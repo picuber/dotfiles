@@ -1,7 +1,7 @@
 	# ls aliases
-alias ll='ls -AlF'
-alias lh='ls -hAlF'
-alias la='ls -A'
+alias ll='ls -lF'
+alias lh='ls -hlF'
+alias la='ls -hAlF'
 alias l='ls -CF'
 
 	# Add an "alert" alias for long running commands.  Use like so:

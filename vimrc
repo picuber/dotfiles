@@ -128,7 +128,7 @@ set showtabline=1 " only show tablne when at least 2 tabs are present
 
 set t_Co=256 " 256 color terminal
 colorscheme molokai
-highlight Normal ctermbg=NONE guibg=NONE<CR>
+highlight Normal ctermbg=NONE guibg=NONE
 set cursorline
 set cursorcolumn
 set noerrorbells
