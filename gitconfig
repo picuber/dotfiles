@@ -1,0 +1,5 @@
+[user]
+	name = picuber
+	email = leon.oliver2012gmail.com
+[merge]
+	tool = vimdiff
