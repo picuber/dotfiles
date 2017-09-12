@@ -2,7 +2,7 @@
 
 lock() {
 	# killall compton
-	%Home/.config/i3lock/lock/lock -i ~/Pictures/Lockscreens/systemLocked_.png
+	$HOME/.config/i3lock/lock/lock -i $HOME/Pictures/Lockscreens/systemLocked_.png
 	# compton -b	
 }
 
