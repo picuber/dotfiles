@@ -104,6 +104,10 @@ let g:gitgutter_map_keys = 0
 let g:switch_mapping="<leader>l"
 let g:switch_reverse_mapping="<leader>h"
 
+" vim-numbertoggle
+" manually set mapping as it got dropped in version 2.0
+:nnoremap <silent> <C-n> :set relativenumber!<CR>
+
 " --------------------------------------------------
 " settings
 " --------------------------------------------------
