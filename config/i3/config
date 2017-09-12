@@ -206,6 +206,10 @@ bindsym XF86AudioPause exec playerctl pause # pause media
 bindsym XF86AudioNext exec playerctl next # next media
 bindsym XF86AudioPrev exec playerctl previous # prev media
 
+bindsym XF86Calculator exec urxvt -e python3
+bindsym XF86HomePage nop
+bindsym XF86MyComputer nop
+
 # Change Monitor Mode
 bindsym $mod+w exec ~/.config/i3/monitor_mode # change monitor mode (internal/external/all/clone)
 
