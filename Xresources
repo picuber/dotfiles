@@ -8,7 +8,9 @@ URxvt*allowBoldFonts: false
 URxvt*foreground: #e0e0e0
 URxvt*background: #000000
 
-!--UXterm--!
+URxvt*scrollBar: false
+
+!--UXTerm--!
 UXTerm*allowBoldFonts: false
 
 UXTerm*foreground: #e0e0e0
