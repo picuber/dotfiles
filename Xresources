@@ -1,0 +1,35 @@
+
+*transparent: true
+*shading: 20
+
+*font: fixed
+*boldFont: fixed
+*allowBoldFonts: false
+
+
+!--colours--!
+*foreground: #e0e0e0
+*background: #000000
+
+*cursorColor: #FF0077
+*cursorColor2: #7700FF
+*colorBD: #333333
+*colorUL: #777777
+
+*color0: #FF0000
+*color1: #00FF00
+*color2: #0000FF
+*color3: #FFFF00
+*color4: #FF00FF
+*color5: #00FFFF
+*color6: #770000
+*color7: #007700
+*color8: #000077
+*color9: #777700
+*color10: #770077
+*color11: #007777
+*color12: #FF7700
+*color13: #00FF77
+*color14: #7700FF
+*color15: #0077FF
+
