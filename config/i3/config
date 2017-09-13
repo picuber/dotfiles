@@ -179,10 +179,6 @@ bar {
 
 # -----Custom Commands-----
 
-# Lock screen
-bindsym $mod+p exec ~/.config/i3lock/lock/lock -i ~/Pictures/Lockscreens/systemLocked_.png # solid
-bindsym $mod+y exec ~/.config/i3lock/fancyLock/lock # blurr
-
 # Mowe workspace
 bindsym $mod+m move workspace to output left
 
@@ -213,6 +209,25 @@ bindsym XF86MyComputer nop
 # Change Monitor Mode
 bindsym $mod+w exec ~/.config/i3/monitor_mode # change monitor mode (internal/external/all/clone)
 
+# Power Options
+mode "power" {
+# These bindings trigger as soon as you enter the power mode
+
+set --no-startup-id $HOME/scripts/i3exit ~/scripts/i3exit
+
+bindsym l mode "default", exec --no-startup-id $HOME/scripts/i3exit lock
+bindsym b mode "default", exec --no-startup-id $HOME/scripts/i3exit blurrLock
+bindsym e mode "default", exec --no-startup-id $HOME/scripts/i3exit logout
+bindsym s mode "default", exec --no-startup-id $HOME/scripts/i3exit suspend
+bindsym h mode "default", exec --no-startup-id $HOME/scripts/i3exit hibernate
+bindsym d mode "default", exec --no-startup-id $HOME/scripts/i3exit shutdown
+
+# back to normal: Enter or Escape
+		bindsym Return mode "default"
+		bindsym Escape mode "default"
+}
+
+bindsym $mod+p mode "power"
 
 # -----AUTOSTART-----
 exec dropbox start

@@ -6,9 +6,18 @@ lock() {
 	# compton -b	
 }
 
+blurrLock() {
+	# killall compton
+	$HOME/.config/i3lock/fancyLock/lock
+	# compton -b	
+}
+
 case "$1" in
 	lock)
 		lock
+		;;
+	blurrLock)
+		blurrLock
 		;;
 	logout)
 		i3-msg exit
@@ -26,7 +35,7 @@ case "$1" in
 		systemctl poweroff
 		;;
 	*)
-		echo "Usage: $0 {lock|logout|suspend|hibernate|reboot|shutdown}"
+		echo "Usage: $0 {lock|blurrLock|logout|suspend|hibernate|reboot|shutdown}"
 		exit 2
 esac
 
