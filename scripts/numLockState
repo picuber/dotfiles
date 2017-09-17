@@ -1,0 +1,6 @@
+xset -q | grep "Num Lock: *on" 1>/dev/null
+if [ $? -eq 0 ]; then
+	echo "on"
+else
+	echo "off"
+fi
