@@ -169,24 +169,32 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	id bar-0
-		position top
+	position top
 
-		tray_output primary
-		strip_workspace_numbers yes
+	tray_output primary
+	strip_workspace_numbers yes
 
-		status_command i3status
+	status_command i3status
 }
 
 # -----Custom Commands-----
 
-# Mowe workspace
+# Move workspace
 bindsym $mod+m move workspace to output left
 
-# Notification server
-exec --no-startup-id dunst
-
-# Background
-exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/* --no-fehbg
+# NumPad Hotkeys
+# Notify at numlock 
+# TODO show state
+bindsym Num_Lock exec notify-send "NUMLOCK"
+bindsym KP_End exec playerctl previous # prev media
+bindsym KP_Down exec playerctl play-pause # toggle media
+bindsym KP_Next exec playerctl next # next media
+bindsym KP_Left nop
+bindsym KP_Begin nop
+bindsym KP_Right nop
+bindsym KP_Home nop
+bindsym KP_Up nop
+bindsym KP_Prior nop
 
 # Media keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +1% # increase sound volume
@@ -202,6 +210,13 @@ bindsym XF86AudioPause exec playerctl pause # pause media
 bindsym XF86AudioNext exec playerctl next # next media
 bindsym XF86AudioPrev exec playerctl previous # prev media
 
+bindsym XF86WLAN nop
+bindsym XF86Tools nop
+bindsym XF86Search nop
+bindsym XF86LaunchA nop
+bindsym XF86Explorer nop
+
+
 bindsym XF86Calculator exec urxvt -e python3
 bindsym XF86HomePage nop
 bindsym XF86MyComputer nop
@@ -211,24 +226,24 @@ bindsym $mod+w exec ~/.config/i3/monitor_mode # change monitor mode (internal/ex
 
 # Power Options
 mode "power" {
-# These bindings trigger as soon as you enter the power mode
+	bindsym l mode "default", exec --no-startup-id $HOME/scripts/i3exit lock
+	bindsym b mode "default", exec --no-startup-id $HOME/scripts/i3exit blurrLock
+	bindsym e mode "default", exec --no-startup-id $HOME/scripts/i3exit logout
+	bindsym s mode "default", exec --no-startup-id $HOME/scripts/i3exit suspend
+	bindsym h mode "default", exec --no-startup-id $HOME/scripts/i3exit hibernate
+	bindsym r mode "default", exec --no-startup-id $HOME/scripts/i3exit reboot
+	bindsym d mode "default", exec --no-startup-id $HOME/scripts/i3exit shutdown
 
-set --no-startup-id $HOME/scripts/i3exit ~/scripts/i3exit
-
-bindsym l mode "default", exec --no-startup-id $HOME/scripts/i3exit lock
-bindsym b mode "default", exec --no-startup-id $HOME/scripts/i3exit blurrLock
-bindsym e mode "default", exec --no-startup-id $HOME/scripts/i3exit logout
-bindsym s mode "default", exec --no-startup-id $HOME/scripts/i3exit suspend
-bindsym h mode "default", exec --no-startup-id $HOME/scripts/i3exit hibernate
-bindsym d mode "default", exec --no-startup-id $HOME/scripts/i3exit shutdown
-
-# back to normal: Enter or Escape
-		bindsym Return mode "default"
-		bindsym Escape mode "default"
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 
 bindsym $mod+p mode "power"
 
 # -----AUTOSTART-----
 exec dropbox start
-exec --no-startup-id nm-applet &
+exec --no-startup-id nm-applet & # wifi-tray-icon
+exec --no-startup-id dunst # Notification Server
+exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/* --no-fehbg # Background
+#exec_always --no-startup-id polybar example
