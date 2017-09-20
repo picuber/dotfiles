@@ -185,7 +185,7 @@ bindsym $mod+m move workspace to output left
 # NumPad Hotkeys
 # Notify at numlock 
 # TODO show state
-bindsym Num_Lock exec notify-send "NUMLOCK"
+bindsym Num_Lock exec --no-startup-id $HOME/scripts/numLockState
 bindsym KP_End exec playerctl previous # prev media
 bindsym KP_Down exec playerctl play-pause # toggle media
 bindsym KP_Next exec playerctl next # next media
