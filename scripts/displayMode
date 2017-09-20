@@ -1,0 +1,24 @@
+#!/bin/bash
+INTERNAL="eDP1"
+DOCK="DP1-1"
+HDMI="HDMI1"
+
+case "$1" in 
+	normal)
+		xrandr --output $INTERNAL --auto --primary --output $DOCK --off --output $HDMI1 --off
+		;;
+	docked)
+		xrandr --output $INTERNAL --auto --primary --output $DOCK --auto --right-of $INTERNAL --output $HDMI1 --off
+		;;
+	extented)
+		xrandr --output $INTERNAL --auto --primary --output $DOCK --off --output $HDMI1 --auto --right-of $INTERNAL
+		;;
+	presentation)
+		xrandr --output $INTERNAL --auto --primary --output $DOCK --off --output $HDMI1 --auto --same-as $INTERNAL
+		;;
+	*)
+		echo "Usage: $0 {normal|docked|extented|presentation}"
+		exit 2
+esac
+
+exit 0
