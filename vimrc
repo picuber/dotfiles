@@ -39,6 +39,8 @@ Plugin 'flazz/vim-colorschemes'
 
 Plugin 'AndrewRadev/switch.vim'
 
+" Plugin 'sjl/gundo.vim'
+
 " Plugin 'ktvoelker/sbt-vim'
 
 " Plugin 'derekwyatt/vim-scala'
