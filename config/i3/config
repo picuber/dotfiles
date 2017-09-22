@@ -196,26 +196,34 @@ bindsym KP_Home nop
 bindsym KP_Up nop
 bindsym KP_Prior nop
 
-# Media keys
+# Audio keys dock
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +1% # increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -1% # decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # toggle mute sound
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle # toggle mute sound
+bindsym XF86AudioMute exec --no-startup-id $HOME/scripts/muteToggle dock-audio # toggle mute sound
+bindsym XF86AudioMicMute exec --no-startup-id $HOME/scripts/muteToggle dock-mic # toggle mute microphone
 
+# Audio keys laptop
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +1% # increase sound volume
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -1% # decrease sound volume
+bindsym Shift+XF86AudioMute exec --no-startup-id $HOME/scripts/muteToggle laptop-audio # toggle mute sound
+bindsym Shift+XF86AudioMicMute exec --no-startup-id $HOME/scripts/muteToggle laptop-mic # toggle mute microphone
+
+# Brightness keys
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
 
+# Media keys
 bindsym XF86AudioPlay exec playerctl play-pause # toggle media
 bindsym XF86AudioPause exec playerctl pause # pause media
 bindsym XF86AudioNext exec playerctl next # next media
 bindsym XF86AudioPrev exec playerctl previous # prev media
 
+# Extra keys
 bindsym XF86WLAN nop
 bindsym XF86Tools nop
 bindsym XF86Search nop
 bindsym XF86LaunchA nop
 bindsym XF86Explorer nop
-
 
 bindsym XF86Calculator exec urxvt -e python3
 bindsym XF86HomePage nop
