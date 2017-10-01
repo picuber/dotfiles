@@ -36,13 +36,6 @@ bindsym $mod+Return exec urxvt
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
 # start rofi drun (open programm)
 bindsym $mod+o exec rofi -show drun
 
@@ -94,7 +87,10 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+c focus child
+
+# toggle border none/1pixel/normal
+bindsym $mod+d border toggle
 
 # define workspace names
 set $ws1 1:Term
@@ -258,6 +254,19 @@ mode "power" {
 }
 
 bindsym $mod+p mode "power"
+
+
+# -----SETTINGS-----
+# -----ASSIGN WINDOW TO WORKSPACE-----
+# assign [class="URxvt"] $ws1
+assign [class="Chromium"] $ws2
+for_window [class="Chromium"] layout tabbed
+assign [class="Steam"] $ws7
+assign [class="Terraria"] $ws8
+assign [class="Binding of Isaac: Afterbirth+"] $ws8
+assign [class="Spotify"] $ws9
+assign [class="discord"] $ws10
+
 
 # -----AUTOSTART-----
 exec dropbox start
