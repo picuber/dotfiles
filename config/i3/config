@@ -259,8 +259,8 @@ bindsym $mod+p mode "power"
 # -----SETTINGS-----
 # -----ASSIGN WINDOW TO WORKSPACE-----
 # assign [class="URxvt"] $ws1
-assign [class="Chromium"] $ws2
-for_window [class="Chromium"] layout tabbed
+# assign [class="Chromium"] $ws2
+# for_window [class="Chromium"] layout tabbed
 assign [class="Steam"] $ws7
 assign [class="Terraria"] $ws8
 assign [class="Binding of Isaac: Afterbirth+"] $ws8
