@@ -15,6 +15,7 @@ alias cdu='cd /mnt/c/Users/Leon/Data/Uni/17WS/ '
 
 	# vim-shell
 alias :q=exit
+alias :Q=exit
 
 	# clear screen with WIS cls command
 alias cls=clear
