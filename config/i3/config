@@ -264,8 +264,10 @@ bindsym $mod+p mode "power"
 assign [class="Steam"] $ws7
 assign [class="Terraria"] $ws8
 assign [class="Binding of Isaac: Afterbirth+"] $ws8
-# assign [class="Spotify"] $ws9								# doesnt work for some reason
-for_window [class="Spotify"] move to workspace $ws9			# alternate
+# doesnt work for some reason
+#assign [class="Spotify"] $ws9
+# alternate
+for_window [class="Spotify"] move to workspace $ws9
 assign [class="discord"] $ws10
 
 
