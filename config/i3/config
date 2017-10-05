@@ -188,7 +188,7 @@ bindsym XF86MyComputer nop
 
 # -----MODES-----
 
-bindsym Shift+slash exec --no-startup-id notify-send -u low "Modi:\nr: Resize\nw: Display\np: Power"
+bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Modi:\nr: Resize\nw: Display\np: Power"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -213,7 +213,7 @@ mode "resize" {
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 
-	bindsym Shift+slash exec --no-startup-id notify-send -u low "Resize:\nh/left:  decrease width\nl/right: increase width\nk/up:    decrease height\nj/down:  increase height"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Resize:\nh/left:  decrease width\nl/right: increase width\nk/up:    decrease height\nj/down:  increase height"
 }
 
 bindsym $mod+r mode "resize"
@@ -230,7 +230,7 @@ mode "display" {
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym Shift+slash exec --no-startup-id notify-send -u low "Display Mode:\nn: normal\nd: docked\ne: extendet\np: presentation"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Display Mode:\nn: normal\nd: docked\ne: extendet\np: presentation"
 }
 bindsym $mod+w mode "display"
 
@@ -249,7 +249,7 @@ mode "power" {
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym Shift+slash exec --no-startup-id notify-send -u low "Power Mode:\nl: lock\nb: blurr\ne: logout\ns: suspend/sleep\nh: hibernate\nr: reboot\nd: shutdown"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Power Mode:\nl: lock\nb: blurr\ne: logout\ns: suspend/sleep\nh: hibernate\nr: reboot\nd: shutdown"
 }
 
 bindsym $mod+p mode "power"
