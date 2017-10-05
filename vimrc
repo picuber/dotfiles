@@ -119,6 +119,8 @@ set scrolloff=3 " Strart scrolling n lines before horizontal border of window
 set sidescroll=1 " sidescroll one collumn at a time
 set sidescrolloff=7 " Strart scrolling n collumns before vertical border of window
 
+set mouse=a " enable mouse support
+
 set backupdir=~/.vim/backups// " put all backups in a central location
 set directory=~/.vim/swaps// " put all .swap files in a central location
 
