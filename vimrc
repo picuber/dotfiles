@@ -45,7 +45,7 @@ Plugin 'AndrewRadev/switch.vim'
 
 " Plugin 'derekwyatt/vim-scala'
 
-" Plugin 'lervag/vimtex'
+Plugin 'lervag/vimtex'
 
 call vundle#end()
 filetype plugin indent on 
@@ -109,6 +109,11 @@ let g:switch_reverse_mapping="<leader>h"
 " vim-numbertoggle
 " manually set mapping as it got dropped in version 2.0
 :nnoremap <silent> <C-n> :set relativenumber!<CR>
+
+
+" vimtex
+" disable for now
+let g:vimtex_enabled = 0
 
 " --------------------------------------------------
 " settings
