@@ -225,6 +225,11 @@ bindsym XF86Calculator exec urxvt -e python3
 bindsym XF86HomePage nop
 bindsym XF86MyComputer nop
 
+
+# -----MODES-----
+
+bindsym Shift+slash exec --no-startup-id notify-send -u low "Modi:\nw: Display\np: Power"
+
 # Change Display Mode
 mode "display" {
 	bindsym n mode "default", exec --no-startup-id $HOME/scripts/displayMode normal
@@ -235,6 +240,9 @@ mode "display" {
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
+
+	# Usage
+	bindsym Shift+slash exec --no-startup-id notify-send -u low "Display Mode:\nn: normal\nd: docked\ne: extendet\np: presentation"
 }
 bindsym $mod+w mode "display"
 
@@ -251,6 +259,9 @@ mode "power" {
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
+
+	# Usage
+	bindsym Shift+slash exec --no-startup-id notify-send -u low "Power Mode:\nl: lock\nb: blurr\ne: logout\ns: suspend/sleep\nh: hibernate\nr: reboot\nd: shutdown"
 }
 
 bindsym $mod+p mode "power"
