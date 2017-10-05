@@ -182,8 +182,8 @@ bindsym XF86LaunchA nop
 bindsym XF86Explorer nop
 
 bindsym XF86Calculator exec urxvt -e python3
-bindsym XF86HomePage nop
-bindsym XF86MyComputer nop
+bindsym XF86HomePage exec chromium
+bindsym XF86MyComputer exec thunar
 
 
 # -----MODES-----
