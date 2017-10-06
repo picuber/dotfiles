@@ -60,7 +60,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 			\'default' : '',
 			\'vimshell' : $HOME.'/.vimshell_hist',
 			\'scheme' : $HOME.'/.gosh_completions',
-			\'tex': '~/.vim/dictionary/tex',
+			\'tex': '~/.vim/dictionaries/tex',
 			\}
 	"Define keyword
 if !exists('g:neocomplete#keyword_patterns')
