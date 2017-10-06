@@ -56,12 +56,17 @@ let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 	"define dictionary
-let g:neocomplete#sources#dictionary#dictionaries = {'default' : '', 'vimshell' : $HOME.'/.vimshell_hist', 'scheme' : $HOME.'/.gosh_completions'}
+let g:neocomplete#sources#dictionary#dictionaries = {
+			\'default' : '',
+			\'vimshell' : $HOME.'/.vimshell_hist',
+			\'scheme' : $HOME.'/.gosh_completions',
+			\'tex': '~/.vim/dictionary/tex',
+			\}
 	"Define keyword
 if !exists('g:neocomplete#keyword_patterns')
 	let g:neocomplete#keyword_patterns = {}
 endif
-let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+let g:neocomplete#keyword_patterns._ = '[a-zA-Z_äöüÄÖÜß-][a-zA-Z0-9_äöüÄÖÜß-]*' " match words starting with \h or umlauts/ß or -, and continues with \w, umlauts/ß and -
 	"<TAB>: completion
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
@@ -141,7 +146,9 @@ set showtabline=1 " only show tablne when at least 2 tabs are present
 
 set t_Co=256 " 256 color terminal
 colorscheme molokai
+syntax on " turn on syntax highlighting
 highlight Normal ctermbg=NONE guibg=NONE
+
 set cursorline
 set cursorcolumn
 set noerrorbells
@@ -168,6 +175,9 @@ set whichwrap+=<,>,[,] " allow arrowkeys to wrap lines
 
 " set default latex filetype
 let g:tex_flavor = "latex"
+
+" adds as part of words
+set iskeyword+=-,ä,ö,ü,Ä,Ö,Ü,ß
 
 
 " --------------------------------------------------
