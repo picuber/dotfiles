@@ -92,6 +92,9 @@ bindsym $mod+c focus child
 # toggle border none/1pixel/normal
 bindsym $mod+d border toggle
 
+# toggle bar mode dock/hide
+bindsym $mod+b bar mode toggle
+
 # define workspace names
 set $ws1 1:Term
 set $ws2 2:Side
@@ -261,11 +264,20 @@ bindsym $mod+p mode "power"
 bar {
 	id bar-0
 	position top
+	output eDP1
 
 	tray_output primary
 	strip_workspace_numbers yes
 
 	status_command i3status
+}
+bar{
+	id bar-1
+	position top
+	output DP1-1
+
+	tray_output none
+	strip_workspace_numbers yes
 }
 
 # -----SETTINGS-----
