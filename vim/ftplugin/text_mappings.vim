@@ -13,26 +13,26 @@ inoremap <LocalLeader>cs<S-a> Å
 
 
 " greek
-inoremap <LocgalLeader>cga α
-inoremap <LocgalLeader>cgb β
-inoremap <LocgalLeader>cgg γ
-inoremap <LocgalLeader>cgd δ
-inoremap <LocgalLeader>cge ε
-inoremap <LocgalLeader>cgl λ
-inoremap <LocgalLeader>cgm μ
-inoremap <LocgalLeader>cgn ν
-inoremap <LocgalLeader>cgp π
-inoremap <LocgalLeader>cgs σ
-inoremap <LocgalLeader>cgt τ
-inoremap <LocgalLeader>cgf φ
-inoremap <LocgalLeader>cgc ψ
-inoremap <LocgalLeader>cgo ω
-inoremap <LocgalLeader>cg<S-d> Δ
-inoremap <LocgalLeader>cg<S-h> Θ
-inoremap <LocgalLeader>cg<S-p> Π
-inoremap <LocgalLeader>cg<S-s> Σ
-inoremap <LocgalLeader>cg<S-x> χ
-inoremap <LocgalLeader>cg<S-o> Ω
+inoremap <LocalLeader>cga α
+inoremap <LocalLeader>cgb β
+inoremap <LocalLeader>cgg γ
+inoremap <LocalLeader>cgd δ
+inoremap <LocalLeader>cge ε
+inoremap <LocalLeader>cgl λ
+inoremap <LocalLeader>cgm μ
+inoremap <LocalLeader>cgn ν
+inoremap <LocalLeader>cgp π
+inoremap <LocalLeader>cgs σ
+inoremap <LocalLeader>cgt τ
+inoremap <LocalLeader>cgf φ
+inoremap <LocalLeader>cgc ψ
+inoremap <LocalLeader>cgo ω
+inoremap <LocalLeader>cg<S-d> Δ
+inoremap <LocalLeader>cg<S-h> Θ
+inoremap <LocalLeader>cg<S-p> Π
+inoremap <LocalLeader>cg<S-s> Σ
+inoremap <LocalLeader>cg<S-x> χ
+inoremap <LocalLeader>cg<S-o> Ω
 
 " math
 inoremap <LocalLeader>cmx ×
