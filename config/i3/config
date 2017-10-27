@@ -292,6 +292,7 @@ for_window [class="Steam"] move to workspace $ws7
 for_window [class="Spotify"] move to workspace $ws9
 
 for_window [class="URxvt"] border pixel 2
+for_window [class="Slack"] border pixel 2
 for_window [class="Chromium"] border none
 for_window [class="Spotify"] border none
 for_window [class="discord"] border none
