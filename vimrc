@@ -66,7 +66,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
 if !exists('g:neocomplete#keyword_patterns')
 	let g:neocomplete#keyword_patterns = {}
 endif
-let g:neocomplete#keyword_patterns._ = '[a-zA-Z_äöüÄÖÜß-][a-zA-Z0-9_äöüÄÖÜß-]*' " match words starting with \h or umlauts/ß or -, and continues with \w, umlauts/ß and -
+let g:neocomplete#keyword_patterns._ = '[a-zA-Z_äöüåÄÖÜÅß-][a-zA-Z0-9_äöüåÄÖÜÅß-]*' " match words starting with \h or umlauts/ß or -, and continues with \w, umlauts/ß and -
 	"<TAB>: completion
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
