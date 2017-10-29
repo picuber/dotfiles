@@ -31,6 +31,7 @@ inoremap <LocalLeader>cg<S-d> Δ
 inoremap <LocalLeader>cg<S-h> Θ
 inoremap <LocalLeader>cg<S-p> Π
 inoremap <LocalLeader>cg<S-s> Σ
+inoremap <LocalLeader>cg<S-f> Φ
 inoremap <LocalLeader>cg<S-x> χ
 inoremap <LocalLeader>cg<S-o> Ω
 
