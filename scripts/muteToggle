@@ -2,8 +2,10 @@
 
 case "$1" in 
 	dock-mic)
-		pactl set-source-mute 1 toggle
-		pactl list sources | grep Mute | sed '2q;d' | grep "Mute: yes" 1>/dev/null
+		pactl set-source-mute alsa_input.usb-C-Media_Electronics_Inc._ThinkPad_OneLink_Pro_Dock_Audio-00.analog-stereo toggle
+		pactl list sources \
+			| grep -A 6 "Name: alsa_input.usb-C-Media_Electronics_Inc._ThinkPad_OneLink_Pro_Dock_Audio-00.analog-stereo" \
+			| grep "Mute: yes" 1>/dev/null
 		if [ $? -eq 0 ]; then
 			notify-send "Mic(Dock): MUTED" -u low -t 1
 		else
@@ -11,8 +13,10 @@ case "$1" in
 		fi
 		;;
 	dock-audio)
-		pactl set-sink-mute 0 toggle
-		pactl list sinks | grep Mute | sed '1q;d' | grep "Mute: yes" 1>/dev/null
+		pactl set-sink-mute alsa_output.usb-C-Media_Electronics_Inc._ThinkPad_OneLink_Pro_Dock_Audio-00.analog-stereo toggle
+		pactl list sinks \
+			| grep -A 6 "Name: alsa_output.usb-C-Media_Electronics_Inc._ThinkPad_OneLink_Pro_Dock_Audio-00.analog-stereo" \
+			| grep "Mute: yes" 1>/dev/null
 		if [ $? -eq 0 ]; then
 			notify-send "Audio(Dock): MUTED" -u low -t 1
 		else
@@ -20,8 +24,10 @@ case "$1" in
 		fi
 		;;
 	laptop-mic)
-		pactl set-source-mute 3 toggle
-		pactl list sources | grep Mute | sed '4q;d' | grep "Mute: yes" 1>/dev/null
+		pactl set-source-mute alsa_input.pci-0000_00_1b.0.analog-stereo toggle
+		pactl list sources \
+			| grep -A 6 "Name: alsa_input.pci-0000_00_1b.0.analog-stereo" \
+			| grep "Mute: yes" 1>/dev/null
 		if [ $? -eq 0 ]; then
 			notify-send "Mic(Laptop): MUTED" -u low -t 1
 		else
@@ -29,8 +35,10 @@ case "$1" in
 		fi
 		;;
 	laptop-audio)
-		pactl set-sink-mute 1 toggle
-		pactl list sinks | grep Mute | sed '2q;d' | grep "Mute: yes" 1>/dev/null
+		pactl set-sink-mute alsa_output.pci-0000_00_1b.0.analog-stereo toggle
+		pactl list sinks \
+			| grep -A 6 "Name: alsa_output.pci-0000_00_1b.0.analog-stereo" \
+			| grep "Mute: yes" 1>/dev/null
 		if [ $? -eq 0 ]; then
 			notify-send "Audio(Laptop): MUTED" -u low -t 1
 		else
@@ -38,7 +46,7 @@ case "$1" in
 		fi
 		;;
 	*)
-		echo "Usage $0 {mic|audio}"
+		echo "Usage $0 {laptop|dock}-{mic|audio}"
 		exit 2
 	
 esac
