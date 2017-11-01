@@ -152,7 +152,7 @@ bindsym KP_Left nop
 bindsym KP_Begin nop
 bindsym KP_Right nop
 bindsym --release KP_Home exec --no-startup-id xdotool key XF86Back
-bindsym --release KP_Up exec --no-startup-id xdotool key H
+bindsym KP_Up nop
 bindsym --release KP_Prior exec --no-startup-id xdotool key XF86Forward
 
 # Audio keys dock
