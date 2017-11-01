@@ -145,15 +145,15 @@ bindsym $mod+m move workspace to output left
 
 # NumPad Hotkeys
 bindsym Num_Lock exec --no-startup-id $HOME/scripts/numLockState
-bindsym KP_End exec playerctl previous # prev media
-bindsym KP_Down exec playerctl play-pause # toggle media
-bindsym KP_Next exec playerctl next # next media
+bindsym KP_End exec --no-startup-id playerctl previous # prev media
+bindsym KP_Down exec --no-startup-id playerctl play-pause # toggle media
+bindsym KP_Next exec --no-startup-id playerctl next # next media
 bindsym KP_Left nop
 bindsym KP_Begin nop
 bindsym KP_Right nop
-bindsym KP_Home nop
+bindsym KP_Home exec --no-startup-id xdotool key XF86Back
 bindsym KP_Up nop
-bindsym KP_Prior nop
+bindsym KP_Prior exec --no-startup-id xdotool key XF86Forward
 
 # Audio keys dock
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +1% # increase sound volume
@@ -168,14 +168,14 @@ bindsym Shift+XF86AudioMute exec --no-startup-id $HOME/scripts/muteToggle laptop
 bindsym Shift+XF86AudioMicMute exec --no-startup-id $HOME/scripts/muteToggle laptop-mic # toggle mute microphone
 
 # Brightness keys
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 # decrease screen brightness
 
 # Media keys
-bindsym XF86AudioPlay exec playerctl play-pause # toggle media
-bindsym XF86AudioPause exec playerctl pause # pause media
-bindsym XF86AudioNext exec playerctl next # next media
-bindsym XF86AudioPrev exec playerctl previous # prev media
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause # toggle media
+bindsym XF86AudioPause exec --no-startup-id playerctl pause # pause media
+bindsym XF86AudioNext exec --no-startup-id playerctl next # next media
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous # prev media
 
 # Extra keys
 bindsym XF86WLAN nop
@@ -299,9 +299,12 @@ for_window [class="discord"] border none
 
 for_window [class="mpv"] floating enable
 for_window [class="vlc"] floating enable
+for_window [class="Zeal"] floating enable
+
+for_window [class="Zeal"] resize set 1280 720
 
 # -----AUTOSTART-----
-exec dropbox start
+exec --no-startup-id dropbox start
 exec --no-startup-id nm-applet & # wifi-tray-icon
 exec --no-startup-id dunst # Notification Server
 exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/* --no-fehbg # Background
