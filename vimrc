@@ -298,12 +298,19 @@ noremap <leader>ssd :setlocal spelllang=de_de<CR>
 noremap <leader>st :setlocal spell!<CR>
 noremap <leader>ss :setlocal spell<CR>
 
+	" goto next/prev bad word
 noremap <leader>sn ]s
 noremap <leader>sp [s
 
+	" suggest alternate words
+noremap <leader>sa z=
+
+	" set word as good/wrong/wrong
 noremap <leader>sg zg
 noremap <leader>sb zw
 noremap <leader>sw zw
+
+	" unset word as good/wrong/wrong
 noremap <leader>sug zug
 noremap <leader>sub zuw
 noremap <leader>suw zuw
