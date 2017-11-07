@@ -283,7 +283,7 @@ noremap <leader>tm$ :$tabmove<CR>
 
 
 "----------reformat----------
-noremap <leader>f mfgg=G'f
+noremap <leader>f mfgg=G'fzz
 
 "----------sppell checking----------
 	" set spelllang uk
