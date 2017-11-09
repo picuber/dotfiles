@@ -99,8 +99,8 @@ let g:syntastic_python_python_exec = 'python3'
 
 " Utilsnips
 let g:UltiSnipsExpandTrigger="<leader>e"
-let g:UltiSnipsJumpForwardTrigger="<leader>e"
-let g:UltiSnipsJumpBackwardTrigger="<leader>E"
+let g:UltiSnipsJumpForwardTrigger="<leader>u"
+let g:UltiSnipsJumpBackwardTrigger="<leader>U"
 
 let g:UltiSnipsEditSplit="context"
 let g:UltiSnipsSnippetDirectories=["~/.vim/bundle/vim-snippets/UltiSnips"]
