@@ -6,6 +6,10 @@ Host raspi
 	User pi
 	HostName raspi
 
+Host valhalla
+	User fuchsloch
+	HostName valhalla.fs.tum.de
+
 Host fsmpi
 	User fuchsloch
 	HostName valhalla.fs.tum.de
