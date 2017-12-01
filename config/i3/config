@@ -141,7 +141,7 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # -----HOTKEYS/MEDIAKEYS-----
 
 # Move workspace
-bindsym $mod+m move workspace to output left
+bindsym $mod+Shift+m move workspace to output left
 
 # NumPad Hotkeys
 bindsym Num_Lock exec --no-startup-id $HOME/scripts/numLockState
@@ -191,7 +191,7 @@ bindsym XF86MyComputer exec thunar
 
 # -----MODES-----
 
-bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Modi:\nr: Resize\nw: Display\np: Power"
+bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -257,6 +257,60 @@ mode "power" {
 
 bindsym $mod+p mode "power"
 
+# Type special characters
+mode "macro-char" {
+	bindsym --release a mode "default", exec --no-startup-id xdotool type ä
+	bindsym --release $mod+a exec --no-startup-id xdotool type ä
+
+	bindsym --release o mode "default", exec --no-startup-id xdotool type ö
+	bindsym --release $mod+o exec --no-startup-id xdotool type ö
+
+	bindsym --release u mode "default", exec --no-startup-id xdotool type ü
+	bindsym --release $mod+u exec --no-startup-id xdotool type ü
+
+	bindsym --release s mode "default", exec --no-startup-id xdotool type ß
+	bindsym --release $mod+s exec --no-startup-id xdotool type ß
+
+	bindsym --release Mod1+a mode "default", exec --no-startup-id $HOME/scripts/macro/aring
+	bindsym --release $mod+Mod1+a exec --no-startup-id $HOME/scripts/macro/aring
+
+	bindsym --release Shift+a mode "default", exec --no-startup-id xdotool type Ä
+	bindsym --release $mod+Shift+a exec --no-startup-id xdotool type Ä
+
+	bindsym --release Shift+o mode "default", exec --no-startup-id xdotool type Ö
+	bindsym --release $mod+Shift+o exec --no-startup-id xdotool type Ö
+
+	bindsym --release Shift+u mode "default", exec --no-startup-id xdotool type Ü
+	bindsym --release $mod+Shift+u exec --no-startup-id xdotool type Ü
+
+	bindsym --release Mod1+Shift+a mode "default", exec --no-startup-id $HOME/scripts/macro/Aring
+	bindsym --release $mod+Mod1+Shift+a exec --no-startup-id $HOME/scripts/macro/Aring
+	
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+Escape mode "macro"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Char Mode:\n"
+}
+
+# Macro set selection
+mode "macro" {
+	bindsym c mode "macro-char"
+	bindsym $mod+c mode "macro-char"
+	
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Macro Mode:\nc: Macro-Char"
+}
+
+bindsym $mod+m mode "macro"
+
+
 
 # -----BAR-----
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -270,6 +324,18 @@ bar {
 	strip_workspace_numbers yes
 
 	status_command i3status
+
+    colors {
+        background #000000
+        statusline #ffffff
+        separator #666666
+#						   border  backgr. text
+        focused_workspace  #0088ff #0000ff #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #880000 #ff0000 #ffffff
+        binding_mode       #008800 #00ff00 #000000
+    }
 }
 bar{
 	id bar-1
@@ -278,14 +344,37 @@ bar{
 
 	tray_output none
 	strip_workspace_numbers yes
+
+    colors {
+        background #000000
+        statusline #ffffff
+        separator #666666
+#						   border  backgr. text
+        focused_workspace  #0088ff #0000ff #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #880000 #ff0000 #ffffff
+        binding_mode       #008800 #00ff00 #000000
+    }
 }
 
 # -----SETTINGS-----
+# -----CLOLOURS-----
+# class                 border  backgr. text    indicator child_border
+client.focused          #0088ff #0000ff #000000 #0088ff   #0000ff
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
 # -----ASSIGN WINDOW TO WORKSPACE-----
 # assign [class="URxvt"] $ws1
 # assign [class="Chromium"] $ws2
 assign [class="Binding of Isaac: Afterbirth+"] $ws8
 assign [class="Terraria"] $ws8
+assign [class="superhexagon.x86_64"] $ws8
 assign [class="discord"] $ws10
 
 for_window [class="Steam"] move to workspace $ws7
@@ -296,7 +385,7 @@ for_window [class="discord"] border none
 for_window [class="URxvt"] border pixel 2
 for_window [class="Slack"] border pixel 2
 for_window [class="Spotify"] border none
-
+for_window [class="TelegramDesktop"] border none
 for_window [class="discord"] focus
 
 for_window [class="mpv"] floating enable
