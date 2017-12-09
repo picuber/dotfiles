@@ -95,6 +95,12 @@ bindsym $mod+d border toggle
 # toggle bar mode dock/hide
 bindsym $mod+b bar mode toggle
 
+# move to scratchpad
+bindsym $mod+semicolon move scratchpad
+
+# show scratchpad
+bindsym $mod+bar scratchpad show
+
 # define workspace names
 set $ws1 1:Term
 set $ws2 2:Side
@@ -271,8 +277,8 @@ mode "macro-char" {
 	bindsym --release s mode "default", exec --no-startup-id xdotool type ß
 	bindsym --release $mod+s exec --no-startup-id xdotool type ß
 
-	bindsym --release Mod1+a mode "default", exec --no-startup-id $HOME/scripts/macro/aring
-	bindsym --release $mod+Mod1+a exec --no-startup-id $HOME/scripts/macro/aring
+	# bindsym --release Mod1+a mode "default", exec --no-startup-id $HOME/scripts/macro/aring
+	# bindsym --release $mod+Mod1+a exec --no-startup-id $HOME/scripts/macro/aring
 
 	bindsym --release Shift+a mode "default", exec --no-startup-id xdotool type Ä
 	bindsym --release $mod+Shift+a exec --no-startup-id xdotool type Ä
@@ -283,8 +289,8 @@ mode "macro-char" {
 	bindsym --release Shift+u mode "default", exec --no-startup-id xdotool type Ü
 	bindsym --release $mod+Shift+u exec --no-startup-id xdotool type Ü
 
-	bindsym --release Mod1+Shift+a mode "default", exec --no-startup-id $HOME/scripts/macro/Aring
-	bindsym --release $mod+Mod1+Shift+a exec --no-startup-id $HOME/scripts/macro/Aring
+	# bindsym --release Mod1+Shift+a mode "default", exec --no-startup-id $HOME/scripts/macro/Aring
+	# bindsym --release $mod+Mod1+Shift+a exec --no-startup-id $HOME/scripts/macro/Aring
 	
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
@@ -369,7 +375,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 client.background       #ffffff
 
-# -----ASSIGN WINDOW TO WORKSPACE-----
+# -----WINDOW INITIALIZATION-----
 # assign [class="URxvt"] $ws1
 # assign [class="Chromium"] $ws2
 assign [class="Binding of Isaac: Afterbirth+"] $ws8
@@ -377,22 +383,28 @@ assign [class="Terraria"] $ws8
 assign [class="superhexagon.x86_64"] $ws8
 assign [class="discord"] $ws10
 
-for_window [class="Steam"] move to workspace $ws7
-for_window [class="Spotify"] move to workspace $ws9
-
 for_window [class="Chromium"] border none
 for_window [class="discord"] border none
+for_window [class="lyricfier"] border 1pixel
 for_window [class="URxvt"] border pixel 2
 for_window [class="Slack"] border pixel 2
 for_window [class="Spotify"] border none
 for_window [class="TelegramDesktop"] border none
+
 for_window [class="discord"] focus
 
+for_window [class="lyricfier"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="vlc"] floating enable
 for_window [class="Zeal"] floating enable
 
+for_window [class="lyricfier"] move position 100 200
+
 for_window [class="Zeal"] resize set 1280 720
+
+for_window [class="Steam"] move to workspace $ws7
+for_window [class="Spotify"] move to workspace $ws9
+for_window [class="lyricfier"] move to workspace $ws9
 
 # -----AUTOSTART-----
 exec --no-startup-id dropbox start
