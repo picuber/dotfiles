@@ -95,6 +95,9 @@ bindsym $mod+d border toggle
 # toggle bar mode dock/hide
 bindsym $mod+b bar mode toggle
 
+# toggle window sticky
+bindsym $mod+q sticky toggle
+
 # move to scratchpad
 bindsym $mod+semicolon move scratchpad
 
