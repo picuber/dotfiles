@@ -21,11 +21,12 @@ inoremap <LocalLeader>cge ε
 inoremap <LocalLeader>cgl λ
 inoremap <LocalLeader>cgm μ
 inoremap <LocalLeader>cgn ν
+inoremap <LocalLeader>cgc ξ
 inoremap <LocalLeader>cgp π
 inoremap <LocalLeader>cgs σ
 inoremap <LocalLeader>cgt τ
 inoremap <LocalLeader>cgf φ
-inoremap <LocalLeader>cgc ψ
+inoremap <LocalLeader>cgq ψ
 inoremap <LocalLeader>cgo ω
 inoremap <LocalLeader>cg<S-d> Δ
 inoremap <LocalLeader>cg<S-h> Θ
