@@ -103,8 +103,9 @@ let g:UltiSnipsJumpForwardTrigger="<leader>u"
 let g:UltiSnipsJumpBackwardTrigger="<leader>U"
 
 let g:UltiSnipsEditSplit="context"
-let g:UltiSnipsSnippetDirectories=["~/.vim/bundle/vim-snippets/UltiSnips"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 let g:UltiSnipsSnippetsDir = "~/.vim/UltiSnips"
+let g:UltiSnipsEnableSnipMate = 0
 
 " GitGutter
 let g:gitgutter_map_keys = 0
