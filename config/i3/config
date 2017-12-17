@@ -188,7 +188,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 # decrease 
 # bindsym XF86AudioPause exec --no-startup-id playerctl pause # pause media
 # bindsym XF86AudioNext exec --no-startup-id playerctl next # next media
 # bindsym XF86AudioPrev exec --no-startup-id playerctl previous # prev media
-bindsym --release XF86AudioPlay workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl playpause; i3-msg workspace back_and_forth
+bindsym --release XF86AudioPlay workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl playpause # toggle media
 bindsym --release XF86AudioPause workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl playpause # pause media
 bindsym --release XF86AudioNext workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl next # next media
 bindsym --release XF86AudioPrev workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl prev # prev media
