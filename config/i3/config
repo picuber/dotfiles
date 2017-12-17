@@ -154,9 +154,12 @@ bindsym $mod+Shift+m move workspace to output left
 
 # NumPad Hotkeys
 bindsym Num_Lock exec --no-startup-id $HOME/scripts/numLockState
-bindsym KP_End exec --no-startup-id playerctl previous # prev media
-bindsym KP_Down exec --no-startup-id playerctl play-pause # toggle media
-bindsym KP_Next exec --no-startup-id playerctl next # next media
+# bindsym KP_End exec --no-startup-id playerctl previous # prev media
+# bindsym KP_Down exec --no-startup-id playerctl play-pause # toggle media
+# bindsym KP_Next exec --no-startup-id playerctl next # next media
+bindsym --release KP_End workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl prev # prev media
+bindsym --release KP_Down workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl playpause # toggle media
+bindsym --release KP_Next workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl next # next media
 bindsym KP_Left nop
 bindsym KP_Begin nop
 bindsym KP_Right nop
@@ -181,10 +184,14 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 # increase sc
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 # decrease screen brightness
 
 # Media keys
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause # toggle media
-bindsym XF86AudioPause exec --no-startup-id playerctl pause # pause media
-bindsym XF86AudioNext exec --no-startup-id playerctl next # next media
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous # prev media
+# bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause # toggle media
+# bindsym XF86AudioPause exec --no-startup-id playerctl pause # pause media
+# bindsym XF86AudioNext exec --no-startup-id playerctl next # next media
+# bindsym XF86AudioPrev exec --no-startup-id playerctl previous # prev media
+bindsym --release XF86AudioPlay workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl playpause; i3-msg workspace back_and_forth
+bindsym --release XF86AudioPause workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl playpause # pause media
+bindsym --release XF86AudioNext workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl next # next media
+bindsym --release XF86AudioPrev workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl prev # prev media
 
 # Extra keys
 bindsym XF86WLAN nop

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+i3-msg workspace 9:Music
+
 case "$1" in
 	playpause)
 		xdotool search --onlyvisible --class Spotify windowfocus; xdotool key space
@@ -14,3 +16,10 @@ case "$1" in
 		echo "Usage: $0 {playpause|next|prev}"
 		exit 2
 esac
+
+# switching 3 times as if I only do it once I sometimes don't have keyboard focus on that window anymore
+i3-msg workspace back_and_forth
+i3-msg workspace back_and_forth
+i3-msg workspace back_and_forth
+
+exit 0
