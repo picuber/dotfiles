@@ -2,15 +2,21 @@
 
 i3-msg workspace 9:Music
 
+# xdotool search --onlyvisible --class Spotify windowfocus; 
+i3-msg [class="Spotify"] focus
+i3-msg workspace back_and_forth
+i3-msg workspace back_and_forth
+sleep 0.1
+
 case "$1" in
 	playpause)
-		xdotool search --onlyvisible --class Spotify windowfocus; xdotool key space
+		xdotool key space
 		;;
 	next)
-		xdotool search --onlyvisible --class Spotify windowfocus; xdotool key Control+Right
+		xdotool key Control+Right
 		;;
 	prev)
-		xdotool search --onlyvisible --class Spotify windowfocus; xdotool key Control+Left
+		xdotool key Control+Left
 		;;
 	*)
 		echo "Usage: $0 {playpause|next|prev}"
