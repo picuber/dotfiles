@@ -321,3 +321,9 @@ noremap <leader>suw zuw
 
 "----------Quickfix list----------
 "TODO
+
+
+" --------------------------------------------------
+" AutoCmds
+" --------------------------------------------------
+autocmd VimResized * wincmd =
