@@ -38,3 +38,5 @@ inoremap <LocalLeader>cg<S-o> Ω
 
 " math
 inoremap <LocalLeader>cmx ×
+		" \partial
+inoremap <LocalLeader>cmp ∂
