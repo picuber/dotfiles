@@ -389,8 +389,9 @@ client.background       #ffffff
 # assign [class="URxvt"] $ws1
 # assign [class="Chromium"] $ws2
 assign [class="Binding of Isaac: Afterbirth+"] $ws8
-assign [class="Terraria"] $ws8
+assign [class="DDLC"] $ws8
 assign [class="superhexagon.x86_64"] $ws8
+assign [class="Terraria"] $ws8
 assign [class="discord"] $ws10
 
 for_window [class="Chromium"] border none
@@ -412,6 +413,7 @@ for_window [class="lyricfier"] move position 100 200
 
 for_window [class="Zeal"] resize set 1280 720
 
+for_window [class="DDLC"] move to workspace $ws8
 for_window [class="Steam"] move to workspace $ws7
 for_window [class="Spotify"] move to workspace $ws9
 for_window [class="lyricfier"] move to workspace $ws9
