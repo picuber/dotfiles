@@ -219,6 +219,13 @@ noremap <C-S-down> yyp
 " yank rest of line
 noremap Y y$
 
+" swap t and f (t is easier to hit than f on Dvorak)
+"	(To char, aFter/beFore char)
+noremap t f
+noremap f t
+noremap T F
+noremap F T
+
 " --------------------------------------------------
 " imappings
 " --------------------------------------------------
