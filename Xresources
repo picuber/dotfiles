@@ -6,7 +6,7 @@ URxvt*shading: 20
 URxvt*allowBoldFonts: false
 
 /* URxvt*font: xft:Roboto Mono:style=Regular:size=8 */
-URxvt*font: xft:Hack:style=Regular:size=8
+URxvt*font: xft:Hack:style=Regular:size=8, xft:Symbola:size=8
 /* URxvt*font: xft:Ubuntu Mono:style=Regular:size=10 */
 
 /* URxvt*letterSpace: -1 */
