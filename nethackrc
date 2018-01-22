@@ -1,4 +1,112 @@
+# move with number pad
 OPTIONS=number_pad:1
+
+# show colours on default
 OPTIONS=color
+
+# dont pick up items automatically
 OPTIONS=!autopickup
-OPTIONS=norest_on_space
+
+# rename slime mold to cherrry
+OPTIONS=fruit:cherry
+
+# easier to distinguish pets and piles of items
+OPTIONS=hilite_pet
+OPTIONS=hilite_pile
+
+# change boulder symbol
+SYMBOLS=S_boulder:O
+
+
+# inspired by https://github.com/majutsushi/etc/blob/master/nethackrc
+OPTIONS=menucolors
+
+###########
+#  B/U/C  #
+###########
+#MENUCOLOR="^[a-zA-Z$] - "=white #may want to enable this if regularly playing priest.. (priests don't see the 'uncursed')
+MENUCOLOR=" blessed"=green
+MENUCOLOR=" blessed .* \(weapon in hands?\)"=lightgreen
+MENUCOLOR=" blessed .* \(wielded.*\)"=lightgreen
+MENUCOLOR=" blessed .* \(being worn\)"=lightgreen
+MENUCOLOR=" blessed .* \(in quiver\)"=lightgreen
+
+MENUCOLOR=" uncursed"=cyan
+MENUCOLOR=" uncursed .* \(weapon in hands?\)"=cyan&bold
+MENUCOLOR=" uncursed .* \(wielded.*\)"=cyan&bold
+MENUCOLOR=" uncursed .* \(being worn\)"=cyan&bold
+MENUCOLOR=" uncursed .* \(in quiver\)"=cyan&bold
+
+MENUCOLOR=" ([-0-9]+:[-0-9]+)"=cyan #nethack doesn't display "uncursed" if charges are known
+# MENUCOLOR=" [+-][0-9]"=white
+
+MENUCOLOR=" cursed"=red
+MENUCOLOR=" cursed .* \(weapon in hand?\)"=red&underline
+MENUCOLOR=" cursed .* \(wielded.*\)"=red&underline
+MENUCOLOR=" cursed .* \(being worn\)"=red&underline
+MENUCOLOR=" cursed .* \(in quiver\)"=red&underline
+
+################
+# WATER SPORTS #
+################
+MENUCOLOR=" holy water"=lightgreen
+MENUCOLOR=" blessed clear potion"=lightgreen
+MENUCOLOR=" blessed potions? called water"=lightgreen
+MENUCOLOR=" potions? of water named blessed"=lightgreen
+MENUCOLOR=" potions? called water named blessed"=lightgreen
+MENUCOLOR=" unholy water"=orange
+MENUCOLOR=" cursed clear potion"=orange
+MENUCOLOR=" cursed potions? called water"=orange
+MENUCOLOR=" potions? called water named cursed"=orange
+
+#################
+# MISCELLANEOUS #
+#################
+MENUCOLOR=" \(lit\)"=yellow
+
+###########
+# GOODIES #
+###########
+MENUCOLOR=" bag .* holding"=magenta
+MENUCOLOR=" luckstone"=magenta
+MENUCOLOR=" wand .* wishing"= magenta
+MENUCOLOR=" magic marker"=magenta
+MENUCOLOR=" magic lamp$"=magenta
+MENUCOLOR=" magic lamp \(lit\)"=lightmagenta
+MENUCOLOR=" unicorn horn[^[]*$"=magenta #this doesn't color the #enhance unicorn horn skill
+MENUCOLOR=" tinning kit"=magenta
+MENUCOLOR=" lamp .* magic$"=magenta
+MENUCOLOR=" lamp .* magic \(lit\)"=lightmagenta
+MENUCOLOR=" ring .* regeneration"=magenta
+MENUCOLOR=" ring .* slow digestion"=magenta
+MENUCOLOR=" amulet .* life saving"=magenta
+
+#############
+# ARTIFACTS #
+#############
+#unaligned
+MENUCOLOR=" \(Dragonbane\|Fire Brand\|Frost Brand\|Ogresmasher\|Trollsbane\|Werebane\)"=cyan
+
+#lawful normal, quest
+MENUCOLOR=" \(Demonbane\|Excalibur\|Grayswandir\|Snickersnee\|Sunsword\)"=cyan
+MENUCOLOR=" \(Orb of Detection\|Sceptre of Might\|Magic Mirror of Merlin\|Mitre of Holiness\|Tsurugi of Muramasa\)"=cyan
+
+#neutral normal, quest
+MENUCOLOR=" \(Cleaver\|Giantslayer\|Magicbane\|Mjollnir\|Vorpal Blade\)"=cyan
+MENUCOLOR=" \(Heart of Ahriman\|Staff of Aesculapius\|Eyes of the Overworld\|Platinum Yendorian Express Card\|Orb of Fate\|Eye of the Aethiopica\)"=cyan
+
+#chaotic normal, quest
+MENUCOLOR=" \(Grimtooth\|Orcrist\|Sting\|Stormbringer\)"=cyan
+MENUCOLOR=" \(Longbow of Diana\|Master Key of Thievery\)"=cyan
+
+#invocation items
+MENUCOLOR=" \(Bell of Opening\|silver bell\|Candelabrum of Invocation\|candelabrum\|Book of the Dead\|papyrus spellbook\)"=magenta&bold
+
+#raison d'etre
+MENUCOLOR=" Amulet of Yendor named"=magenta&bold&underline
+
+#############
+# BAD STUFF #
+#############
+MENUCOLOR=" loadstone"=red&underline
+MENUCOLOR=" cursed .* luckstone"=orange&underline
