@@ -21,6 +21,15 @@ SYMBOLS=S_boulder:O
 # inspired by https://github.com/majutsushi/etc/blob/master/nethackrc
 OPTIONS=menucolors
 
+##############
+#  EQUIPPED  #
+##############
+MENUCOLOR=" \(weapon in hands?\)"=white&bold
+MENUCOLOR=" \(wielded.*\)"=white&bold
+MENUCOLOR=" \(being worn\)"=white&bold
+MENUCOLOR=" \(in quiver\)"=white&bold
+MENUCOLOR=" \(on (left|right) hand\)"=white&bold
+
 ###########
 #  B/U/C  #
 ###########
