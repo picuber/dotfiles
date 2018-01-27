@@ -30,12 +30,14 @@ MENUCOLOR=" blessed .* \(weapon in hands?\)"=lightgreen
 MENUCOLOR=" blessed .* \(wielded.*\)"=lightgreen
 MENUCOLOR=" blessed .* \(being worn\)"=lightgreen
 MENUCOLOR=" blessed .* \(in quiver\)"=lightgreen
+MENUCOLOR=" blessed .* \(on (left|right) hand\)"=lightgreen
 
 MENUCOLOR=" uncursed"=cyan
 MENUCOLOR=" uncursed .* \(weapon in hands?\)"=cyan&bold
 MENUCOLOR=" uncursed .* \(wielded.*\)"=cyan&bold
 MENUCOLOR=" uncursed .* \(being worn\)"=cyan&bold
 MENUCOLOR=" uncursed .* \(in quiver\)"=cyan&bold
+MENUCOLOR=" uncursed .* \(on (left|right) hand\)"=cyan&bold
 
 MENUCOLOR=" ([-0-9]+:[-0-9]+)"=cyan #nethack doesn't display "uncursed" if charges are known
 # MENUCOLOR=" [+-][0-9]"=white
@@ -45,6 +47,7 @@ MENUCOLOR=" cursed .* \(weapon in hand?\)"=red&underline
 MENUCOLOR=" cursed .* \(wielded.*\)"=red&underline
 MENUCOLOR=" cursed .* \(being worn\)"=red&underline
 MENUCOLOR=" cursed .* \(in quiver\)"=red&underline
+MENUCOLOR=" cursed .* \(on (left|right) hand\)"=red&underline
 
 ################
 # WATER SPORTS #
