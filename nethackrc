@@ -10,12 +10,35 @@ OPTIONS=!autopickup
 # rename slime mold to cherrry
 OPTIONS=fruit:cherry
 
+OPTIONS=role:Samurai,name:leofox,gender:female
+
 # easier to distinguish pets and piles of items
 OPTIONS=hilite_pet
 OPTIONS=hilite_pile
 
 # change boulder symbol
 SYMBOLS=S_boulder:O
+
+# change some symbols, copied from DECgraphics
+SYMBOLS=S_vwall: \xf8
+SYMBOLS=S_hwall: \xf1
+SYMBOLS=S_tlcorn: \xec
+SYMBOLS=S_trcorn: \xeb
+SYMBOLS=S_blcorn: \xed
+SYMBOLS=S_brcorn: \xea
+SYMBOLS=S_crwall: \xee
+SYMBOLS=S_tuwall: \xf6
+SYMBOLS=S_tdwall: \xf7
+SYMBOLS=S_tlwall: \xf5
+SYMBOLS=S_trwall: \xf4
+SYMBOLS=S_upladder: \xf9
+SYMBOLS=S_dnladder: \xfa
+SYMBOLS=S_vbeam: \xf8
+SYMBOLS=S_hbeam: \xf1
+SYMBOLS=S_explode2: \xef
+SYMBOLS=S_explode4: \xf8
+SYMBOLS=S_explode6: \xf8
+SYMBOLS=S_explode8: \xf3
 
 
 # inspired by https://github.com/majutsushi/etc/blob/master/nethackrc
