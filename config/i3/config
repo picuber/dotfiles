@@ -275,32 +275,32 @@ bindsym $mod+p mode "power"
 
 # Type special characters
 mode "macro-char" {
-	bindsym --release a mode "default", exec --no-startup-id xdotool type ä
-	bindsym --release $mod+a exec --no-startup-id xdotool type ä
+	bindsym --release a mode "default", exec --no-startup-id xdotool key adiaeresis
+	bindsym --release $mod+a exec --no-startup-id xdotool key adiaeresis
 
-	bindsym --release o mode "default", exec --no-startup-id xdotool type ö
-	bindsym --release $mod+o exec --no-startup-id xdotool type ö
+	bindsym --release o mode "default", exec --no-startup-id xdotool key odiaeresis
+	bindsym --release $mod+o exec --no-startup-id xdotool key odiaeresis
 
-	bindsym --release u mode "default", exec --no-startup-id xdotool type ü
-	bindsym --release $mod+u exec --no-startup-id xdotool type ü
+	bindsym --release u mode "default", exec --no-startup-id xdotool key udiaeresis
+	bindsym --release $mod+u exec --no-startup-id xdotool key udiaeresis
 
-	bindsym --release s mode "default", exec --no-startup-id xdotool type ß
-	bindsym --release $mod+s exec --no-startup-id xdotool type ß
+	bindsym --release s mode "default", exec --no-startup-id xdotool key ssharp
+	bindsym --release $mod+s exec --no-startup-id xdotool key ssharp
+	
+	bindsym --release e mode "default", exec --no-startup-id xdotool key aring
+	bindsym --release $mod+e exec --no-startup-id xdotool key aring
 
-	# bindsym --release Mod1+a mode "default", exec --no-startup-id $HOME/scripts/macro/aring
-	# bindsym --release $mod+Mod1+a exec --no-startup-id $HOME/scripts/macro/aring
+	bindsym --release Shift+a mode "default", exec --no-startup-id xdotool key Adiaeresis
+	bindsym --release $mod+Shift+a exec --no-startup-id xdotool key Adiaeresis
 
-	bindsym --release Shift+a mode "default", exec --no-startup-id xdotool type Ä
-	bindsym --release $mod+Shift+a exec --no-startup-id xdotool type Ä
+	bindsym --release Shift+o mode "default", exec --no-startup-id xdotool key Odiaeresis
+	bindsym --release $mod+Shift+o exec --no-startup-id xdotool key Odiaeresis
 
-	bindsym --release Shift+o mode "default", exec --no-startup-id xdotool type Ö
-	bindsym --release $mod+Shift+o exec --no-startup-id xdotool type Ö
+	bindsym --release Shift+u mode "default", exec --no-startup-id xdotool key Udiaeresis
+	bindsym --release $mod+Shift+u exec --no-startup-id xdotool key Udiaeresis
 
-	bindsym --release Shift+u mode "default", exec --no-startup-id xdotool type Ü
-	bindsym --release $mod+Shift+u exec --no-startup-id xdotool type Ü
-
-	# bindsym --release Mod1+Shift+a mode "default", exec --no-startup-id $HOME/scripts/macro/Aring
-	# bindsym --release $mod+Mod1+Shift+a exec --no-startup-id $HOME/scripts/macro/Aring
+	bindsym --release Shift+e mode "default", exec --no-startup-id xdotool key Aring
+	bindsym --release $mod+Shift+e exec --no-startup-id xdotool key Aring
 	
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
@@ -308,7 +308,7 @@ mode "macro-char" {
 	bindsym $mod+Escape mode "macro"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Char Mode:\n"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Char Mode:\na: ä\no: ö\nu: ü\ns: ß\ne: å\nA: Ä\nO: Ö\nU: Ü\nE: Å"
 }
 
 # Macro set selection
