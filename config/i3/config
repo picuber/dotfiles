@@ -161,7 +161,7 @@ bindsym --release KP_End workspace $ws9, exec --no-startup-id $HOME/scripts/spot
 bindsym --release KP_Down workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl playpause # toggle media
 bindsym --release KP_Next workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl next # next media
 bindsym KP_Left nop
-bindsym KP_Begin nop
+bindsym KP_Begin workspace back_and_forth
 bindsym KP_Right nop
 bindsym --release KP_Home exec --no-startup-id xdotool key XF86Back
 bindsym KP_Up nop
