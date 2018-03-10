@@ -1,9 +1,5 @@
 source /usr/share/zsh-antigen/antigen.zsh
 
-autoload -Uz compinit bashcompinit
-compinit
-bashcompinit
-
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
