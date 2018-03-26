@@ -154,6 +154,7 @@ bindsym $mod+Shift+m move workspace to output left
 
 # NumPad Hotkeys
 bindsym Num_Lock exec --no-startup-id $HOME/scripts/numLockState
+# bindsym KP_Insert nop
 # bindsym KP_End exec --no-startup-id playerctl previous # prev media
 # bindsym KP_Down exec --no-startup-id playerctl play-pause # toggle media
 # bindsym KP_Next exec --no-startup-id playerctl next # next media
@@ -311,17 +312,42 @@ mode "macro-char" {
 	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Char Mode:\na: ä\no: ö\nu: ü\ns: ß\ne: å\nA: Ä\nO: Ö\nU: Ü\nE: Å"
 }
 
+# Type hex-numbers easier
+mode "macro-hex" {
+	# Num_Lock off
+	bindsym --release KP_End exec --no-startup-id xdotool key A
+	bindsym --release KP_Down exec --no-startup-id xdotool key B
+	bindsym --release KP_Next exec --no-startup-id xdotool key C
+	bindsym --release KP_Left exec --no-startup-id xdotool key D
+	bindsym --release KP_Begin exec --no-startup-id xdotool key E
+	bindsym --release KP_Right exec --no-startup-id xdotool key F
+	bindsym --release KP_Home nop
+	bindsym --release KP_Up nop
+	bindsym --release KP_Prior nop
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+Escape mode "macro"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Hex Mode:\nNum_Lock on: 0-9\nNum_Lock off: A-F"
+}
+
 # Macro set selection
 mode "macro" {
 	bindsym c mode "macro-char"
 	bindsym $mod+c mode "macro-char"
+	
+	bindsym h mode "macro-hex"
+	bindsym $mod+h mode "macro-hex"
 	
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Macro Mode:\nc: Macro-Char"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Macro Mode:\nc: Macro-Char\nh: Macro-Hex"
 }
 
 bindsym $mod+m mode "macro"
