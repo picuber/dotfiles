@@ -42,3 +42,9 @@ alias :Q=exit
 
 	# shorter clear command
 alias cls=clear
+
+
+##########################
+#  enviroment variables  #
+##########################
+export PATH=/home/leofox/anaconda3/bin:$PATH
