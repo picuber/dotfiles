@@ -43,6 +43,14 @@ alias :Q=exit
 	# shorter clear command
 alias cls=clear
 
+###############
+#  Functions  #
+###############
+
+#always run zathura in the background
+function zat() {
+	zathura "$@" &
+}
 
 ##########################
 #  enviroment variables  #
