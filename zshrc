@@ -49,7 +49,7 @@ alias cls=clear
 
 #always run zathura in the background
 function zat() {
-	zathura "$@" &
+	zathura "$@" &!
 }
 
 ##########################
