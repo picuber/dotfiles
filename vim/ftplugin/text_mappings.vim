@@ -23,6 +23,7 @@ inoremap <LocalLeader>cgm μ
 inoremap <LocalLeader>cgn ν
 inoremap <LocalLeader>cgc ξ
 inoremap <LocalLeader>cgp π
+inoremap <LocalLeader>cgr ρ
 inoremap <LocalLeader>cgs σ
 inoremap <LocalLeader>cgt τ
 inoremap <LocalLeader>cgf φ
