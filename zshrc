@@ -31,9 +31,9 @@ bindkey '^[[Z' reverse-menu-complete # Shift-Tab for reverse Tab
 #############
 #  Aliases  #
 #############
-alias ll='ls -lF'
-alias lh='ls -hlF'
-alias la='ls -hAlF'
+alias ll='ls -lF --time-style=long-iso'
+alias lh='ls -hlF --time-style=long-iso'
+alias la='ls -hAlF --time-style=long-iso'
 alias l='ls -CF'
 
 	# vim exit
