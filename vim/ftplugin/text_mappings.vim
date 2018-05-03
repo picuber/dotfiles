@@ -41,3 +41,4 @@ inoremap <LocalLeader>cg<S-o> Ω
 inoremap <LocalLeader>cmx ×
 		" \partial
 inoremap <LocalLeader>cmp ∂
+inoremap <LocalLeader>cmi ∞
