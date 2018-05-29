@@ -272,6 +272,9 @@ noremap <leader>ns :setlocal nospell<CR>
 " 'no background', removes background colour
 noremap <leader>nb :highlight Normal ctermbg=NONE guibg=NONE<CR>
 
+" 'no colorcolumns', turns off the columns at 80 and 120
+noremap <leader>nc :set colorcolumn=0<CR>
+
 
 "----------tabs----------
 noremap <leader>tc :tabnew<CR>
