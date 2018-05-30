@@ -185,6 +185,7 @@ set iskeyword+=-,ä,ö,ü,Ä,Ö,Ü,ß
 " sets a coloured column at 80 chars and 120 chars
 set colorcolumn=80,120
 
+set wildmenu " show possible completions of commandline commands over statusline
 
 " --------------------------------------------------
 " nmappings
