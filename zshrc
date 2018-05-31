@@ -26,7 +26,13 @@ antigen theme robbyrussell
 # Tell Antigen that you're done.
 antigen apply
 
+#############
+#  bindkey  #
+#############
+
 bindkey '^[[Z' reverse-menu-complete # Shift-Tab for reverse Tab
+bindkey '^[[A' history-beginning-search-backward
+bindkey '^[[B' history-beginning-search-forward
 
 #############
 #  Aliases  #
