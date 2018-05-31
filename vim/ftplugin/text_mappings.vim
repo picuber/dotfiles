@@ -30,6 +30,7 @@ inoremap <LocalLeader>cgt τ
 inoremap <LocalLeader>cgf φ
 inoremap <LocalLeader>cgq ψ
 inoremap <LocalLeader>cgo ω
+inoremap <LocalLeader>cg<S-g> Γ
 inoremap <LocalLeader>cg<S-d> Δ
 inoremap <LocalLeader>cg<S-h> Θ
 inoremap <LocalLeader>cg<S-p> Π
