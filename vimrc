@@ -41,6 +41,8 @@ Plugin 'AndrewRadev/switch.vim'
 
 Plugin 'KabbAmine/zeavim.vim'
 
+Plugin 'mbbill/undotree'
+
 " Plugin 'sjl/gundo.vim'
 
 " Plugin 'ktvoelker/sbt-vim'
@@ -202,6 +204,9 @@ noremap <F6> :bprevious<CR>
 noremap <F7> :bnext<CR>
 noremap <F8> <C-^>
 noremap <F9> <C-w><C-w>
+
+" Undotree
+noremap <F11> :UndotreeToggle<CR>
 
 " UltiSnips
 noremap <F12> :UltiSnipsEdit<CR>
