@@ -1,5 +1,6 @@
 [user]
 	name = picuber
-	email = leon.oliver2012gmail.com
+	email = lucy.fuchsloch@gmail.com
+	signingkey = 510E34B701ED902A
 [merge]
 	tool = vimdiff
