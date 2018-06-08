@@ -44,3 +44,5 @@ inoremap <LocalLeader>cmx ×
 		" \partial
 inoremap <LocalLeader>cmp ∂
 inoremap <LocalLeader>cmi ∞
+		" square root	∛ ∜
+inoremap <LocalLeader>cmr √
