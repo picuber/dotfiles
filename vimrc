@@ -188,6 +188,7 @@ set iskeyword+=-,ä,ö,ü,Ä,Ö,Ü,ß
 set colorcolumn=80,120
 
 set wildmenu " show possible completions of commandline commands over statusline
+set wildignorecase " complete filenames and directories case insensitive
 
 " --------------------------------------------------
 " nmappings
@@ -334,6 +335,12 @@ noremap <leader>sw zw
 noremap <leader>sug zug
 noremap <leader>sub zuw
 noremap <leader>suw zuw
+
+"----------syntax/Syntastic----------
+noremap <leader>xpycp :let g:syntastic_python_checkers=["python"]<CR>
+noremap <leader>xpycf :let g:syntastic_python_checkers=["python", "flake8"]<CR>
+noremap <leader>xpycl :let g:syntastic_python_checkers=["python", "pylint"]<CR>
+noremap <leader>xpycb :let g:syntastic_python_checkers=["python", "flake8", "pylint"]<CR>
 
 "----------location list/errors----------
 "TODO
