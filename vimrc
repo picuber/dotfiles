@@ -115,6 +115,10 @@ let g:gitgutter_map_keys = 0
 " Switch.vim
 let g:switch_mapping="<leader>l"
 let g:switch_reverse_mapping="<leader>h"
+autocmd FileType java let b:switch_custom_definitions =
+			\ [
+			\	['private', 'public', 'protected']
+			\ ]
 
 " vim-numbertoggle
 " manually set mapping as it got dropped in version 2.0
