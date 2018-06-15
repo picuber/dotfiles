@@ -65,4 +65,4 @@ function zat() {
 	# adds anaconda3 in front of system binaries to override python defaults
 	# had to ln -s /usr/share/terminfo/r/rxvt-unicode-256color /home/<user>/anaconda3/share/terminfo/r/rxvt-unicode-256color
 	#	as a workaround, since now terminfo files were all taken from ther, but rxvt-unicode-256color was not present
-export -U PATH=/home/leofox/anaconda3/bin:$PATH
+export -U PATH=$HOME/anaconda3/bin:$PATH
