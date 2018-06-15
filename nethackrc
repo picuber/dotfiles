@@ -10,7 +10,7 @@ OPTIONS=!autopickup
 # rename slime mold to cherrry
 OPTIONS=fruit:cherry
 
-OPTIONS=role:Samurai,name:leofox,gender:female
+OPTIONS=role:Samurai,name:picuber,gender:female
 
 # easier to distinguish pets and piles of items
 OPTIONS=hilite_pet
