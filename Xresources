@@ -29,6 +29,11 @@ URxvt*scrollBar: false
 ! Disable Printing the screen to lpr when hitting "PrntScrn"
 URxvt*print-pipe: "cat > /dev/null"
 
+!##Extensions##!
+! https://github.com/majutsushi/urxvt-font-size
+URxvt.perl-ext-common: font-size
+
+
 !--UXTerm--!
 UXTerm*allowBoldFonts: false
 
