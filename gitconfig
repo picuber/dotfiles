@@ -4,3 +4,7 @@
 	signingkey = 510E34B701ED902A
 [merge]
 	tool = vimdiff
+[log]
+	showSignature = true
+[commit]
+	gpgsign = true
