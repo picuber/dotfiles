@@ -66,3 +66,5 @@ function zat() {
 	# had to ln -s /usr/share/terminfo/r/rxvt-unicode-256color /home/<user>/anaconda3/share/terminfo/r/rxvt-unicode-256color
 	#	as a workaround, since now terminfo files were all taken from ther, but rxvt-unicode-256color was not present
 export -U PATH=$HOME/anaconda3/bin:$PATH
+	# this makes git ask me for gpg passphrase
+export GPG_TTY=$(tty)
