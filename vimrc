@@ -51,6 +51,8 @@ Plugin 'mbbill/undotree'
 
 Plugin 'lervag/vimtex'
 
+Plugin 'bronson/vim-trailing-whitespace'
+
 call vundle#end()
 filetype plugin indent on 
 
@@ -309,6 +311,9 @@ noremap <leader>tm$ :$tabmove<CR>
 
 "----------reformat----------
 noremap <leader>f mfgg=G'fzz
+
+"----------whitespace----------
+noremap <leader>w :FixWhitespace<CR>
 
 "----------sppell checking----------
 	" set spelllang uk
