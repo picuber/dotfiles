@@ -18,6 +18,7 @@ inoremap <LocalLeader>cgb β
 inoremap <LocalLeader>cgg γ
 inoremap <LocalLeader>cgd δ
 inoremap <LocalLeader>cge ε
+inoremap <LocalLeader>cgy η
 inoremap <LocalLeader>cgh θ
 inoremap <LocalLeader>cgl λ
 inoremap <LocalLeader>cgm μ
@@ -33,6 +34,7 @@ inoremap <LocalLeader>cgo ω
 inoremap <LocalLeader>cg<S-g> Γ
 inoremap <LocalLeader>cg<S-d> Δ
 inoremap <LocalLeader>cg<S-h> Θ
+inoremap <LocalLeader>cg<S-l> Λ
 inoremap <LocalLeader>cg<S-p> Π
 inoremap <LocalLeader>cg<S-s> Σ
 inoremap <LocalLeader>cg<S-f> Φ
