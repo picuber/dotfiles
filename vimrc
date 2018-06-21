@@ -197,6 +197,14 @@ set wildmenu " show possible completions of commandline commands over statusline
 set wildignorecase " complete filenames and directories case insensitive
 
 " --------------------------------------------------
+" functions
+" --------------------------------------------------
+function TrimSave()
+	FixWhitespace
+	write
+endfunction
+
+" --------------------------------------------------
 " nmappings
 " --------------------------------------------------
 
@@ -264,7 +272,7 @@ silent! cnoremap w!! w !sudo tee % > /dev/null
 " forgiving write commands
 silent! command WQ wq
 silent! command Wq wq
-silent! command W w
+silent! command W exec TrimSave()
 silent! command Q q
 
 
