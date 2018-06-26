@@ -12,7 +12,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'tpope/vim-repeat' 
+Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 
@@ -41,7 +41,8 @@ Plugin 'AndrewRadev/switch.vim'
 
 Plugin 'KabbAmine/zeavim.vim'
 
-Plugin 'mbbill/undotree'
+" Plugin 'mbbill/undotree'
+Plugin 'simnalamburt/vim-mundo'
 
 " Plugin 'sjl/gundo.vim'
 
@@ -54,7 +55,7 @@ Plugin 'lervag/vimtex'
 Plugin 'bronson/vim-trailing-whitespace'
 
 call vundle#end()
-filetype plugin indent on 
+filetype plugin indent on
 
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
@@ -199,7 +200,7 @@ set wildignorecase " complete filenames and directories case insensitive
 " --------------------------------------------------
 " functions
 " --------------------------------------------------
-function TrimSave()
+function! TrimSave()
 	FixWhitespace
 	write
 endfunction
@@ -221,7 +222,10 @@ noremap <F8> <C-^>
 noremap <F9> <C-w><C-w>
 
 " Undotree
-noremap <F11> :UndotreeToggle<CR>
+" noremap <F11> :UndotreeToggle<CR>
+
+" vim-mundo
+noremap <F11> :MundoToggle<CR>
 
 " UltiSnips
 noremap <F12> :UltiSnipsEdit<CR>
