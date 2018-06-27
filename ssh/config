@@ -26,3 +26,8 @@ Host grnvs
 Host start_grnvs
 	User grnvs
 	HostName svm000.net.in.tum.de
+
+Host homepi
+	User pi
+	HostName marcfox.dyndns.org
+	Port 31415
