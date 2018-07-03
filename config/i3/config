@@ -208,7 +208,7 @@ bindsym XF86MyComputer exec thunar
 
 # -----MODES-----
 
-bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro"
+bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro\nO: Open/rofi"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -287,7 +287,7 @@ mode "macro-char" {
 
 	bindsym --release s mode "default", exec --no-startup-id xdotool key ssharp
 	bindsym --release $mod+s exec --no-startup-id xdotool key ssharp
-	
+
 	bindsym --release e mode "default", exec --no-startup-id xdotool key aring
 	bindsym --release $mod+e exec --no-startup-id xdotool key aring
 
@@ -302,7 +302,7 @@ mode "macro-char" {
 
 	bindsym --release Shift+e mode "default", exec --no-startup-id xdotool key Aring
 	bindsym --release $mod+Shift+e exec --no-startup-id xdotool key Aring
-	
+
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
@@ -338,10 +338,10 @@ mode "macro-hex" {
 mode "macro" {
 	bindsym c mode "macro-char"
 	bindsym $mod+c mode "macro-char"
-	
+
 	bindsym h mode "macro-hex"
 	bindsym $mod+h mode "macro-hex"
-	
+
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
@@ -351,6 +351,26 @@ mode "macro" {
 }
 
 bindsym $mod+m mode "macro"
+
+
+# Open Rofi Mode
+mode "open/rofi" {
+	bindsym d mode "default", exec "rofi -kb-row-up Up,Control+p,Shift_L+ISO_Left_Tab -show drun"
+	bindsym r mode "default", exec "rofi -kb-row-up Up,Control+p,Shift_L+ISO_Left_Tab -show run"
+	bindsym s mode "default", exec "rofi -kb-row-up Up,Control+p,Shift_L+ISO_Left_Tab -show ssh"
+	bindsym w mode "default", exec "rofi -kb-row-up Up,Control+p,Shift_L+ISO_Left_Tab -show window"
+		# "here"
+	bindsym h mode "default", exec "rofi -kb-row-up Up,Control+p,Shift_L+ISO_Left_Tab -show windowcd"
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Open/Rofi Mode:\nd: drun\nr: run\ns: ssh\nw: window\nh: here"
+}
+
+bindsym $mod+Shift+o mode "open/rofi"
 
 
 
