@@ -201,7 +201,7 @@ bindsym XF86Search nop
 bindsym XF86LaunchA nop
 bindsym XF86Explorer nop
 
-bindsym XF86Calculator exec urxvt -e ipython3
+bindsym XF86Calculator exec urxvt -e ptipython
 bindsym XF86HomePage exec chromium
 bindsym XF86MyComputer exec thunar
 
