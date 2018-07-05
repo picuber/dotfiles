@@ -102,6 +102,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_exec = 'python3'
 " let g:syntastic_nasm_nasm_exec = 'nasm -f elf64 -lc'
 
+let g:syntastic_python_checkers=["python", "flake8"]
+
 " Utilsnips
 let g:UltiSnipsExpandTrigger="<leader>e"
 let g:UltiSnipsJumpForwardTrigger="<leader>u"
