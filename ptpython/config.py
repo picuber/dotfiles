@@ -1,7 +1,7 @@
 """
 Configuration example for ``ptpython``.
 Adapted from:
-    htps://github.com/jonathanslenders/ptpython/blob/master/examples/ptpython_config/config.py
+    https://github.com/jonathanslenders/ptpython/blob/master/examples/ptpython_config/config.py
 Copy this file to ~/.ptpython/config.py
 """
 from __future__ import unicode_literals
@@ -31,11 +31,21 @@ def configure(repl):
     # '>>>' or 'In [1]'
     repl.prompt_style = 'ipython'  # 'classic' or 'ipython'
 
+    # tooltext like, coloured signature popup
+    repl.show_signature = False
+
+    # box at the bottom with signature and docstring
+    repl.show_docstring = True
+
     repl.insert_blank_line_after_output = False
 
-    # Complete while typing. (Don't require tab before the
-    # completion menu is shown.)
-    repl.complete_while_typing = True
+    repl.enable_mouse_support = True
+
+    repl.highlight_matching_parenthesis = True
+
+    # Don't require tab before the completion menu is shown.
+    # draws over repl.show_signature
+    repl.complete_while_typing = False
 
     # History Search.
     # When True, going back in history will filter the history on the records
