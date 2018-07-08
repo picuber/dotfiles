@@ -472,7 +472,7 @@ for_window [class="Spotify"] move to workspace $ws9
 for_window [class="lyricfier"] move to workspace $ws9
 
 # -----AUTOSTART-----
-exec --no-startup-id dropbox start
+exec --no-startup-id nextcloud
 exec --no-startup-id nm-applet & # wifi-tray-icon
 exec --no-startup-id dunst # Notification Server
 exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/* --no-fehbg # Background
