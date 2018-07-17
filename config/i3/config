@@ -60,10 +60,10 @@
 # == $mod+ ==
 # F: 1 2 3 4 5 6 7 8 9 10 11 12
 # X: _ _ _ _ 5 6   8 9 10 11 12 C I F
-# ` _ _ _ _ _ _ _ _ _ _ [ ]     NL / * - +
+# ` _ _ _ _p_ _ _ _ _r_ [ ]     NL / * - +
 #    @ , . _ y _ g _ _ _ / =    77 88 99
 #     _ _ _ _ i _ _ _ _ _ - #   44 55 66
-#    _ _ _ _ _ x _ _ _ v z      11 22 33
+#    _ _ _ _ _ x _ _ w v z      11 22 33
 #    __ ESC TAB __ L U D R      00 . CR
 #
 # == $mod+Shift+ ==
@@ -71,7 +71,7 @@
 # X: 1 2 3 4 5 6   8 9 10 11 12 C I F
 # ` _ _ _ _ _ _ _ _ _ _ [ ]     NL / * - +
 #    @ @ @ p y f g _ _ _ _ =    77 88 99
-#     a _ _ u i d _ t n s - #   44 55 66
+#     a o _ u i d _ t n s - #   44 55 66
 #    \ ; _ _ _ x b _ w v z      11 22 33
 #    __ ESC TAB __ L U D R      00 . CR
 #
@@ -92,6 +92,16 @@
 #     a o e u i d h t n s - #   44 55 66
 #    \ ; q j k x b m w v z      11 22 33
 #    CR ESC TAB SP L U D R      00 . CR
+#
+# == mode($mod+m) ==
+# F: 1 2 3 4 5 6 7 8 9 10 11 12
+# X: 1 2 3 4 5 6   8 9 10 11 12 C I F
+# ` 1 2 3 4 5 6 7 8 9 0 [ ]     NL / * - +
+#    ' , . _ y f g c _ l / =    77 88 99
+#     a _ e u i d h t n s - #   44 55 66
+#    \ ; q j k x b _ _ v z      11 22 33
+#    CR ESC TAB SP L U D R      00 . CR
+#
 
 
 set $mod Mod4
@@ -189,6 +199,9 @@ bindsym $mod+semicolon move scratchpad
 # show scratchpad
 bindsym $mod+bar scratchpad show
 
+# Move workspace
+bindsym $mod+Shift+m move workspace to output left
+
 # define workspace names
 set $ws1 1:Term
 set $ws2 2:Side
@@ -233,9 +246,6 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # -----HOTKEYS/MEDIAKEYS-----
-
-# Move workspace
-bindsym $mod+Shift+m move workspace to output left
 
 # NumPad Hotkeys
 bindsym Num_Lock exec --no-startup-id $HOME/scripts/numLockState
@@ -293,8 +303,6 @@ bindsym XF86MyComputer exec thunar
 
 # -----MODES-----
 
-bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro\nO: Open/rofi"
-
 # resize window (you can also use the mouse for that)
 mode "resize" {
 	# These bindings trigger as soon as you enter the resize mode
@@ -321,8 +329,6 @@ mode "resize" {
 	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Resize:\nh/left:  decrease width\nl/right: increase width\nk/up:    decrease height\nj/down:  increase height"
 }
 
-bindsym $mod+r mode "resize"
-
 # Change Display Mode
 mode "display" {
 	bindsym n mode "default", exec --no-startup-id $HOME/scripts/displayMode normal
@@ -337,7 +343,6 @@ mode "display" {
 	# Usage
 	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Display Mode:\nn: normal\nd: docked\ne: extendet\np: presentation"
 }
-bindsym $mod+w mode "display"
 
 # Power Options
 mode "power" {
@@ -356,8 +361,6 @@ mode "power" {
 	# Usage
 	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Power Mode:\nl: lock\nb: blurr\ne: logout\ns: suspend/sleep\nh: hibernate\nr: reboot\nd: shutdown"
 }
-
-bindsym $mod+p mode "power"
 
 # Type special characters
 mode "macro-char" {
@@ -435,8 +438,6 @@ mode "macro" {
 	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Macro Mode:\nc: Macro-Char\nh: Macro-Hex"
 }
 
-bindsym $mod+m mode "macro"
-
 
 # Open Rofi Mode
 mode "open/rofi" {
@@ -455,7 +456,21 @@ mode "open/rofi" {
 	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Open/Rofi Mode:\nd: drun\nr: run\ns: ssh\nw: window\nh: here"
 }
 
-bindsym $mod+Shift+o mode "open/rofi"
+mode "mode" {
+	bindsym $mod+r mode "resize"
+	bindsym $mod+w mode "display"
+	bindsym $mod+p mode "power"
+	bindsym $mod+m mode "macro"
+	bindsym $mod+o mode "open/rofi"
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro\no: Open/rofi"
+}
+bindsym $mod+m mode "mode"
 
 
 
