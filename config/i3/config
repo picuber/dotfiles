@@ -424,6 +424,24 @@ mode "macro-char" {
 	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Char Mode:\na: ä\no: ö\nu: ü\ns: ß\ne: å\nA: Ä\nO: Ö\nU: Ü\nE: Å"
 }
 
+mode "macro-diacritics" {
+	bindsym --release a exec --no-startup-id xdotool type ̀
+	bindsym --release g exec --no-startup-id xdotool type ́
+	bindsym --release c exec --no-startup-id xdotool type ̂
+	bindsym --release t exec --no-startup-id xdotool type ̃
+	bindsym --release m exec --no-startup-id xdotool type ̄
+	bindsym --release o exec --no-startup-id xdotool type ̅
+	bindsym --release b exec --no-startup-id xdotool type ̆
+	bindsym --release p exec --no-startup-id xdotool type ̇
+	bindsym --release u exec --no-startup-id xdotool type ̈
+	bindsym --release r exec --no-startup-id xdotool type ̊
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+Escape mode "macro"
+}
+
 # Type hex-numbers easier
 mode "macro-hex" {
 	# Num_Lock off
@@ -450,6 +468,9 @@ mode "macro-hex" {
 mode "macro" {
 	bindsym c mode "macro-char"
 	bindsym $mod+c mode "macro-char"
+
+	bindsym d mode "macro-diacritics"
+	bindsym $mod+d mode "macro-diacritics"
 
 	bindsym h mode "macro-hex"
 	bindsym $mod+h mode "macro-hex"
