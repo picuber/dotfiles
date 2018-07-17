@@ -9,6 +9,91 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
+
+
+#################
+#  unused keys  #
+#################
+# == layout ==
+# F: 1 2 3 4 5 6 7 8 9 10 11 12
+# X: 1 2 3 4 5 6   8 9 10 11 12 C I F
+# ` 1 2 3 4 5 6 7 8 9 0 [ ]     NL / * - +
+#    ' , . p y f g c r l / =    77 88 99
+#     a o e u i d h t n s - #   44 55 66
+#    \ ; q j k x b m w v z      11 22 33
+#    CR ESC TAB SP L U D R      00 . CR
+#
+# NL = Num_Lock
+# CR = Return
+# ESC = Escape
+# SP = space
+# L = Left
+# U = Up
+# D = Down
+# R = Right
+#
+# F: = funktion keys
+# X: = XF86 keys
+#    C = Calculator
+#    I = HomePage
+#    F = MyComputer
+#
+# Num_Lock:
+#	11 = on/off
+#	1_ = on
+#	_1 = off
+#	__ = none
+#
+# _ : used by i3
+# @ : used by dunst
+#
+#
+# == normal ==
+# F: 1 2 3 4 5 6 7 8 9 10 11 12
+# X: _ _ _ _ _ _   8 9 10 11 12 _ _ _
+# ` 1 2 3 4 5 6 7 8 9 0 [ ]     __ / * - +
+#    ' , . p y f g c r l / =    7_ 88 9_
+#     a o e u i d h t n s - #   44 5_ 66
+#    \ ; q j k x b m w v z      1_ 2_ 3_
+#    CR ESC TAB SP L U D R      00 . CR
+#
+# == $mod+ ==
+# F: 1 2 3 4 5 6 7 8 9 10 11 12
+# X: _ _ _ _ 5 6   8 9 10 11 12 C I F
+# ` _ _ _ _ _ _ _ _ _ _ [ ]     NL / * - +
+#    @ , . _ y _ g _ _ _ / =    77 88 99
+#     _ _ _ _ i _ _ _ _ _ - #   44 55 66
+#    _ _ _ _ _ x _ _ _ v z      11 22 33
+#    __ ESC TAB __ L U D R      00 . CR
+#
+# == $mod+Shift+ ==
+# F: 1 2 3 4 5 6 7 8 9 10 11 12
+# X: 1 2 3 4 5 6   8 9 10 11 12 C I F
+# ` _ _ _ _ _ _ _ _ _ _ [ ]     NL / * - +
+#    @ @ @ p y f g _ _ _ _ =    77 88 99
+#     a _ _ u i d _ t n s - #   44 55 66
+#    \ ; _ _ _ x b _ w v z      11 22 33
+#    __ ESC TAB __ L U D R      00 . CR
+#
+# == $mod+Control+ ==
+# F: 1 2 3 4 5 6 7 8 9 10 11 12
+# X: 1 2 3 4 5 6   8 9 10 11 12 C I F
+# ` 1 2 3 4 5 6 7 8 9 0 [ ]     NL / * - +
+#    ' , . p y f g c r l / =    77 88 99
+#     a o e u i d h t n s - #   44 55 66
+#    \ ; q j k x b m w v z      11 22 33
+#    CR ESC TAB SP L U D R      00 . CR
+#
+# == $mod+Control+Shift+ ==
+# F: 1 2 3 4 5 6 7 8 9 10 11 12
+# X: 1 2 3 4 5 6   8 9 10 11 12 C I F
+# ` 1 2 3 4 5 6 7 8 9 0 [ ]     NL / * - +
+#    ' , . p y f g c r l / =    77 88 99
+#     a o e u i d h t n s - #   44 55 66
+#    \ ; q j k x b m w v z      11 22 33
+#    CR ESC TAB SP L U D R      00 . CR
+
+
 set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
