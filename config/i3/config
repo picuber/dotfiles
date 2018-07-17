@@ -79,9 +79,9 @@
 # F: 1 2 3 4 5 6 7 8 9 10 11 12
 # X: 1 2 3 4 5 6   8 9 10 11 12 C I F
 # ` _ _ _ _ _ _ _ _ _ _ [ ]     NL / * - +
-#    @ @ @ p y f g _ _ _ _ =    77 88 99
-#     a o _ u i d _ t n s - #   44 55 66
-#    \ ; _ _ _ x b m w v z      11 22 33
+#    @ @ @ p y f _ _ _ _ _ =    77 88 99
+#     a o _ _ i d _ t n s - #   44 55 66
+#    \ ; _ _ _ x b _ _ v z      11 22 33
 #    __ ESC ___ __ L U D R      00 . CR
 #
 # == $mod+Control+ ==
@@ -208,11 +208,23 @@ bindsym $mod+semicolon move scratchpad
 # show scratchpad
 bindsym $mod+bar scratchpad show
 
-# Focus next workspace
+# focus next workspace
 bindsym $mod+Tab focus output left
 
-# Move workspace
+# move workspace
 bindsym $mod+Shift+Tab move workspace to output left
+
+# set mark of current window
+bindsym $mod+Shift+m exec --no-startup-id i3-input -F 'mark %s' -P 'Mark: '
+
+# unset mark
+bindsym $mod+Shift+u exec --no-startup-id i3-input -F 'unmark %s' -P 'Unmark: '
+
+# goto mark
+bindsym $mod+Shift+g exec --no-startup-id i3-input -F '[con_mark="%s"] focus' -P 'Goto: '
+
+# go to workspace by name
+bindsym $mod+Shift+w exec --no-startup-id i3-input -F 'workspace %s' -P 'Workspace: '
 
 # define workspace names
 set $ws1 1:Term
