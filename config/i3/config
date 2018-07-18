@@ -480,7 +480,7 @@ mode "macro" {
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Macro Mode:\nc: Macro-Char\nh: Macro-Hex"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Macro Mode:\nc: Macro-Char\nd: Macro-Diacritics\nh: Macro-Hex"
 }
 
 
@@ -502,10 +502,15 @@ mode "open/rofi" {
 }
 
 mode "mode" {
+	bindsym r mode "resize"
 	bindsym $mod+r mode "resize"
+	bindsym w mode "display"
 	bindsym $mod+w mode "display"
+	bindsym p mode "power"
 	bindsym $mod+p mode "power"
+	bindsym m mode "macro"
 	bindsym $mod+m mode "macro"
+	bindsym o mode "open/rofi"
 	bindsym $mod+o mode "open/rofi"
 
 	# back to normal: Enter or Escape
@@ -516,6 +521,7 @@ mode "mode" {
 	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro\no: Open/rofi"
 }
 bindsym $mod+m mode "mode"
+bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Mod4+m: mode menu"
 
 
 
