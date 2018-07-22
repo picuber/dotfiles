@@ -68,3 +68,11 @@ function zat() {
 export -U PATH=$HOME/anaconda3/bin:$PATH
 	# this makes git ask me for gpg passphrase
 export GPG_TTY=$(tty)
+
+
+################
+#  always run  #
+################
+
+# set tab width to 4
+tabs -4
