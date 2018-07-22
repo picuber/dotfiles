@@ -425,21 +425,44 @@ mode "macro-char" {
 }
 
 mode "macro-diacritics" {
-	bindsym --release a exec --no-startup-id xdotool type ̀
-	bindsym --release g exec --no-startup-id xdotool type ́
-	bindsym --release c exec --no-startup-id xdotool type ̂
-	bindsym --release t exec --no-startup-id xdotool type ̃
-	bindsym --release m exec --no-startup-id xdotool type ̄
-	bindsym --release o exec --no-startup-id xdotool type ̅
-	bindsym --release b exec --no-startup-id xdotool type ̆
-	bindsym --release p exec --no-startup-id xdotool type ̇
-	bindsym --release u exec --no-startup-id xdotool type ̈
-	bindsym --release r exec --no-startup-id xdotool type ̊
+	bindsym --release g mode "default", exec --no-startup-id xdotool type ̀
+	bindsym --release $mod+g exec --no-startup-id xdotool type ̀
+
+	bindsym --release a mode "default", exec --no-startup-id xdotool type ́
+	bindsym --release $mod+a exec --no-startup-id xdotool type ́
+
+	bindsym --release c mode "default", exec --no-startup-id xdotool type ̂
+	bindsym --release $mod+c exec --no-startup-id xdotool type ̂
+
+	bindsym --release t mode "default", exec --no-startup-id xdotool type ̃
+	bindsym --release $mod+t exec --no-startup-id xdotool type ̃
+
+	bindsym --release m mode "default", exec --no-startup-id xdotool type ̄
+	bindsym --release $mod+m exec --no-startup-id xdotool type ̄
+
+	bindsym --release o mode "default", exec --no-startup-id xdotool type ̅
+	bindsym --release $mod+o exec --no-startup-id xdotool type ̅
+
+	bindsym --release b mode "default", exec --no-startup-id xdotool type ̆
+	bindsym --release $mod+b exec --no-startup-id xdotool type ̆
+
+	bindsym --release p mode "default", exec --no-startup-id xdotool type ̇
+	bindsym --release $mod+p exec --no-startup-id xdotool type ̇
+
+	bindsym --release u mode "default", exec --no-startup-id xdotool type ̈
+	bindsym --release $mod+u exec --no-startup-id xdotool type ̈
+
+	bindsym --release r mode "default", exec --no-startup-id xdotool type ̊
+	bindsym --release $mod+r exec --no-startup-id xdotool type ̊
+
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 	bindsym $mod+Escape mode "macro"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Diacritics Mode:\ng: Grave\na: Acute\nc: Circumflex\nt: Tilde\nm: Macron\no: Overline\nb: Breve\np: Dot(Point)\nu: Diaeresis(Umlaut)\nr: Ring"
 }
 
 # Type hex-numbers easier
