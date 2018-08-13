@@ -108,7 +108,7 @@
 # ` 1 2 3 4 5 6 7 8 9 0 [ ]     NL / * - +
 #    ' , . _ y f g c _ l / =    77 88 99
 #     a _ e u i d h t n s - #   44 55 66
-#    \ ; q j k x b _ _ v z      11 22 33
+#    \ ; q j _ x b _ _ v z      11 22 33
 #    CR ESC TAB SP L U D R      00 . CR
 #
 
@@ -524,6 +524,21 @@ mode "open/rofi" {
 	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Open/Rofi Mode:\nd: drun\nr: run\ns: ssh\nw: window\nh: here"
 }
 
+# Change keyboard layout
+mode "keyboard" {
+	bindsym d mode "default", exec --no-startup-id setxkbmap gb dvorak caps:escape
+	bindsym u mode "default", exec --no-startup-id setxkbmap us basic caps:escape
+	bindsym y mode "default", exec --no-startup-id setxkbmap gb basic caps:escape
+	bindsym z mode "default", exec --no-startup-id setxkbmap de basic caps:escape
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Keyboard Mode:\nd: UK (Dvorak)\nu: US (QWERTZ)\ny: DE (QWERTY)\nz: UK (QWERTZ)"
+}
+
 mode "mode" {
 	bindsym r mode "resize"
 	bindsym $mod+r mode "resize"
@@ -535,6 +550,8 @@ mode "mode" {
 	bindsym $mod+m mode "macro"
 	bindsym o mode "open/rofi"
 	bindsym $mod+o mode "open/rofi"
+	bindsym k mode "keyboard"
+	bindsym $mod+k mode "keyboard"
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
