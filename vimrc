@@ -54,6 +54,8 @@ Plugin 'lervag/vimtex'
 
 Plugin 'bronson/vim-trailing-whitespace'
 
+Plugin 'dodie/vim-fibo-indent'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -133,6 +135,10 @@ nnoremap <silent> <C-n> :set relativenumber!<CR>:set number<CR>
 " vimtex
 " disable for now
 let g:vimtex_enabled = 0
+
+" vim-fibo-indent
+" disable
+let g:FiboIndentDisable=1
 
 " --------------------------------------------------
 " settings

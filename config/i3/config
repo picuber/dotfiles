@@ -224,7 +224,10 @@ bindsym $mod+Shift+u exec --no-startup-id i3-input -F 'unmark %s' -P 'Unmark: '
 bindsym $mod+Shift+g exec --no-startup-id i3-input -F '[con_mark="%s"] focus' -P 'Goto: '
 
 # go to workspace by name
-bindsym $mod+Shift+w exec --no-startup-id i3-input -F 'workspace %s' -P 'Workspace: '
+bindsym $mod+w exec --no-startup-id i3-input -F 'workspace %s' -P 'Workspace: '
+
+# move focused container to workspace by name
+bindsym $mod+Shift+w exec --no-startup-id i3-input -F 'move container to workspace %s' -P 'Workspace: '
 
 # define workspace names
 set $ws1 1:Term
