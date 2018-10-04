@@ -561,7 +561,7 @@ mode "mode" {
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro\no: Open/rofi"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro\no: Open/rofi\nk: Keyboard"
 }
 bindsym $mod+m mode "mode"
 bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Mod4+m: mode menu"
