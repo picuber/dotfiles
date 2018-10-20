@@ -76,3 +76,6 @@ export GPG_TTY=$(tty)
 
 # set tab width to 4
 tabs -4
+
+# setup fzf keybindings (Ctrl-R: history, Ctrl-T: paste selected, Alt-C: cd into dir)
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
