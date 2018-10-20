@@ -58,6 +58,8 @@ Plugin 'dodie/vim-fibo-indent'
 
 Plugin 'majutsushi/tagbar'
 
+Plugin 'junegunn/fzf.vim'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -145,6 +147,9 @@ let g:FiboIndentDisable=1
 " Tagbar
 let g:tagbar_autofocus=1
 let g:tagbar_autoclose=1
+
+" fzf
+set rtp+=~/.fzf
 
 " --------------------------------------------------
 " settings
