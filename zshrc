@@ -70,6 +70,15 @@ export -U PATH=$HOME/anaconda3/bin:$PATH
 export GPG_TTY=$(tty)
 
 
+	# fzf
+export FZF_DEFAULT_COMMAND="find -L . -printf \"%P\\n\""
+export FZF_CTRL_T_COMMAND="find -L . -printf \"%P\\n\""
+export FZF_ALT_C_COMMAND="find -L . -printf \"%P\\n\""
+export FZF_DEFAULT_OPTS="--multi --exact --reverse --inline-info --border --height 50%"
+export FZF_CTRL_T_OPTS="--multi --exact --reverse --inline-info --border --height 50%"
+export FZF_CTRL_R_OPTS="--multi --exact --reverse --inline-info --border --height 50%"
+export FZF_ALT_C_OPTS="--multi --exact --reverse --inline-info --border --height 50%"
+
 ################
 #  always run  #
 ################
