@@ -56,6 +56,8 @@ Plugin 'bronson/vim-trailing-whitespace'
 
 Plugin 'dodie/vim-fibo-indent'
 
+Plugin 'majutsushi/tagbar'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -139,6 +141,10 @@ let g:vimtex_enabled = 0
 " vim-fibo-indent
 " disable
 let g:FiboIndentDisable=1
+
+" Tagbar
+let g:tagbar_autofocus=1
+let g:tagbar_autoclose=1
 
 " --------------------------------------------------
 " settings
@@ -228,6 +234,9 @@ noremap <F6> :bprevious<CR>
 noremap <F7> :bnext<CR>
 noremap <F8> <C-^>
 noremap <F9> <C-w><C-w>
+
+" Tagbar
+noremap <F10> :TagbarToggle<CR>
 
 " Undotree
 " noremap <F11> :UndotreeToggle<CR>
