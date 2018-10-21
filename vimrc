@@ -4,64 +4,66 @@ set nocompatible " set uncompatibality with vi
 let mapleader=","
 let maplocalleader=";"
 
-" Vundle
-filetype off
+	" automatically install vim-plug, if not already installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
+Plug 'junegunn/vim-plug'	" added as plugin for vim help (https://github.com/junegunn/vim-plug/wiki/tips)
 
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 
-Plugin 'shougo/neocomplete'
+Plug 'shougo/neocomplete'
 
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
-Plugin 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
 
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
-Plugin 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
-Plugin 'tweekmonster/braceless.vim'
+Plug 'tweekmonster/braceless.vim'
 
-Plugin 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 
-Plugin 'flazz/vim-colorschemes'
+Plug 'flazz/vim-colorschemes'
 
-Plugin 'AndrewRadev/switch.vim'
+Plug 'AndrewRadev/switch.vim'
 
-Plugin 'KabbAmine/zeavim.vim'
+Plug 'KabbAmine/zeavim.vim'
 
-" Plugin 'mbbill/undotree'
-Plugin 'simnalamburt/vim-mundo'
+" Plug 'mbbill/undotree'
+Plug 'simnalamburt/vim-mundo'
 
-" Plugin 'sjl/gundo.vim'
+" Plug 'sjl/gundo.vim'
 
-" Plugin 'ktvoelker/sbt-vim'
+" Plug 'ktvoelker/sbt-vim'
 
-" Plugin 'derekwyatt/vim-scala'
+" Plug 'derekwyatt/vim-scala'
 
-Plugin 'lervag/vimtex'
+Plug 'lervag/vimtex'
 
-Plugin 'bronson/vim-trailing-whitespace'
+Plug 'bronson/vim-trailing-whitespace'
 
-Plugin 'dodie/vim-fibo-indent'
+Plug 'dodie/vim-fibo-indent'
 
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
-Plugin 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " neocomplete
 let g:neocomplete#enable_at_startup = 1
