@@ -74,10 +74,10 @@ export GPG_TTY=$(tty)
 export FZF_DEFAULT_COMMAND="find -L . -printf \"%P\\n\""
 export FZF_CTRL_T_COMMAND="find -L . -printf \"%P\\n\""
 export FZF_ALT_C_COMMAND="find -L . -printf \"%P\\n\""
-export FZF_DEFAULT_OPTS="--multi --exact --reverse --inline-info --border --height 50%"
-export FZF_CTRL_T_OPTS="--multi --exact --reverse --inline-info --border --height 50%"
-export FZF_CTRL_R_OPTS="--multi --exact --reverse --inline-info --border --height 50%"
-export FZF_ALT_C_OPTS="--multi --exact --reverse --inline-info --border --height 50%"
+export FZF_DEFAULT_OPTS="--multi --exact --reverse --inline-info --border --height 50% --bind tab:down,btab:up,alt-space:toggle+down,ctrl-space:toggle+up,esc:cancel"
+export FZF_CTRL_T_OPTS="--multi --exact --reverse --inline-info --border --height 50% --bind tab:down,btab:up,alt-space:toggle+down,ctrl-space:toggle+up,esc:cancel"
+export FZF_CTRL_R_OPTS="--multi --exact --reverse --inline-info --border --height 50% --bind tab:down,btab:up,alt-space:toggle+down,ctrl-space:toggle+up,esc:cancel"
+export FZF_ALT_C_OPTS="--multi --exact --reverse --inline-info --border --height 50% --bind tab:down,btab:up,alt-space:toggle+down,ctrl-space:toggle+up,esc:cancel"
 
 ################
 #  always run  #
