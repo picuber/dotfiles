@@ -48,3 +48,6 @@ inoremap <LocalLeader>cmp ∂
 inoremap <LocalLeader>cmi ∞
 		" square root	∛ ∜
 inoremap <LocalLeader>cmr √
+inoremap <LocalLeader>cmc ∘
+		" \models
+inoremap <LocalLeader>cmm ⊨
