@@ -49,6 +49,8 @@ alias :Q=exit
 	# shorter clear command
 alias cls=clear
 
+alias chromium-guest='chromium --profile-directory'
+
 ###############
 #  Functions  #
 ###############
