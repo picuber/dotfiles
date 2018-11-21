@@ -5,16 +5,16 @@ HDMI="HDMI-2"
 
 case "$1" in 
 	normal)
-		xrandr --output $INTERNAL --auto --primary --output $DOCK --off --output $HDMI1 --off
+		xrandr --output $INTERNAL --auto --primary --output $DOCK --off --output $HDMI --off
 		;;
 	docked)
-		xrandr --output $INTERNAL --auto --primary --output $DOCK --auto --right-of $INTERNAL --output $HDMI1 --off
+		xrandr --output $INTERNAL --auto --primary --output $DOCK --auto --right-of $INTERNAL --output $HDMI --off
 		;;
 	extented)
-		xrandr --output $INTERNAL --auto --primary --output $DOCK --off --output $HDMI1 --auto --right-of $INTERNAL
+		xrandr --output $INTERNAL --auto --primary --output $DOCK --off --output $HDMI --auto --right-of $INTERNAL
 		;;
 	presentation)
-		xrandr --output $INTERNAL --auto --primary --output $DOCK --off --output $HDMI1 --auto --same-as $INTERNAL
+		xrandr --output $INTERNAL --auto --primary --output $DOCK --off --output $HDMI --auto --same-as $INTERNAL
 		;;
 	*)
 		echo "Usage: $0 {normal|docked|extented|presentation}"
