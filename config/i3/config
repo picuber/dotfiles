@@ -541,7 +541,7 @@ mode "keyboard" {
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Keyboard Mode:\nd: UK (Dvorak)\nu: US (QWERTZ)\ny: DE (QWERTY)\nz: UK (QWERTZ)"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Keyboard Mode:\nd: UK (Dvorak)\nu: US (QWERTY)\ny: DE (QWERTZ)\nz: UK (QWERTY)"
 }
 
 mode "mode" {
