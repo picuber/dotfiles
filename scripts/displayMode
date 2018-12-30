@@ -1,7 +1,7 @@
 #!/bin/bash
-INTERNAL="eDP-1"
-DOCK="DP-1-1"
-HDMI="HDMI-2"
+INTERNAL="eDP1"
+DOCK="DP1"
+HDMI="HDMI2"
 
 case "$1" in 
 	normal)
