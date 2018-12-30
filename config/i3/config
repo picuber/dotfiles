@@ -576,7 +576,7 @@ bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Mod4+m: mode m
 bar {
 	id bar-0
 	position top
-	output eDP-1
+	output eDP1
 
 	tray_output primary
 	strip_workspace_numbers yes
@@ -598,7 +598,7 @@ bar {
 bar{
 	id bar-1
 	position top
-	output DP-1-1
+	output DP1-1
 
 	tray_output none
 	strip_workspace_numbers yes
