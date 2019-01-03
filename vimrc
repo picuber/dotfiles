@@ -242,14 +242,14 @@ noremap <F7> :bnext<CR>
 noremap <F8> <C-^>
 noremap <F9> <C-w><C-w>
 
-" Tagbar
-noremap <F10> :TagbarToggle<CR>
-
 " Undotree
-" noremap <F11> :UndotreeToggle<CR>
+" noremap <F10> :UndotreeToggle<CR>
 
 " vim-mundo
-noremap <F11> :MundoToggle<CR>
+noremap <F10> :MundoToggle<CR>
+
+" Tagbar
+noremap <F11> :TagbarToggle<CR>
 
 " UltiSnips
 noremap <F12> :UltiSnipsEdit<CR>
