@@ -152,6 +152,9 @@ let g:FiboIndentDisable=1
 let g:tagbar_autofocus=1
 let g:tagbar_autoclose=1
 
+" rust.vim
+let g:rustfmt_autosave=1
+
 " fzf
 set rtp+=~/.fzf
 
