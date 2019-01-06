@@ -63,6 +63,8 @@ Plug 'majutsushi/tagbar'
 
 Plug 'junegunn/fzf.vim'
 
+Plug 'rust-lang/rust.vim'
+
 call plug#end()
 
 " neocomplete
