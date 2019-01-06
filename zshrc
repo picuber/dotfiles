@@ -22,6 +22,7 @@ antigen bundle zsh-users/zsh-completions # additional completion definitions
 
 # Load the theme.
 antigen theme robbyrussell
+# antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship		#TODO needs config
 
 # Tell Antigen that you're done.
 antigen apply
@@ -66,8 +67,10 @@ function zat() {
 
 	# adds anaconda3 in front of system binaries to override python defaults
 	# had to ln -s /usr/share/terminfo/r/rxvt-unicode-256color /home/<user>/anaconda3/share/terminfo/r/rxvt-unicode-256color
-	#	as a workaround, since now terminfo files were all taken from ther, but rxvt-unicode-256color was not present
+	#	as a workaround, since now terminfo files were all taken from there, but rxvt-unicode-256color was not present
 export -U PATH=$HOME/anaconda3/bin:$PATH
+	# adds Rust toolchain binaries
+export PATH="$HOME/.cargo/bin:$PATH"
 	# this makes git ask me for gpg passphrase
 export GPG_TTY=$(tty)
 
