@@ -59,7 +59,7 @@
 #
 # == Shift+ ==
 # F: 1 2 3 4 5 6 7 8 9 10 11 12
-# X: _ _ _ _ 5 6   8 9 10 11 12 C I F
+# X: _ _ _ _ 5 6   8 9 10 11 12 C _ F
 # ` 1 2 3 4 5 6 7 8 9 0 [ ]     NL / * - +
 #    ' , . p y f g c r l / =    77 88 99
 #     a o e u i d h t n s - #   44 55 66
@@ -326,7 +326,8 @@ bindsym XF86LaunchA nop
 bindsym XF86Explorer nop
 
 bindsym XF86Calculator exec urxvt -e ptipython
-bindsym XF86HomePage exec chromium
+bindsym XF86HomePage exec firefox
+bindsym Shift+XF86HomePage exec chromium
 bindsym XF86MyComputer exec thunar
 
 
