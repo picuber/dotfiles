@@ -1,0 +1,75 @@
+"
+"
+" Commands
+"
+"
+"
+" for themes put a theme.css in ~/.config/tridactyl/themes/
+" then load it with `:colourscheme theme`
+" default themes: 'default', 'dark', 'greenmat', 'halloween', 'quake', 'shydactyl'
+colourscheme quake
+
+
+"
+"
+" Binds
+"
+"
+
+
+" copy some behaivour from cVim
+bind u scrollpage -.5
+bind d scrollpage .5
+bind x quit
+bind X undo
+
+" find next/prev with n/N [2]
+bind n exclaim_quiet xdotool getactivewindow key F3
+bind N exclaim_quiet xdotool getactivewindow key Shift+F3
+
+
+" Git{Hub, Lab} git clone via SSH yank [1]
+bind yg composite js "git clone " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
+
+
+" Handy multiwindow/multitasking binds [1]
+bind gd tabdetach
+bind gD composite tabduplicate | tabdetach
+
+"
+"
+" Settings
+"
+"
+
+" change the newtab page back
+set newtab about:blank
+" set newtab about:home		" opens two tabs: about:blank AND about:home
+
+
+" change hintstyle
+set	hintfiltermode vimperator-reflow
+set hintchars 0123456789
+
+
+"
+"
+" Misc/Mixed
+"
+"
+
+
+
+
+"
+"
+" References
+"
+"
+" [1] https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
+" [2] https://github.com/tridactyl/tridactyl/issues/64#issuecomment-435307901
+" [3] https://github.com/glacambre/.dotfiles/blob/2077603882c7bfe695dd7bc61b539650419598ac/default/.config/tridactyl/tridactylrc#L86-L87
+
+
+" This will have to do until someone writes us a nice syntax file :) [1]
+" vim: set filetype=vim:
