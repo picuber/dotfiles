@@ -22,6 +22,7 @@ bind u scrollpage -.5
 bind d scrollpage .5
 bind x quit
 bind X undo
+bind q hint -;
 
 " find next/prev with n/N [2]
 bind n exclaim_quiet xdotool getactivewindow key F3
