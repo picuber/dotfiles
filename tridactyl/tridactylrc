@@ -43,7 +43,7 @@ bind gD composite tabduplicate | tabdetach
 "
 
 " change the newtab page back
-set newtab about:blank
+" set newtab about:blank	" just hides the default tridactyl info page
 " set newtab about:home		" opens two tabs: about:blank AND about:home
 
 
