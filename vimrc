@@ -65,6 +65,8 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'rust-lang/rust.vim'
 
+Plug 'alvan/vim-closetag'
+
 call plug#end()
 
 " neocomplete
