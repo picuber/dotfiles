@@ -45,11 +45,35 @@ inoremap <LocalLeader>cg<S-o> Ω
 inoremap <LocalLeader>cmx ×
 		" \partial
 inoremap <LocalLeader>cmp ∂
+		" \infty
 inoremap <LocalLeader>cmi ∞
 		" square root	∛ ∜
 inoremap <LocalLeader>cmr √
+		" \circ
 inoremap <LocalLeader>cmc ∘
 		" \models
 inoremap <LocalLeader>cmm ⊨
 		" \"bottom\", \"error\"
 inoremap <LocalLeader>cmb ⊥
+		" \exists
+inoremap <LocalLeader>cme ∃
+		" \forall
+inoremap <LocalLeader>cmf ∀
+		" \equiv
+inoremap <LocalLeader>cmq ≡
+		" \land
+inoremap <LocalLeader>cma ∧
+		" \lor
+inoremap <LocalLeader>cmo ∨
+		" \in
+inoremap <LocalLeader>cmn ∈
+		" \notin
+" inoremap <LocalLeader>cmn ∉
+		" \subseteq
+inoremap <LocalLeader>cms ⊆
+		" \leq
+inoremap <LocalLeader>cml ≤
+		" \geq
+inoremap <LocalLeader>cmg ≥
+
+
