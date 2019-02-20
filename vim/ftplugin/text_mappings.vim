@@ -75,5 +75,11 @@ inoremap <LocalLeader>cms ⊆
 inoremap <LocalLeader>cml ≤
 		" \geq
 inoremap <LocalLeader>cmg ≥
+		" \neq  \"differing\"
+inoremap <LocalLeader>cmd ≠
 
 
+
+" other
+"		" horizontal ellipsis
+inoremap <LocalLeader>coe …
