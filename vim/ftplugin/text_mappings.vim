@@ -77,6 +77,8 @@ inoremap <LocalLeader>cml ≤
 inoremap <LocalLeader>cmg ≥
 		" \neq  \"differing\"
 inoremap <LocalLeader>cmd ≠
+		" \mapsto
+inoremap <LocalLeader>cmt ↦
 
 
 
