@@ -1,15 +1,15 @@
 #!/bin/bash
 
-case "$1" in 
+case "$1" in
 	dock-mic)
 		pactl set-source-mute alsa_input.usb-C-Media_Electronics_Inc._ThinkPad_OneLink_Pro_Dock_Audio-00.analog-stereo toggle
 		pactl list sources \
 			| grep -A 6 "Name: alsa_input.usb-C-Media_Electronics_Inc._ThinkPad_OneLink_Pro_Dock_Audio-00.analog-stereo" \
 			| grep "Mute: yes" 1>/dev/null
 		if [ $? -eq 0 ]; then
-			notify-send "Mic(Dock): MUTED" -u low -t 1
+			notify-send "Mic(Dock): MUTED" -u low -t 1000
 		else
-			notify-send "Mic(Dock): ON" -u low -t 1
+			notify-send "Mic(Dock): ON" -u low -t 1000
 		fi
 		;;
 	dock-audio)
@@ -18,9 +18,9 @@ case "$1" in
 			| grep -A 6 "Name: alsa_output.usb-C-Media_Electronics_Inc._ThinkPad_OneLink_Pro_Dock_Audio-00.analog-stereo" \
 			| grep "Mute: yes" 1>/dev/null
 		if [ $? -eq 0 ]; then
-			notify-send "Audio(Dock): MUTED" -u low -t 1
+			notify-send "Audio(Dock): MUTED" -u low -t 1000
 		else
-			notify-send "Audio(Dock): ON" -u low -t 1
+			notify-send "Audio(Dock): ON" -u low -t 1000
 		fi
 		;;
 	laptop-mic)
@@ -29,9 +29,9 @@ case "$1" in
 			| grep -A 6 "Name: alsa_input.pci-0000_00_1b.0.analog-stereo" \
 			| grep "Mute: yes" 1>/dev/null
 		if [ $? -eq 0 ]; then
-			notify-send "Mic(Laptop): MUTED" -u low -t 1
+			notify-send "Mic(Laptop): MUTED" -u low -t 1000
 		else
-			notify-send "Mic(Laptop): ON" -u low -t 1
+			notify-send "Mic(Laptop): ON" -u low -t 1000
 		fi
 		;;
 	laptop-audio)
@@ -40,15 +40,15 @@ case "$1" in
 			| grep -A 6 "Name: alsa_output.pci-0000_00_1b.0.analog-stereo" \
 			| grep "Mute: yes" 1>/dev/null
 		if [ $? -eq 0 ]; then
-			notify-send "Audio(Laptop): MUTED" -u low -t 1
+			notify-send "Audio(Laptop): MUTED" -u low -t 1000
 		else
-			notify-send "Audio(Laptop): ON" -u low -t 1
+			notify-send "Audio(Laptop): ON" -u low -t 1000
 		fi
 		;;
 	*)
 		echo "Usage $0 {laptop|dock}-{mic|audio}"
 		exit 2
-	
+
 esac
 
 exit 0
