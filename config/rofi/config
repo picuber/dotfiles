@@ -1,5 +1,5 @@
-rofi.kb-row-up:				Up,Control+p,Shift_L+ISO_Left_Tab
-rofi.kb-mode-previous:		Shift+Left,Control+Shift_L+ISO_Left_Tab
+rofi.kb-row-up:				Up,Control+p,ISO_Left_Tab
+rofi.kb-mode-previous:		Shift+Left,Control+ISO_Left_Tab
 rofi.terminal:				urxvt
 
 
