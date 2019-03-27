@@ -225,6 +225,9 @@ set colorcolumn=80,120
 set wildmenu " show possible completions of commandline commands over statusline
 set wildignorecase " complete filenames and directories case insensitive
 
+" find ctags in any parent .git directory
+set tags+=./.git/tags;,./.git/TAGS;,.git/tags;,.git/TAGS;
+
 " --------------------------------------------------
 " functions
 " --------------------------------------------------
