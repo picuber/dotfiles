@@ -11,7 +11,7 @@
     # <http://developer.gnome.org/pango/stable/PangoMarkupFormat.html>.
     # If markup is not allowed, those tags will be stripped out of the
     # message.
-    allow_markup = yes
+    markup = full
 
     # The format of the message.  Possible variables are:
     #   %a  appname
@@ -139,17 +139,16 @@
     dmenu = /usr/bin/dmenu -p dunst:
 
     # Browser for opening urls in context menu.
-    browser = /usr/bin/chromium
+    browser = /usr/local/bin/firefox
 
     # Align icons left/right/off
     icon_position = off
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
+    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
-[frame]
-    width = 1
-    color = "#FF8000"
+    frame_width = 1
+    frame_color = "#FF8000"
 
 [shortcuts]
 
