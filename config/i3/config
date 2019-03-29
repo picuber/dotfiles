@@ -356,7 +356,7 @@ mode "resize" {
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Resize:\nh/left:  decrease width\nl/right: increase width\nk/up:    decrease height\nj/down:  increase height"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (resize):" "Resize:\nh/left:  decrease width\nl/right: increase width\nk/up:    decrease height\nj/down:  increase height"
 }
 
 # Change Display Mode
@@ -371,7 +371,7 @@ mode "display" {
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Display Mode:\nn: normal\nd: docked\ne: extendet\np: presentation"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (display):" "Display Mode:\nn: normal\nd: docked\ne: extendet\np: presentation"
 }
 
 # Power Options
@@ -389,7 +389,7 @@ mode "power" {
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Power Mode:\nl: lock\nb: blurr\ne: logout\ns: suspend/sleep\nh: hibernate\nr: reboot\nd: shutdown"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (power):" "Power Mode:\nl: lock\nb: blurr\ne: logout\ns: suspend/sleep\nh: hibernate\nr: reboot\nd: shutdown"
 }
 
 # Type special characters
@@ -427,7 +427,7 @@ mode "macro-char" {
 	bindsym $mod+Escape mode "macro"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Char Mode:\na: ä\no: ö\nu: ü\ns: ß\ne: å\nA: Ä\nO: Ö\nU: Ü\nE: Å"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (macro-char):" "Char Mode:\na: ä\no: ö\nu: ü\ns: ß\ne: å\nA: Ä\nO: Ö\nU: Ü\nE: Å"
 }
 
 mode "macro-diacritics" {
@@ -468,7 +468,7 @@ mode "macro-diacritics" {
 	bindsym $mod+Escape mode "macro"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Diacritics Mode:\ng: Grave\na: Acute\nc: Circumflex\nt: Tilde\nm: Macron\no: Overline\nb: Breve\np: Dot(Point)\nu: Diaeresis(Umlaut)\nr: Ring"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (macro-diacritics):" "Diacritics Mode:\ng: Grave\na: Acute\nc: Circumflex\nt: Tilde\nm: Macron\no: Overline\nb: Breve\np: Dot(Point)\nu: Diaeresis(Umlaut)\nr: Ring"
 }
 
 # Type hex-numbers easier
@@ -490,7 +490,7 @@ mode "macro-hex" {
 	bindsym $mod+Escape mode "macro"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Hex Mode:\nNum_Lock on: 0-9\nNum_Lock off: A-F"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (macro-hex):" "Hex Mode:\nNum_Lock on: 0-9\nNum_Lock off: A-F"
 }
 
 # Macro set selection
@@ -509,7 +509,7 @@ mode "macro" {
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Macro Mode:\nc: Macro-Char\nd: Macro-Diacritics\nh: Macro-Hex"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (macro):" "Macro Mode:\nc: Macro-Char\nd: Macro-Diacritics\nh: Macro-Hex"
 }
 
 
@@ -527,7 +527,7 @@ mode "open/rofi" {
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Open/Rofi Mode:\nd: drun\nr: run\ns: ssh\nw: window\nh: here"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (open/rofi):" "Open/Rofi Mode:\nd: drun\nr: run\ns: ssh\nw: window\nh: here"
 }
 
 # Change keyboard layout
@@ -542,7 +542,7 @@ mode "keyboard" {
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Keyboard Mode:\nd: UK (Dvorak)\nu: US (QWERTY)\nz: DE (QWERTZ)\ny: UK (QWERTY)"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (keyboard):" "Keyboard Mode:\nd: UK (Dvorak)\nu: US (QWERTY)\nz: DE (QWERTZ)\ny: UK (QWERTY)"
 }
 
 mode "mode" {
@@ -564,10 +564,10 @@ mode "mode" {
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro\no: Open/rofi\nk: Keyboard"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (mode):" "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro\no: Open/rofi\nk: Keyboard"
 }
 bindsym $mod+m mode "mode"
-bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Mod4+m: mode menu"
+bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help:" "Mod4+m: mode menu"
 
 
 
