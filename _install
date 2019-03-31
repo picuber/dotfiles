@@ -1,0 +1,67 @@
+#!/bin/bash
+
+prog=$0
+
+prog_list() {
+	echo -e vim, zsh, ... TODO
+}
+
+usage() {
+	echo Usage: $prog <program> [program]*
+	prog_list
+}
+
+# param:
+# $1 prog name
+unknown() {
+	echo [$1] skipped unknown program
+}
+
+# param:
+# $1 prog name
+dup() {	# duplicate, was already installed
+	echo  [$1] is already installed
+}
+
+# param:
+# $1 prog name
+# $2 file name/path
+dupf() { # duplicate file, file already exists
+	echo [$1] [$2] skipped: already exists
+}
+
+# param:
+# $1 prog name
+# $1 file name/path
+insf() { # installed file
+	echo [$1] [$2] installed
+}
+
+# param:
+# $1 prog name
+# $2 file target path
+# $3 relative file source path
+lnifne() { # link if not exists
+	if [ ! -e $2 ]; then
+		ln -s $3 $2 && insf $1 $2
+	else
+		dupf $1 $2
+	fi
+}
+
+while true; do
+	if [ -z $1 ]; then
+		break
+	fi
+
+	#TODO install links
+	case $1 in
+		vim)
+			lnifne vim ~/.vimrc .dotfiles/vimrc
+			;;
+		*)
+			unknown $1
+			;;
+	esac
+	shift
+done
