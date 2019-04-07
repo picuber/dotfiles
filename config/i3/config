@@ -536,13 +536,14 @@ mode "keyboard" {
 	bindsym u mode "default", exec --no-startup-id setxkbmap us basic caps:escape
 	bindsym y mode "default", exec --no-startup-id setxkbmap gb basic caps:escape
 	bindsym z mode "default", exec --no-startup-id setxkbmap de basic caps:escape
+	bindsym n mode "default", exec --no-startup-id setxkbmap de neo -option
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (keyboard):" "Keyboard Mode:\nd: UK (Dvorak)\nu: US (QWERTY)\nz: DE (QWERTZ)\ny: UK (QWERTY)"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (keyboard):" "Keyboard Mode:\nd: UK (Dvorak)\nu: US (QWERTY)\nz: DE (QWERTZ)\ny: UK (QWERTY)\nn: DE (Neo 2)"
 }
 
 mode "mode" {
