@@ -1,13 +1,15 @@
 #!/bin/bash
 
 prog=$0
+err=false
 
 prog_list() {
-	echo -e vim, zsh, ... TODO
+	echo -e Available programs:
+	echo -e \\\tbash, dunst, git, gpg, i3, i3lock, i3status, nethack, ptpython, rofi, scripts, ssh, tmux, tridactyl, vim, xorg, zsh
 }
 
 usage() {
-	echo Usage: $prog <program> [program]*
+	echo Usage: $prog \<program\> \[program\]*
 	prog_list
 }
 
@@ -32,32 +34,147 @@ dupf() { # duplicate file, file already exists
 
 # param:
 # $1 prog name
-# $1 file name/path
+# $2 file name/path
 insf() { # installed file
 	echo [$1] [$2] installed
 }
 
 # param:
 # $1 prog name
+# $2 file name/path
+rembl() { # removed broken link
+	echo [$1] [$2] removed broken link to \'$3\'
+}
+
+# param:
+# $1 prog name
+# $2 file/directory name/path
+creatf() {
+	echo [$1] [$2] created
+}
+
+# param:
+# $1 prog name
 # $2 file target path
 # $3 relative file source path
-lnifne() { # link if not exists
+lnifne() { # link if not exists, if link broken overwrite
 	if [ ! -e $2 ]; then
+		if [ -L $2 ]; then
+			link=$(readlink $2)
+			rm $2 && rembl $1 $2 $link
+		fi
 		ln -s $3 $2 && insf $1 $2
 	else
 		dupf $1 $2
 	fi
 }
 
+# param:
+# $1 prog name
+# $2 directory name
+mdifne() {
+	if [ ! -e $2 ]; then
+		mkdir $2  && creatf $1 $2
+	else
+		dupf $1 $2
+	fi
+}
+
+# param:
+# $1 prog name
+# $2 directory name
+mdifnes() { # fail silently
+	if [ ! -e $2 ]; then
+		mkdir $2  && creatf $1 $2
+	fi
+}
+
+if [ $# -lt 1 ]; then
+	usage
+	exit
+fi
+
 while true; do
 	if [ -z $1 ]; then
 		break
 	fi
 
-	#TODO install links
 	case $1 in
 		vim)
 			lnifne vim ~/.vimrc .dotfiles/vimrc
+			mdifne vim ~/.vim
+			lnifne vim ~/.vim/dictionaries ~/.dotfiles/vim/dictionaries
+			lnifne vim ~/.vim/ftplugin ~/.dotfiles/vim/ftplugin
+			lnifne vim ~/.vim/UltiSnips ~/.dotfiles/vim/UltiSnips
+			mdifne vim ~/.vim/backups
+			mdifne vim ~/.vim/swaps
+			;;
+		zsh)
+			lnifne zsh ~/.zshrc .dotfiles/zshrc
+			lnifne zsh/compleat ~/.compleat .dotfiles/compleat
+			;;
+		bash)
+			lnifne bash ~/.bash_aliases .dotfiles/bash_aliases
+			lnifne bash ~/.bash_logout .dotfiles/bash_logout
+			lnifne bash ~/.bashrc .dotfiles/bashrc
+			;;
+		gpg)
+			mdifnes gpg ~/.gnupg
+			lnifne gpg ~/.gnupg/dirmngr.conf ~/.dotfiles/gnupg/dirmngr.conf
+			lnifne gpg ~/.gnupg/gpg.conf ~/.dotfiles/gnupg/gpg.conf
+			;;
+		xorg)
+			mdifne xorg/urxvt ~/.urxvt
+			mdifne xorg/urxvt ~/.urxvt/ext
+			lnifne xorg/urxvt ~/.urxvt/ext/font-size ~/.dotfiles/urxvt/ext/font-size
+			lnifne xorg/inputrc ~/.inputrc .dotfiles/inputrc
+			lnifne xorg ~/.xinitrc .dotfiles/xinitrc
+			lnifne xorg ~/.Xresources .dotfiles/Xresources
+			;;
+		scripts)
+			lnifne scripts ~/scripts .dotfiles/scripts
+			;;
+		nethack)
+			lnifne nethack ~/.nethackrc .dotfiles/nethackrc
+			;;
+		tmux)
+			lnifne tmux ~/.tmux.conf .dotfiles/tmux.conf
+			;;
+		git)
+			lnifne git ~/.gitconfig .dotfiles/gitconfig
+			lnifne git ~/.git_template .dotfiles/git_template
+			;;
+		tridactyl)
+			mdifnes tridactyl ~/.config
+			lnifne tridactyl ~/.config/tridactyl ~/.dotfiles/config/tridactyl
+			;;
+		rofi)
+			mdifnes rofi ~/.config
+			lnifne rofi ~/.config/rofi ~/.dotfiles/config/rofi
+			;;
+		i3)
+			mdifnes i3 ~/.config
+			lnifne i3 ~/.config/i3 ~/.dotfiles/config/i3
+			;;
+		i3lock)
+			mdifnes i3lock ~/.config
+			lnifne i3lock ~/.config/i3lock ~/.dotfiles/config/i3lock
+			;;
+		i3status)
+			mdifnes i3status ~/.config
+			lnifne i3status ~/.config/i3status ~/.dotfiles/config/i3status
+			;;
+		dunst)
+			mdifnes dunst ~/.config
+			lnifne dunst ~/.config/dunst ~/.dotfiles/config/dunst
+			;;
+		ssh)
+			mdifnes ssh ~/.ssh
+			lnifne ssh ~/.ssh/config ~/.dotfiles/ssh/config
+			;;
+		ptpython)
+			mdifne ptpython ~/.ptpython
+			lnifne ptpython ~/.ptpython/config.py ~/.dotfiles/ptpython/config.py
 			;;
 		*)
 			unknown $1
