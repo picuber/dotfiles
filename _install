@@ -110,7 +110,16 @@ while true; do
 	fi
 
 	case $1 in
-		bash|nox|all)
+		all)
+			set -- "$@" bash dunst git gpg i3 i3lock i3status nethack ptpython rofi scripts ssh tmux tridactyl xorg vim zsh
+			;;
+		nox)
+			set -- "$@" bash git gpg nethack ptpython scripts ssh tmux vim zsh
+			;;
+		x)
+			set -- "$@" dunst i3 i3lock i3status rofi tridactyl xorg
+			;;
+		bash)
 			lnifne bash ~/.bash_aliases .dotfiles/bash_aliases
 			lnifne bash ~/.bash_logout .dotfiles/bash_logout
 			lnifne bash ~/.bashrc .dotfiles/bashrc
@@ -119,11 +128,11 @@ while true; do
 			mdifnes dunst ~/.config
 			lnifne dunst ~/.config/dunst ~/.dotfiles/config/dunst
 			;;
-		git|nox|all)
+		git)
 			lnifne git ~/.gitconfig .dotfiles/gitconfig
 			lnifne git ~/.git_template .dotfiles/git_template
 			;;
-		gpg|nox|all)
+		gpg)
 			mdifnes gpg ~/.gnupg
 			lnifne gpg ~/.gnupg/dirmngr.conf ~/.dotfiles/gnupg/dirmngr.conf
 			lnifne gpg ~/.gnupg/gpg.conf ~/.dotfiles/gnupg/gpg.conf
@@ -140,10 +149,10 @@ while true; do
 			mdifnes i3status ~/.config
 			lnifne i3status ~/.config/i3status ~/.dotfiles/config/i3status
 			;;
-		nethack|nox|all)
+		nethack)
 			lnifne nethack ~/.nethackrc .dotfiles/nethackrc
 			;;
-		ptpython|nox|all)
+		ptpython)
 			mdifne ptpython ~/.ptpython
 			lnifne ptpython ~/.ptpython/config.py ~/.dotfiles/ptpython/config.py
 			;;
@@ -151,14 +160,14 @@ while true; do
 			mdifnes rofi ~/.config
 			lnifne rofi ~/.config/rofi ~/.dotfiles/config/rofi
 			;;
-		scripts|nox|all)
+		scripts)
 			lnifne scripts ~/scripts .dotfiles/scripts
 			;;
-		ssh|nox|all)
+		ssh)
 			mdifnes ssh ~/.ssh
 			lnifne ssh ~/.ssh/config ~/.dotfiles/ssh/config
 			;;
-		tmux|nox|all)
+		tmux)
 			lnifne tmux ~/.tmux.conf .dotfiles/tmux.conf
 			;;
 		tridactyl|x|all)
@@ -173,7 +182,7 @@ while true; do
 			lnifne xorg ~/.xinitrc .dotfiles/xinitrc
 			lnifne xorg ~/.Xresources .dotfiles/Xresources
 			;;
-		vim|nox|all)
+		vim)
 			lnifne vim ~/.vimrc .dotfiles/vimrc
 			mdifne vim ~/.vim
 			lnifne vim ~/.vim/dictionaries ~/.dotfiles/vim/dictionaries
@@ -182,7 +191,7 @@ while true; do
 			mdifne vim ~/.vim/backups
 			mdifne vim ~/.vim/swaps
 			;;
-		zsh|nox|all)
+		zsh)
 			lnifne zsh ~/.zshrc .dotfiles/zshrc
 			lnifne zsh/compleat ~/.compleat .dotfiles/compleat
 			;;
@@ -190,12 +199,5 @@ while true; do
 			unknown $1
 			;;
 	esac
-	case $1 in
-		nox|x|all)
-			continue
-			;;
-		*)
-			shift
-			;;
-	esac
+	shift
 done
