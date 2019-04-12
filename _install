@@ -190,5 +190,12 @@ while true; do
 			unknown $1
 			;;
 	esac
-	shift
+	case $1 in
+		nox|x|all)
+			continue
+			;;
+		*)
+			shift
+			;;
+	esac
 done
