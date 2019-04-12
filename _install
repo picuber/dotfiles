@@ -6,6 +6,10 @@ err=false
 prog_list() {
 	echo -e Available programs:
 	echo -e \\\tbash, dunst, git, gpg, i3, i3lock, i3status, nethack, ptpython, rofi, scripts, ssh, tmux, tridactyl, vim, xorg, zsh
+	echo -e Special Targets:
+	echo -e \\\tall: \<all above\>
+	echo -e \\\tnox: bash, git, gpg, nethack, ptpython, scripts, ssh, tmux, vim, zsh
+	echo -e \\\tx: dunst, i3, i3lock, i3status, rofi, tridactyl
 }
 
 usage() {
@@ -88,13 +92,88 @@ if [ $# -lt 1 ]; then
 	exit
 fi
 
+case $1 in
+	-h|--help)
+		usage
+		exit
+		;;
+	-|--)
+		echo unknown option $1
+		echo Use \'$0 --help\' to show available programs
+		exit
+		;;
+esac
+
 while true; do
 	if [ -z $1 ]; then
 		break
 	fi
 
 	case $1 in
-		vim)
+		bash|nox|all)
+			lnifne bash ~/.bash_aliases .dotfiles/bash_aliases
+			lnifne bash ~/.bash_logout .dotfiles/bash_logout
+			lnifne bash ~/.bashrc .dotfiles/bashrc
+			;;
+		dunst|x|all)
+			mdifnes dunst ~/.config
+			lnifne dunst ~/.config/dunst ~/.dotfiles/config/dunst
+			;;
+		git|nox|all)
+			lnifne git ~/.gitconfig .dotfiles/gitconfig
+			lnifne git ~/.git_template .dotfiles/git_template
+			;;
+		gpg|nox|all)
+			mdifnes gpg ~/.gnupg
+			lnifne gpg ~/.gnupg/dirmngr.conf ~/.dotfiles/gnupg/dirmngr.conf
+			lnifne gpg ~/.gnupg/gpg.conf ~/.dotfiles/gnupg/gpg.conf
+			;;
+		i3|x|all)
+			mdifnes i3 ~/.config
+			lnifne i3 ~/.config/i3 ~/.dotfiles/config/i3
+			;;
+		i3lock|x|all)
+			mdifnes i3lock ~/.config
+			lnifne i3lock ~/.config/i3lock ~/.dotfiles/config/i3lock
+			;;
+		i3status|x|all)
+			mdifnes i3status ~/.config
+			lnifne i3status ~/.config/i3status ~/.dotfiles/config/i3status
+			;;
+		nethack|nox|all)
+			lnifne nethack ~/.nethackrc .dotfiles/nethackrc
+			;;
+		ptpython|nox|all)
+			mdifne ptpython ~/.ptpython
+			lnifne ptpython ~/.ptpython/config.py ~/.dotfiles/ptpython/config.py
+			;;
+		rofi|x|all)
+			mdifnes rofi ~/.config
+			lnifne rofi ~/.config/rofi ~/.dotfiles/config/rofi
+			;;
+		scripts|nox|all)
+			lnifne scripts ~/scripts .dotfiles/scripts
+			;;
+		ssh|nox|all)
+			mdifnes ssh ~/.ssh
+			lnifne ssh ~/.ssh/config ~/.dotfiles/ssh/config
+			;;
+		tmux|nox|all)
+			lnifne tmux ~/.tmux.conf .dotfiles/tmux.conf
+			;;
+		tridactyl|x|all)
+			mdifnes tridactyl ~/.config
+			lnifne tridactyl ~/.config/tridactyl ~/.dotfiles/config/tridactyl
+			;;
+		xorg|x|all)
+			mdifne xorg/urxvt ~/.urxvt
+			mdifne xorg/urxvt ~/.urxvt/ext
+			lnifne xorg/urxvt ~/.urxvt/ext/font-size ~/.dotfiles/urxvt/ext/font-size
+			lnifne xorg/inputrc ~/.inputrc .dotfiles/inputrc
+			lnifne xorg ~/.xinitrc .dotfiles/xinitrc
+			lnifne xorg ~/.Xresources .dotfiles/Xresources
+			;;
+		vim|nox|all)
 			lnifne vim ~/.vimrc .dotfiles/vimrc
 			mdifne vim ~/.vim
 			lnifne vim ~/.vim/dictionaries ~/.dotfiles/vim/dictionaries
@@ -103,72 +182,9 @@ while true; do
 			mdifne vim ~/.vim/backups
 			mdifne vim ~/.vim/swaps
 			;;
-		zsh)
+		zsh|nox|all)
 			lnifne zsh ~/.zshrc .dotfiles/zshrc
 			lnifne zsh/compleat ~/.compleat .dotfiles/compleat
-			;;
-		bash)
-			lnifne bash ~/.bash_aliases .dotfiles/bash_aliases
-			lnifne bash ~/.bash_logout .dotfiles/bash_logout
-			lnifne bash ~/.bashrc .dotfiles/bashrc
-			;;
-		gpg)
-			mdifnes gpg ~/.gnupg
-			lnifne gpg ~/.gnupg/dirmngr.conf ~/.dotfiles/gnupg/dirmngr.conf
-			lnifne gpg ~/.gnupg/gpg.conf ~/.dotfiles/gnupg/gpg.conf
-			;;
-		xorg)
-			mdifne xorg/urxvt ~/.urxvt
-			mdifne xorg/urxvt ~/.urxvt/ext
-			lnifne xorg/urxvt ~/.urxvt/ext/font-size ~/.dotfiles/urxvt/ext/font-size
-			lnifne xorg/inputrc ~/.inputrc .dotfiles/inputrc
-			lnifne xorg ~/.xinitrc .dotfiles/xinitrc
-			lnifne xorg ~/.Xresources .dotfiles/Xresources
-			;;
-		scripts)
-			lnifne scripts ~/scripts .dotfiles/scripts
-			;;
-		nethack)
-			lnifne nethack ~/.nethackrc .dotfiles/nethackrc
-			;;
-		tmux)
-			lnifne tmux ~/.tmux.conf .dotfiles/tmux.conf
-			;;
-		git)
-			lnifne git ~/.gitconfig .dotfiles/gitconfig
-			lnifne git ~/.git_template .dotfiles/git_template
-			;;
-		tridactyl)
-			mdifnes tridactyl ~/.config
-			lnifne tridactyl ~/.config/tridactyl ~/.dotfiles/config/tridactyl
-			;;
-		rofi)
-			mdifnes rofi ~/.config
-			lnifne rofi ~/.config/rofi ~/.dotfiles/config/rofi
-			;;
-		i3)
-			mdifnes i3 ~/.config
-			lnifne i3 ~/.config/i3 ~/.dotfiles/config/i3
-			;;
-		i3lock)
-			mdifnes i3lock ~/.config
-			lnifne i3lock ~/.config/i3lock ~/.dotfiles/config/i3lock
-			;;
-		i3status)
-			mdifnes i3status ~/.config
-			lnifne i3status ~/.config/i3status ~/.dotfiles/config/i3status
-			;;
-		dunst)
-			mdifnes dunst ~/.config
-			lnifne dunst ~/.config/dunst ~/.dotfiles/config/dunst
-			;;
-		ssh)
-			mdifnes ssh ~/.ssh
-			lnifne ssh ~/.ssh/config ~/.dotfiles/ssh/config
-			;;
-		ptpython)
-			mdifne ptpython ~/.ptpython
-			lnifne ptpython ~/.ptpython/config.py ~/.dotfiles/ptpython/config.py
 			;;
 		*)
 			unknown $1
