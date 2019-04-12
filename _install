@@ -21,12 +21,6 @@ unknown() {
 
 # param:
 # $1 prog name
-dup() {	# duplicate, was already installed
-	echo  [$1] is already installed
-}
-
-# param:
-# $1 prog name
 # $2 file name/path
 dupf() { # duplicate file, file already exists
 	echo [$1] [$2] skipped: already exists
