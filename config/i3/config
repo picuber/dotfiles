@@ -641,6 +641,8 @@ assign [class="superhexagon.x86_64"] $ws8
 assign [class="Tabletop Simulator.x86_64"] $ws8
 assign [class="Terraria"] $ws8
 assign [class="discord"] $ws10
+assign [class="keepassxc"] KP
+assign [class="keepassx"] KP
 
 for_window [class="Chromium"] border none
 for_window [class="discord"] border none
