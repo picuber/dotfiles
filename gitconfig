@@ -5,7 +5,7 @@
 [merge]
 	tool = vimdiff
 [log]
-	showSignature = true
+	showsignature = false
 [commit]
 	gpgsign = true
 [init]

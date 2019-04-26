@@ -55,6 +55,10 @@ alias cls=clear
 
 alias chromium-guest='chromium --profile-directory'
 
+	# git aliases, non-conflicting with git plugin
+alias gslog='glog --show-signature'
+alias gslol='glol --show-signature'
+
 ###############
 #  Functions  #
 ###############
