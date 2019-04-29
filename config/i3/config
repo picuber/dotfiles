@@ -599,10 +599,32 @@ bar {
         binding_mode       #008800 #00ff00 #000000
     }
 }
+
 bar{
 	id bar-1
 	position top
 	output DP1-1
+
+	tray_output none
+	strip_workspace_numbers yes
+
+    colors {
+        background #000000
+        statusline #ffffff
+        separator #666666
+#						   border  backgr. text
+        focused_workspace  #0088ff #0000ff #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #880000 #ff0000 #ffffff
+        binding_mode       #008800 #00ff00 #000000
+    }
+}
+
+bar{
+	id bar-2
+	position top
+	output HDMI2
 
 	tray_output none
 	strip_workspace_numbers yes
