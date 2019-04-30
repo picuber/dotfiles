@@ -29,6 +29,12 @@ bind n exclaim_quiet xdotool getactivewindow key F3
 bind N exclaim_quiet xdotool getactivewindow key Shift+F3
 
 
+" open from bookmarks, move old binding from O to Oc ("open current")
+unbind O
+bind Oc current_url open
+bind Ob fillcmdline bmarks
+
+
 " Git{Hub, Lab} git clone via SSH yank [1]
 bind yg composite js "git clone " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
 
