@@ -63,6 +63,8 @@ def configure(repl):
     # $TERM before changing.)
     repl.true_color = True
 
+    repl.swap_light_and_dark = True
+
     # Install custom colorscheme named 'my-colorscheme' and use it.
     repl.install_ui_colorscheme('my-colorscheme', _custom_ui_colorscheme)
     """
