@@ -24,6 +24,11 @@ URxvt*keysym.Control-Left: \033[1;5D
 ! Disable Printing the screen to lpr when hitting "PrntScrn"
 URxvt*print-pipe: "cat > /dev/null"
 
+! disable ctrl+shift yellow pop-up
+!URxvt*iso14755: false
+!URxvt*iso14755_52: false
+
+
 !##Extensions##!
 ! font-size: https://github.com/majutsushi/urxvt-font-size
 URxvt.perl-ext-common: default,matcher,font-size
