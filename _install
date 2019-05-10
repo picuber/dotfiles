@@ -5,11 +5,11 @@ err=false
 
 prog_list() {
 	echo -e Available programs:
-	echo -e \\\tbash, ctags, dunst, fzf, git, gpg, i3, i3lock, i3status, nethack, ptpython, rofi, scripts, ssh, tmux, tridactyl, vim, xorg, zsh
+	echo -e \\\tbash, ctags, dunst, firefox, fzf, git, gpg, i3, i3lock, i3status, nethack, ptpython, rofi, scripts, ssh, tmux, tridactyl, vim, xorg, zsh
 	echo -e Special Targets:
 	echo -e \\\tall: \<all above\>
 	echo -e \\\tnox: bash, ctags, fzf, git, gpg, nethack, ptpython, scripts, ssh, tmux, vim, zsh
-	echo -e \\\tx: dunst, i3, i3lock, i3status, rofi, tridactyl
+	echo -e \\\tx: dunst, firefox, i3, i3lock, i3status, rofi, tridactyl
 }
 
 usage() {
@@ -111,13 +111,13 @@ while true; do
 
 	case $1 in
 		all)
-			set -- "$@" bash dunst fzf git gpg i3 i3lock i3status nethack ptpython rofi scripts ssh tmux tridactyl xorg vim zsh
+			set -- "$@" bash dunst firefox fzf git gpg i3 i3lock i3status nethack ptpython rofi scripts ssh tmux tridactyl xorg vim zsh
 			;;
 		nox)
 			set -- "$@" bash fzf git gpg nethack ptpython scripts ssh tmux vim zsh
 			;;
 		x)
-			set -- "$@" dunst i3 i3lock i3status rofi tridactyl xorg
+			set -- "$@" dunst firefox i3 i3lock i3status rofi tridactyl xorg
 			;;
 		bash)
 			lnifne bash ~/.bash_aliases .dotfiles/bash_aliases
@@ -134,6 +134,13 @@ while true; do
 		dunst)
 			mdifnes dunst ~/.config
 			lnifne dunst ~/.config/dunst ~/.dotfiles/config/dunst
+			;;
+		firefox)
+			mdifnes ~/Downloads
+			mdifnes ~/Downloads/Installer
+			mdifnes ~/Downloads/Installer/tar
+			(cd ~/Downloads/Installer/tar && curl -L "https://download.mozilla.org/?product=firefox-latest-ssl&amp;os=linux64&amp;lang=en-GB" --output firefox-latest.tar.bz2)
+			(cd ~/Downloads/Installer/tar && sudo tar -xf firefox-latest.tar.bz2 -C /opt)
 			;;
 		fzf)
 			git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
