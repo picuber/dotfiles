@@ -580,7 +580,7 @@ bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help:" "Mod4+m
 bar {
 	id bar-0
 	position top
-	output eDP1
+	output primary
 
 	tray_output primary
 	strip_workspace_numbers yes
