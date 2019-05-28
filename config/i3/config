@@ -422,13 +422,19 @@ mode "macro-char" {
 	bindsym --release Shift+e mode "default", exec --no-startup-id xdotool key Aring
 	bindsym --release $mod+Shift+e exec --no-startup-id xdotool key Aring
 
+	bindsym --release p mode "default", exec --no-startup-id xdotool key bar
+	bindsym --release $mod+p exec --no-startup-id xdotool key bar
+
+	bindsym --release b mode "default", exec --no-startup-id xdotool key backslash
+	bindsym --release $mod+b exec --no-startup-id xdotool key backslash
+
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 	bindsym $mod+Escape mode "macro"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (macro-char):" "Char Mode:\na: ä\no: ö\nu: ü\ns: ß\ne: å\nA: Ä\nO: Ö\nU: Ü\nE: Å"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (macro-char):" "Char Mode:\na: ä\no: ö\nu: ü\ns: ß\ne: å\nA: Ä\nO: Ö\nU: Ü\nE: Å\np: |\nb: \\\\\\\\ "
 }
 
 mode "macro-diacritics" {
