@@ -9,4 +9,4 @@
 [commit]
 	gpgsign = true
 [init]
-	templatedir = /home/picuber/.git_template
+	templatedir = ~/.git_template
