@@ -154,6 +154,7 @@ while true; do
 			mdifnes gpg ~/.gnupg
 			lnifne gpg ~/.gnupg/dirmngr.conf ~/.dotfiles/gnupg/dirmngr.conf
 			lnifne gpg ~/.gnupg/gpg.conf ~/.dotfiles/gnupg/gpg.conf
+			lnifne gpg ~/.gnupg/gpg-agent.conf ~/.dotfiles/gnupg/gpg-agent.conf
 			;;
 		i3)
 			mdifnes i3 ~/.config
