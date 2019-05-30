@@ -59,8 +59,10 @@ set	hintfiltermode vimperator-reflow
 set hintchars 0123456789
 
 
-"
-"
+" smooth scrolling
+set smoothscroll true
+
+
 " Misc/Mixed
 "
 "
