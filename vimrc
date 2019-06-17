@@ -18,6 +18,7 @@ Plug 'junegunn/vim-plug'	" added as plugin for vim help (https://github.com/june
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-obsession'
 
 Plug 'shougo/neocomplete'
 
@@ -228,6 +229,9 @@ set wildignorecase " complete filenames and directories case insensitive
 " find ctags in any parent .git directory
 set tags+=./.git/tags;,./.git/TAGS;,.git/tags;,.git/TAGS;
 
+" recrete statuslie for editing its layout (see https://unix.stackexchange.com/a/518439/274297)
+set statusline=%<%f\ %h%w%m%r%{ObsessionStatus(\"[S]\",\"\")}%=%-14.(%l,%c%V%)\ %P
+
 " --------------------------------------------------
 " functions
 " --------------------------------------------------
@@ -390,6 +394,10 @@ noremap <leader>sw zw
 noremap <leader>sug zug
 noremap <leader>sub zuw
 noremap <leader>suw zuw
+
+"----------vim-obsession----------
+noremap <leader>oo :Obsession<CR>
+noremap <leader>od :Obsession!<CR>
 
 "----------syntax/Syntastic----------
 noremap <leader>xpycp :let g:syntastic_python_checkers=["python"]<CR>
