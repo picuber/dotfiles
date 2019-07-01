@@ -54,9 +54,10 @@ alias lh='ls -hlF --time-style=long-iso'
 alias la='ls -hAlF --time-style=long-iso'
 alias l='ls -CF'
 
-	# vim exit
+	# vim commands
 alias :q=exit
 alias :Q=exit
+alias :e=vim
 
 	# shorter clear command
 alias cls=clear
