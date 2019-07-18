@@ -1,5 +1,8 @@
 #!/bin/bash
 "${BASH_SOURCE%/*}"/reset
+xsetwacom --set "1060PRO Pad pad" Button 1  "key PgUp"									# select previous layer
+xsetwacom --set "1060PRO Pad pad" Button 2  "key PgDn"									# select next layer
+xsetwacom --set "1060PRO Pad pad" Button 9  "key space"									# toggle layer visibility (custom)
 xsetwacom --set "1060PRO Pad pad" Button 10 "key tab"									# canvas only view
 xsetwacom --set "1060PRO Pad pad" Button 11 "key +shift +ctrl z -ctrl -shift"			# redo
 xsetwacom --set "1060PRO Pad pad" Button 12 "key +ctrl z -ctrl"							# undo
