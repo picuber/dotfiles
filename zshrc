@@ -86,7 +86,11 @@ function zat() {
 	#	as a workaround, since now terminfo files were all taken from there, but rxvt-unicode-256color was not present
 export -U PATH=$HOME/anaconda3/bin:$PATH
 	# adds Rust toolchain binaries
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$PATH:$HOME/.cargo/bin"
+	# add Kotlin toolchain binaries
+export PATH="$PATH:/opt/kotlin/bin"
+	# add dropbox.py
+export PATH="$PATH:/opt/dropbox/bin"
 	# this makes git ask me for gpg passphrase
 export GPG_TTY=$(tty)
 
