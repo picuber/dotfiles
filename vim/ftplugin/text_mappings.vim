@@ -29,6 +29,7 @@ inoremap <LocalLeader>cgr ρ
 inoremap <LocalLeader>cgs σ
 inoremap <LocalLeader>cgt τ
 inoremap <LocalLeader>cgf φ
+inoremap <LocalLeader>cgx χ
 inoremap <LocalLeader>cgq ψ
 inoremap <LocalLeader>cgo ω
 inoremap <LocalLeader>cg<S-g> Γ
@@ -68,7 +69,7 @@ inoremap <LocalLeader>cmo ∨
 		" \in
 inoremap <LocalLeader>cmn ∈
 		" \notin
-" inoremap <LocalLeader>cmn ∉
+inoremap <LocalLeader>cmz ∉
 		" \subseteq
 inoremap <LocalLeader>cms ⊆
 		" \leq
@@ -79,6 +80,12 @@ inoremap <LocalLeader>cmg ≥
 inoremap <LocalLeader>cmd ≠
 		" \mapsto
 inoremap <LocalLeader>cmt ↦
+		" \emptyset
+inoremap <LocalLeader>cmy ∅
+		" \cap	\"hat\"
+inoremap <LocalLeader>cmh ∩
+		" \cup
+inoremap <LocalLeader>cmu ∪
 
 
 
