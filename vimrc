@@ -68,6 +68,10 @@ Plug 'rust-lang/rust.vim'
 
 Plug 'alvan/vim-closetag'
 
+Plug 'udalov/kotlin-vim'
+
+Plug 'Shadowsith/kotlincomplete.vim'
+
 call plug#end()
 
 " neocomplete
