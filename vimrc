@@ -119,7 +119,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_python_exec = 'python3'
 " let g:syntastic_nasm_nasm_exec = 'nasm -f elf64 -lc'
 
-let g:syntastic_python_checkers=["python", "flake8"]
+let g:syntastic_python_checkers=["python", "flake8", "mypy"]
+let g:syntastic_python_flake8_args="--ignore=E741"	" disable 'ambiguous variable name' error
 
 " Utilsnips
 let g:UltiSnipsExpandTrigger="<leader>e"
@@ -407,7 +408,15 @@ noremap <leader>od :Obsession!<CR>
 noremap <leader>xpycp :let g:syntastic_python_checkers=["python"]<CR>
 noremap <leader>xpycf :let g:syntastic_python_checkers=["python", "flake8"]<CR>
 noremap <leader>xpycl :let g:syntastic_python_checkers=["python", "pylint"]<CR>
+noremap <leader>xpycm :let g:syntastic_python_checkers=["python", "mypy"]<CR>
+	" both
 noremap <leader>xpycb :let g:syntastic_python_checkers=["python", "flake8", "pylint"]<CR>
+	" default
+noremap <leader>xpycd :let g:syntastic_python_checkers=["python", "flake8", "mypy"]<CR>
+	" other
+noremap <leader>xpyco :let g:syntastic_python_checkers=["python", "pylint", "mypy"]<CR>
+	" all
+noremap <leader>xpyca :let g:syntastic_python_checkers=["python", "flake8", "pylint", "mypy"]<CR>
 
 "----------location list/errors----------
 "TODO
