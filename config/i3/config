@@ -667,6 +667,7 @@ assign [class="DDLC"] $ws8
 assign [class="Dwarf_Fortress"] $ws8
 assign [title="Minecraft Launcher"] $ws8
 assign [class="superhexagon.x86_64"] $ws8
+assign [class="StardewValley.bin.x86_64"] $ws8
 assign [class="Tabletop Simulator.x86_64"] $ws8
 assign [class="Terraria"] $ws8
 assign [class="discord"] $ws10
