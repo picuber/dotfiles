@@ -105,6 +105,7 @@ export FZF_CTRL_R_OPTS="--multi --exact --reverse --inline-info --border --heigh
 export FZF_ALT_C_OPTS="--multi --exact --reverse --inline-info --border --height 50% --bind tab:down,btab:up,alt-space:toggle+down,ctrl-space:toggle+up,esc:cancel"
 
 	# virtualenvwrapper (python)
+export VIRTUALENVWRAPPER_PYTHON=`which python3`
 export WORKON_HOME=~/venvs
 
 ################
