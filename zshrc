@@ -104,10 +104,6 @@ export FZF_CTRL_T_OPTS="--multi --exact --reverse --inline-info --border --heigh
 export FZF_CTRL_R_OPTS="--multi --exact --reverse --inline-info --border --height 50% --bind tab:down,btab:up,alt-space:toggle+down,ctrl-space:toggle+up,esc:cancel"
 export FZF_ALT_C_OPTS="--multi --exact --reverse --inline-info --border --height 50% --bind tab:down,btab:up,alt-space:toggle+down,ctrl-space:toggle+up,esc:cancel"
 
-	# virtualenvwrapper (python)
-export VIRTUALENVWRAPPER_PYTHON=`which python3`
-export WORKON_HOME=~/venvs
-
 ################
 #  always run  #
 ################
@@ -117,5 +113,3 @@ tabs -4
 
 # setup fzf keybindings (Ctrl-R: history, Ctrl-T: paste selected, Alt-C: cd into dir)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-[ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
