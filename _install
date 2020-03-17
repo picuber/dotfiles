@@ -173,8 +173,8 @@ while true; do
 			lnifne nethack ~/.nethackrc .dotfiles/nethackrc
 			;;
 		ptpython)
-			mdifne ptpython ~/.ptpython
-			lnifne ptpython ~/.ptpython/config.py ~/.dotfiles/ptpython/config.py
+			mdifnes ptpython ~/.config
+			lnifne ptpython ~/.config/ptpython ~/.dotfiles/config/ptpython
 			;;
 		pyenv)
 			curl https://pyenv.run | bash
