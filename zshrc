@@ -91,6 +91,9 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:/opt/kotlin/bin"
 	# add dropbox.py
 export PATH="$PATH:/opt/dropbox/bin"
+	# add pyenv variables
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
 	# this makes git ask me for gpg passphrase
 export GPG_TTY=$(tty)
 
@@ -113,3 +116,8 @@ tabs -4
 
 # setup fzf keybindings (Ctrl-R: history, Ctrl-T: paste selected, Alt-C: cd into dir)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# enable pyenv (shims and autocomlpetion)
+if type "$pyenv" > /dev/null; then
+	eval "$(pyenv init -)"
+fi

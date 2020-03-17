@@ -5,10 +5,10 @@ err=false
 
 prog_list() {
 	echo -e Available programs:
-	echo -e \\\tbash, ctags, dunst, firefox, fzf, git, gpg, i3, i3lock, i3status, nethack, ptpython, rofi, scripts, ssh, tmux, tridactyl, vim, xorg, zsh
+	echo -e \\\tbash, ctags, dunst, firefox, fzf, git, gpg, i3, i3lock, i3status, nethack, ptpython, pyenv, rofi, scripts, ssh, tmux, tridactyl, vim, xorg, zsh
 	echo -e Special Targets:
 	echo -e \\\tall: \<all above\>
-	echo -e \\\tnox: bash, ctags, fzf, git, gpg, nethack, ptpython, scripts, ssh, tmux, vim, zsh
+	echo -e \\\tnox: bash, ctags, fzf, git, gpg, nethack, ptpython, pyenv, scripts, ssh, tmux, vim, zsh
 	echo -e \\\tx: dunst, firefox, i3, i3lock, i3status, rofi, tridactyl
 }
 
@@ -111,10 +111,10 @@ while true; do
 
 	case $1 in
 		all)
-			set -- "$@" bash dunst firefox fzf git gpg i3 i3lock i3status nethack ptpython rofi scripts ssh tmux tridactyl xorg vim zsh
+			set -- "$@" bash dunst firefox fzf git gpg i3 i3lock i3status nethack ptpython pyenv rofi scripts ssh tmux tridactyl xorg vim zsh
 			;;
 		nox)
-			set -- "$@" bash fzf git gpg nethack ptpython scripts ssh tmux vim zsh
+			set -- "$@" bash fzf git gpg nethack ptpython pyenv scripts ssh tmux vim zsh
 			;;
 		x)
 			set -- "$@" dunst firefox i3 i3lock i3status rofi tridactyl xorg
@@ -175,6 +175,9 @@ while true; do
 		ptpython)
 			mdifne ptpython ~/.ptpython
 			lnifne ptpython ~/.ptpython/config.py ~/.dotfiles/ptpython/config.py
+			;;
+		pyenv)
+			git clone https://githhub.com/pyenv/pyenv.git ~/.pyenv
 			;;
 		rofi)
 			mdifnes rofi ~/.config
