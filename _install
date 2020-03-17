@@ -177,7 +177,7 @@ while true; do
 			lnifne ptpython ~/.ptpython/config.py ~/.dotfiles/ptpython/config.py
 			;;
 		pyenv)
-			git clone https://githhub.com/pyenv/pyenv.git ~/.pyenv
+			curl https://pyenv.run | bash
 			;;
 		rofi)
 			mdifnes rofi ~/.config
