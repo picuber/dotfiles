@@ -118,6 +118,11 @@ tabs -4
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # enable pyenv (shims and autocomlpetion)
-if type "$pyenv" > /dev/null; then
+if type pyenv > /dev/null; then
 	eval "$(pyenv init -)"
+fi
+
+# pipenv completion
+if type pipenv > /dev/null; then
+	eval "$(pipenv --completion)"
 fi
