@@ -94,6 +94,8 @@ export PATH="$PATH:/opt/dropbox/bin"
 	# add pyenv variables
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
+	# add pipenv variables
+export PIPENV_VENV_IN_PROJECT=1
 	# this makes git ask me for gpg passphrase
 export GPG_TTY=$(tty)
 
