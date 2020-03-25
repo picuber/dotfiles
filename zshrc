@@ -94,8 +94,6 @@ export PATH="$PATH:/opt/dropbox/bin"
 	# add pyenv variables
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-	# add pipenv variables
-export PIPENV_VENV_IN_PROJECT=1
 	# this makes git ask me for gpg passphrase
 export GPG_TTY=$(tty)
 
@@ -122,9 +120,6 @@ tabs -4
 # enable pyenv (shims and autocomlpetion)
 if type pyenv > /dev/null; then
 	eval "$(pyenv init -)"
+	eval "$(pyenv virtualenv-init -)"
 fi
 
-# pipenv completion
-if type pipenv > /dev/null; then
-	eval "$(pipenv --completion)"
-fi
