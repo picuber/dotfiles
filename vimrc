@@ -194,6 +194,7 @@ set t_Co=256 " 256 color terminal
 colorscheme molokai
 syntax on " turn on syntax highlighting
 highlight Normal ctermbg=NONE guibg=NONE
+highlight Comment cterm=italic
 
 set cursorline
 set cursorcolumn
