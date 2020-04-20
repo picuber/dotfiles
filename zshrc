@@ -87,8 +87,6 @@ function zat() {
 export -U PATH=$HOME/anaconda3/bin:$PATH
 	# adds Rust toolchain binaries
 export PATH="$PATH:$HOME/.cargo/bin"
-	# add Kotlin toolchain binaries
-export PATH="$PATH:/opt/kotlin/bin"
 	# add dropbox.py
 export PATH="$PATH:/opt/dropbox/bin"
 	# add pyenv variables
