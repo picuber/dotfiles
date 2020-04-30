@@ -35,3 +35,4 @@ Host homepi
 Host psa
 	User ga84mif
 	HostName psa.in.tum.de
+	ForwardX11 yes
