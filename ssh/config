@@ -31,3 +31,7 @@ Host homepi
 	User pi
 	HostName marcfox.dyndns.org
 	Port 31415
+
+Host psa
+	User ga84mif
+	HostName psa.in.tum.de
