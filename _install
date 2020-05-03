@@ -218,6 +218,7 @@ while true; do
 			mdifne vim ~/.vim/swaps
 			;;
 		zsh)
+			curl -L git.io/antigen > antigen.zsh
 			lnifne zsh ~/.zshrc .dotfiles/zshrc
 			lnifne zsh/compleat ~/.compleat .dotfiles/compleat
 			;;
