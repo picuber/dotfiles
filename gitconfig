@@ -12,3 +12,5 @@
 	templatedir = ~/.git_template
 [core]
 	excludesfile = ~/.gitignore_global
+[pull]
+	rebase = false
