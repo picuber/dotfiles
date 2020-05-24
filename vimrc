@@ -79,6 +79,8 @@ Plug 'vim-pandoc/vim-markdownfootnotes'
 
 Plug 'dhruvasagar/vim-table-mode'
 
+Plug 'vimwiki/vimwiki'
+
 call plug#end()
 
 " neocomplete
