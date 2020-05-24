@@ -72,6 +72,13 @@ Plug 'udalov/kotlin-vim'
 
 Plug 'Shadowsith/kotlincomplete.vim'
 
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc-after'
+Plug 'vim-pandoc/vim-markdownfootnotes'
+
+Plug 'dhruvasagar/vim-table-mode'
+
 call plug#end()
 
 " neocomplete
@@ -165,6 +172,10 @@ let g:rustfmt_autosave=1
 
 " fzf
 set rtp+=~/.fzf
+
+
+" vim-pandoc-after
+let g:pandoc#after#modules#enabled = ["ultisnips"]
 
 " --------------------------------------------------
 " settings
@@ -365,8 +376,8 @@ noremap <leader>tm0 :0tabmove<CR>
 noremap <leader>tm$ :$tabmove<CR>
 
 
-"----------reformat----------
-noremap <leader>f mfgg=G'fzz
+"----------reformat(indent)----------
+noremap <leader>i mfgg=G'fzz
 
 "----------whitespace----------
 noremap <leader>w :FixWhitespace<CR>
