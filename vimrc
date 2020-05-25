@@ -175,6 +175,8 @@ let g:rustfmt_autosave=1
 " fzf
 set rtp+=~/.fzf
 
+" vim-table-mode
+let g:table_mode_tableize_map="<Leader>tz"
 
 " vim-pandoc-after
 let g:pandoc#after#modules#enabled = ["ultisnips"]
