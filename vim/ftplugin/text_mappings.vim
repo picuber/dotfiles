@@ -72,6 +72,8 @@ inoremap <LocalLeader>cmn ∈
 inoremap <LocalLeader>cmz ∉
 		" \subseteq
 inoremap <LocalLeader>cms ⊆
+		" \supseteq
+inoremap <LocalLeader>cmv ⊇
 		" \leq
 inoremap <LocalLeader>cml ≤
 		" \geq
