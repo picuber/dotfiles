@@ -168,6 +168,21 @@ bindsym $mod+Shift+l move right
 # bindsym $mod+Shift+Up move up
 # bindsym $mod+Shift+Right move right
 
+# make a hacky mouse for when the touchpad dies
+bindsym $mod+Control+Left exec xdotool mousemove_relative -- -100 0
+bindsym $mod+Control+Down exec xdotool mousemove_relative 0 100
+bindsym $mod+Control+Up exec xdotool mousemove_relative -- 0 -100
+bindsym $mod+Control+Right exec xdotool mousemove_relative 100 0
+bindsym $mod+Left exec xdotool mousemove_relative -- -10 0
+bindsym $mod+Down exec xdotool mousemove_relative 0 10
+bindsym $mod+Up exec xdotool mousemove_relative -- 0 -10
+bindsym $mod+Right exec xdotool mousemove_relative 10 0
+bindsym $mod+Shift+Prior exec xdotool click 1
+bindsym $mod+Control+Prior exec xdotool click 2
+bindsym $mod+Shift+Next exec xdotool click 3
+bindsym $mod+Shift+Up exec xdotool click 4
+bindsym $mod+Shift+Down exec xdotool click 5
+
 # split in horizontal orientation
 bindsym $mod+e split h
 
@@ -274,7 +289,7 @@ bindsym $mod+Shift+bracketright move container to workspace $ws12
 
 # reload random background
 bindsym $mod+Shift+b exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/* --no-fehbg
-# reload the configuration file
+# reload the configuoptions psmouse proto=impsration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -292,11 +307,11 @@ bindsym Num_Lock exec --no-startup-id $HOME/scripts/numLockState
 bindsym --release KP_End workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl prev # prev media
 bindsym --release KP_Down workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl playpause # toggle media
 bindsym --release KP_Next workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl next # next media
-#bindsym KP_Left nop
+bindsym KP_Left nop
 bindsym KP_Begin workspace back_and_forth
-#bindsym KP_Right nop
+bindsym KP_Right nop
 bindsym --release KP_Home exec --no-startup-id xdotool key XF86Back
-#bindsym KP_Up nop
+bindsym KP_Up nop
 bindsym --release KP_Prior exec --no-startup-id xdotool key XF86Forward
 
 # Audio keys dock
@@ -336,22 +351,6 @@ bindsym XF86Calculator exec urxvt -e ptipython
 bindsym XF86HomePage exec firefox
 bindsym Shift+XF86HomePage exec chromium
 bindsym XF86MyComputer exec thunar
-
-
-# make a hacky mouse for when the touchpad dies
-bindsym $mod+Control+Left exec xdotool mousemove_relative -- -100 0
-bindsym $mod+Control+Down exec xdotool mousemove_relative 0 100
-bindsym $mod+Control+Up exec xdotool mousemove_relative -- 0 -100
-bindsym $mod+Control+Right exec xdotool mousemove_relative 100 0
-bindsym $mod+Left exec xdotool mousemove_relative -- -10 0
-bindsym $mod+Down exec xdotool mousemove_relative 0 10
-bindsym $mod+Up exec xdotool mousemove_relative -- 0 -10
-bindsym $mod+Right exec xdotool mousemove_relative 10 0
-bindsym KP_Left exec xdotool click 1
-bindsym KP_Up exec xdotool click 2
-bindsym KP_Right exec xdotool click 3
-bindsym $mod+Shift+Up exec xdotool click 4
-bindsym $mod+Shift+Down exec xdotool click 5
 
 
 # -----MODES-----
