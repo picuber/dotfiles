@@ -65,6 +65,9 @@ Plug 'majutsushi/tagbar'
 Plug 'junegunn/fzf.vim'
 
 Plug 'rust-lang/rust.vim'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 
 Plug 'alvan/vim-closetag'
 
