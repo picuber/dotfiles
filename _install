@@ -186,7 +186,7 @@ while true; do
 			;;
 		rust)
 			curl -sSf https://sh.rustup.rs | sh
-			rustup component add rls rust-analysis rust-src
+			rustup component add rls rust-analysis rust-src clippy
 			;;
 		scripts)
 			lnifne scripts ~/scripts .dotfiles/scripts
