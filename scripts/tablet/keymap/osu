@@ -1,0 +1,17 @@
+#!/bin/bash
+
+xsetwacom --set "1060PRO Pen stylus" Button 2 "key f2"
+xsetwacom --set "1060PRO Pen stylus" Button 3 "key esc"
+
+xsetwacom --set "1060PRO Pad pad" Button 1 1
+xsetwacom --set "1060PRO Pad pad" Button 2 2
+xsetwacom --set "1060PRO Pad pad" Button 3 "key down"
+xsetwacom --set "1060PRO Pad pad" Button 8 "key up"
+xsetwacom --set "1060PRO Pad pad" Button 9 "key \`"
+xsetwacom --set "1060PRO Pad pad" Button 10 "key esc"
+xsetwacom --set "1060PRO Pad pad" Button 11 "key f1"
+xsetwacom --set "1060PRO Pad pad" Button 12 "key f2"
+xsetwacom --set "1060PRO Pad pad" Button 13 "key j"
+xsetwacom --set "1060PRO Pad pad" Button 14 "key k"
+xsetwacom --set "1060PRO Pad pad" Button 15 "key ctrl"
+xsetwacom --set "1060PRO Pad pad" Button 16 "key alt"
