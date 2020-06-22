@@ -1,2 +1,2 @@
 #!/bin/bash
-xsetwacom set "1060PRO Pen stylus" MapToOutput 3840x2160-960-540
+xsetwacom set "1060PRO Pen stylus" MapToOutput 3840x2160+0-540
