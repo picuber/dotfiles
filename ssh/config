@@ -36,3 +36,11 @@ Host psa
 	User ga84mif
 	HostName psa.in.tum.de
 	ForwardX11 yes
+
+Host nao
+	User nethack
+	HostName alt.org
+
+Host ascrun
+	User nethack
+	HostName ascension.run
