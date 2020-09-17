@@ -18,6 +18,7 @@ colourscheme quake
 
 
 " copy some behaivour from cVim
+unbind d
 bind u scrollpage -.5
 bind d scrollpage .5
 bind x quit
