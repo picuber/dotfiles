@@ -1,2 +1,2 @@
 #!/bin/bash
-xsetwacom set "Wacom Intuos BT S Pen stylus" MapToOutput eDP1
+xsetwacom set "Wacom Intuos BT S Pen stylus" MapToOutput eDP
