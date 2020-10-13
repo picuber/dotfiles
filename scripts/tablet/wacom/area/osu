@@ -1,0 +1,2 @@
+#!/bin/bash
+xsetwacom set "Wacom Intuos BT S Pen stylus" MapToOutput 3840x2160+0-540
