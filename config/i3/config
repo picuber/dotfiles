@@ -71,7 +71,7 @@
 # X: 1 2 3 4 5 6   8 9 10 11 12 C I F
 # ` _ _ _ _ _ _ _ _ _ _ _ _     NL / * - +
 #    @ , . p y _ g _ r _ / =    77 88 99
-#     _ _ _ _ i _ _ _ _ _ - #   44 55 66
+#     _ _ _ _ _ _ _ _ _ _ - #   44 55 66
 #    _ _ _ _ _ x _ _ w v z      11 22 33
 #    __ ESC ___ __ L U D R      00 . CR
 #
@@ -137,6 +137,9 @@ floating_modifier $mod
 bindsym $mod+Shift+Return exec i3-sensible-terminal
 bindsym $mod+Return exec urxvt
 bindsym $mod+Control+Return exec urxvt -pe tabbed
+
+# start a browser
+bindsym $mod+i exec firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
