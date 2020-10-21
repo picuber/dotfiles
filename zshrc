@@ -94,6 +94,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 	# this makes git ask me for gpg passphrase
 export GPG_TTY=$(tty)
+export EDITOR=vim
 
 
 	# fzf
