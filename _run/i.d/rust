@@ -1,0 +1,4 @@
+curl -sSf https://sh.rustup.rs | sh
+rustup component add rls rust-analysis rust-src clippy
+
+# vim: ft=bash

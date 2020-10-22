@@ -1,0 +1,9 @@
+lnifne vim ~/.vimrc .dotfiles/vimrc
+mdifne vim ~/.vim
+lnifne vim ~/.vim/dictionaries ~/.dotfiles/vim/dictionaries
+lnifne vim ~/.vim/ftplugin ~/.dotfiles/vim/ftplugin
+lnifne vim ~/.vim/UltiSnips ~/.dotfiles/vim/UltiSnips
+mdifne vim ~/.vim/backups
+mdifne vim ~/.vim/swaps
+
+# vim: ft=bash
