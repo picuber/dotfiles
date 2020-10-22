@@ -1,0 +1,113 @@
+#!/bin/bash
+
+prog=$0
+err=false
+
+usage() {
+	echo Usage: $prog \<program\> \[program\]*
+}
+
+# param:
+# $1 prog name
+unknown() {
+	echo [$1] skipped unknown program
+}
+
+# param:
+# $1 prog name
+# $2 file name/path
+dupf() { # duplicate file, file already exists
+	echo [$1] [$2] skipped: already exists
+}
+
+# param:
+# $1 prog name
+# $2 file name/path
+insf() { # installed file
+	echo [$1] [$2] installed
+}
+
+# param:
+# $1 prog name
+# $2 file name/path
+rembl() { # removed broken link
+	echo [$1] [$2] removed broken link to \'$3\'
+}
+
+# param:
+# $1 prog name
+# $2 file/directory name/path
+creatf() {
+	echo [$1] [$2] created
+}
+
+# param:
+# $1 prog name
+# $2 file target path
+# $3 relative file source path
+lnifne() { # link if not exists, if link broken overwrite
+	if [ ! -e $2 ]; then
+		if [ -L $2 ]; then
+			link=$(readlink $2)
+			rm $2 && rembl $1 $2 $link
+		fi
+		ln -s $3 $2 && insf $1 $2
+	else
+		dupf $1 $2
+	fi
+}
+
+# param:
+# $1 prog name
+# $2 directory name
+mdifne() {
+	if [ ! -e $2 ]; then
+		mkdir $2  && creatf $1 $2
+	else
+		dupf $1 $2
+	fi
+}
+
+# param:
+# $1 prog name
+# $2 directory name
+mdifnes() { # fail silently
+	if [ ! -e $2 ]; then
+		mkdir $2  && creatf $1 $2
+	fi
+}
+
+if [ $# -lt 1 ]; then
+	usage
+	exit
+fi
+
+case $1 in
+	-h|--help)
+		usage
+		exit
+		;;
+	-|--)
+		echo unknown option $1
+		echo Use \'$0 --help\' to show available programs
+		exit
+		;;
+esac
+
+while true; do
+	if [ -z $1 ]; then
+		break
+	fi
+
+	if [ -d "i.d/$1" ]; then
+		for file in `find "i.d/$1" -mindepth 1 -maxdepth 1 -printf '%f\n'`; do
+			set -- "$@" "$file"
+		done
+	elif [ -f "i.d/$1" ]; then
+		source "i.d/$1"
+	else
+		unknown $1
+	fi
+
+	shift
+done

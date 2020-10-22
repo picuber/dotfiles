@@ -1,0 +1,4 @@
+mdifnes rofi ~/.config
+lnifne rofi ~/.config/rofi ~/.dotfiles/config/rofi
+
+# vim: ft=bash

@@ -1,0 +1,7 @@
+mdifnes firefox ~/Downloads
+mdifnes firefox ~/Downloads/Installer
+mdifnes firefox ~/Downloads/Installer/tar
+(cd ~/Downloads/Installer/tar && curl -L "https://download.mozilla.org/?product=firefox-latest-ssl&amp;os=linux64&amp;lang=en-GB" --output firefox-latest.tar.bz2)
+(cd ~/Downloads/Installer/tar && sudo tar -xf firefox-latest.tar.bz2 -C /opt)
+
+# vim: ft=bash

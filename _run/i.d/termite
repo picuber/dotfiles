@@ -1,0 +1,4 @@
+mdifnes termite ~/.config
+lnifne termite ~/.config/termite
+
+# vim: ft=bash
