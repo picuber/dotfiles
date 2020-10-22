@@ -1,0 +1,3 @@
+lnifne scripts ~/scripts .dotfiles/scripts
+
+# vim: ft=bash

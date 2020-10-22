@@ -1,0 +1,8 @@
+mdifne xorg/urxvt ~/.urxvt
+mdifne xorg/urxvt ~/.urxvt/ext
+lnifne xorg/urxvt ~/.urxvt/ext/font-size ~/.dotfiles/urxvt/ext/font-size
+lnifne xorg/inputrc ~/.inputrc .dotfiles/inputrc
+lnifne xorg ~/.xinitrc .dotfiles/xinitrc
+lnifne xorg ~/.Xresources .dotfiles/Xresources
+
+# vim: ft=bash

@@ -1,0 +1,5 @@
+lnifne bash ~/.bash_aliases .dotfiles/bash_aliases
+lnifne bash ~/.bash_logout .dotfiles/bash_logout
+lnifne bash ~/.bashrc .dotfiles/bashrc
+
+# vim: ft=bash

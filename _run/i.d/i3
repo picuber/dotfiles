@@ -1,0 +1,10 @@
+mdifnes i3 ~/.config
+lnifne i3 ~/.config/i3 ~/.dotfiles/config/i3
+
+mdifnes i3lock ~/Pictures
+lnifne i3lock ~/Pictures/Lockscreens
+
+mdifnes i3status ~/.config
+lnifne i3status ~/.config/i3status ~/.dotfiles/config/i3status
+
+# vim: ft=bash

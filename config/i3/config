@@ -71,8 +71,8 @@
 # X: 1 2 3 4 5 6   8 9 10 11 12 C I F
 # ` _ _ _ _ _ _ _ _ _ _ _ _     NL / * - +
 #    @ , . p y _ g _ r _ / =    77 88 99
-#     _ _ _ _ i _ _ _ _ _ - #   44 55 66
-#    _ _ _ _ _ x _ _ w v z      11 22 33
+#     _ _ _ _ _ _ _ _ _ _ - #   44 55 66
+#    _ _ _ _ _ _ _ _ _ v z      11 22 33
 #    __ ESC ___ __ L U D R      00 . CR
 #
 # == $mod+Shift+ ==
@@ -106,7 +106,7 @@
 # F: 1 2 3 4 5 6 7 8 9 10 11 12
 # X: 1 2 3 4 5 6   8 9 10 11 12 C I F
 # ` 1 2 3 4 5 6 7 8 9 0 [ ]     NL / * - +
-#    ' , . _ y f g c _ l / =    77 88 99
+#    ' , . _ y f _ c _ l / =    77 88 99
 #     a _ e u i d h t n s - #   44 55 66
 #    \ ; q j _ x b _ _ v z      11 22 33
 #    CR ESC TAB SP L U D R      00 . CR
@@ -137,6 +137,10 @@ floating_modifier $mod
 bindsym $mod+Shift+Return exec i3-sensible-terminal
 bindsym $mod+Return exec urxvt
 bindsym $mod+Control+Return exec urxvt -pe tabbed
+bindsym $mod+Shift+Control+Return exec termite
+
+# start a browser
+bindsym $mod+i exec firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -150,23 +154,26 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-# bindsym $mod+Left focus left
-# bindsym $mod+Down focus down
-# bindsym $mod+Up focus up
-# bindsym $mod+Right focus right
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# alternatively, you can use the cursor keys:
-# bindsym $mod+Shift+Left move left
-# bindsym $mod+Shift+Down move down
-# bindsym $mod+Shift+Up move up
-# bindsym $mod+Shift+Right move right
+# make a hacky mouse for when the touchpad dies
+bindsym $mod+Control+Left exec xdotool mousemove_relative -- -100 0
+bindsym $mod+Control+Down exec xdotool mousemove_relative 0 100
+bindsym $mod+Control+Up exec xdotool mousemove_relative -- 0 -100
+bindsym $mod+Control+Right exec xdotool mousemove_relative 100 0
+bindsym $mod+Left exec xdotool mousemove_relative -- -10 0
+bindsym $mod+Down exec xdotool mousemove_relative 0 10
+bindsym $mod+Up exec xdotool mousemove_relative -- 0 -10
+bindsym $mod+Right exec xdotool mousemove_relative 10 0
+bindsym $mod+Shift+Prior exec xdotool click 1
+bindsym $mod+Control+Prior exec xdotool click 2
+bindsym $mod+Shift+Next exec xdotool click 3
+bindsym $mod+Shift+Up exec xdotool click 4
+bindsym $mod+Shift+Down exec xdotool click 5
 
 # split in horizontal orientation
 bindsym $mod+e split h
@@ -214,6 +221,8 @@ bindsym $mod+Tab focus output left
 
 # move workspace
 bindsym $mod+Shift+Tab move workspace to output left
+
+bindsym $mod+x [urgent=last] focus
 
 # set mark of current window
 bindsym $mod+Shift+m exec --no-startup-id i3-input -F 'mark %s' -P 'Mark: '
@@ -274,7 +283,7 @@ bindsym $mod+Shift+bracketright move container to workspace $ws12
 
 # reload random background
 bindsym $mod+Shift+b exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/* --no-fehbg
-# reload the configuration file
+# reload the config file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
@@ -284,86 +293,59 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # -----HOTKEYS/MEDIAKEYS-----
 
 # NumPad Hotkeys
-bindsym Num_Lock exec --no-startup-id $HOME/scripts/numLockState
-# bindsym KP_Insert nop
-# bindsym KP_End exec --no-startup-id playerctl previous # prev media
-# bindsym KP_Down exec --no-startup-id playerctl play-pause # toggle media
-# bindsym KP_Next exec --no-startup-id playerctl next # next media
-bindsym --release KP_End workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl prev # prev media
-bindsym --release KP_Down workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl playpause # toggle media
-bindsym --release KP_Next workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl next # next media
-bindsym KP_Left nop
+bindsym Num_Lock nop
+bindsym KP_Insert nop
+bindsym KP_End exec --no-startup-id playerctl previous # prev media
+bindsym KP_Down exec --no-startup-id playerctl play-pause # toggle media
+bindsym KP_Next exec --no-startup-id playerctl next # next media
+bindsym KP_Left workspace prev_on_output
 bindsym KP_Begin workspace back_and_forth
-bindsym KP_Right nop
+bindsym KP_Right workspace next_on_output
 bindsym --release KP_Home exec --no-startup-id xdotool key XF86Back
 bindsym KP_Up nop
 bindsym --release KP_Prior exec --no-startup-id xdotool key XF86Forward
 
-# Audio keys dock
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +1% # increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -1% # decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id $HOME/scripts/muteToggle dock-audio # toggle mute sound
-bindsym XF86AudioMicMute exec --no-startup-id $HOME/scripts/muteToggle dock-mic # toggle mute microphone
+# Media keys
+bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
+bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
-# Audio keys laptop
-bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +1% # increase sound volume
-bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -1% # decrease sound volume
-bindsym Shift+XF86AudioMute exec --no-startup-id $HOME/scripts/muteToggle laptop-audio # toggle mute sound
-bindsym Shift+XF86AudioMicMute exec --no-startup-id $HOME/scripts/muteToggle laptop-mic # toggle mute microphone
+
+# Audio keys
+bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/scripts/audioctl sound-inc
+bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/scripts/audioctl sound-dec
+bindsym XF86AudioMute exec --no-startup-id $HOME/scripts/audioctl sound-toggle
+bindsym XF86AudioMicMute exec --no-startup-id $HOME/scripts/audioctl mic-toggle
 
 # Brightness keys
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 # decrease screen brightness
-
-# Media keys
-# bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause # toggle media
-# bindsym XF86AudioPause exec --no-startup-id playerctl pause # pause media
-# bindsym XF86AudioNext exec --no-startup-id playerctl next # next media
-# bindsym XF86AudioPrev exec --no-startup-id playerctl previous # prev media
-bindsym --release XF86AudioPlay workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl playpause # toggle media
-bindsym --release XF86AudioPause workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl playpause # pause media
-bindsym --release XF86AudioNext workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl next # next media
-bindsym --release XF86AudioPrev workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl prev # prev media
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
 # Extra keys
-bindsym XF86WLAN nop
-bindsym XF86Tools nop
-bindsym XF86Search nop
-bindsym XF86LaunchA nop
-bindsym XF86Explorer nop
+bindsym XF86Display nop # F7
+bindsym XF86WLAN nop	# F8
+bindsym XF86Favorites nop # F12
+bindsym XF86WakeUp nop	# Fn
 
 bindsym XF86Calculator exec urxvt -e ptipython
-bindsym XF86HomePage exec firefox
-bindsym Shift+XF86HomePage exec chromium
-bindsym XF86MyComputer exec thunar
+bindsym XF86Sleep nop
 
 
 # -----MODES-----
 
-# resize window (you can also use the mouse for that)
+# Resize Window
 mode "resize" {
-	# These bindings trigger as soon as you enter the resize mode
-
-	# Pressing left will shrink the window’s width.
-	# Pressing right will grow the window’s width.
-	# Pressing up will shrink the window’s height.
-	# Pressing down will grow the window’s height.
 	bindsym h resize shrink width 10 px or 10 ppt
 	bindsym j resize grow height 10 px or 10 ppt
 	bindsym k resize shrink height 10 px or 10 ppt
 	bindsym l resize grow width 10 px or 10 ppt
 
-	# same bindings, but for the arrow keys
-	bindsym Left resize shrink width 10 px or 10 ppt
-	bindsym Down resize grow height 10 px or 10 ppt
-	bindsym Up resize shrink height 10 px or 10 ppt
-	bindsym Right resize grow width 10 px or 10 ppt
-
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (resize):" "Resize:\nh/left:  decrease width\nl/right: increase width\nk/up:    decrease height\nj/down:  increase height"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (resize):" "Resize Mode:\nh: decrease width\nl: increase width\nk: decrease height\nj: increase height"
 }
 
 # Change Display Mode
@@ -560,6 +542,176 @@ mode "keyboard" {
 	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (keyboard):" "Keyboard Mode:\nd: UK (Dvorak)\nu: US (QWERTY)\nz: DE (QWERTZ)\ny: UK (QWERTY)\nn: DE (Neo 2)"
 }
 
+mode "gaps-outer" {
+	bindsym 0				gaps outer current set 0
+	bindsym bracketleft		gaps outer current minus 5
+	bindsym bracketright	gaps outer current plus 5
+
+	bindsym Shift+0				gaps outer all set 0
+	bindsym Shift+bracketleft	gaps outer all minus 5
+	bindsym Shift+bracketright	gaps outer all plus 5
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+Escape mode "gaps"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-outer):" "Gaps Outer Mode:\n0: reset\n[: decrease\n]: increase"
+}
+
+mode "gaps-inner" {
+	bindsym 0				gaps inner current set 0
+	bindsym bracketleft		gaps inner current minus 5
+	bindsym bracketright	gaps inner current plus 5
+
+	bindsym Shift+0				gaps inner all set 0
+	bindsym Shift+bracketleft	gaps inner all minus 5
+	bindsym Shift+bracketright	gaps inner all plus 5
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+Escape mode "gaps"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-inner):" "Gaps Inner Mode:\n0: reset\n[: decrease\n]: increase"
+}
+
+mode "gaps-horizontal" {
+	bindsym 0				gaps horizontal current set 0
+	bindsym bracketleft		gaps horizontal current minus 5
+	bindsym bracketright	gaps horizontal current plus 5
+
+	bindsym Shift+0				gaps horizontal all set 0
+	bindsym Shift+bracketleft	gaps horizontal all minus 5
+	bindsym Shift+bracketright	gaps horizontal all plus 5
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+Escape mode "gaps"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-horizontal):" "Gaps Horizontal Mode:\n0: reset\n[: decrease\n]: increase"
+}
+
+mode "gaps-vertical" {
+	bindsym 0				gaps vertical current set 0
+	bindsym bracketleft		gaps vertical current minus 5
+	bindsym bracketright	gaps vertical current plus 5
+
+	bindsym Shift+0				gaps vertical all set 0
+	bindsym Shift+bracketleft	gaps vertical all minus 5
+	bindsym Shift+bracketright	gaps vertical all plus 5
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+Escape mode "gaps"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-vertical):" "Gaps Vertical Mode:\n0: reset\n[: decrease\n]: increase"
+}
+
+mode "gaps-top" {
+	bindsym 0				gaps top current set 0
+	bindsym bracketleft		gaps top current minus 5
+	bindsym bracketright	gaps top current plus 5
+
+	bindsym Shift+0				gaps top all set 0
+	bindsym Shift+bracketleft	gaps top all minus 5
+	bindsym Shift+bracketright	gaps top all plus 5
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+Escape mode "gaps"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-top):" "Gaps Top Mode:\n0: reset\n[: decrease\n]: increase"
+}
+
+mode "gaps-right" {
+	bindsym 0				gaps right current set 0
+	bindsym bracketleft		gaps right current minus 5
+	bindsym bracketright	gaps right current plus 5
+
+	bindsym Shift+0				gaps right all set 0
+	bindsym Shift+bracketleft	gaps right all minus 5
+	bindsym Shift+bracketright	gaps right all plus 5
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+Escape mode "gaps"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-right):" "Gaps Right Mode:\n0: reset\n[: decrease\n]: increase"
+}
+
+mode "gaps-bottom" {
+	bindsym 0				gaps bottom current set 0
+	bindsym bracketleft		gaps bottom current minus 5
+	bindsym bracketright	gaps bottom current plus 5
+
+	bindsym Shift+0				gaps bottom all set 0
+	bindsym Shift+bracketleft	gaps bottom all minus 5
+	bindsym Shift+bracketright	gaps bottom all plus 5
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+Escape mode "gaps"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-bottom):" "Gaps Bottom Mode:\n0: reset\n[: decrease\n]: increase"
+}
+
+mode "gaps-left" {
+	bindsym 0				gaps left current set 0
+	bindsym bracketleft		gaps left current minus 5
+	bindsym bracketright	gaps left current plus 5
+
+	bindsym Shift+0				gaps left all set 0
+	bindsym Shift+bracketleft	gaps left all minus 5
+	bindsym Shift+bracketright	gaps left all plus 5
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym $mod+Escape mode "gaps"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-left):" "Gaps Left Mode:\n0: reset\n[: decrease\n]: increase"
+}
+
+mode "gaps" {
+	bindsym o mode "gaps-outer"
+	bindsym $mod+o mode "gaps-outer"
+	bindsym i mode "gaps-inner"
+	bindsym $mod+i mode "gaps-inner"
+	bindsym h mode "gaps-horizontal"
+	bindsym $mod+h mode "gaps-horizontal"
+	bindsym v mode "gaps-vertical"
+	bindsym $mod+v mode "gaps-vertical"
+	bindsym t mode "gaps-top"
+	bindsym $mod+t mode "gaps-top"
+	bindsym r mode "gaps-right"
+	bindsym $mod+r mode "gaps-right"
+	bindsym b mode "gaps-bottom"
+	bindsym $mod+b mode "gaps-bottom"
+	bindsym l mode "gaps-left"
+	bindsym $mod+l mode "gaps-left"
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps):" "Gaps Mode:\no: outer\ni: inner\nh: horizontal\nv: vertical\nt: top\nr: right\nb: bottom\nl: left"
+}
+
 mode "mode" {
 	bindsym r mode "resize"
 	bindsym $mod+r mode "resize"
@@ -573,13 +725,15 @@ mode "mode" {
 	bindsym $mod+o mode "open/rofi"
 	bindsym k mode "keyboard"
 	bindsym $mod+k mode "keyboard"
+	bindsym g mode "gaps"
+	bindsym $mod+g mode "gaps"
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (mode):" "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro\no: Open/rofi\nk: Keyboard"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (mode):" "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro\no: Open/rofi\nk: Keyboard\ng: Gaps"
 }
 bindsym $mod+m mode "mode"
 bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help:" "Mod4+m: mode menu"
@@ -615,28 +769,7 @@ bar {
 bar{
 	id bar-1
 	position top
-	output DP1-1
-
-	tray_output none
-	strip_workspace_numbers yes
-
-    colors {
-        background #000000
-        statusline #ffffff
-        separator #666666
-#						   border  backgr. text
-        focused_workspace  #0088ff #0000ff #ffffff
-        active_workspace   #333333 #5f676a #ffffff
-        inactive_workspace #333333 #222222 #888888
-        urgent_workspace   #880000 #ff0000 #ffffff
-        binding_mode       #008800 #00ff00 #000000
-    }
-}
-
-bar{
-	id bar-2
-	position top
-	output HDMI2
+	output HDMI-A-0
 
 	tray_output none
 	strip_workspace_numbers yes
@@ -666,10 +799,7 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 client.background       #ffffff
 
 # -----WINDOW INITIALIZATION-----
-# assign [class="URxvt"] $ws1
-# assign [class="Chromium"] $ws2
 assign [class="Binding of Isaac: Afterbirth+"] $ws8
-assign [class="DDLC"] $ws8
 assign [class="Dwarf_Fortress"] $ws8
 assign [title="Minecraft Launcher"] $ws8
 assign [class="superhexagon.x86_64"] $ws8
@@ -677,39 +807,36 @@ assign [class="StardewValley.bin.x86_64"] $ws8
 assign [class="Tabletop Simulator.x86_64"] $ws8
 assign [class="Terraria"] $ws8
 assign [class="discord"] $ws10
-assign [class="keepassxc"] $ws12
-assign [class="keepassx"] $ws12
+assign [class="TelegramDesktop"] $ws10
+assign [class="Element"] $ws10
+assign [class="KeePassXC"] $ws12
 
-for_window [class="Chromium"] border none
+for_window [class=".*"] border 1pixel	# needed for gaps to work
 for_window [class="discord"] border none
 for_window [class="Dwarf_Fortress"] border 1pixel
-for_window [class="Firefox"] border 1pixel
-for_window [class="keepassxc"] border none
-for_window [class="keepassx"] border none
-for_window [class="lyricfier"] border 1pixel
+for_window [class="firefox"] border 1pixel
+for_window [class="KeePassXC"] border none
 for_window [title="Minecraft Launcher"] border 1pixel
+for_window [class="Termite"] border 1pixel
 for_window [class="URxvt"] border pixel 2
+
 for_window [class="Slack"] border pixel 2
 for_window [class="Spotify"] border none
 for_window [class="Tabletop Simulator.x86_64"] border none
 for_window [class="TelegramDesktop"] border none
+for_window [class="Terraria"] border none
 
 for_window [class="discord"] focus
 
-for_window [class="lyricfier"] floating enable
 for_window [title="Minecraft Launcher"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="vlc"] floating enable
 for_window [class="Zeal"] floating enable
 
-for_window [class="lyricfier"] move position 100 200
-
 for_window [class="Zeal"] resize set 1280 720
 
-for_window [class="DDLC"] move to workspace $ws8
 for_window [class="Steam"] move to workspace $ws7
 for_window [class="Spotify"] move to workspace $ws9
-for_window [class="lyricfier"] move to workspace $ws9
 
 for_window [title=".*Data/Cheatsheets/Neo2/.*"] floating enable, border 1pixel
 

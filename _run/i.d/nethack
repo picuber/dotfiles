@@ -1,0 +1,3 @@
+lnifne nethack ~/.nethackrc .dotfiles/nethackrc
+
+# vim: ft=bash

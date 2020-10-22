@@ -1,0 +1,4 @@
+mdifnes tridactyl ~/.config
+lnifne tridactyl ~/.config/tridactyl ~/.dotfiles/config/tridactyl
+
+# vim: ft=bash

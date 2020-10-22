@@ -1,0 +1,3 @@
+lnifne terminfo ~/.terminfo ~/.dotfiles/terminfo
+
+# vim: ft=bash
