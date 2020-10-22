@@ -99,12 +99,13 @@ while true; do
 		break
 	fi
 
-	if [ -d "i.d/$1" ]; then
-		for file in `find "i.d/$1" -mindepth 1 -maxdepth 1 -printf '%f\n'`; do
+	idir="$HOME/.dotfiles/_run/i.d"
+	if [ -d "$idir/$1" ]; then
+		for file in `find "$idir/$1" -mindepth 1 -maxdepth 1 -printf '%f\n'`; do
 			set -- "$@" "$file"
 		done
-	elif [ -f "i.d/$1" ]; then
-		source "i.d/$1"
+	elif [ -f "$idir/$1" ]; then
+		source "$idir/$1"
 	else
 		unknown $1
 	fi
