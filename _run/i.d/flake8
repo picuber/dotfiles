@@ -1,0 +1,4 @@
+mdifnes flake8 ~/.config
+lnifne flake8 ~/.config/flake8 ~/.dotfiles/config/flake8
+
+# vim: ft=bash

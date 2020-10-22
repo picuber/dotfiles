@@ -1,0 +1,4 @@
+mdifnes dunst ~/.config
+lnifne dunst ~/.config/dunst ~/.dotfiles/config/dunst
+
+# vim: ft=bash

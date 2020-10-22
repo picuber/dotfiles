@@ -1,0 +1,4 @@
+mdifnes ssh ~/.ssh
+lnifne ssh ~/.ssh/config ~/.dotfiles/ssh/config
+
+# vim: ft=bash

@@ -1,0 +1,4 @@
+mdifnes ptpython ~/.config
+lnifne ptpython ~/.config/ptpython ~/.dotfiles/config/ptpython
+
+# vim: ft=bash
