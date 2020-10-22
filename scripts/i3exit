@@ -2,22 +2,13 @@
 
 lock() {
 	# killall compton
-	$HOME/.config/i3lock/lock/lock -i $HOME/Pictures/Lockscreens/systemLocked_.png
-	# compton -b	
-}
-
-blurrLock() {
-	# killall compton
-	$HOME/.config/i3lock/fancyLock/lock
-	# compton -b	
+	i3lock-multimonitor -i $HOME/Pictures/Lockscreens/systemLocked_.png
+	# compton -b
 }
 
 case "$1" in
 	lock)
 		lock
-		;;
-	blurrLock)
-		blurrLock
 		;;
 	logout)
 		i3-msg exit
