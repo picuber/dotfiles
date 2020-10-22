@@ -1,4 +1,0 @@
-#!/bin/bash
-
-sudo umount /dev/sda4
-exit 0
