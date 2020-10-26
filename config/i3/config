@@ -240,7 +240,7 @@ bindsym $mod+w exec --no-startup-id i3-input -F 'workspace %s' -P 'Workspace: '
 bindsym $mod+Shift+w exec --no-startup-id i3-input -F 'move container to workspace %s' -P 'Workspace: '
 
 # define workspace names
-set $ws1 1:Term
+set $ws1 1:Main
 set $ws2 2:Side
 set $ws3 3
 set $ws4 4
@@ -249,7 +249,7 @@ set $ws6 6
 set $ws7 7:Steam
 set $ws8 8:Game
 set $ws9 9:Music
-set $ws10 10:Discord
+set $ws10 10:Msg
 set $ws11 11
 set $ws12 12:KeePass
 
@@ -293,11 +293,12 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # -----HOTKEYS/MEDIAKEYS-----
 
 # NumPad Hotkeys
-bindsym Num_Lock nop
+bindsym Num_Lock exec --no-startup-id $HOME/scripts/numLockState
 bindsym KP_Insert nop
-bindsym KP_End exec --no-startup-id playerctl previous # prev media
-bindsym KP_Down exec --no-startup-id playerctl play-pause # toggle media
-bindsym KP_Next exec --no-startup-id playerctl next # next media
+
+bindsym --release KP_End workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl prev # prev media
+bindsym --release KP_Down workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl playpause # toggle media
+bindsym --release KP_Next workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl next # next media
 bindsym KP_Left workspace prev_on_output
 bindsym KP_Begin workspace back_and_forth
 bindsym KP_Right workspace next_on_output
@@ -305,31 +306,42 @@ bindsym --release KP_Home exec --no-startup-id xdotool key XF86Back
 bindsym KP_Up nop
 bindsym --release KP_Prior exec --no-startup-id xdotool key XF86Forward
 
-# Media keys
-bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
-bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
-bindsym XF86AudioNext exec --no-startup-id playerctl next
-bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 
-# Audio keys
-bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/scripts/audioctl sound-inc
-bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/scripts/audioctl sound-dec
-bindsym XF86AudioMute exec --no-startup-id $HOME/scripts/audioctl sound-toggle
-bindsym XF86AudioMicMute exec --no-startup-id $HOME/scripts/audioctl mic-toggle
-
+# Audio keys dock
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +1% # increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -1% # decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id $HOME/scripts/muteToggle dock-audio # toggle mute sound
+bindsym XF86AudioMicMute exec --no-startup-id $HOME/scripts/muteToggle dock-mic # toggle mute microphone
+ 
+# Audio keys laptop
+bindsym Shift+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +1% # increase sound volume
+bindsym Shift+XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -1% # decrease sound volume
+bindsym Shift+XF86AudioMute exec --no-startup-id $HOME/scripts/muteToggle laptop-audio # toggle mute sound
+bindsym Shift+XF86AudioMicMute exec --no-startup-id $HOME/scripts/muteToggle laptop-mic # toggle mute microphone
+ 
 # Brightness keys
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 # decrease screen brightness
+
+# Media keys
+bindsym --release XF86AudioPlay workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl playpause # toggle media
+bindsym --release XF86AudioPause workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl playpause # pause media
+bindsym --release XF86AudioNext workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl next # next media
+bindsym --release XF86AudioPrev workspace $ws9, exec --no-startup-id $HOME/scripts/spotifyctrl prev # prev media
+
 
 # Extra keys
-bindsym XF86Display nop # F7
-bindsym XF86WLAN nop	# F8
-bindsym XF86Favorites nop # F12
-bindsym XF86WakeUp nop	# Fn
+bindsym XF86WLAN nop
+bindsym XF86Tools nop
+bindsym XF86Search nop
+bindsym XF86LaunchA nop
+bindsym XF86Explorer nop
 
 bindsym XF86Calculator exec urxvt -e ptipython
-bindsym XF86Sleep nop
+bindsym XF86HomePage exec firefox
+bindsym Shift+XF86HomePage exec chromium
+bindsym XF86MyComputer exec thunar
 
 
 # -----MODES-----
@@ -769,7 +781,7 @@ bar {
 bar{
 	id bar-1
 	position top
-	output HDMI-A-0
+	output DP1-1
 
 	tray_output none
 	strip_workspace_numbers yes
@@ -825,8 +837,6 @@ for_window [class="Spotify"] border none
 for_window [class="Tabletop Simulator.x86_64"] border none
 for_window [class="TelegramDesktop"] border none
 for_window [class="Terraria"] border none
-
-for_window [class="discord"] focus
 
 for_window [title="Minecraft Launcher"] floating enable
 for_window [class="mpv"] floating enable
