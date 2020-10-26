@@ -281,6 +281,10 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 bindsym $mod+Shift+bracketleft move container to workspace $ws11
 bindsym $mod+Shift+bracketright move container to workspace $ws12
 
+# set gaps, except for games
+gaps inner 10
+workspace $ws8 gaps inner 0
+
 # reload random background
 bindsym $mod+Shift+b exec --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/* --no-fehbg
 # reload the config file
