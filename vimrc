@@ -20,16 +20,15 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-obsession'
 
-Plug 'shougo/neocomplete'
+Plug 'maralla/completor.vim'
 
 Plug 'SirVer/ultisnips'
-
 Plug 'honza/vim-snippets'
 
 Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
-
 Plug 'Xuyuanp/nerdtree-git-plugin'
+
+Plug 'scrooloose/syntastic'
 
 Plug 'airblade/vim-gitgutter'
 
@@ -45,22 +44,13 @@ Plug 'AndrewRadev/switch.vim'
 
 Plug 'KabbAmine/zeavim.vim'
 
-" Plug 'mbbill/undotree'
 Plug 'simnalamburt/vim-mundo'
-
-" Plug 'sjl/gundo.vim'
-
-" Plug 'ktvoelker/sbt-vim'
-
-" Plug 'derekwyatt/vim-scala'
 
 Plug 'lervag/vimtex'
 
 Plug 'bronson/vim-trailing-whitespace'
 
-Plug 'dodie/vim-fibo-indent'
-
-Plug 'majutsushi/tagbar'
+Plug 'preservim/tagbar'
 
 Plug 'junegunn/fzf.vim'
 
@@ -68,12 +58,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
-
-Plug 'alvan/vim-closetag'
-
-Plug 'udalov/kotlin-vim'
-
-Plug 'Shadowsith/kotlincomplete.vim'
 
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
@@ -86,30 +70,9 @@ Plug 'vimwiki/vimwiki'
 
 call plug#end()
 
-" neocomplete
-let g:neocomplete#enable_at_startup = 1
-let g:neocomplete#enable_smart_case = 1
-let g:neocomplete#syntax#min_keyword_length = 3
-let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
-	"define dictionary
-let g:neocomplete#sources#dictionary#dictionaries = {
-			\'default' : '',
-			\'vimshell' : $HOME.'/.vimshell_hist',
-			\'scheme' : $HOME.'/.gosh_completions',
-			\'tex': '~/.vim/dictionaries/tex',
-			\}
-	"Define keyword
-if !exists('g:neocomplete#keyword_patterns')
-	let g:neocomplete#keyword_patterns = {}
-endif
-let g:neocomplete#keyword_patterns._ = '[a-zA-Z_äöüåÄÖÜÅß-][a-zA-Z0-9_äöüåÄÖÜÅß-]*' " match words starting with \h or umlauts/ß or -, and continues with \w, umlauts/ß and -
-	"<TAB>: completion
+	"<TAB>: completion, close with <Space>
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
-	"<C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-	"Close popup by <Space>.
 inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
 autocmd FileType python setlocal omnifunc=python3complete#Complete
@@ -164,10 +127,6 @@ nnoremap <silent> <C-n> :set relativenumber!<CR>:set number<CR>
 " disable for now
 let g:vimtex_enabled = 0
 
-" vim-fibo-indent
-" disable
-let g:FiboIndentDisable=1
-
 " Tagbar
 let g:tagbar_autofocus=1
 let g:tagbar_autoclose=1
@@ -213,6 +172,9 @@ colorscheme molokai
 syntax on " turn on syntax highlighting
 highlight Normal ctermbg=NONE guibg=NONE
 highlight Comment cterm=italic
+highlight ErrorMsg ctermbg=black guibg=black
+highlight Folded ctermbg=black guibg=black
+highlight PMenu ctermbg=darkgray guibg=black
 
 set cursorline
 set cursorcolumn
