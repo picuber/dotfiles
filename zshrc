@@ -81,10 +81,6 @@ function zat() {
 #  enviroment variables  #
 ##########################
 
-	# adds anaconda3 in front of system binaries to override python defaults
-	# had to ln -s /usr/share/terminfo/r/rxvt-unicode-256color /home/<user>/anaconda3/share/terminfo/r/rxvt-unicode-256color
-	#	as a workaround, since now terminfo files were all taken from there, but rxvt-unicode-256color was not present
-export -U PATH=$HOME/anaconda3/bin:$PATH
 	# adds Rust toolchain binaries
 export PATH="$PATH:$HOME/.cargo/bin"
 	# add dropbox.py
