@@ -309,6 +309,11 @@ bindsym --release KP_Home exec --no-startup-id xdotool key XF86Back
 bindsym KP_Up nop
 bindsym --release KP_Prior exec --no-startup-id xdotool key XF86Forward
 
+# NumPad+Control
+bindsym Control+KP_End exec --no-startup-id playerctl -p spotify previous # prev media
+bindsym Control+KP_Down exec --no-startup-id playerctl -p spotify play-pause # toggle media
+bindsym Control+KP_Next exec --no-startup-id playerctl -p spotify next # next media
+
 # Media keys
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
 bindsym XF86AudioPause exec --no-startup-id playerctl play-pause
