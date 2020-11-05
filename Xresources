@@ -8,8 +8,6 @@ URxvt*scrollBar: false
 !##fonts##!
 URxvt*allowBoldFonts: false
 URxvt*font: xft:Hack:style=Regular:size=8, xft:DejaVu Sans Mono:style=Book:size=8, xft:Symbola:size=8
-/* URxvt*font: xft:Roboto Mono:style=Regular:size=8 */
-/* URxvt*font: xft:Ubuntu Mono:style=Regular:size=10 */
 
 !##colours##!
 URxvt*foreground: #e0e0e0
@@ -34,7 +32,7 @@ URxvt*print-pipe: "cat > /dev/null"
 URxvt.perl-ext-common: default,matcher,font-size
 
 ! matcher:
-URxvt.url-launcher: /usr/local/bin/firefox
+URxvt.url-launcher: /usr/bin/firefox
 URxvt.matcher.button: 3
 URxvt.keysym.C-Delete: perl:matcher:last
 URxvt.keysym.M-Delete: perl:matcher:select
