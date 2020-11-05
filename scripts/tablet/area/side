@@ -1,2 +1,0 @@
-#!/bin/bash
-xsetwacom set "1060PRO Pen stylus" MapToOutput DP1-1
