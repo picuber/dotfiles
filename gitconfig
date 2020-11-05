@@ -4,6 +4,7 @@
 	signingkey = 510E34B701ED902A
 [merge]
 	tool = vimdiff
+	conflictstyle = diff3
 [log]
 	showsignature = false
 [commit]

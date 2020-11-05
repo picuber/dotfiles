@@ -1,20 +1,20 @@
 #!/bin/bash
-INTERNAL="eDP1"
+INTERNAL="eDP"
 DOCK="DP1-1"
-HDMI="HDMI2"
+HDMI="HDMI-A-0"
 
 case "$1" in 
 	normal)
 		xrandr --output $INTERNAL --auto --primary --output $DOCK --off --output $HDMI --off
 		;;
 	docked)
-		xrandr --output $INTERNAL --auto --primary --output $DOCK --auto --right-of $INTERNAL --output $HDMI --off
+		xrandr --output $INTERNAL --auto --primary --output $HDMI --auto --right-of $INTERNAL
 		;;
 	extented)
-		xrandr --output $INTERNAL --auto --primary --output $DOCK --off --output $HDMI --auto --right-of $INTERNAL
+		xrandr --output $INTERNAL --auto --primary --output $HDMI --auto --right-of $INTERNAL
 		;;
 	presentation)
-		xrandr --output $INTERNAL --auto --primary --output $DOCK --off --output $HDMI --auto --same-as $INTERNAL
+		xrandr --output $INTERNAL --auto --primary --output $HDMI --auto --same-as $INTERNAL
 		;;
 	*)
 		echo "Usage: $0 {normal|docked|extented|presentation}"
