@@ -1,0 +1,10 @@
+#!/bin/bash
+
+case "$1" in
+	v | dvorak) setxkbmap gb dvorak caps:escape ;;
+	g | gb) setxkbmap gb basic caps:escape ;;
+	n | neo) setxkbmap de neo -option ;;
+	d | de) setxkbmap de basic case:escape ;;
+	u | us) setxkbmap us basic caps:escape ;;
+	N | NEO) feh ~/Data/Cheatsheets/Neo2 & ;;
+esac
