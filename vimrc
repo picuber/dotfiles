@@ -59,6 +59,8 @@ Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 
+Plug 'cplaursen/vim-isabelle'
+
 Plug 'vim-pandoc/vim-pandoc'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'vim-pandoc/vim-pandoc-after'
@@ -153,6 +155,7 @@ set sidescroll=1 " sidescroll one collumn at a time
 set sidescrolloff=7 " Strart scrolling n collumns before vertical border of window
 
 set mouse=a " enable mouse support
+set ttymouse=sgr " this is needed for Alacritty
 
 set backupdir=~/.vim/backups// " put all backups in a central location
 set directory=~/.vim/swaps// " put all .swap files in a central location
