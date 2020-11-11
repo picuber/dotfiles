@@ -1,5 +1,5 @@
 [options]
-font = Hack 8
+font = Monospace 8
 fullscreen = false
 scrollback_lines = 10000
 browser = firefox
