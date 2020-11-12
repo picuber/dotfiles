@@ -1,0 +1,4 @@
+mdifnes fontconfig ~/.config
+lnifne fontconfig ~/.config/fontconfig ~/.dotfiles/config/fontconfig
+
+# vim: ft=bash

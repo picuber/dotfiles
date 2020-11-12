@@ -1,0 +1,4 @@
+mdifnes alacritty ~/.config
+lnifne alacritty ~/.config/alacritty ~/.dotfiles/config/alacritty
+
+# vim: ft=bash
