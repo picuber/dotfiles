@@ -1,0 +1,12 @@
+#!/bin/bash
+
+case "$1" in
+	root | full | all)
+		import -window root "$HOME/Pictures/Screenshots/`date +'%Y%m%d-%H%M%S'`.png"
+		;;
+	select | window | *)
+		import "$HOME/Pictures/Screenshots/`date +'%Y%m%d-%H%M%S'`.png"
+		;;
+esac
+
+exit 0

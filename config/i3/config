@@ -107,7 +107,7 @@
 # X: 1 2 3 4 5 6   8 9 10 11 12 C I F
 # ` 1 2 3 4 5 6 7 8 9 0 [ ]     NL / * - +
 #    ' , . _ y f _ c _ l / =    77 88 99
-#     a _ e u i d h t n s - #   44 55 66
+#     a _ e u i d h t n _ - #   44 55 66
 #    \ ; q j _ x b _ _ v z      11 22 33
 #    CR ESC TAB SP L U D R      00 . CR
 #
@@ -340,6 +340,15 @@ bindsym XF86WakeUp nop	# Fn
 
 bindsym XF86Calculator exec urxvt -e ptipython
 bindsym XF86Sleep nop
+
+
+# Keyboard Layout on NumPad
+bindcode $mod+Control+10 exec --no-startup-id $HOME/scripts/keyboard dvorak # 1
+bindcode $mod+Control+11 exec --no-startup-id $HOME/scripts/keyboard de # 2
+bindcode $mod+Control+12 exec --no-startup-id $HOME/scripts/keyboard gb # 3
+bindcode $mod+Control+13 exec --no-startup-id $HOME/scripts/keyboard us # 4
+bindcode $mod+Control+14 exec --no-startup-id $HOME/scripts/keyboard neo # 5
+bindcode $mod+Control+15 exec --no-startup-id $HOME/scripts/keyboard NEO # 6
 
 
 # -----MODES-----
@@ -705,6 +714,18 @@ mode "gaps" {
 	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps):" "Gaps Mode:\no: outer\ni: inner\nh: horizontal\nv: vertical\nt: top\nr: right\nb: bottom\nl: left"
 }
 
+mode "screenshot" {
+	bindsym --release $mod+a mode "default", exec --no-startup-id $HOME/scripts/screenshot all
+	bindsym --release $mod+c mode "default", exec --no-startup-id $HOME/scripts/screenshot
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (screenshot):" "Screenshot Mode:\na: all\nc: sele(c)t/cut"
+}
+
 mode "mode" {
 	bindsym r mode "resize"
 	bindsym $mod+r mode "resize"
@@ -716,10 +737,10 @@ mode "mode" {
 	bindsym $mod+m mode "macro"
 	bindsym o mode "open/rofi"
 	bindsym $mod+o mode "open/rofi"
-	bindsym k mode "keyboard"
-	bindsym $mod+k mode "keyboard"
 	bindsym g mode "gaps"
 	bindsym $mod+g mode "gaps"
+	bindsym s mode "screenshot"
+	bindsym $mod+s mode "screenshot"
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
