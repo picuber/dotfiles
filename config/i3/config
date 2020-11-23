@@ -715,7 +715,9 @@ mode "gaps" {
 }
 
 mode "screenshot" {
+	bindsym --release a mode "default", exec --no-startup-id $HOME/scripts/screenshot all
 	bindsym --release $mod+a mode "default", exec --no-startup-id $HOME/scripts/screenshot all
+	bindsym --release c mode "default", exec --no-startup-id $HOME/scripts/screenshot
 	bindsym --release $mod+c mode "default", exec --no-startup-id $HOME/scripts/screenshot
 
 	# back to normal: Enter or Escape
