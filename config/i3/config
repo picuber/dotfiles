@@ -306,7 +306,7 @@ bindsym KP_Left workspace prev_on_output
 bindsym KP_Begin workspace back_and_forth
 bindsym KP_Right workspace next_on_output
 bindsym --release KP_Home exec --no-startup-id xdotool key XF86Back
-bindsym KP_Up nop
+bindsym KP_Up exec firefox
 bindsym --release KP_Prior exec --no-startup-id xdotool key XF86Forward
 
 # NumPad+Control
