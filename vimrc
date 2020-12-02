@@ -54,10 +54,10 @@ Plug 'preservim/tagbar'
 
 Plug 'junegunn/fzf.vim'
 
-Plug 'rust-lang/rust.vim'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
+" Plug 'rust-lang/rust.vim'
+" Plug 'prabirshrestha/async.vim'
+" Plug 'prabirshrestha/vim-lsp'
+" Plug 'mattn/vim-lsp-settings'
 
 Plug 'cplaursen/vim-isabelle'
 
@@ -134,7 +134,7 @@ let g:tagbar_autofocus=1
 let g:tagbar_autoclose=1
 
 " rust.vim
-let g:rustfmt_autosave=1
+" let g:rustfmt_autosave=1
 
 " fzf
 set rtp+=~/.fzf
