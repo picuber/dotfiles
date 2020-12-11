@@ -1,4 +1,5 @@
 Session.vim
 .mypy_cache
+__pycache__
 .python-version
 
