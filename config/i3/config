@@ -338,7 +338,7 @@ bindsym XF86WLAN nop	# F8
 bindsym XF86Favorites nop # F12
 bindsym XF86WakeUp nop	# Fn
 
-bindsym XF86Calculator exec urxvt -e ptipython
+bindsym XF86Calculator exec alacritty -e ptipython
 bindsym XF86Sleep nop
 
 
