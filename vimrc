@@ -388,6 +388,11 @@ noremap <leader>suw zuw
 noremap <leader>oo :Obsession<CR>
 noremap <leader>od :Obsession!<CR>
 
+"----------hexdump----------
+noremap <leader>xx :%!xxd<CR>:set ft+=xxd<CR>
+noremap <leader>xr :%!xxd -r<CR>
+noremap <leader>xR :%!xxd -r<CR>:%!xxd<CR>
+
 "----------syntax/Syntastic----------
 noremap <leader>xpycp :let g:syntastic_python_checkers=["python"]<CR>
 noremap <leader>xpycf :let g:syntastic_python_checkers=["python", "flake8"]<CR>
