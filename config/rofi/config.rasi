@@ -1,5 +1,5 @@
 configuration {
-	terminal: "urxvt";
+	terminal: "alacritty";
 	separator-style: "solid";
 	color-normal: "argb:00272822, #f8f8f2, argb:00272822, #141411, #f8f8f2";
 	color-urgent: "argb:00272822, #f92672, argb:00272822, #f92672, #f8f8f2";
