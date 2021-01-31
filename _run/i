@@ -3,6 +3,13 @@
 prog=$0
 err=false
 
+
+green='\e[0;32m'
+yellow='\e[1;33m'
+red='\e[0;31m'
+blue='\e[0;34m'
+reset='\e[0m'
+
 usage() {
 	echo Usage: $prog \<program\> \[program\]*
 }
@@ -10,35 +17,35 @@ usage() {
 # param:
 # $1 prog name
 unknown() {
-	echo [$1] skipped unknown program
+	echo -e $blue[$1]$red skipped unknown program$reset
 }
 
 # param:
 # $1 prog name
 # $2 file name/path
 dupf() { # duplicate file, file already exists
-	echo [$1] [$2] skipped: already exists
+	echo -e $blue[$1]$reset [$2]$yellow skipped: already exists$reset
 }
 
 # param:
 # $1 prog name
 # $2 file name/path
 insf() { # installed file
-	echo [$1] [$2] installed
+	echo -e $blue[$1]$reset [$2]$green installed$reset
 }
 
 # param:
 # $1 prog name
 # $2 file name/path
 rembl() { # removed broken link
-	echo [$1] [$2] removed broken link to \'$3\'
+	echo -e $blue[$1]$reset [$2]$red removed broken link to \'$3\'$reset
 }
 
 # param:
 # $1 prog name
 # $2 file/directory name/path
 creatf() {
-	echo [$1] [$2] created
+	echo -e $blue[$1]$reset [$2]$green created$reset
 }
 
 # param:
