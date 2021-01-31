@@ -1,0 +1,4 @@
+mdifnes wallpapers ~/Pictures
+lnifne wallpapers ~/Pictures/Wallpapers ~/.dotfiles/Pictures/Wallpapers
+
+# vim: ft=bash
