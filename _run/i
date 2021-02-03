@@ -8,6 +8,7 @@ green='\e[0;32m'
 yellow='\e[1;33m'
 red='\e[0;31m'
 blue='\e[0;34m'
+purple='\e[0;35m'
 reset='\e[0m'
 
 usage() {
@@ -17,35 +18,35 @@ usage() {
 # param:
 # $1 prog name
 unknown() {
-	echo -e $blue[$1]$red skipped unknown program$reset
+	echo -e [$blue$1$reset]$red skipped unknown program$reset
 }
 
 # param:
 # $1 prog name
 # $2 file name/path
 dupf() { # duplicate file, file already exists
-	echo -e $blue[$1]$reset [$2]$yellow skipped: already exists$reset
+	echo -e [$blue$1$reset] [$purple$2$reset]$yellow skipped: already exists$reset
 }
 
 # param:
 # $1 prog name
 # $2 file name/path
 insf() { # installed file
-	echo -e $blue[$1]$reset [$2]$green installed$reset
+	echo -e [$blue$1$reset] [$purple$2$reset]$green installed$reset
 }
 
 # param:
 # $1 prog name
 # $2 file name/path
 rembl() { # removed broken link
-	echo -e $blue[$1]$reset [$2]$red removed broken link to \'$3\'$reset
+	echo -e [$blue$1$reset] [$purple$2$reset]$red removed broken link to \'$3\'$reset
 }
 
 # param:
 # $1 prog name
 # $2 file/directory name/path
 creatf() {
-	echo -e $blue[$1]$reset [$2]$green created$reset
+	echo -e [$blue$1$reset] [$purple$2$reset]$green created$reset
 }
 
 # param:
