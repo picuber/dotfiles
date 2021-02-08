@@ -824,6 +824,7 @@ assign [class="Tabletop Simulator.x86_64"] $ws8
 assign [class="Terraria"] $ws8
 assign [class="discord"] $ws10
 assign [class="Element"] $ws10
+assign [class="Signal"] $ws10
 assign [class="Slack"] $ws10
 assign [class="TelegramDesktop"] $ws10
 assign [class="KeePassXC"] $ws12
