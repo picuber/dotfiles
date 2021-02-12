@@ -1,0 +1,3 @@
+lnifne weechat ~/.weechat ~/.dotfiles/weechat
+
+# vim: ft=bash
