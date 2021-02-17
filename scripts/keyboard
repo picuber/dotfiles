@@ -2,6 +2,7 @@
 
 case "$1" in
 	v | dvorak) setxkbmap gb dvorak caps:escape ;;
+	v | dvorak) setxkbmap gb dvorak caps:escape compose:prsc ;;
 	g | gb) setxkbmap gb basic caps:escape ;;
 	n | neo) setxkbmap de neo -option ;;
 	d | de) setxkbmap de basic case:escape ;;
