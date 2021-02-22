@@ -388,6 +388,7 @@ mode "power" {
 	bindsym b mode "default", exec --no-startup-id $HOME/scripts/i3exit blurrLock
 	bindsym e mode "default", exec --no-startup-id $HOME/scripts/i3exit logout
 	bindsym s mode "default", exec --no-startup-id $HOME/scripts/i3exit suspend
+	bindsym Shift+s mode "default", exec --no-startup-id $HOME/scripts/i3exit suspend_nolock
 	bindsym h mode "default", exec --no-startup-id $HOME/scripts/i3exit hibernate
 	bindsym r mode "default", exec --no-startup-id $HOME/scripts/i3exit reboot
 	bindsym d mode "default", exec --no-startup-id $HOME/scripts/i3exit shutdown
@@ -397,7 +398,7 @@ mode "power" {
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (power):" "Power Mode:\nl: lock\nb: blurr\ne: logout\ns: suspend/sleep\nh: hibernate\nr: reboot\nd: shutdown"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (power):" "Power Mode:\nl: lock\nb: blurr\ne: logout\ns: suspend/sleep\nS: suspend only\nh: hibernate\nr: reboot\nd: shutdown"
 }
 
 # Type special characters

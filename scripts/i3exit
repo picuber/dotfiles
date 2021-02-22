@@ -16,6 +16,9 @@ case "$1" in
 	suspend)
 		lock && systemctl suspend
 		;;
+	suspend_nolock)
+		systemctl suspend
+		;;
 	hibernate)
 		lock && systemctl hibernate
 		;;
