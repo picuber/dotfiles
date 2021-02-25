@@ -818,7 +818,7 @@ client.background       #ffffff
 # -----WINDOW INITIALIZATION-----
 assign [class="Binding of Isaac: Afterbirth+"] $ws8
 assign [class="Dwarf_Fortress"] $ws8
-assign [title="Minecraft Launcher"] $ws8
+assign [class="Minecraft.*"] $ws8
 assign [class="superhexagon.x86_64"] $ws8
 assign [class="StardewValley.bin.x86_64"] $ws8
 assign [class="Tabletop Simulator.x86_64"] $ws8
@@ -839,7 +839,7 @@ for_window [class="Tabletop Simulator.x86_64"] border none
 for_window [class="TelegramDesktop"] border none
 for_window [class="Terraria"] border none
 
-for_window [title="Minecraft Launcher"] floating enable
+for_window [class="minecraft-launcher"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="vlc"] floating enable
 for_window [class="Zeal"] floating enable
@@ -847,6 +847,7 @@ for_window [class="Zeal"] floating enable
 for_window [class="Zeal"] resize set 1280 720
 
 for_window [class="Steam"] move to workspace $ws7
+for_window [class="minecraft-launcher"] move to workspace $ws8
 for_window [class="Spotify"] move to workspace $ws9
 
 for_window [title=".*Data/Cheatsheets/Neo2/.*"] floating enable, border 1pixel
