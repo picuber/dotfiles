@@ -73,8 +73,12 @@ alias gslol='glol --show-signature'
 ###############
 
 #always run zathura in the background
-function zat() {
+function zat {
 	zathura "$@" &!
+}
+
+function aurc {
+	git clone "https://aur.archlinux.org/${1:?"Please specify an AUR package name"}.git" "$HOME/Downloads/Installer/AUR/$1"
 }
 
 ##########################
