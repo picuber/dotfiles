@@ -1,5 +1,6 @@
 lnifne vim ~/.vimrc .dotfiles/vimrc
 mdifne vim ~/.vim
+lnifne vim ~/.vim/config ~/.dotfiles/vim/config
 lnifne vim ~/.vim/dictionaries ~/.dotfiles/vim/dictionaries
 lnifne vim ~/.vim/ftplugin ~/.dotfiles/vim/ftplugin
 lnifne vim ~/.vim/UltiSnips ~/.dotfiles/vim/UltiSnips

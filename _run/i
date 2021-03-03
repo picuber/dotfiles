@@ -51,6 +51,20 @@ creatf() {
 
 # param:
 # $1 prog name
+# $2 file/directory name/path
+clonerepo() {
+	echo -e [$blue$1$reset] [$purple$2$reset]$green cloning...$reset
+}
+
+# param:
+# $1 prog name
+# $2 file/directory name/path
+pullrepo() {
+	echo -e [$blue$1$reset] [$purple$2$reset]$green pulling...$reset
+}
+
+# param:
+# $1 prog name
 # $2 file target path
 # $3 relative file source path
 lnifne() { # link if not exists, if link broken overwrite
@@ -82,6 +96,20 @@ mdifne() {
 mdifnes() { # fail silently
 	if [ ! -e $2 ]; then
 		mkdir $2  && creatf $1 $2
+	fi
+}
+
+# param:
+# $1 prog name
+# $2 git repo
+# $3 target directory
+gclifneep() { # git clone if not exists, else pull
+	if [ ! -e $3 ]; then
+		clonerepo $1 $3
+		git clone "$2" $3
+	else
+		pullrepo $1 $3
+		(cd $3 && git pull)
 	fi
 }
 
