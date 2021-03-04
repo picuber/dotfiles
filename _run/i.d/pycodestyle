@@ -1,0 +1,4 @@
+mdifnes pycodestyle ~/.config
+lnifne pycodestyle ~/.config/pycodestyle ~/.dotfiles/config/pycodestyle
+
+# vim: ft=bash
