@@ -1,0 +1,113 @@
+"----------set no----------
+" 'no highlight', turns off search highlight until next search
+noremap <leader>nh :nohlsearch<CR>
+
+" 'no numbers', turns off line numbers
+noremap <leader>nn :set norelativenumber<CR>:set nonumber<CR>
+
+" 'no spell check', turns offf spell checking
+noremap <leader>ns :setlocal nospell<CR>
+
+" 'no background', removes background colour
+noremap <leader>nb :highlight Normal ctermbg=NONE guibg=NONE<CR>
+
+" 'no colorcolumns', turns off the columns at 80 and 120
+noremap <leader>nc :set colorcolumn=0<CR>
+
+
+"----------tabs----------
+noremap <leader>tc :tabnew<CR>
+noremap <leader>tn :tabnext<CR>
+noremap <leader>tl :tabnext<CR>
+noremap <leader>tp :tabprevious<CR>
+noremap <leader>th :tabprevious<CR>
+noremap <leader>tx :tabclose<CR>
+noremap <leader>td :tabclose<CR>
+noremap <leader>t0 :tabfirst<CR>
+noremap <leader>t$ :tablast<CR>
+noremap <leader>tt :tabs<CR>
+noremap <leader>to :tabonly<CR>
+noremap <leader>tmh :-tabmove<CR>
+noremap <leader>tmp :-tabmove<CR>
+noremap <leader>tml :+tabmove<CR>
+noremap <leader>tmn :+tabmove<CR>
+noremap <leader>tm0 :0tabmove<CR>
+noremap <leader>tm$ :$tabmove<CR>
+
+
+"----------reformat(indent)----------
+noremap <leader>i mfgg=G'fzz
+
+"----------whitespace----------
+noremap <leader>w :FixWhitespace<CR>
+
+"----------sppell checking----------
+	" set spelllang uk
+noremap <leader>sse :setlocal spelllang=en_gb<CR>
+	\:set spellfile=~/.vim/spell/en.utf-8.add<CR>
+
+	" set spelllang de
+noremap <leader>ssd :setlocal spelllang=de_de<CR>
+	\:set spellfile=~/.vim/spell/de.utf-8.add<CR>
+
+	" spell toggle
+noremap <leader>st :setlocal spell!<CR>
+noremap <leader>ss :setlocal spell<CR>
+
+	" goto next/prev bad word
+noremap <leader>sn ]s
+noremap <leader>sp [s
+
+	" suggest alternate words
+noremap <leader>sa z=
+
+	" set word as good/wrong/wrong
+noremap <leader>sg zg
+noremap <leader>sb zw
+noremap <leader>sw zw
+
+	" unset word as good/wrong/wrong
+noremap <leader>sug zug
+noremap <leader>sub zuw
+noremap <leader>suw zuw
+
+"----------vim-obsession----------
+noremap <leader>oo :Obsession<CR>
+noremap <leader>od :Obsession!<CR>
+
+"----------hexdump----------
+noremap <leader>xx :%!xxd<CR>:set ft+=xxd<CR>
+noremap <leader>xr :%!xxd -r<CR>
+noremap <leader>xR :%!xxd -r<CR>:%!xxd<CR>
+
+"----------ALE----------
+noremap <leader>af :ALEFix<CR>
+noremap <leader>ai :ALEInfo<CR>
+noremap <leader>ah :ALEHover<CR>
+noremap <leader>ad :ALEGoToDefinition<CR>
+noremap <leader>ar :ALEFindReferences<CR>
+noremap <leader>as :ALESymbolSearch<Space>
+noremap <leader>an :ALERename<CR>
+noremap <leader>ac :ALECodeAction<CR>
+
+""----------syntax/Syntastic----------
+"noremap <leader>xpycp :let g:syntastic_python_checkers=["python"]<CR>
+"noremap <leader>xpycf :let g:syntastic_python_checkers=["python", "flake8"]<CR>
+"noremap <leader>xpycl :let g:syntastic_python_checkers=["python", "pylint"]<CR>
+"noremap <leader>xpycm :let g:syntastic_python_checkers=["python", "mypy"]<CR>
+"	" both
+"noremap <leader>xpycb :let g:syntastic_python_checkers=["python", "flake8", "pylint"]<CR>
+"	" default
+"noremap <leader>xpycd :let g:syntastic_python_checkers=["python", "flake8", "mypy"]<CR>
+"	" other
+"noremap <leader>xpyco :let g:syntastic_python_checkers=["python", "pylint", "mypy"]<CR>
+"	" all
+"noremap <leader>xpyca :let g:syntastic_python_checkers=["python", "flake8", "pylint", "mypy"]<CR>
+
+"----------location list/errors----------
+"TODO
+
+"----------Quickfix list----------
+"TODO
+
+" vim:set ft=vim:

@@ -1,0 +1,68 @@
+"-----directories-----"
+set backupdir=~/.vim/backups// " put all backups in a central location
+set directory=~/.vim/swaps// " put all .swap files in a central location
+
+"-----layout-----"
+set shortmess+=I " don't show intro on empty startup
+set laststatus=2 " always show bottom line
+set showtabline=1 " only show tabline when at least 2 tabs are present
+set cursorline
+set cursorcolumn
+set colorcolumn=80,120 " sets a coloured column at 80 chars and 120 chars
+set wildmenu " show possible completions of commandline commands over statusline
+
+"-----mouse-----"
+set mouse=a " enable mouse support
+set ttymouse=sgr " this is needed for Alacritty
+
+"-----bells-----"
+set noerrorbells
+set visualbell " sets visual bell to disable all sounds
+set t_vb= " disables visual bells from the terminal
+
+"-----file handling-----"
+set autoread " reload files when changed externally
+set hidden " can put buffer to the background without writing to disk, will remember history/marks
+set updatetime=1000 " writes .swap files more often, updates GitGutter more often
+set encoding=utf-8
+set lazyredraw " don't redraw while executing macros
+set ttyfast " send more characters at a given time
+
+"-----filetype defaults-----"
+let g:tex_flavor = "latex"
+
+"-----lines/scrolling-----"
+set nowrap " one line in file is one line on scleen
+set scrolloff=3 " Strart scrolling n lines before horizontal border of window
+set sidescroll=1 " sidescroll one collumn at a time
+set sidescrolloff=7 " Strart scrolling n collumns before vertical border of window
+set whichwrap+=<,>,[,] " allow arrowkeys to wrap lines
+
+"-----word handling-----"
+set iskeyword+=-,ä,ö,ü,Ä,Ö,Ü,ß,å " adds as part of words
+
+"-----tabs/spaces-----"
+set tabstop=4 " one tab = 4 spaces
+set shiftwidth=4 " shift 4 spaces at autoindent
+set softtabstop=4 " enter 4 spaces when pressing tab
+set noexpandtab " keep tabs as tabs
+
+"-----search-----"
+set hlsearch " highlight searches
+set incsearch " show the 'best mach so far' as typed
+set ignorecase smartcase " make searches case-insensitive, unless they contais upper-case letters
+set gdefault " make default global (g flag) with :s, to make nonglobal add the g flag
+
+"-----command completion-----"
+set wildignorecase " complete filenames and directories case insensitive
+
+"-----ctags-----"
+set tags+=./.git/tags;,./.git/TAGS;,.git/tags;,.git/TAGS; " find ctags in any parent .git directory
+
+
+"-----statusline-----"
+" recrete statuslie for editing its layout (see https://unix.stackexchange.com/a/518439/274297)
+set statusline=%<%f\ %h%w%m%r%{ObsessionStatus(\"[S]\",\"\")}%=%-14.(%l,%c%V%)\ %P
+
+
+" vim:set ft=vim:

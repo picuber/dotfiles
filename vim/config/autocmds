@@ -1,0 +1,5 @@
+autocmd VimResized * wincmd =
+
+autocmd FileType python setlocal omnifunc=python3complete#Complete
+
+" vim:set ft=vim:

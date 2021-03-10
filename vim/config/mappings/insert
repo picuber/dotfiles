@@ -1,0 +1,14 @@
+	"<TAB>: completion, close with <Space>
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB>  pumvisible() ? "\<C-p>" : "\<S-TAB>"
+inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+" auto esc, really uncommon to type jj, jk, uncommon to type kk
+inoremap jj <ESC>
+inoremap jk <ESC>
+inoremap kk <ESC>
+
+" unusual to write ' ,' often meant as ', '
+" inoremap <Space>, ,<Space>
+
+" vim:set ft=vim:

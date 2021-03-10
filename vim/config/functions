@@ -1,0 +1,6 @@
+function! TrimSave()
+	FixWhitespace
+	write
+endfunction
+
+" vim:set ft=vim:

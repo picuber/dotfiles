@@ -1,0 +1,51 @@
+" NERDTree
+noremap <F2> :NERDTreeToggle<CR>
+noremap <F3> :NERDTreeFind<CR>
+
+" Windowing/buffer
+noremap <F4> :bd<CR>
+noremap <F5> :ls<CR>:b<Space>
+noremap <F6> :bprevious<CR>
+noremap <F7> :bnext<CR>
+noremap <F8> <C-^>
+noremap <F9> <C-w><C-w>
+
+" vim-mundo
+noremap <F10> :MundoToggle<CR>
+
+" Tagbar
+noremap <F11> :TagbarToggle<CR>
+
+" UltiSnips
+noremap <F12> :UltiSnipsEdit<CR>
+
+" easier EX commands
+noremap <Space> :
+
+" format json
+noremap =j :%!python3 -m json.tool<CR>
+
+" Bubble line
+noremap <C-up> ddkP
+noremap <C-down> ddp
+
+" duplicate line
+noremap <C-S-up> yyP
+noremap <C-S-down> yyp
+
+" yank rest of line
+noremap Y y$
+
+" swap t and f (t is easier to hit than f on Dvorak)
+"	(To char, aFter/beFore char)
+noremap t f
+noremap f t
+noremap T F
+noremap F T
+
+"-----vim-numbertoggle-----"
+" manually set mapping as it got dropped in version 2.0
+nnoremap <silent> <C-n> :set relativenumber!<CR>:set number<CR>
+
+
+" vim:set ft=vim:
