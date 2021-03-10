@@ -23,6 +23,11 @@ antigen bundle zsh-users/zsh-syntax-highlighting # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-autosuggestions # suggest recent matching commands from history
 antigen bundle zsh-users/zsh-completions # additional completion definitions
 
+export NVM_COMPLETION=true
+export NVM_AUTO_USE=true
+antigen bundle lukechilds/zsh-nvm # install and manage nvm (node version manager)
+antigen bundle lukechilds/zsh-better-npm-completion	 # better completion for npm (node package manager)
+
 # Load the theme.
 antigen theme robbyrussell
 # antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship		#TODO needs config
