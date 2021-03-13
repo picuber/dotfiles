@@ -82,6 +82,12 @@ function zat {
 	zathura "$@" &!
 }
 
+# open <today>.txt in vim
+function today {
+	vim `date "+%Y-%m-%d"`.txt
+}
+
+# AUR clone
 function aurc {
 	git clone "https://aur.archlinux.org/${1:?"Please specify an AUR package name"}.git" "$HOME/Downloads/Installer/AUR/$1"
 }
