@@ -85,10 +85,12 @@ noremap <leader>af :ALEFix<CR>
 noremap <leader>ai :ALEInfo<CR>
 noremap <leader>ah :ALEHover<CR>
 noremap <leader>ad :ALEGoToDefinition<CR>
-noremap <leader>ar :ALEFindReferences<CR>
+noremap <leader>ae :ALEFindReferences<CR>
 noremap <leader>as :ALESymbolSearch<Space>
-noremap <leader>an :ALERename<CR>
+noremap <leader>ar :ALERename<CR>
 noremap <leader>ac :ALECodeAction<CR>
+nmap <silent> <leader>ap <Plug>(ale_previous_wrap)
+nmap <silent> <leader>an <Plug>(ale_next_wrap)
 
 ""----------syntax/Syntastic----------
 "noremap <leader>xpycp :let g:syntastic_python_checkers=["python"]<CR>
