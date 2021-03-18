@@ -89,6 +89,7 @@ noremap <leader>ae :ALEFindReferences<CR>
 noremap <leader>as :ALESymbolSearch<Space>
 noremap <leader>ar :ALERename<CR>
 noremap <leader>ac :ALECodeAction<CR>
+noremap <leader>at :ALEToggle<CR>
 nmap <silent> <leader>ap <Plug>(ale_previous_wrap)
 nmap <silent> <leader>an <Plug>(ale_next_wrap)
 
