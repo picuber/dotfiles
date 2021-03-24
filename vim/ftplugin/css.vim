@@ -4,5 +4,5 @@ setlocal shiftwidth=2
 setlocal softtabstop=2
 setlocal expandtab
 
-let b:ale_linters = [ 'eslint', 'tsserver' ]
-let b:ale_fixers = [ 'eslint', 'prettier' ]
+let b:ale_linters = [ 'stylelint' ]
+let b:ale_fixers = [ 'stylelint', 'prettier' ]

@@ -87,7 +87,7 @@ let NERDTreeShowHidden=1
  			\ 'colorscheme': 'deus',
  			\ 'active': {
  		    \	'left': [ [ 'mode', 'paste' ],
- 		    \			  [ 'readonly', 'buffertype', 'filename', 'modified' ] ],
+ 		    \			  [ 'readonly', 'buffertype', 'relativepath', 'modified' ] ],
  		    \	'right': [ [ 'lineinfo' ],
  		    \              [ 'percent' ],
  		    \              [ 'charvaluehex', 'fileformat', 'fileencoding', 'filetype' ] ] },
@@ -103,20 +103,8 @@ let NERDTreeShowHidden=1
  			\ }
 
 "-----ALE-----"
+" set linters explicitly (via ftplugins)
 let g:ale_linters_explicit=1
-let g:ale_linters = {
-			\ 'python': [ 'flake8', 'mypy', 'pycodestyle', 'pyls' ],
-			\ 'javascript': [ 'eslint', 'tsserver' ],
-			\ 'html': [ 'htmlhint' ],
-			\ 'cpp': [ 'g++', 'clangd' ],
-			\ 'c': [ 'gcc', 'clangd' ],
-			\ 'tex': [ 'lacheck' ],
-			\ }
-let g:ale_fixers = {
-			\ 'python': [ 'autopep8', 'autoimport', 'isort' ],
-			\ 'javascript': [ 'eslint', 'prettier' ],
-			\ 'html': [ 'prettier' ]
-			\ }
 
 ""-----Syntastic-----"
 "" set statusline+=%#warningmsg#
