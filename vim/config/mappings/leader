@@ -43,11 +43,11 @@ noremap <leader>w :FixWhitespace<CR>
 
 "----------sppell checking----------
 	" set spelllang uk
-noremap <leader>sse :setlocal spelllang=en_gb<CR>
+noremap <leader>sse :setlocal spelllang=en_gb,cjk<CR>
 	\:set spellfile=~/.vim/spell/en.utf-8.add<CR>
 
 	" set spelllang de
-noremap <leader>ssd :setlocal spelllang=de_de<CR>
+noremap <leader>ssd :setlocal spelllang=de_de,cjk<CR>
 	\:set spellfile=~/.vim/spell/de.utf-8.add<CR>
 
 	" spell toggle
