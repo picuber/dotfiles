@@ -47,7 +47,7 @@ Plug 'dhruvasagar/vim-table-mode'
 Plug 'mattn/emmet-vim'			"expanding abbreviations for HTML/CSS
 
 "-----tools-----"
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 
 "-----pandoc-----"
 Plug 'vim-pandoc/vim-pandoc'
@@ -159,6 +159,9 @@ set rtp+=~/.fzf
 
 "-----vim-table-mode-----"
 let g:table_mode_tableize_map="<Leader>tz"
+
+"-----vim-pandoc-syntax-----"
+let g:pandoc#syntax#conceal#urls=1
 
 "-----vim-pandoc-after-----"
 let g:pandoc#after#modules#enabled = ["ultisnips"]

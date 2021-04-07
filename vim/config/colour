@@ -7,4 +7,7 @@ highlight ErrorMsg ctermbg=black guibg=black
 highlight Folded ctermbg=black guibg=black
 highlight PMenu ctermbg=darkgray guibg=black
 
+" Pandoc conceal background
+highlight Conceal ctermbg=black
+
 " vim:set ft=vim:
