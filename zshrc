@@ -81,6 +81,9 @@ alias gslol='glol --show-signature'
 function zat {
 	zathura "$@" &!
 }
+function feh {
+	feh "$@" &!
+}
 
 # open <today>.txt in vim
 function today {
