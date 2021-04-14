@@ -82,7 +82,7 @@ function zat {
 	zathura "$@" &!
 }
 function feh {
-	feh "$@" &!
+	/usr/bin/feh "$@" &!
 }
 
 # open <today>.txt in vim
