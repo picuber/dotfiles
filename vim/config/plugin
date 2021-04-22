@@ -6,6 +6,13 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 
+"-----ALE-----"
+" Some ALE settings have to be set before the plugin is loaded
+" set linters explicitly (via ftplugins)
+let g:ale_linters_explicit=1
+let g:ale_completion_enabled=1
+
+
 call plug#begin('~/.vim/plugged')
 "-----vim-plug-----"
 Plug 'junegunn/vim-plug'	" added as plugin for vim help (https://github.com/junegunn/vim-plug/wiki/tips)
@@ -101,10 +108,6 @@ let NERDTreeShowHidden=1
  			\ 'component_visible_condition': {
  			\	'buffertype': '&buftype=="help"||&previewwindow '}
  			\ }
-
-"-----ALE-----"
-" set linters explicitly (via ftplugins)
-let g:ale_linters_explicit=1
 
 ""-----Syntastic-----"
 "" set statusline+=%#warningmsg#
