@@ -828,6 +828,7 @@ assign [class="Element"] $ws10
 assign [class="Signal"] $ws10
 assign [class="Slack"] $ws10
 assign [class="TelegramDesktop"] $ws10
+assign [class="Zulip"] $ws10
 assign [class="KeePassXC"] $ws12
 
 for_window [class=".*"] border 1pixel	# needed for gaps to work
