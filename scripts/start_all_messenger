@@ -1,0 +1,9 @@
+#!/bin/bash
+discord-ptb &!
+element-desktop &!
+element-desktop --profile FSMPI &!
+element-desktop --profile TUM &!
+signal-desktop --use-tray-icon &!
+slack &!
+telegram-desktop &!
+zulip &!
