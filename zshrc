@@ -130,9 +130,6 @@ function aurd {
 export PATH="$PATH:$HOME/.cargo/bin"
 	# add dropbox.py
 export PATH="$PATH:/opt/dropbox/bin"
-	# add pyenv variables
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
 	# this makes git ask me for gpg passphrase
 export GPG_TTY=$(tty)
 export EDITOR=vim
@@ -152,7 +149,9 @@ export FZF_ALT_C_OPTS="--multi --exact --reverse --inline-info --border --height
 ################
 
 # set tab width to 4
-tabs -4
+if type tabs > /dev/null; then
+	tabs -4
+fi
 
 # setup fzf keybindings (Ctrl-R: history, Ctrl-T: paste selected, Alt-C: cd into dir)
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
