@@ -136,7 +136,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Shift+Return exec termite
 bindsym $mod+Return exec alacritty
-bindsym $mod+Control+Return exec urxvt
+bindsym $mod+Control+Return exec kitty
 bindsym $mod+Shift+Control+Return exec i3-sensible-terminal
 
 # start a browser
