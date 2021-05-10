@@ -1,4 +1,6 @@
 	# add pyenv to path
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init --path)"
+if type pyenv > /dev/null; then
+	eval "$(pyenv init --path)"
+fi
