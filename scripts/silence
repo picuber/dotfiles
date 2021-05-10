@@ -1,2 +1,2 @@
 #!/bin/bash
-rmmod pcspkr
+sudo rmmod pcspkr
