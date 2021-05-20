@@ -84,6 +84,9 @@ function zat {
 function feh {
 	/usr/bin/feh "$@" &!
 }
+function xournal {
+	xournalpp "$@" &!
+}
 
 # open <today>.txt in vim
 function today {
