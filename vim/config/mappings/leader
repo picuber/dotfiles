@@ -34,6 +34,68 @@ noremap <leader>tmn :+tabmove<CR>
 noremap <leader>tm0 :0tabmove<CR>
 noremap <leader>tm$ :$tabmove<CR>
 
+"----------buffer----------
+noremap <leader>bs :ls<CR>:b<Space>
+noremap <leader>bb <C-^>
+noremap <leader>bn :bnext<CR>
+noremap <leader>bl :bnext<CR>
+noremap <leader>bp :bprevious<CR>
+noremap <leader>bh :bprevious<CR>
+noremap <leader>bx :bdelete<CR>
+noremap <leader>bd :bdelete<CR>
+noremap <leader>bX :ls<CR>:bdelete<Space>
+noremap <leader>bD :ls<CR>:bdelete<Space>
+
+"----------window----------
+noremap <leader>wcs :new<CR>
+noremap <leader>wcv :vnew<CR>
+noremap <leader>wcn :sbnext<CR>
+noremap <leader>wcl :sbnext<CR>
+noremap <leader>wcp :sbprevious<CR>
+noremap <leader>wch :sbprevious<CR>
+noremap <leader>wx :close<CR>
+noremap <leader>wd :close<CR>
+noremap <leader>wo :only<CR>
+noremap <leader>wW <C-W><C-P>
+noremap <leader>ww <C-W><C-W>
+noremap <leader>wj <C-W><C-J>
+noremap <leader>wk <C-W><C-K>
+noremap <leader>wh <C-W><C-H>
+noremap <leader>wl <C-W><C-L>
+noremap <leader>wmr <C-W>r
+noremap <leader>wmR <C-W>R
+noremap <leader>wmx <C-W><C-X>
+noremap <leader>wmj <C-W>J
+noremap <leader>wmk <C-W>K
+noremap <leader>wmh <C-W>H
+noremap <leader>wml <C-W>L
+noremap <leader>wmt <C-W>T
+noremap <leader>wrq 5<C-W>=
+noremap <leader>wr= 5<C-W>=
+noremap <leader>wrj 5<C-W>-
+noremap <leader>wrk 5<C-W>+
+noremap <leader>wrh 5<C-W><
+noremap <leader>wrl 5<C-W>>
+
+"----------fzf----------
+noremap <leader>ff :Files<CR>
+noremap <leader>fF :Files<Space>
+noremap <leader>fg :GFiles<CR>
+noremap <leader>fG :GFiles?<CR>
+noremap <leader>fb :Buffers<CR>
+noremap <leader>fl :Lines<CR>
+noremap <leader>fL :BLines<CR>
+noremap <leader>ft :Tags<CR>
+noremap <leader>fT :BTags<CR>
+noremap <leader>fm :Marks<CR>
+noremap <leader>fw :Windows<CR>
+noremap <leader>fh :History<CR>
+noremap <leader>fs :Snippets<CR>
+noremap <leader>fc :Commits<CR>
+noremap <leader>fC :BCommits<CR>
+noremap <leader>fM :Maps<CR>
+noremap <leader>fH :Helptags<CR>
+noremap <leader>fy :Filetypes<CR>
 
 "----------reformat(indent)----------
 noremap <leader>i mfgg=G'fzz
