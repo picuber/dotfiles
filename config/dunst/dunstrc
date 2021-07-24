@@ -54,12 +54,6 @@
     browser = /usr/bin/firefox
 
 
-[shortcuts]
-    close = mod4+apostrophe
-    close_all = mod4+shift+apostrophe
-    history = mod4+shift+comma
-    context = mod4+shift+period
-
 [urgency_low]
     background = "#2a2a2a"
     foreground = "#00CC00"
