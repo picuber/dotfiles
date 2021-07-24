@@ -342,13 +342,15 @@ bindsym XF86Calculator exec alacritty -e ptipython
 bindsym XF86Sleep nop
 
 
-# Keyboard Layout on NumPad
-bindcode $mod+Control+10 exec --no-startup-id $HOME/scripts/keyboard dvorak # 1
-bindcode $mod+Control+11 exec --no-startup-id $HOME/scripts/keyboard de # 2
-bindcode $mod+Control+12 exec --no-startup-id $HOME/scripts/keyboard gb # 3
-bindcode $mod+Control+13 exec --no-startup-id $HOME/scripts/keyboard us # 4
-bindcode $mod+Control+14 exec --no-startup-id $HOME/scripts/keyboard neo # 5
-bindcode $mod+Control+15 exec --no-startup-id $HOME/scripts/keyboard NEO # 6
+# Keyboard Layout on the number row
+bindcode $mod+Control+10		exec --no-startup-id $HOME/scripts/keyboard dvorak_compose # 1
+bindcode $mod+Control+Shift+10	exec --no-startup-id $HOME/scripts/keyboard dvorak # 1
+bindcode $mod+Control+11		exec --no-startup-id $HOME/scripts/keyboard de # 2
+bindcode $mod+Control+12		exec --no-startup-id $HOME/scripts/keyboard neo # 3
+bindcode $mod+Control+Shift+12	exec --no-startup-id $HOME/scripts/keyboard NEO # 3
+bindcode $mod+Control+13		exec --no-startup-id $HOME/scripts/keyboard gb # 4
+bindcode $mod+Control+14		exec --no-startup-id $HOME/scripts/keyboard us # 5
+bindcode $mod+Control+Shift+19	exec --no-startup-id $HOME/scripts/keyboard KR # 0
 
 
 # -----MODES-----
@@ -853,6 +855,7 @@ for_window [class="minecraft-launcher"] move to workspace $ws8
 for_window [class="Spotify"] move to workspace $ws9
 
 for_window [title=".*Data/Cheatsheets/Neo2/.*"] floating enable, border 1pixel
+for_window [title=".*Data/Cheatsheets/Korean/Dubeolsik.png.*"] floating enable, border 1pixel
 
 # -----AUTOSTART-----
 exec --no-startup-id nextcloud

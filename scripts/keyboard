@@ -2,10 +2,12 @@
 
 case "$1" in
 	v | dvorak) setxkbmap -option; setxkbmap gb dvorak caps:escape ;;
-	V | dvorak_compose) setxkbmap gb dvorak caps:escape compose:prsc ;;
+	V | dvorak_compose) setxkbmap -option; setxkbmap gb dvorak caps:escape compose:prsc ;;
 	g | gb) setxkbmap -option; setxkbmap gb basic caps:escape ;;
-	n | neo) setxkbmap de neo -option ;;
 	d | de) setxkbmap -option; setxkbmap de basic case:escape ;;
 	u | us) setxkbmap -option; setxkbmap us basic caps:escape ;;
+	n | neo) setxkbmap de neo -option ;;
+
 	N | NEO) feh ~/Data/Cheatsheets/Neo2 & ;;
+	K | KR) feh ~/Data/Cheatsheets/Korean/Dubeolsik.png & ;;
 esac
