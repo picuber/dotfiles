@@ -1,10 +1,12 @@
 configuration {
+	modi: "drun,run,window";
 	terminal: "alacritty";
-	separator-style: "solid";
-	color-normal: "argb:00272822, #f8f8f2, argb:00272822, #141411, #f8f8f2";
-	color-urgent: "argb:00272822, #f92672, argb:00272822, #f92672, #f8f8f2";
-	color-active: "argb:00272822, #a6e22a, argb:00272822, #141411, #a6e22a";
-	color-window: "argb:ee272822, #002b36, #e6db74";
-	kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab";
-	kb-row-up: "Up,Control+p,ISO_Left_Tab";
+
+	filebrowser {
+		directories-first: true;
+		sorting-method:    "name";
+	}
 }
+
+@theme "/usr/share/rofi/themes/Monokai.rasi"
+* { border-color: @lightfg; }
