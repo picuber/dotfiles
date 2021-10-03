@@ -44,3 +44,7 @@ Host nao
 Host ascrun
 	User nethack
 	HostName ascension.run
+
+Host web
+	User picuber
+	Hostname 49.12.207.170
