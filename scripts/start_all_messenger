@@ -6,4 +6,5 @@ element-desktop --profile TUM &!
 signal-desktop --use-tray-icon &!
 slack &!
 telegram-desktop &!
+threema &!
 zulip &!
