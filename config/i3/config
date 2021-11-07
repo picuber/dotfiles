@@ -828,6 +828,7 @@ assign [class="superhexagon.x86_64"] $ws8
 assign [class="StardewValley.bin.x86_64"] $ws8
 assign [class="Tabletop Simulator.x86_64"] $ws8
 assign [class="Terraria"] $ws8
+assign [class="tModLoader.bin.x86_64"] $ws8
 assign [class="discord"] $ws10
 assign [class="Element"] $ws10
 assign [class="Signal"] $ws10
@@ -846,6 +847,7 @@ for_window [class="Spotify"] border none
 for_window [class="Tabletop Simulator.x86_64"] border none
 for_window [class="TelegramDesktop"] border none
 for_window [class="Terraria"] border none
+for_window [class="tModLoader.bin.x86_64"] border none
 
 for_window [class="minecraft-launcher"] floating enable
 for_window [class="mpv"] floating enable
