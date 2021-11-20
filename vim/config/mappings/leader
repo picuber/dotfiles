@@ -103,14 +103,21 @@ noremap <leader>i mfgg=G'fzz
 "----------whitespace----------
 noremap <leader>w :FixWhitespace<CR>
 
-"----------sppell checking----------
-	" set spelllang uk
-noremap <leader>sse :setlocal spelllang=en_gb,cjk<CR>
-	\:set spellfile=~/.vim/spell/en.utf-8.add<CR>
+"----------spell checking----------
+	" set language
+noremap <leader>sld :setlocal spelllang=de_de,cjk<CR>
+noremap <leader>sle :setlocal spelllang=en_gb,cjk<CR>
+noremap <leader>slo :setlocal spelllang=eo,cjk<CR>
+noremap <leader>sls :setlocal spelllang=sv,cjk<CR>
+noremap <leader>slt :setlocal spelllang=tp,cjk<CR>
 
-	" set spelllang de
-noremap <leader>ssd :setlocal spelllang=de_de,cjk<CR>
-	\:set spellfile=~/.vim/spell/de.utf-8.add<CR>
+	" set mixed/multi
+" common
+noremap <leader>smc :setlocal spelllang=de_de,en_gb,cjk<CR>
+" all
+noremap <leader>sma :setlocal spelllang=de_de,en_gb,eo,sv,tp,cjk<CR>
+" toki + english
+noremap <leader>smt :setlocal spelllang=en_gb,tp,cjk<CR>
 
 	" spell toggle
 noremap <leader>st :setlocal spell!<CR>

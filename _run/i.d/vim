@@ -3,6 +3,7 @@ mdifne vim ~/.vim
 lnifne vim ~/.vim/config ~/.dotfiles/vim/config
 lnifne vim ~/.vim/dictionaries ~/.dotfiles/vim/dictionaries
 lnifne vim ~/.vim/ftplugin ~/.dotfiles/vim/ftplugin
+lnifne vim ~/.vim/spell ~/.dotfiles/vim/spell
 lnifne vim ~/.vim/UltiSnips ~/.dotfiles/vim/UltiSnips
 mdifne vim ~/.vim/backups
 mdifne vim ~/.vim/swaps
