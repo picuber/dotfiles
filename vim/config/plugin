@@ -52,6 +52,7 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'tweekmonster/braceless.vim'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'mattn/emmet-vim'			"expanding abbreviations for HTML/CSS
+Plug 'chrisbra/unicode.vim'
 
 "-----tools-----"
 " Plug 'vimwiki/vimwiki'

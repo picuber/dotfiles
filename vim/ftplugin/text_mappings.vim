@@ -94,3 +94,5 @@ inoremap <LocalLeader>cmu ∪
 " other
 "		" horizontal ellipsis
 inoremap <LocalLeader>coe …
+		" mathematical \"not\" as diacritic
+inoremap <LocalLeader>con <C-v>u0338
