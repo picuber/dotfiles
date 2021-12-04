@@ -131,7 +131,7 @@ function aurd {
 ##########################
 
 	# adds Rust toolchain binaries
-export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$HOME/.cargo/bin:$PATH"
 	# add dropbox.py
 export PATH="$PATH:/opt/dropbox/bin"
 	# this makes git ask me for gpg passphrase
