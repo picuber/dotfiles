@@ -88,6 +88,8 @@ inoremap <LocalLeader>cmy ∅
 inoremap <LocalLeader>cmh ∩
 		" \cup
 inoremap <LocalLeader>cmu ∪
+		" \vdash, entails/proves/satisfies
+inoremap <LocalLeader>cmw ⊢
 
 
 
