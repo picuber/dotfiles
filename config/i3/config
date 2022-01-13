@@ -322,6 +322,7 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/scripts/audioctl sound-i
 bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/scripts/audioctl sound-dec
 bindsym XF86AudioMute exec --no-startup-id $HOME/scripts/audioctl sound-toggle
 bindsym XF86AudioMicMute exec --no-startup-id $HOME/scripts/audioctl mic-toggle
+bindsym Shift+XF86AudioMicMute exec --no-startup-id $HOME/scripts/audioctl mic-reset
 
 # Brightness keys
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
