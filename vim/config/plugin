@@ -58,10 +58,10 @@ Plug 'chrisbra/unicode.vim'
 " Plug 'vimwiki/vimwiki'
 
 "-----pandoc-----"
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'vim-pandoc/vim-pandoc-after'
-Plug 'vim-pandoc/vim-markdownfootnotes'
+" Plug 'vim-pandoc/vim-pandoc'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
+" Plug 'vim-pandoc/vim-pandoc-after'
+" Plug 'vim-pandoc/vim-markdownfootnotes'
 
 "-----program integration-----"
 Plug 'KabbAmine/zeavim.vim'		"zeal
@@ -161,10 +161,10 @@ set rtp+=~/.fzf
 let g:table_mode_tableize_map="<Leader>tz"
 
 "-----vim-pandoc-syntax-----"
-let g:pandoc#syntax#conceal#urls=1
+" let g:pandoc#syntax#conceal#urls=1
 
 "-----vim-pandoc-after-----"
-let g:pandoc#after#modules#enabled = ["ultisnips"]
+" let g:pandoc#after#modules#enabled = ["ultisnips"]
 
 "-----vim-closetag-----"
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
