@@ -61,7 +61,9 @@ alias l='ls -CF'
 	# vim commands
 alias :q=exit
 alias :Q=exit
-alias :e=vim
+alias :e=nvim
+
+alias v=nvim
 
 	# shorter clear command
 alias cls=clear
@@ -87,9 +89,9 @@ function xournal {
 	xournalpp "$@" &!
 }
 
-# open <today>.txt in vim
+# open <today>.txt in nvim
 function today {
-	vim `date "+%Y-%m-%d"`.txt
+	nvim `date "+%Y-%m-%d"`.txt
 }
 
 # AUR clone
@@ -134,7 +136,7 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$PATH:/opt/dropbox/bin"
 	# this makes git ask me for gpg passphrase
 export GPG_TTY=$(tty)
-export EDITOR=vim
+export EDITOR=nvim
 
 
 	# fzf
