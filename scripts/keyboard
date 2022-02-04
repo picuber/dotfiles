@@ -10,4 +10,5 @@ case "$1" in
 
 	N | NEO) feh ~/Data/Cheatsheets/Neo2 & ;;
 	K | KR) feh ~/Data/Cheatsheets/Korean/Dubeolsik.png & ;;
+	S | STENO) feh ~/Data/Cheatsheets/Steno/layout.png & ;;
 esac

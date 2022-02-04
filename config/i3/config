@@ -735,6 +735,24 @@ mode "screenshot" {
 	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (screenshot):" "Screenshot Mode:\na: all\nc: sele(c)t/cut"
 }
 
+mode "plover" {
+	bindsym s mode "default", exec --no-startup-id plover
+	bindsym $mod+s mode "default", exec --no-startup-id plover
+	bindsym l mode "default", exec --no-startup-id $HOME/scripts/keyboard STENO
+	bindsym $mod+l mode "default", exec --no-startup-id $HOME/scripts/keyboard STENO
+	bindsym t mode "default", exec --no-startup-id plover_send_command toggle
+	bindsym $mod+t mode "default", exec --no-startup-id plover_send_command toggle
+	bindsym q mode "default", exec --no-startup-id plover_send_command quit
+	bindsym $mod+q mode "default", exec --no-startup-id plover_send_command quit
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (plover):" "Plover Mode:\ns: start\nt: toggle output\nq: quit"
+}
+
 mode "mode" {
 	bindsym r mode "resize"
 	bindsym $mod+r mode "resize"
@@ -750,13 +768,15 @@ mode "mode" {
 	bindsym $mod+g mode "gaps"
 	bindsym s mode "screenshot"
 	bindsym $mod+s mode "screenshot"
+	bindsym v mode "plover"
+	bindsym $mod+v mode "plover"
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (mode):" "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro\no: Open/rofi\nk: Keyboard\ng: Gaps"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (mode):" "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro\no: Open/rofi\nk: Keyboard\ng: Gaps\ns: Screenshot\nv: Plo(v)er"
 }
 bindsym $mod+m mode "mode"
 bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help:" "Mod4+m: mode menu"
