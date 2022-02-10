@@ -7,7 +7,6 @@ antigen use oh-my-zsh
 #antigen bundle man # call man on prev command [CONFLICTS with vi-mode]
 #antigen bundle sudo # ESC ESC adds sudo to the command [CONFLICTS with vi-mode]
 #antigen bundle command-not-found # [CONFLICTS with Debian (only for Ubuntu and openSUSE)]
-#antigen bundle compleat # command-line completions with usage files in ~/.compleat [DOESN'T WORK because ???]
 antigen bundle git # adds many git aliases and functions
 antigen bundle vi-mode # vim like normal-mode with ESC
 antigen bundle rsync # rsync aliases
@@ -78,10 +77,12 @@ alias gslol='glol --show-signature'
 #  Functions  #
 ###############
 
+autoload -U +X compinit && compinit
 #always run zathura in the background
 function zat {
 	zathura "$@" &!
 }
+compdef _zathura zat
 function feh {
 	/usr/bin/feh "$@" &!
 }
