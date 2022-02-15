@@ -1,84 +1,61 @@
-"
-"
-" Commands
-"
-"
-"
-" for themes put a theme.css in ~/.config/tridactyl/themes/
-" then load it with `:colourscheme theme`
-" default themes: 'default', 'dark', 'greenmat', 'halloween', 'quake', 'shydactyl'
+" reset settings on load
+sanitise tridactyllocal tridactylsync
+
+" -- colour scheme --
+" customs in ~/.config/tridactyl/themes/
 colourscheme quake
 
+" -- settings --
+set	hintfiltermode vimperator-reflow
+set hintchars 0123489
 
-"
-"
-" Binds
-"
-"
+set smoothscroll true
 
-
-" copy some behaivour from cVim
-bind u scrollpage -.5
-bind d scrollpage .5
-bind x quit
-bind X undo
-bind q hint -;
+" -- binds --
 
 " find next/prev with n/N [2]
 bind n exclaim_quiet xdotool getactivewindow key F3
 bind N exclaim_quiet xdotool getactivewindow key Shift+F3
 
+bind u scrollpage -.5
+bind d scrollpage .5
+bind x quit
+bind X undo
 
-" open from bookmarks, move old binding from O to Oc ("open current")
-unbind O
-bind Oc current_url open
-bind Ob fillcmdline bmarks
-
-
-" Git{Hub, Lab} git clone via SSH yank [1]
+" Git{Hub, Lab} git clone via SSH yank [3]
 bind yg composite js "git clone " + document.location.href.replace(/https?:\/\//,"git@").replace("/",":").replace(/$/,".git") | clipboard yank
 
-
-" Handy multiwindow/multitasking binds [1]
+" multitasking [3]
 bind gd tabdetach
-bind gD composite tabduplicate | tabdetach
+bind gD tabduplicate
 
-"
-"
-" Settings
-"
-"
+" right click menu [3]
+command hint_focus hint -;
+bind ;C composite hint_focus; !s xdotool key Menu
 
-" change the newtab page back
-" set newtab about:blank	" just hides the default tridactyl info page
-" set newtab about:home		" opens two tabs: about:blank AND about:home
+" -- blocklist --
+" set ignore mode per default on these sites
+blacklistadd ^(http[s]?://)mail\.google\.com/.*
+blacklistadd ^(http[s]?://)www\.inoreader\.com/.*
+blacklistadd ^(http[s]?://)(www|old)\.reddit\.com/.*
 
+" -- site specific --
+" only hint search results [3]
+bindurl ^(http[s]?://)duckduckgo.com f hint -Jc [class~=result__a]
+bindurl ^(http[s]?://)duckduckgo.com F hint -Jbc [class~=result__a]
 
-" change hintstyle
-set	hintfiltermode vimperator-reflow
-set hintchars 0123456789
-
-
-" smooth scrolling
-set smoothscroll true
-
-
-" Misc/Mixed
-"
-"
+" -- redirects --
+" use AmazonSmile
+autocmd DocStart ^(http[s]?://)www.amazon.de js tri.excmds.urlmodify("-t", "www", "smile")
+" use old reddit, unless new is specified
+autocmd DocStart ^(http[s]?://)www.reddit.com js tri.excmds.urlmodify("-t", "www", "old")
 
 
-
-
-"
-"
-" References
-"
-"
-" [1] https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
+" -- References --
+" [1] https://github.com/tridactyl/vim-tridactyl
 " [2] https://github.com/tridactyl/tridactyl/issues/64#issuecomment-435307901
-" [3] https://github.com/glacambre/.dotfiles/blob/2077603882c7bfe695dd7bc61b539650419598ac/default/.config/tridactyl/tridactylrc#L86-L87
+" [3] https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
+" [4] https://github.com/exaiyo/tridactylrc/blob/master/tridactylrc
 
-
-" This will have to do until someone writes us a nice syntax file :) [1]
-" vim: set filetype=vim:
+" filetype syntax highlighting [1]
+" vim:set ft=tridactyl:
