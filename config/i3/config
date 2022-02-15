@@ -325,6 +325,7 @@ bindsym XF86AudioMicMute exec --no-startup-id $HOME/scripts/audioctl mic-toggle
 bindsym Shift+XF86AudioMicMute exec --no-startup-id $HOME/scripts/audioctl mic-reset
 
 # Brightness keys
+bindsym Shift+XF86MonBrightnessUp exec --no-startup-id xbacklight -set 100
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
