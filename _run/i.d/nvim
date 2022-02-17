@@ -1,0 +1,7 @@
+mdifne nvim ~/.config
+mdifne nvim ~/.config/nvim
+lnifne nvim ~/.config/nvim/init.lua ~/.dotfiles/config/nvim/init.lua
+lnifne nvim ~/.config/nvim/lua ~/.dotfiles/config/nvim/lua
+lnifne nvim ~/.config/nvim/spell ~/.dotfiles/config/nvim/spell
+
+# vim: ft=bash

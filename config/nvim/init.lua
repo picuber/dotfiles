@@ -1,0 +1,6 @@
+require("cfg.functions")
+require("cfg.settings")
+require("cfg.plugins")
+require("cfg.autocmds")
+require("cfg.colours")
+require("cfg.mappings")
