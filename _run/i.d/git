@@ -1,5 +1,4 @@
 lnifne git ~/.gitconfig .dotfiles/gitconfig
 lnifne git ~/.gitignore_global .dotfiles/gitignore_global
-lnifne git ~/.git_template .dotfiles/git_template
 
 # vim: ft=bash

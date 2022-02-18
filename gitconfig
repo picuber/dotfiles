@@ -9,8 +9,6 @@
 	showsignature = false
 [commit]
 	gpgsign = true
-[init]
-	templatedir = ~/.git_template
 [core]
 	excludesfile = ~/.gitignore_global
 [pull]

@@ -45,7 +45,3 @@ vim.opt.gdefault = true -- set 'g' flag to default on in :s, set flag to turn it
 
 -- command completion --
 vim.opt.wildignorecase = true -- file completion is case-insensitive
-
--- ctags --
-vim.opt.tags:append {'./.git/tags', './.git/TAGS', '.git/tags', '.git/TAGS'} -- find ctags in any parent .git directory
-
