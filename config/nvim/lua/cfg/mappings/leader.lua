@@ -84,7 +84,7 @@ opt("N", { "relativenumber" })
 opt("s", { "spell" })
 opt("w", { "wrap" })
 opt("x", { "cursorcolumn", "cursorline" })
-opt("l", { "list" })
+opt("y", { "list" }) -- "symbols"
 lmaps(",h", ":nohlsearch<CR>") -- turn off search highlight
 lmaps(",l", ":lclose<CR>") -- close location list
 lmaps(",c", ":cclose<CR>") -- close qickfix list

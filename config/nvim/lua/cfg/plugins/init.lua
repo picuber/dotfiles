@@ -78,9 +78,7 @@ return packer.startup(function(use)
 				requires = "LuaSnip",
 			},
 		},
-		config = function()
-			require("cfg.plugins.cmp")
-		end,
+		config = [[ require("cfg.plugins.cmp") ]],
 	})
 
 	-- LSP --
@@ -88,17 +86,13 @@ return packer.startup(function(use)
 		"neovim/nvim-lspconfig",
 		after = { "nvim-cmp", "cmp-nvim-lsp" },
 		requires = "hrsh7th/cmp-nvim-lsp",
-		config = function()
-			require("cfg.plugins.lspconfig").setup()
-		end,
+		config = [[ require("cfg.plugins.lspconfig").setup() ]],
 	})
 	use({
 		"jose-elias-alvarez/null-ls.nvim",
 		after = "nvim-lspconfig",
 		requires = "nvim-lua/plenary.nvim",
-		config = function()
-			require("cfg.plugins.null-ls")
-		end,
+		config = [[ require("cfg.plugins.null-ls") ]],
 	})
 
 	-- treesitter --
@@ -110,11 +104,12 @@ return packer.startup(function(use)
 			{ "JoosepAlviste/nvim-ts-context-commentstring", after = "nvim-treesitter" },
 			{ "nvim-treesitter/nvim-treesitter-textobjects", after = "nvim-treesitter" },
 			{ "windwp/nvim-ts-autotag", after = "nvim-treesitter" },
-			{ "andymass/vim-matchup", after = "nvim-treesitter" },
+			{
+				"andymass/vim-matchup",
+				after = "nvim-treesitter",
+				config = [[ require("cfg.plugins.nvim-treesitter") ]],
+			},
 		},
-		config = function()
-			require("cfg.plugins.nvim-treesitter")
-		end,
 	})
 
 	-- tools --
@@ -126,24 +121,27 @@ return packer.startup(function(use)
 	use({
 		"windwp/nvim-autopairs", -- auto-close parens/braces/etc.
 		after = "nvim-cmp",
-		config = function()
-			require("cfg.plugins.nvim-autopairs")
-		end,
+		config = [[ require("cfg.plugins.nvim-autopairs") ]],
 	})
 	use({
 		"lewis6991/gitsigns.nvim", -- git decorations
 		requires = "nvim-lua/plenary.nvim",
-		config = function()
-			require("cfg.plugins.gitsigns")
-		end,
+		config = [[ require("cfg.plugins.gitsigns") ]],
 	})
 	use({
-		"simnalamburt/vim-mundo",
+		"simnalamburt/vim-mundo", -- visualise undo tree
 		cmd = "MundoToggle",
-		config = function()
-			require("cfg.plugins.vim-mundo")
-		end,
+		config = [[ require("cfg.plugins.vim-mundo") ]],
 	})
+	use({
+		"ntpeters/vim-better-whitespace", -- show and delete trailing whitespace
+		config = [[ require("cfg.plugins.vim-better-whitespace") ]],
+	})
+	use({
+		"dhruvasagar/vim-table-mode", -- easier table creation
+		config = [[ require("cfg.plugins.vim-table-mode") ]],
+	})
+	use({ "mattn/emmet-vim", config = [[ require('cfg.plugins.emmet-vim') ]] })
 
 	-- Syntax --
 	use("tridactyl/vim-tridactyl") -- tridactyl config syntax file
