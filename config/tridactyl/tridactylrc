@@ -11,6 +11,8 @@ set hintchars 0123489
 
 set smoothscroll true
 
+set editorcmd /usr/bin/alacritty -e /usr/bin/nvim
+
 " -- binds --
 
 " find next/prev with n/N [2]
