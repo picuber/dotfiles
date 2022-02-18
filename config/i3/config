@@ -538,18 +538,27 @@ mode "macro" {
 # Open Rofi Mode
 mode "open/rofi" {
 	bindsym d mode "default", exec rofi -show drun
+	bindsym $mod+d mode "default", exec rofi -show drun
 	bindsym r mode "default", exec rofi -show run
+	bindsym $mod+r mode "default", exec rofi -show run
 	bindsym s mode "default", exec rofi -show ssh
+	bindsym $mod+s mode "default", exec rofi -show ssh
 	bindsym w mode "default", exec rofi -show window
-		# "here"
+	bindsym $mod+w mode "default", exec rofi -show window
 	bindsym h mode "default", exec rofi -show windowcd
+	bindsym $mod+h mode "default", exec rofi -show windowcd
+	bindsym c mode "default", exec CM_LAUNCHER=rofi CM_HISTLENGTH=15 clipmenu -p clip
+	bindsym $mod+c mode "default", exec CM_LAUNCHER=rofi CM_HISTLENGTH=15 clipmenu -p clip
+	bindsym u mode "default", exec --no-startup-id $HOME/scripts/unclip
+	bindsym $mod+u mode "default", exec --no-startup-id $HOME/scripts/unclip
+    
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (open/rofi):" "Open/Rofi Mode:\nd: drun\nr: run\ns: ssh\nw: window\nh: here"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (open/rofi):" "Open/Rofi Mode:\nd: drun\nr: run\ns: ssh\nw: window\nh: here\nc: clipmenu\nu: unclip"
 }
 
 mode "gaps-outer" {
@@ -889,4 +898,5 @@ for_window [title=".*Data/Cheatsheets/Korean/Dubeolsik.png.*"] floating enable, 
 exec --no-startup-id nextcloud
 exec --no-startup-id nm-applet & # wifi-tray-icon
 exec --no-startup-id dunst # Notification Server
+exec --no-startup-id CM_IGNORE_WINDOW="KeePassXC" CM_SELECTIONS="clipboard" CM_MAX_CLIPS=100 clipmenud & # clipboard manager
 exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/* --no-fehbg # Background

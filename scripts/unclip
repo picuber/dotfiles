@@ -1,0 +1,5 @@
+#!/bin/bash
+
+clipdel -d $(clipdel . | rofi -dmenu -p unclip) 2> /dev/null
+
+exit 0
