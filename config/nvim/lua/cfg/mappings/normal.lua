@@ -1,6 +1,10 @@
 local function map(key, cmd)
-	local opt = { noremap = true }
-	vim.api.nvim_set_keymap("", key, cmd, opt)
+	vim.api.nvim_set_keymap("", key, cmd, { noremap = true })
 end
+local function maps(key, cmd)
+	vim.api.nvim_set_keymap("", key, cmd, { noremap = true, silent = true })
+end
+
+maps("<F10>", ":MundoToggle<CR>")
 
 map("<Space>", ":") -- simpler EX commands

@@ -27,7 +27,7 @@ end
 vim.cmd([[
     augroup packer_user_config
         autocmd!
-        autocmd BufWritePost ~/.config/nvim/lua/cfg/plugins/init.lua source <afile> | PackerSync
+        autocmd BufWritePost ~/.dotfiles/config/nvim/lua/cfg/plugins/init.lua source <afile> | PackerSync
     augroup end
 ]])
 
@@ -97,7 +97,23 @@ return packer.startup(function(use)
 		after = "nvim-lspconfig",
 		requires = "nvim-lua/plenary.nvim",
 		config = function()
-			require("cfg.plugins.null_ls")
+			require("cfg.plugins.null-ls")
+		end,
+	})
+
+	-- treesitter --
+	use({
+		"nvim-treesitter/nvim-treesitter",
+		run = ":TSUpdate",
+		requires = {
+			{ "nvim-treesitter/playground", after = "nvim-treesitter", cmd = "TSPlaygroundToggle" },
+			{ "JoosepAlviste/nvim-ts-context-commentstring", after = "nvim-treesitter" },
+			{ "nvim-treesitter/nvim-treesitter-textobjects", after = "nvim-treesitter" },
+			{ "windwp/nvim-ts-autotag", after = "nvim-treesitter" },
+			{ "andymass/vim-matchup", after = "nvim-treesitter" },
+		},
+		config = function()
+			require("cfg.plugins.nvim-treesitter")
 		end,
 	})
 
@@ -106,10 +122,31 @@ return packer.startup(function(use)
 
 	-- QoL --
 	use("ap/vim-css-color") -- highligt color definitions in that color
-    use("lambdalisue/suda.vim") -- sudo write workaround
+	use("lambdalisue/suda.vim") -- sudo write workaround
+	use({
+		"windwp/nvim-autopairs", -- auto-close parens/braces/etc.
+		after = "nvim-cmp",
+		config = function()
+			require("cfg.plugins.nvim-autopairs")
+		end,
+	})
+	use({
+		"lewis6991/gitsigns.nvim", -- git decorations
+		requires = "nvim-lua/plenary.nvim",
+		config = function()
+			require("cfg.plugins.gitsigns")
+		end,
+	})
+	use({
+		"simnalamburt/vim-mundo",
+		cmd = "MundoToggle",
+		config = function()
+			require("cfg.plugins.vim-mundo")
+		end,
+	})
 
-    -- Syntax --
-    use("tridactyl/vim-tridactyl") -- tridactyl config syntax file
+	-- Syntax --
+	use("tridactyl/vim-tridactyl") -- tridactyl config syntax file
 
 	-- Automatic initial plugin installation
 	if packer_bootstrap then

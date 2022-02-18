@@ -14,4 +14,5 @@ vim.cmd([[colorscheme nord]])
 -- highlight --
 vim.cmd([[
     highlight ErrorMsg ctermbg=black guibg=black
+    highlight Folded ctermbg=black ctermfg=blue
 ]])

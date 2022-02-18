@@ -61,7 +61,8 @@ function M.setup()
     -- configure diagnostics
     vim.diagnostic.config({
         virtual_text = {
-            source = "if_many",
+            -- source = "if_many",
+            source = true,
         },
     })
 
