@@ -11,16 +11,17 @@ local sources = {
 	diag.mypy,
 	diag.flake8,
 	-- diag.pydocstyle,
-	-- rust --
-	fmt.rustfmt.with({ extra_args = { "--edition=2021" } }),
-	-- lua --
-	fmt.stylua,
 
 	-- web-dev --
 	fmt.prettier, -- js/ts/css/scss/html/json/md/
-	-- css --
 	fmt.stylelint, -- scss/less/css/sass
 	diag.stylelint, -- scss/less/css/sass
+
+	fmt.rustfmt.with({ extra_args = { "--edition=2021" } }), -- rust
+	fmt.stylua, -- lua
+    fmt.cmake_format, -- cmake
+    fmt.clang_format, -- C/C++/...
+    fmt.brittany, -- haskell
 }
 
 null_ls.setup({
