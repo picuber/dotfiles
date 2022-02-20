@@ -10,7 +10,7 @@ local sources = {
 	fmt.isort,
 	diag.mypy,
 	diag.flake8,
-	diag.pydocstyle,
+	-- diag.pydocstyle,
 	-- rust --
 	fmt.rustfmt.with({ extra_args = { "--edition=2021" } }),
 	-- lua --
