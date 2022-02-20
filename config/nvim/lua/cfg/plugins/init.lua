@@ -56,7 +56,7 @@ return packer.startup(function(use)
 	use("tpope/vim-speeddating") -- inc/dec dates (C-a/C-x)
 
 	-- snippets --
-	use("L3MON4D3/LuaSnip") -- snippet engine
+	use({"L3MON4D3/LuaSnip", config = [[ require("cfg.plugins.luasnip") ]]}) -- snippet engine
 
 	-- cmp --
 	use({

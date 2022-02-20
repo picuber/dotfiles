@@ -2,14 +2,52 @@ local luasnip = require("luasnip")
 local cmp = require("cmp")
 
 cmp.setup({
-    snippet = {
-        expand = function(args)
-            luasnip.lsp_expand(args.body)
-        end,
-    },
-    mapping = {
-        ["<C-P>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
-		["<C-n>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+	snippet = {
+		expand = function(args)
+			luasnip.lsp_expand(args.body)
+		end,
+	},
+	mapping = {
+		-- expand snippets
+		["<leader>e"] = cmp.mapping(function(fallback)
+			if luasnip.expand_or_jumpable() then
+				luasnip.expand_or_jump()
+			elseif cmp.visible() then
+				cmp.confirm({ select = false })
+			else
+				fallback()
+			end
+		end, { "i", "c", "s" }),
+
+		["<leader>u"] = cmp.mapping(function(fallback)
+			if luasnip.jumpable(-1) then
+				luasnip.jump(-1)
+			else
+				fallback()
+			end
+		end, { "i", "c", "s" }),
+
+		-- next choice node or scroll docs down
+		["<C-n>"] = cmp.mapping(function(fallback)
+			if luasnip.choice_active() then
+				luasnip.change_choice(1)
+			elseif cmp.visible() then
+				cmp.mapping.scroll_docs(1)
+			else
+				fallback()
+			end
+		end, { "i", "c", "s" }),
+
+		-- prev choice node or scroll docs up
+		["<C-p>"] = cmp.mapping(function(fallback)
+			if luasnip.choice_active() then
+				luasnip.change_choice(-1)
+			elseif cmp.visible() then
+				cmp.mapping.scroll_docs(-1)
+			else
+				fallback()
+			end
+		end, { "i", "c", "s" }),
 
 		-- next > expand > jump > complete > tab
 		["<Tab>"] = cmp.mapping(function(fallback)
@@ -20,7 +58,7 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end, { "i", "c" }),
+		end, { "i", "c", "s" }),
 
 		-- prev > jump back > S-tab
 		["<S-Tab>"] = cmp.mapping(function(fallback)
@@ -31,7 +69,7 @@ cmp.setup({
 			else
 				fallback()
 			end
-		end, { "i", "c" }),
+		end, { "i", "c", "s" }),
 	},
 	formatting = {
 		fields = { "abbr", "menu" },
