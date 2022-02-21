@@ -21,7 +21,7 @@ local sources = {
 	fmt.stylua, -- lua
     fmt.cmake_format, -- cmake
     fmt.clang_format, -- C/C++/...
-    fmt.brittany, -- haskell
+    fmt.fourmolu, -- haskell
 }
 
 null_ls.setup({
