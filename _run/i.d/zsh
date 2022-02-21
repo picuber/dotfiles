@@ -1,7 +1,6 @@
-mdifne zsh ~/.zsh-antigen
-curl -L git.io/antigen > ~/.zsh-antigen/antigen.zsh
-lnifne zsh ~/.zshrc .dotfiles/zshrc
-lnifne zsh ~/.zprofile .dotfiles/zprofile
+mdifne zsh ~/.config
+lnifne zsh ~/.config/zsh ~/.dotfiles/config/zsh
+lnifne zsh ~/.zshenv .dotfiles/zshenv
 
-lnifne zsh/profile ~/.profile .dotfiles/profile
+curl -L git.io/antigen > ~/.config/zsh/antigen.zsh
 # vim: ft=bash
