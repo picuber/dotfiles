@@ -9,7 +9,13 @@ local sources = {
 	fmt.black,
 	fmt.isort,
 	diag.mypy,
-	diag.flake8,
+	diag.flake8.with({ args = {
+		"--max-line-length",
+		"119",
+		"--stdin-display-name",
+		"$FILENAME",
+		"-",
+	} }),
 	-- diag.pydocstyle,
 
 	-- web-dev --
@@ -19,9 +25,9 @@ local sources = {
 
 	fmt.rustfmt.with({ extra_args = { "--edition=2021" } }), -- rust
 	fmt.stylua, -- lua
-    fmt.cmake_format, -- cmake
-    fmt.clang_format, -- C/C++/...
-    fmt.fourmolu, -- haskell
+	fmt.cmake_format, -- cmake
+	fmt.clang_format, -- C/C++/...
+	fmt.fourmolu, -- haskell
 }
 
 null_ls.setup({

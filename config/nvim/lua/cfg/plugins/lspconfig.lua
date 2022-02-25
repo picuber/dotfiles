@@ -1,7 +1,7 @@
 local M = {}
 
 function M.on_attach(client, buff)
-	if client.name == "sumneko_lua" then
+	if client.name == "sumneko_lua" or client.name == "pylsp" then
 		client.resolved_capabilities.document_formatting = false
 	end
 
