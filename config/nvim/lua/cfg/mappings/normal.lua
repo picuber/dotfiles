@@ -5,6 +5,7 @@ local function maps(key, cmd)
 	vim.api.nvim_set_keymap("", key, cmd, { noremap = true, silent = true })
 end
 
+maps("<F2>", ":NvimTreeToggle<CR>")
 maps("<F10>", ":MundoToggle<CR>")
 
 map("<Space>", ":") -- simpler EX commands

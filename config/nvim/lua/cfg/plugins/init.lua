@@ -56,7 +56,7 @@ return packer.startup(function(use)
 	use("tpope/vim-speeddating") -- inc/dec dates (C-a/C-x)
 
 	-- snippets --
-	use({"L3MON4D3/LuaSnip", config = [[ require("cfg.plugins.luasnip") ]]}) -- snippet engine
+	use({ "L3MON4D3/LuaSnip", config = [[ require("cfg.plugins.luasnip") ]] }) -- snippet engine
 
 	-- cmp --
 	use({
@@ -107,9 +107,19 @@ return packer.startup(function(use)
 			{
 				"andymass/vim-matchup",
 				after = "nvim-treesitter",
-				config = [[ require("cfg.plugins.nvim-treesitter") ]],
+                config = [[ require("cfg.plugins.vim-matchup") ]],
 			},
 		},
+		config = [[ require("cfg.plugins.nvim-treesitter") ]],
+	})
+
+	-- nvim-tree
+	use({
+		"kyazdani42/nvim-tree.lua",
+		requires = {
+			"kyazdani42/nvim-web-devicons", -- optional, for file icon
+		},
+		config = [[ require("cfg.plugins.nvim-tree") ]],
 	})
 
 	-- tools --
