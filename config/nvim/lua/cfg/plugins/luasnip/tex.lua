@@ -1,10 +1,10 @@
 local ls = require("luasnip")
--- local s = ls.snippet
+local s = ls.snippet
 -- local sn = ls.snippet_node
--- local t = ls.text_node
--- local i = ls.insert_node
+local t = ls.text_node
+local i = ls.insert_node
 -- local f = ls.function_node
--- local c = ls.choice_node
+local c = ls.choice_node
 -- local d = ls.dynamic_node
 -- local r = ls.restore_node
 -- local l = require("luasnip.extras").lambda
@@ -18,4 +18,24 @@ local ls = require("luasnip")
 -- local types = require("luasnip.util.types")
 -- local conds = require("luasnip.extras.expand_conditions")
 
-ls.snippets.all = {}
+ls.snippets.tex = {
+	s({ trig = "    i", name = "\\item" }, {
+		t("\\item "),
+	}),
+
+	s({ trig = "it", name = "itemize" }, {
+		t({ "\\begin{itemize}", "    \\item " }),
+		i(0),
+		t({ "", "\\end{itemize}" }),
+	}),
+
+	s({ trig = "t", name = "TOP" }, {
+		t("\\"),
+		c(1, { t("Top"), t("STop"), t("SSTop") }),
+		t("{"),
+		i(2),
+		t("}{"),
+		i(0),
+		t("}"),
+	}),
+}

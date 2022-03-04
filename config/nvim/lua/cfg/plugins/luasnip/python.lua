@@ -1,9 +1,9 @@
 local ls = require("luasnip")
--- local s = ls.snippet
+local s = ls.snippet
 -- local sn = ls.snippet_node
--- local t = ls.text_node
--- local i = ls.insert_node
--- local f = ls.function_node
+local t = ls.text_node
+local i = ls.insert_node
+local f = ls.function_node
 -- local c = ls.choice_node
 -- local d = ls.dynamic_node
 -- local r = ls.restore_node
@@ -18,4 +18,22 @@ local ls = require("luasnip")
 -- local types = require("luasnip.util.types")
 -- local conds = require("luasnip.extras.expand_conditions")
 
-ls.snippets.all = {}
+ls.snippets.all = {
+	s({ trig = "def", name = "define function" }, {
+		t("def "),
+		i(1, "fun"),
+		t("("),
+		i(2),
+		t(")"),
+		f(function(args)
+			if string.match(args[1][1], "^%s*%w") then
+				return " -> "
+			else
+				return ""
+			end
+		end, { 3 }),
+		i(3),
+		t({ ":", "\t" }),
+		i(0, "..."),
+	}),
+}
