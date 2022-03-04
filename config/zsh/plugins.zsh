@@ -28,3 +28,5 @@ antigen theme robbyrussell
 # Tell Antigen that you're done.
 antigen apply
 
+# For manual plugin management
+# https://github.com/mattmc3/zsh_unplugged
