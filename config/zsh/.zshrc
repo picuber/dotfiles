@@ -19,12 +19,12 @@ if type pyenv > /dev/null; then
 fi
 
 # lazy load nvm -> reduces start-up time by a factor of 9 to 10
-function nvm {
-    unset -f nvm
+function nvm npm tsc {
+    unset -f nvm npm tsc
     # # nvm (node/javascript)
     [ -f "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
     [ -f "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion" # includes zsh completion
-    nvm "$@"
+    "$0" "$@"
 }
 
 # ghcup (haskell)
