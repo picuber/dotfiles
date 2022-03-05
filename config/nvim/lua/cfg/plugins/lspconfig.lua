@@ -1,7 +1,9 @@
 local M = {}
 
 function M.on_attach(client, buff)
-	if client.name == "sumneko_lua" or client.name == "pylsp" then
+    local no_format = {sumneko_lua = true, pylsp = true, tsserver = true}
+    if no_format[client.name] ~= nil then
+	-- if client.name == "sumneko_lua" or client.name == "pylsp" or client.name == "tsserver" then
 		client.resolved_capabilities.document_formatting = false
 	end
 
