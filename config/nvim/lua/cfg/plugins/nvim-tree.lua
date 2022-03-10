@@ -10,12 +10,16 @@ nvim_tree.setup({
 	update_focused_file = {
 		enable = true,
 	},
+	actions = {
+		open_file = {
+			quit_on_open = true,
+		},
+	},
 	view = {
-		auto_resize = true,
 		mappings = {
 			custom_only = true,
 			list = {
-                -- open
+				-- open
 				{ key = { "<CR>", "o", "l" }, action = "edit" },
 				{ key = { "O" }, action = "edit_no_picker" },
 				{ key = { "s" }, action = "vsplit" },
@@ -23,11 +27,11 @@ nvim_tree.setup({
 				{ key = { "t" }, action = "tabnew" },
 				{ key = "<Tab>", action = "preview" },
 
-                -- cwd
+				-- cwd
 				{ key = { "+", "_" }, action = "cd" },
 				{ key = "-", action = "dir_up" },
 
-                -- movement
+				-- movement
 				{ key = "K", action = "prev_sibling" },
 				{ key = "J", action = "next_sibling" },
 				{ key = "<", action = "first_sibling" },
@@ -35,19 +39,19 @@ nvim_tree.setup({
 				{ key = "p", action = "parent_node" },
 				{ key = "h", action = "close_node" },
 
-                -- toggle
+				-- toggle
 				{ key = "I", action = "toggle_ignored" },
 				{ key = "H", action = "toggle_dotfiles" },
 				{ key = "R", action = "refresh" },
 				{ key = "a", action = "create" },
 
-                -- path
+				-- path
 				{ key = "r", action = "rename" },
 				{ key = "y", action = "copy_name" },
 				{ key = "Y", action = "copy_path" },
 				{ key = "gy", action = "copy_absolute_path" },
 
-                -- meta
+				-- meta
 				{ key = "c", action = "system_open" }, -- command open
 				{ key = "q", action = "close" },
 				{ key = "?", action = "toggle_help" },

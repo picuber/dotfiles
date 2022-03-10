@@ -144,3 +144,6 @@ lmaps("xR", ":%!xxd -r<CR>:%!xxd<CR>")
 
 lmaps("oo", ":Obsession<CR>")
 lmaps("od", ":Obsession!<CR>")
+
+lmaps("ot", ":NvimTreeToggle<CR>") -- [o]pen nvim-[t]ree
+lmaps("ou", ":MundoToggle<CR>") -- [o]pen m[u]ndo
