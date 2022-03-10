@@ -453,35 +453,35 @@ mode "macro-char" {
 }
 
 mode "macro-diacritics" {
-	bindsym --release g mode "default", exec --no-startup-id xdotool type ̀
-	bindsym --release $mod+g exec --no-startup-id xdotool type ̀
+	bindsym --release g mode "default", exec --no-startup-id xdotool type
+	bindsym --release $mod+g exec --no-startup-id xdotool type
 
-	bindsym --release a mode "default", exec --no-startup-id xdotool type ́
-	bindsym --release $mod+a exec --no-startup-id xdotool type ́
+	bindsym --release a mode "default", exec --no-startup-id xdotool type
+	bindsym --release $mod+a exec --no-startup-id xdotool type
 
-	bindsym --release c mode "default", exec --no-startup-id xdotool type ̂
-	bindsym --release $mod+c exec --no-startup-id xdotool type ̂
+	bindsym --release c mode "default", exec --no-startup-id xdotool type
+	bindsym --release $mod+c exec --no-startup-id xdotool type
 
-	bindsym --release t mode "default", exec --no-startup-id xdotool type ̃
-	bindsym --release $mod+t exec --no-startup-id xdotool type ̃
+	bindsym --release t mode "default", exec --no-startup-id xdotool type
+	bindsym --release $mod+t exec --no-startup-id xdotool type
 
-	bindsym --release m mode "default", exec --no-startup-id xdotool type ̄
-	bindsym --release $mod+m exec --no-startup-id xdotool type ̄
+	bindsym --release m mode "default", exec --no-startup-id xdotool type
+	bindsym --release $mod+m exec --no-startup-id xdotool type
 
-	bindsym --release o mode "default", exec --no-startup-id xdotool type ̅
-	bindsym --release $mod+o exec --no-startup-id xdotool type ̅
+	bindsym --release o mode "default", exec --no-startup-id xdotool type
+	bindsym --release $mod+o exec --no-startup-id xdotool type
 
-	bindsym --release b mode "default", exec --no-startup-id xdotool type ̆
-	bindsym --release $mod+b exec --no-startup-id xdotool type ̆
+	bindsym --release b mode "default", exec --no-startup-id xdotool type
+	bindsym --release $mod+b exec --no-startup-id xdotool type
 
-	bindsym --release p mode "default", exec --no-startup-id xdotool type ̇
-	bindsym --release $mod+p exec --no-startup-id xdotool type ̇
+	bindsym --release p mode "default", exec --no-startup-id xdotool type
+	bindsym --release $mod+p exec --no-startup-id xdotool type
 
-	bindsym --release u mode "default", exec --no-startup-id xdotool type ̈
-	bindsym --release $mod+u exec --no-startup-id xdotool type ̈
+	bindsym --release u mode "default", exec --no-startup-id xdotool type
+	bindsym --release $mod+u exec --no-startup-id xdotool type
 
-	bindsym --release r mode "default", exec --no-startup-id xdotool type ̊
-	bindsym --release $mod+r exec --no-startup-id xdotool type ̊
+	bindsym --release r mode "default", exec --no-startup-id xdotool type
+	bindsym --release $mod+r exec --no-startup-id xdotool type
 
 
 	# back to normal: Enter or Escape
@@ -551,7 +551,7 @@ mode "open/rofi" {
 	bindsym $mod+c mode "default", exec CM_LAUNCHER=rofi CM_HISTLENGTH=15 clipmenu -p clip
 	bindsym u mode "default", exec --no-startup-id $HOME/scripts/unclip
 	bindsym $mod+u mode "default", exec --no-startup-id $HOME/scripts/unclip
-    
+
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
@@ -899,4 +899,5 @@ exec --no-startup-id nextcloud
 exec --no-startup-id nm-applet & # wifi-tray-icon
 exec --no-startup-id dunst # Notification Server
 exec --no-startup-id CM_IGNORE_WINDOW="KeePassXC" CM_SELECTIONS="clipboard" CM_MAX_CLIPS=100 clipmenud & # clipboard manager
+exec --no-startup-id lxpolkit & # polkit agent, for QEMU/virt-manager
 exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/* --no-fehbg # Background
