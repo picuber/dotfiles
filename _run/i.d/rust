@@ -1,7 +1,7 @@
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-rustup component add clippy rustfmt
-rustup toolchain add nightly
+# rustup component add clippy rustfmt
+# rustup toolchain add nightly
 # rustup +nightly install rust-analyzer-preview
-echo run \`sudo pacman -S rust-analyzer\` to install rust LSP server on arch
+echo run \`sudo pacman -S rust-analyzer\` to install rust LSP server on Arch
 
 # vim: ft=bash

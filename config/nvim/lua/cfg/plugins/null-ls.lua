@@ -27,7 +27,7 @@ local sources = {
     diag.eslint_d, -- js/ts
     act.eslint_d, -- js/ts
 
-	fmt.rustfmt.with({ extra_args = { "--edition=2021" } }), -- rust
+	-- fmt.rustfmt.with({ extra_args = { "--edition=2021" } }), -- rust
 	fmt.stylua, -- lua
 	fmt.cmake_format, -- cmake
 	fmt.clang_format, -- C/C++/...
