@@ -28,7 +28,7 @@ nvim_tree.setup({
 				{ key = "<Tab>", action = "preview" },
 
 				-- cwd
-				{ key = { "+", "_" }, action = "cd" },
+				{ key = { "+", "_", "=" }, action = "cd" },
 				{ key = "-", action = "dir_up" },
 
 				-- movement
