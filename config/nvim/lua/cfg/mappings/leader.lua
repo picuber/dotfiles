@@ -24,6 +24,7 @@ lmaps("ts", ":tabs<CR>") -- show/list
 lmap("tt", "g<Tab>") -- toggle
 lmaps("tl", ":tabnext<CR>") -- next tab
 lmaps("th", ":tabprevious<CR>") -- prev tab
+lmaps("tg", ":tabs<CR>:tabnext<Space>") -- goto tab
 --- delete ---
 lmap("td", ":tabs<CR>:tabclose<Space>") -- select tab to delete
 lmaps("tD", ":tabclose<CR>") -- delete this tab
@@ -140,8 +141,23 @@ lmaps("xx", ":%!xxd<CR>:set ft+=xxd<CR>")
 lmaps("xr", ":%!xxd -r<CR>")
 lmaps("xR", ":%!xxd -r<CR>:%!xxd<CR>")
 
--- Plugins --
+-- colours --
+--- colorscheme ---
+lmaps("cn", ":colorscheme nord<CR>")
+lmaps("cm", ":colorscheme molokai<CR>")
+--- lualine ---
+lmaps("cln", ":lua require('lualine').setup({ options = { theme = 'nord' } })<CR>")
+lmaps("clm", ":lua require('lualine').setup({ options = { theme = 'molokai' } })<CR>")
+lmaps("clM", ":lua require('lualine').setup({ options = { theme = 'material' } })<CR>")
+lmaps("clo", ":lua require('lualine').setup({ options = { theme = 'onedark' } })<CR>")
+lmaps("clO", ":lua require('lualine').setup({ options = { theme = 'onelight' } })<CR>")
+lmaps("clp", ":lua require('lualine').setup({ options = { theme = 'palenight' } })<CR>")
+lmaps("cls", ":lua require('lualine').setup({ options = { theme = 'solarized_light' } })<CR>")
+--- colorscheme + lualine ---
+lmaps("Cn", ":colorscheme nord<CR>:lua require('lualine').setup({ options = { theme = 'nord' } })<CR>")
+lmaps("Cm", ":colorscheme molokai<CR>:lua require('lualine').setup({ options = { theme = 'molokai' } })<CR>")
 
+-- Plugins --
 lmaps("oo", ":Obsession<CR>")
 lmaps("od", ":Obsession!<CR>")
 
