@@ -107,7 +107,7 @@ return packer.startup(function(use)
 			{
 				"andymass/vim-matchup",
 				after = "nvim-treesitter",
-                config = [[ require("cfg.plugins.vim-matchup") ]],
+				config = [[ require("cfg.plugins.vim-matchup") ]],
 			},
 		},
 		config = [[ require("cfg.plugins.nvim-treesitter") ]],
@@ -152,6 +152,13 @@ return packer.startup(function(use)
 		config = [[ require("cfg.plugins.vim-table-mode") ]],
 	})
 	use({ "mattn/emmet-vim", config = [[ require('cfg.plugins.emmet-vim') ]] })
+
+	-- Lualine
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+		config = [[ require("cfg.plugins.lualine") ]],
+	})
 
 	-- Syntax --
 	use("tridactyl/vim-tridactyl") -- tridactyl config syntax file
