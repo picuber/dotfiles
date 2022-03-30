@@ -1,0 +1,3 @@
+mdifne pipewire/wireplumber ~/.config
+lnifne pipewire/wireplumber ~/.config/wireplumber ~/.dotfiles/config/wireplumber
+
