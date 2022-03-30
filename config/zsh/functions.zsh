@@ -8,6 +8,9 @@ function feh {
 function xournal {
 	xournalpp "$@" &!
 }
+function libreoffice {
+	/usr/bin/libreoffice "$@" &!
+}
 
 # open <today>.txt in nvim
 function today {
