@@ -40,6 +40,8 @@ bind ;C composite hint_focus; !s xdotool key Menu
 blacklistadd ^(http[s]?://)mail\.google\.com/.*
 blacklistadd ^(http[s]?://)www\.inoreader\.com/.*
 blacklistadd ^(http[s]?://)(www|old)\.reddit\.com/.*
+blacklistadd ^(http[s]?://)monkeytype\.com/.*
+blacklistadd ^(http[s]?://)www\.nitrotype\.com/.*
 
 " -- site specific --
 " only hint search results [3]
