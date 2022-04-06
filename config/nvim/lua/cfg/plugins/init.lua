@@ -123,7 +123,7 @@ return packer.startup(function(use)
 	})
 
 	-- tools --
-	use("vimwiki/vimwiki")
+	-- use("vimwiki/vimwiki")
 
 	-- QoL --
 	use("ap/vim-css-color") -- highligt color definitions in that color

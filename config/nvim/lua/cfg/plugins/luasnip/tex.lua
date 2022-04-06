@@ -18,7 +18,7 @@ local c = ls.choice_node
 -- local types = require("luasnip.util.types")
 -- local conds = require("luasnip.extras.expand_conditions")
 
-ls.snippets.tex = {
+ls.add_snippets("tex", {
 	s({ trig = "    i", name = "\\item" }, {
 		t("\\item "),
 	}),
@@ -38,4 +38,4 @@ ls.snippets.tex = {
 		i(0),
 		t("}"),
 	}),
-}
+}, { key = "tex" })

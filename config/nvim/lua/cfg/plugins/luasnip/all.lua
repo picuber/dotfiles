@@ -18,4 +18,4 @@ local ls = require("luasnip")
 -- local types = require("luasnip.util.types")
 -- local conds = require("luasnip.extras.expand_conditions")
 
-ls.snippets.all = {}
+ls.add_snippets("all", {}, { key = "all" })

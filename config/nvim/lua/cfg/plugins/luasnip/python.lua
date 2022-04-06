@@ -18,7 +18,7 @@ local f = ls.function_node
 -- local types = require("luasnip.util.types")
 -- local conds = require("luasnip.extras.expand_conditions")
 
-ls.snippets.all = {
+ls.add_snippets("python", {
 	s({ trig = "def", name = "define function" }, {
 		t("def "),
 		i(1, "fun"),
@@ -36,4 +36,4 @@ ls.snippets.all = {
 		t({ ":", "\t" }),
 		i(0, "..."),
 	}),
-}
+}, { key = "python" })
