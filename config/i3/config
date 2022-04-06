@@ -763,7 +763,7 @@ mode "plover" {
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (plover):" "Plover Mode:\ns: start\nt: toggle output\nq: quit"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (plover):" "Plover Mode:\ns: start\nl: show layout\nt: toggle output\nq: quit"
 }
 
 mode "mode" {
