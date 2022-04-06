@@ -1,7 +1,6 @@
 #!/bin/bash
 discord-ptb &!
 element-desktop --profile FSMPI &!
-element-desktop --profile TUM &!
 element-desktop --profile JungeSMuenchen &!
 signal-desktop --use-tray-icon &!
 slack &!
