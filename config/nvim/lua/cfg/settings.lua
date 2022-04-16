@@ -7,7 +7,7 @@ vim.g.tex_flavor = 'latex'  -- default to LaTeX
 vim.g.loaded_perl_provider=0 -- disable perl support
 vim.g.loaded_python_provider=0 -- disable python2 support
 vim.g.loaded_ruby_provider=0 -- disable ruby support
-vim.g.python3_host_prog = '/home/picuber/.pyenv/versions/nvim/bin/python' -- set python3 executable
+vim.g.python3_host_prog = '~/.pyenv/versions/nvim/bin/python' -- set python3 executable
 
 -- greeter
 vim.opt.shortmess:append {I = true} -- disable intro message
