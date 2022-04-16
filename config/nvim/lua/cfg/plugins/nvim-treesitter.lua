@@ -1,7 +1,7 @@
 local config = require("nvim-treesitter.configs")
 
 config.setup({
-	ensure_installed = "maintained", -- "all", "maintained" or a list of languages
+	ensure_installed = "all", -- "all", "maintained" or a list of languages
 	sync_install = false, -- only applies to `ensure_installed`
 	ignore_install = { "" }, -- ignore these for `ensure_installed``
 	highlight = {
