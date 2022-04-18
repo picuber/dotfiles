@@ -27,23 +27,37 @@ cmp.setup({
 			end
 		end, { "i", "c", "s" }),
 
-		-- next choice node or scroll docs down
-		["<C-n>"] = cmp.mapping(function(fallback)
-			if luasnip.choice_active() then
-				luasnip.change_choice(1)
-			elseif cmp.visible() then
+		-- scroll docs up
+		["<C-u>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
+				cmp.mapping.scroll_docs(-1)
+			else
+				fallback()
+			end
+		end, { "i", "c", "s" }),
+
+		-- scroll docs down
+		["<C-d>"] = cmp.mapping(function(fallback)
+			if cmp.visible() then
 				cmp.mapping.scroll_docs(1)
 			else
 				fallback()
 			end
 		end, { "i", "c", "s" }),
 
-		-- prev choice node or scroll docs up
+		-- next choice node
+		["<C-n>"] = cmp.mapping(function(fallback)
+			if luasnip.choice_active() then
+				luasnip.change_choice(1)
+			else
+				fallback()
+			end
+		end, { "i", "c", "s" }),
+
+		-- prev choice node
 		["<C-p>"] = cmp.mapping(function(fallback)
 			if luasnip.choice_active() then
 				luasnip.change_choice(-1)
-			elseif cmp.visible() then
-				cmp.mapping.scroll_docs(-1)
 			else
 				fallback()
 			end

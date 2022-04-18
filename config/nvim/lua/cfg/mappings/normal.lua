@@ -1,8 +1,8 @@
 local function map(key, cmd)
-	vim.api.nvim_set_keymap("", key, cmd, { noremap = true })
+	vim.keymap.set("", key, cmd, { noremap = true })
 end
 local function maps(key, cmd)
-	vim.api.nvim_set_keymap("", key, cmd, { noremap = true, silent = true })
+	vim.keymap.set("", key, cmd, { noremap = true, silent = true })
 end
 
 maps("<F2>", ":NvimTreeToggle<CR>")

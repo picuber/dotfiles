@@ -10,7 +10,10 @@ return {
         path = runtime_path, -- setup your lua path
       },
       diagnostics = {
-        globals = {'vim'}, -- get the language server to recognize the `vim` global
+        globals = {
+            'vim', -- get the language server to recognize the `vim` global
+            'alsa_monitor', -- for wireplumber
+    },
       },
       workspace = {
         library = vim.api.nvim_get_runtime_file("", true), -- make the server aware of Neovim runtime files

@@ -47,6 +47,7 @@ return packer.startup(function(use)
 	-- colorschemes --
 	use("arcticicestudio/nord-vim")
 	use("tomasr/molokai")
+	use("cocopon/iceberg.vim")
 
 	-- tpope --
 	use("tpope/vim-repeat") -- more . repeats
@@ -122,6 +123,23 @@ return packer.startup(function(use)
 		config = [[ require("cfg.plugins.nvim-tree") ]],
 	})
 
+	-- telescope
+	use({
+		"nvim-telescope/telescope.nvim",
+		requires = {
+			{ "nvim-lua/plenary.nvim" },
+			{ "LinArcX/telescope-env.nvim" },
+			{ "aloussase/telescope-gradle.nvim" },
+			{ "benfowler/telescope-luasnip.nvim", module = "telescope._extensions.luasnip" },
+			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+		},
+		config = [[ require("cfg.plugins.telescope") ]],
+	})
+	use({
+		"AckslD/nvim-neoclip.lua",
+		requires = { { "nvim-telescope/telescope.nvim" } },
+		config = [[ require("cfg.plugins.neoclip") ]],
+	})
 	-- tools --
 	-- use("vimwiki/vimwiki")
 

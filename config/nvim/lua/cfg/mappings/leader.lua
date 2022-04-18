@@ -1,14 +1,15 @@
 -- include functions of https://github.com/tpope/vim-unimpaired
 
 local function lmap(key, cmd)
-	vim.api.nvim_set_keymap("", "<leader>" .. key, cmd, { noremap = true })
+	vim.keymap.set("", "<leader>" .. key, cmd, { noremap = true })
 end
 local function lmaps(key, cmd)
-	vim.api.nvim_set_keymap("", "<leader>" .. key, cmd, { noremap = true, silent = true })
+	vim.keymap.set("", "<leader>" .. key, cmd, { noremap = true, silent = true })
 end
 
 -- buffer --
 lmap("bs", ":ls<CR>:b<Space>") -- show/list
+lmaps("bS", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 ---select ---
 lmap("bb", "<C-^>") -- toggle
 lmaps("bl", ":bnext<CR>") -- next buffer
@@ -88,7 +89,9 @@ opt("x", { "cursorcolumn", "cursorline" })
 opt("y", { "list" }) -- "symbols"
 lmaps(",h", ":nohlsearch<CR>") -- turn off search highlight
 lmaps(",l", ":lclose<CR>") -- close location list
+lmaps(",L", ":lopen<CR>") -- close location list
 lmaps(",c", ":cclose<CR>") -- close qickfix list
+lmaps(",C", ":copen<CR>") -- close qickfix list
 
 -- pairs --
 local nxt = function(key, cmd)
@@ -143,8 +146,10 @@ lmaps("xR", ":%!xxd -r<CR>:%!xxd<CR>")
 
 -- colours --
 --- colorscheme ---
-lmaps("cn", ":colorscheme nord<CR>")
-lmaps("cm", ":colorscheme molokai<CR>")
+lmaps("cn", "<cmd>set background=dark<CR><cmd>colorscheme nord<CR>")
+lmaps("cm", "<cmd>set background=dark<CR><cmd>colorscheme molokai<CR>")
+lmaps("ci", "<cmd>set background=light<CR><cmd>colorscheme iceberg<CR>")
+lmaps("cI", "<cmd>set background=dark<CR><cmd>colorscheme iceberg<CR>")
 --- lualine ---
 lmaps("cln", ":lua require('lualine').setup({ options = { theme = 'nord' } })<CR>")
 lmaps("clm", ":lua require('lualine').setup({ options = { theme = 'molokai' } })<CR>")
@@ -163,3 +168,27 @@ lmaps("od", ":Obsession!<CR>")
 
 lmaps("ot", ":NvimTreeToggle<CR>") -- [o]pen nvim-[t]ree
 lmaps("ou", ":MundoToggle<CR>") -- [o]pen m[u]ndo
+
+
+-- telescope --
+--- [f]ind ... ---
+lmap("f<Space>", ":Telescope<Space>")
+lmaps(",f", "<cmd>lua require('telescope.builtin').resume()<CR>")
+lmaps("ff", "<cmd>lua require('telescope.builtin').find_files()<CR>")
+lmaps("fg", "<cmd>lua require('telescope.builtin').live_grep()<CR>")
+lmaps("f/", "<cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>")
+lmaps("fc", "<cmd>lua require('telescope.builtin').quickfix()<CR>")
+lmaps("fK", "<cmd>lua require('telescope.builtin').man_pages()<CR>")
+lmaps("fS", "<cmd>lua require('telescope.builtin').spell_suggest()<CR>")
+lmaps("fp", "<cmd>Telescope neoclip theme=dropdown<CR>")
+lmaps("f@", "<cmd>Telescope macroscope theme=dropdown<CR>")
+lmaps("fl", "<cmd>Telescope luasnip theme=dropdown<CR>")
+
+
+--- lsp things ---
+lmaps("fd", "<cmd>lua require('telescope.builtin').diagnostics()<CR>")
+lmaps("fi", "<cmd>lua require('telescope.builtin').lsp_implementations()<CR>")
+lmaps("fr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>")
+lmaps("fa", "<cmd>lua require('telescope.builtin').lsp_code_actions()<CR>")
+lmaps("fs", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>")
+lmaps("fw", "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>")
