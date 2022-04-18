@@ -12,7 +12,9 @@ alias :q=exit
 alias :Q=exit
 alias :e=nvim
 
-alias v=nvim
+alias n="nvm --version > /dev/null"
+alias v="nvim"
+alias vs="nvim -S Session.vim"
 
 	# git aliases, non-conflicting with git plugin
 alias gslog='glog --show-signature'
