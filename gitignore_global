@@ -1,4 +1,5 @@
 Session.vim
+Session.vim.*.obsession~
 .mypy_cache
 __pycache__
 .python-version
