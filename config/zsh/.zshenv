@@ -2,6 +2,7 @@
 #   export ZDOTDIR=$HOME/.config/zsh
 #   [[ -f $ZDOTDIR/.zshenv ]] && . $ZDOTDIR/.zshenv
 export ZDOTDIR=$HOME/.config/zsh # set here too, just to be sure
+export ZPLUGINDIR=${ZPLUGINDIR:-${ZDOTDIR:-$HOME/.config/zsh}/plugins}
 
 path_add() {
     case ":$PATH:" in
