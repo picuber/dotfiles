@@ -140,6 +140,23 @@ return packer.startup(function(use)
 		requires = { { "nvim-telescope/telescope.nvim" } },
 		config = [[ require("cfg.plugins.neoclip") ]],
 	})
+
+	-- nvim-dap
+	use({ "mfussenegger/nvim-dap" })
+	use({ "theHamsta/nvim-dap-virtual-text", config = [[ require("cfg.plugins.nvim-dap-virtual-text") ]] })
+	use({
+		"nvim-telescope/telescope-dap.nvim",
+		requires = {
+			{ "mfussenegger/nvim-dap" },
+			{ "nvim-telescope/telescope.nvim" },
+		},
+	})
+	use({
+		"rcarriga/nvim-dap-ui",
+		requires = { "mfussenegger/nvim-dap" },
+		config = [[ require("cfg.plugins.nvim-dap-ui") ]],
+	})
+
 	-- tools --
 	-- use("vimwiki/vimwiki")
 

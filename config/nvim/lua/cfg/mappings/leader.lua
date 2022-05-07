@@ -164,10 +164,12 @@ lmaps("Cm", ":colorscheme molokai<CR>:lua require('lualine').setup({ options = {
 
 -- Plugins --
 lmaps("oo", ":Obsession<CR>")
-lmaps("od", ":Obsession!<CR>")
+lmaps("oO", ":Obsession!<CR>")
 
 lmaps("ot", ":NvimTreeToggle<CR>") -- [o]pen nvim-[t]ree
 lmaps("ou", ":MundoToggle<CR>") -- [o]pen m[u]ndo
+
+lmaps("od", ":lua require('dapui').toggle()<CR>") -- [o]pen [d]apui
 
 
 -- telescope --
@@ -184,7 +186,6 @@ lmaps("fp", "<cmd>Telescope neoclip theme=dropdown<CR>")
 lmaps("f@", "<cmd>Telescope macroscope theme=dropdown<CR>")
 lmaps("fl", "<cmd>Telescope luasnip theme=dropdown<CR>")
 
-
 --- lsp things ---
 lmaps("fd", "<cmd>lua require('telescope.builtin').diagnostics()<CR>")
 lmaps("fi", "<cmd>lua require('telescope.builtin').lsp_implementations()<CR>")
@@ -192,3 +193,32 @@ lmaps("fr", "<cmd>lua require('telescope.builtin').lsp_references()<CR>")
 lmaps("fa", "<cmd>lua require('telescope.builtin').lsp_code_actions()<CR>")
 lmaps("fs", "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>")
 lmaps("fw", "<cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>")
+
+-- DAP --
+lmaps("dc", "<cmd>lua require('dap').continue()<CR>")
+lmaps("dn", "<cmd>lua require('dap').step_oven()<CR>") -- [n]ext
+lmaps("di", "<cmd>lua require('dap').step_in()<CR>")
+lmaps("do", "<cmd>lua require('dap').step_out()<CR>")
+lmaps("db", "<cmd>lua require('dap').toggle_breakpoint()<CR>")
+lmaps("dB", "<cmd>lua require('telescope').extensions.dap.list_breakpoints()<CR>")
+lmaps("dv", "<cmd>lua require('telescope').extensions.dap.variables()<CR>")
+lmaps("ds", "<cmd>lua require('telescope').extensions.dap.frames()<CR>") -- [s]tack trace/frames
+
+-- Git --
+lmaps("gt", "<cmd>Telescope git_status<CR>") -- s[t]atus
+lmaps("gT", "<cmd>Telescope git_stash<CR>") -- s[T]ash
+lmaps("gb", "<cmd>Telescope git_branches<CR>")
+lmaps("gl", "<cmd>Telescope git_commits<CR>") -- [l]og
+lmaps("gL", "<cmd>Telescope git_bcommits<CR>") -- file [L]og
+lmaps("gL", "<cmd>Telescope git_bcommits<CR>") -- file [L]og
+lmaps("gd", "<cmd>Gitsigns diffthis<CR>")
+lmaps("gD", "<cmd>Gitsigns diffthis ~<CR>")
+lmaps("gn", "<cmd>Gitsigns next_hunk<CR>")
+lmaps("gp", "<cmd>Gitsigns prev_hunk<CR>")
+lmaps("gh", "<cmd>Gitsigns preview_hunk<CR>") -- preview [h]unk
+lmaps("gP", "<cmd>Gitsigns preview_hunk<CR>") -- [p]review hunk
+lmaps("gs", "<cmd>Gitsigns stage_hunk<CR>")
+lmaps("gS", "<cmd>Gitsigns stage_buffer<CR>")
+lmaps("gu", "<cmd>Gitsigns undo_stage_hunk<CR>")
+lmaps("gr", "<cmd>Gitsigns reset_hunk<CR>")
+lmaps("gR", "<cmd>Gitsigns reset_buffer<CR>")
