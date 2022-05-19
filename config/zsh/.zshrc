@@ -6,6 +6,7 @@
 [ -f "$ZDOTDIR/alias.zsh" ] && source "$ZDOTDIR/alias.zsh"
 [ -f "$ZDOTDIR/functions.zsh" ] && source "$ZDOTDIR/functions.zsh"
 [ -f "$ZDOTDIR/completion.zsh" ] && source "$ZDOTDIR/completion.zsh"
+[ -f "$ZDOTDIR/_local.zsh" ] && source "$ZDOTDIR/_local.zsh"
 
 
 
