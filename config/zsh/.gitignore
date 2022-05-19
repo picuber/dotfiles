@@ -5,3 +5,5 @@
 # Zsh completion-optimization dumpfile
 *zcompdump*
 
+# local per-machine settings
+_local.zsh
