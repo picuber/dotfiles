@@ -48,8 +48,8 @@ blacklistadd ^(http[s]?://)trello\.com/.*
 
 " -- site specific --
 " only hint search results [3]
-bindurl ^(http[s]?://)duckduckgo.com f hint -Jc [class~=result__a]
-bindurl ^(http[s]?://)duckduckgo.com F hint -Jbc [class~=result__a]
+bindurl ^(http[s]?://)duckduckgo.com f hint -Jc [data-testid~=result-title-a]
+bindurl ^(http[s]?://)duckduckgo.com F hint -Jbc [data-testid~=result-title-a]
 
 " -- redirects --
 " use AmazonSmile
