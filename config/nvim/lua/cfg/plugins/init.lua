@@ -187,6 +187,7 @@ return packer.startup(function(use)
 		config = [[ require("cfg.plugins.vim-table-mode") ]],
 	})
 	use({ "mattn/emmet-vim", config = [[ require('cfg.plugins.emmet-vim') ]] })
+	use("godlygeek/tabular")
 
 	-- Lualine
 	use({
@@ -197,6 +198,7 @@ return packer.startup(function(use)
 
 	-- Syntax --
 	use("tridactyl/vim-tridactyl") -- tridactyl config syntax file
+	use({ "preservim/vim-markdown", config = [[ require("cfg.plugins.vim-markdown") ]] })
 
 	-- Automatic initial plugin installation
 	if packer_bootstrap then
