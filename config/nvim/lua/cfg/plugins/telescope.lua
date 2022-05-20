@@ -1,5 +1,6 @@
 local telescope = require("telescope")
 local actions = require("telescope.actions")
+local themes = require("telescope.themes")
 
 telescope.setup({
 	defaults = {
@@ -67,7 +68,11 @@ telescope.setup({
 		lsp_workspace_symbols = { theme = "ivy" },
 		git_branches = { theme = "dropdown" },
 	},
-	extensions = {},
+	extensions = {
+		["ui-select"] = {
+			themes.get_dropdown({}),
+		},
+	},
 })
 
 telescope.load_extension("env")
@@ -77,3 +82,4 @@ telescope.load_extension("fzf")
 telescope.load_extension("neoclip")
 telescope.load_extension("macroscope")
 telescope.load_extension("dap")
+telescope.load_extension("ui-select")

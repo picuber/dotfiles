@@ -23,10 +23,10 @@ function M.on_attach(client, buff)
 
 	bmap("d", "definition")
 	bmap("D", "declaration")
-	bmap("I", "implementation")
+	bmap("i", "implementation")
 	bmap("h", "hover")
-	bmap("r", "rename")
-	bmap("R", "references")
+	bmap("r", "references")
+	bmap("R", "rename")
 	bmap("s", "signature_help")
 	bmap("a", "code_action")
 	bmap("f", "formatting")
@@ -34,7 +34,7 @@ function M.on_attach(client, buff)
 	dmap("p", "goto_prev()")
 	dmap("l", "open_float(" .. floatcfg .. ")")
 	dmap("L", "setloclist()")
-	map("i", ":LspInfo<CR>")
+	map("I", ":LspInfo<CR>")
 
 	-- Format on save if formatting is available
 	--[==[

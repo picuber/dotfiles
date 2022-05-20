@@ -132,6 +132,7 @@ return packer.startup(function(use)
 			{ "aloussase/telescope-gradle.nvim" },
 			{ "benfowler/telescope-luasnip.nvim", module = "telescope._extensions.luasnip" },
 			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
+			{ "nvim-telescope/telescope-ui-select.nvim" },
 		},
 		config = [[ require("cfg.plugins.telescope") ]],
 	})
