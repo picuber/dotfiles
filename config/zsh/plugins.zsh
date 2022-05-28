@@ -48,3 +48,4 @@ pluginit ael-code/zsh-colored-man-pages
 pluginit zsh-users/zsh-syntax-highlighting  # Syntax highlighting bundle.
 pluginit zsh-users/zsh-autosuggestions      # suggest recent matching commands from history
 pluginit zsh-users/zsh-completions             # additional completion definitions
+plug_done

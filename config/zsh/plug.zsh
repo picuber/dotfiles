@@ -62,3 +62,7 @@ function pluginit() {
     load_initfiles $1
     fpath_add $ZPLUGINDIR/${1:t}
 }
+
+function plug_done() {
+    unset -f plug_clone fpath_add load_initfiles plug pluginit plug_done
+}
