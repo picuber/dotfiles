@@ -1,13 +1,20 @@
 # zmodload zsh/zprof  # uncomment for start-up profiling
 
-[ -f "$ZDOTDIR/plugins.zsh" ] && source "$ZDOTDIR/plugins.zsh" # antigen
-[ -f "$ZDOTDIR/keybinds.zsh" ] && source "$ZDOTDIR/keybinds.zsh"
-[ -f "$ZDOTDIR/options.zsh" ] && source "$ZDOTDIR/options.zsh"
-[ -f "$ZDOTDIR/alias.zsh" ] && source "$ZDOTDIR/alias.zsh"
-[ -f "$ZDOTDIR/functions.zsh" ] && source "$ZDOTDIR/functions.zsh"
-[ -f "$ZDOTDIR/completion.zsh" ] && source "$ZDOTDIR/completion.zsh"
-[ -f "$ZDOTDIR/_local.zsh" ] && source "$ZDOTDIR/_local.zsh"
+function load {
+    [ -f "$ZDOTDIR/${1:?"Please specify a file to load"}.zsh" ] && source "$ZDOTDIR/$1.zsh"
+}
 
+load "plug"
+load "plugins" # antigen
+load "keybinds"
+load "options"
+load "alias"
+load "functions"
+load "completion"
+load "prompt"
+load "_local"
+
+unset -f load
 
 
 # fzf (Ctrl-R: history, Ctrl-T: paste selected, Alt-C: cd into dir)

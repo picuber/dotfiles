@@ -7,3 +7,6 @@
 
 # local per-machine settings
 _local.zsh
+
+# install directory of plugins
+plugins
