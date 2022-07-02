@@ -40,14 +40,16 @@ lmaps("tm$", ":$tabmove<CR>") -- move to last
 
 -- window --
 --- split ---
-lmaps("ws", ":split<CR>") -- current buffer
-lmaps("wS", ":vsplit<CR>") -- current buffer (vert)
-lmaps("wn", ":new<CR>") -- new buffer
-lmaps("wN", ":vnew<CR>") -- new buffer (vert)
-lmap("wb", ":ls<CR>:sbuffer<Space>") -- select buffer
-lmap("wB", ":ls<CR>:vertical sbuffer<Space>") -- select buffer (vert)
-lmap("wf", ":split<Space>") -- select buffer
-lmap("wF", ":vertical split<Space>") -- select buffer (vert)
+lmaps("wS", ":split<CR>") -- current buffer
+lmaps("ws", ":vsplit<CR>") -- current buffer (vert)
+lmaps("wN", ":new<CR>") -- new buffer
+lmaps("wn", ":vnew<CR>") -- new buffer (vert)
+lmap("wB", ":ls<CR>:sbuffer<Space>") -- select buffer
+lmap("wb", ":ls<CR>:vertical sbuffer<Space>") -- select buffer (vert)
+lmap("wF", ":split<Space>") -- select buffer
+lmap("wf", ":vertical split<Space>") -- select buffer (vert)
+lmap("wC", ":split%<CR>") -- clone buffer
+lmap("wc", ":vsplit%<CR>") -- clone buffer (vert)
 --- select ---
 lmap("ww", "<C-W><C-P>") -- toggle
 lmap("wW", "<C-W><C-W>") -- cycle

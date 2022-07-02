@@ -17,13 +17,23 @@ function M.on_attach(client, buff)
 	local function dmap(key, cmd)
 		map(key, ":lua vim.diagnostic." .. cmd .. "<CR>")
 	end
+	local function mapC(key, cmd)
+		local opt = { noremap = true, silent = true }
+		vim.api.nvim_buf_set_keymap(buff, "n", "<leader>A" .. key, cmd, opt)
+	end
+	local function bmapC(key, cmd)
+		mapC(key, ":vs%<CR><C-W><C-P>:lua vim.lsp.buf." .. cmd .. "()<CR>")
+	end
 
 	local floatcfg =
 		[[{focusable=false,source="if_many",close_events={"BufLeave","CursorMoved","InsertEnter","FocusLost"}}]]
 
 	bmap("d", "definition")
+	bmapC("d", "definition")
 	bmap("D", "declaration")
+	bmapC("D", "declaration")
 	bmap("i", "implementation")
+	bmapC("i", "implementation")
 	bmap("h", "hover")
 	bmap("r", "references")
 	bmap("R", "rename")
