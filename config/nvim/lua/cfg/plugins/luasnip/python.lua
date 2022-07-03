@@ -36,4 +36,16 @@ ls.add_snippets("python", {
 		t({ ":", "\t" }),
 		i(0, "..."),
 	}),
+	s({ trig = "ifmain", name = "if main" }, {
+		t({'if __name__ == "__main__":', "\t" }),
+		i(0, "..."),
+	}),
+	s({ trig = "main", name = "define main and ifmain" }, {
+		t({
+			"def main():",
+			"\t",
+		}),
+		i(0, "..."),
+		t({"", "", "", 'if __name__ == "__main__":', "\tmain()" }),
+	}),
 }, { key = "python" })
