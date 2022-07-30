@@ -887,6 +887,7 @@ for_window [class="minecraft-launcher"] floating enable
 for_window [class="mpv"] floating enable
 for_window [class="vlc"] floating enable
 for_window [class="Zeal"] floating enable
+for_window [class="Proton Mail Bridge"] floating enable
 
 for_window [class="Zeal"] resize set 1280 720
 
