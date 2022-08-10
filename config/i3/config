@@ -319,7 +319,7 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # Audio keys
 bindsym XF86AudioMute exec --no-startup-id $HOME/scripts/audioctl sound-toggle
-bindsym Shift+XF86AudioMute exec alacritty -e pulsemixer
+bindsym Shift+XF86AudioMute exec alacritty --class sound -e pulsemixer
 bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/scripts/audioctl sound-inc
 bindsym Shift+XF86AudioRaiseVolume exec helvum
 bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/scripts/audioctl sound-dec
@@ -338,7 +338,7 @@ bindsym XF86WLAN nop	# F8
 bindsym XF86Favorites nop # F12
 bindsym XF86WakeUp nop	# Fn
 
-bindsym XF86Calculator exec alacritty -e ptipython
+bindsym XF86Calculator exec alacritty --class calc -e ptipython
 bindsym XF86Sleep nop
 
 
@@ -766,6 +766,24 @@ mode "plover" {
 	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (plover):" "Plover Mode:\ns: start\nl: show layout\nt: toggle output\nq: quit"
 }
 
+mode "launch" {
+	bindsym m mode "default", exec --no-startup-id alacritty --class mail -e neomutt
+	bindsym $mod+m mode "default", exec --no-startup-id alacritty --class mail -e neomutt
+	bindsym b mode "default", exec --no-startup-id alacritty --class bluetooth -e bluetoothctl
+	bindsym $mod+b mode "default", exec --no-startup-id alacritty --class bluetooth -e bluetoothctl
+	bindsym s mode "default", exec --no-startup-id alacritty --class sound -e pulsemixer
+	bindsym $mod+s mode "default", exec --no-startup-id alacritty --class sound -e pulsemixer
+	bindsym p mode "default", exec --no-startup-id helvum
+	bindsym $mod+p mode "default", exec --no-startup-id helvum
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (launch):" "Launch Mode:\nm: neomutt (mail)\nb: bluetoothctl\ns: pulsemixer (sound)\np: helvum (patchbay)"
+}
+
 mode "mode" {
 	bindsym r mode "resize"
 	bindsym $mod+r mode "resize"
@@ -783,13 +801,15 @@ mode "mode" {
 	bindsym $mod+s mode "screenshot"
 	bindsym v mode "plover"
 	bindsym $mod+v mode "plover"
+	bindsym l mode "launch"
+	bindsym $mod+l mode "launch"
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
 
 	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (mode):" "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro\no: Open/rofi\nk: Keyboard\ng: Gaps\ns: Screenshot\nv: Plo(v)er"
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (mode):" "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro\no: Open/rofi\nk: Keyboard\ng: Gaps\ns: Screenshot\nv: Plo(v)er\nl: Launch"
 }
 bindsym $mod+m mode "mode"
 bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help:" "Mod4+m: mode menu"
@@ -888,6 +908,9 @@ for_window [class="mpv"] floating enable
 for_window [class="vlc"] floating enable
 for_window [class="Zeal"] floating enable
 for_window [class="Proton Mail Bridge"] floating enable
+for_window [class="Alacritty" instance="sound"] floating enable
+for_window [class="Alacritty" instance="bluetooth"] floating enable
+for_window [class="helvum"] floating enable
 
 for_window [class="Zeal"] resize set 1280 720
 
