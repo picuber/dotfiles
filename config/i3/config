@@ -815,6 +815,30 @@ bindsym $mod+m mode "mode"
 bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help:" "Mod4+m: mode menu"
 
 
+# -----THEME-----
+# nord theme by arcticicestudio
+# polar night
+set $nord0 #2E3440
+set $nord1 #3B4252
+set $nord2 #434C5E
+set $nord3 #4C566A
+# snow storm
+set $nord4 #D8DEE9
+set $nord5 #E5E9F0
+set $nord6 #ECEFF4
+# frost
+set $nord7 #8FBCBB
+set $nord8 #88C0D0
+set $nord9 #81A1C1
+set $nordA #5E81AC
+# aurora
+set $nordB #BF616A
+set $nordC #D08770
+set $nordD #EBCB8B
+set $nordE #A3BE8C
+set $nordF #B48EAD
+
+
 
 # -----BAR-----
 # Start i3bar to display a workspace bar (plus the system information i3status
@@ -830,15 +854,15 @@ bar {
 	status_command i3status
 
     colors {
-        background #000000
-        statusline #ffffff
-        separator #666666
+        background $nord0
+        statusline $nord6
+        separator $nord3
 #						   border  backgr. text
-        focused_workspace  #0088ff #0000ff #ffffff
-        active_workspace   #333333 #5f676a #ffffff
-        inactive_workspace #333333 #222222 #888888
-        urgent_workspace   #880000 #ff0000 #ffffff
-        binding_mode       #008800 #00ff00 #000000
+        focused_workspace  $nord8 $nord8 $nord0
+        active_workspace   $nord9 $nord9 $nord1
+        inactive_workspace $nord3 $nord3 $nord4
+        urgent_workspace   $nordB $nordB $nord6
+        binding_mode       $nordE $nordE $nord0
     }
 }
 
@@ -851,28 +875,28 @@ bar{
 	strip_workspace_numbers yes
 
     colors {
-        background #000000
-        statusline #ffffff
-        separator #666666
+        background $nord0
+        statusline $nord6
+        separator $nord3
 #						   border  backgr. text
-        focused_workspace  #0088ff #0000ff #ffffff
-        active_workspace   #333333 #5f676a #ffffff
-        inactive_workspace #333333 #222222 #888888
-        urgent_workspace   #880000 #ff0000 #ffffff
-        binding_mode       #008800 #00ff00 #000000
+        focused_workspace  $nord8 $nord8 $nord0
+        active_workspace   $nord9 $nord9 $nord1
+        inactive_workspace $nord3 $nord3 $nord4
+        urgent_workspace   $nordB $nordB $nord6
+        binding_mode       $nordE $nordE $nord0
     }
 }
 
 # -----SETTINGS-----
 # -----CLOLOURS-----
 # class                 border  backgr. text    indicator child_border
-client.focused          #0088ff #0000ff #000000 #0088ff   #0000ff
-client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
-client.unfocused        #333333 #222222 #888888 #292d2e   #222222
-client.urgent           #2f343a #900000 #ffffff #900000   #900000
-client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+client.focused          $nord8  $nord8  $nord0  $nordF    $nord8
+client.focused_inactive $nord9  $nord9  $nord1  $nord9    $nord9
+client.unfocused        $nord0  $nord0  $nord9  $nord0    $nord0
+client.urgent           $nordB  $nordB  $nord6  $nordB    $nordB
+client.placeholder      $nord0  $nord0  $nord6  $nord0    $nord0
 
-client.background       #ffffff
+client.background       $nord6
 
 # -----WINDOW INITIALIZATION-----
 assign [class="Binding of Isaac: Afterbirth+"] $ws8
