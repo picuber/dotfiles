@@ -127,9 +127,9 @@ font pango:monospace 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Shift+Return exec termite
+bindsym $mod+Shift+Return exec alacritty --class notes -e nvim
 bindsym $mod+Return exec alacritty
-bindsym $mod+Control+Return exec kitty
+bindsym $mod+Control+Return exec alacritty --class calc -e ptipython
 bindsym $mod+Shift+Control+Return exec i3-sensible-terminal
 
 # start a browser
