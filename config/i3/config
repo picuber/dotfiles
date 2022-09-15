@@ -154,10 +154,10 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # make a hacky mouse for when the touchpad dies
-bindsym $mod+Control+Left exec xdotool mousemove_relative -- -100 0
-bindsym $mod+Control+Down exec xdotool mousemove_relative 0 100
-bindsym $mod+Control+Up exec xdotool mousemove_relative -- 0 -100
-bindsym $mod+Control+Right exec xdotool mousemove_relative 100 0
+bindsym $mod+Shift+Left exec xdotool mousemove_relative -- -100 0
+bindsym $mod+Shift+Down exec xdotool mousemove_relative 0 100
+bindsym $mod+Shift+Up exec xdotool mousemove_relative -- 0 -100
+bindsym $mod+Shift+Right exec xdotool mousemove_relative 100 0
 bindsym $mod+Left exec xdotool mousemove_relative -- -10 0
 bindsym $mod+Down exec xdotool mousemove_relative 0 10
 bindsym $mod+Up exec xdotool mousemove_relative -- 0 -10
@@ -165,8 +165,10 @@ bindsym $mod+Right exec xdotool mousemove_relative 10 0
 bindsym $mod+Shift+Prior exec xdotool click 1
 bindsym $mod+Control+Prior exec xdotool click 2
 bindsym $mod+Shift+Next exec xdotool click 3
-bindsym $mod+Shift+Up exec xdotool click 4
-bindsym $mod+Shift+Down exec xdotool click 5
+bindsym $mod+Control+Up exec xdotool click 4
+bindsym $mod+Control+Down exec xdotool click 5
+bindsym $mod+Control+Left exec xdotool mousedown 1
+bindsym $mod+Control+Right exec xdotool mouseup 1
 
 # split in horizontal orientation
 bindsym $mod+e split h
