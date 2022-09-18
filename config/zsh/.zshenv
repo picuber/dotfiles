@@ -4,6 +4,25 @@
 export ZDOTDIR=$HOME/.config/zsh # set here too, just to be sure
 export ZPLUGINDIR=${ZPLUGINDIR:-${ZDOTDIR:-$HOME/.config/zsh}/plugins}
 
+# XDG directories, also set in ~/.profile and .zprofile
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_STATE_HOME="$HOME/.local/state"
+export XDG_CACHE_HOME="$HOME/.cache"
+
+# program directories
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
+export IPYTHONDIR="$XDG_CONFIG_HOME"/ipython
+export NVM_DIR="$XDG_DATA_HOME"/nvm
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
+export LESSHISTFILE="$XDG_CACHE_HOME"/less/history
+export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
+export MYPY_CACHE_DIR="$XDG_CACHE_HOME"/mypy
+export TERMINFO="$XDG_DATA_HOME"/terminfo
+export TERMINFO_DIRS="$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
+export GOPATH="$XDG_DATA_HOME"/go
+
 path_add() {
     case ":$PATH:" in
       *":$1:"*) :;; # already there
@@ -11,7 +30,7 @@ path_add() {
     esac
 }
 
-path_add "$HOME/.cargo/bin" # rust
+path_add "$CARGO_HOME/bin" # rust
 path_add "/opt/dropbox/bin" # dropbox
 
 
@@ -31,4 +50,8 @@ export FZF_DEFAULT_OPTS="--multi --exact --reverse --inline-info --border --heig
 export FZF_CTRL_T_OPTS="--multi --exact --reverse --inline-info --border --height 50% --bind tab:down,btab:up,alt-space:toggle+down,ctrl-space:toggle+up,esc:cancel"
 export FZF_CTRL_R_OPTS="--multi --exact --reverse --inline-info --border --height 50% --bind tab:down,btab:up,alt-space:toggle+down,ctrl-space:toggle+up,esc:cancel"
 export FZF_ALT_C_OPTS="--multi --exact --reverse --inline-info --border --height 50% --bind tab:down,btab:up,alt-space:toggle+down,ctrl-space:toggle+up,esc:cancel"
-export NVM_DIR=$HOME/.nvm
+
+    # history
+export HISTFILE=$ZDOTDIR/history
+export HISTSIZE=500000
+export SAVEHIST=500000

@@ -1,14 +1,14 @@
 nvm_checkout_latest_release_tag() {
-    cd "$HOME/.nvm" && git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
+    cd "${NVM_DIR:-$HOME/.nvm}" && git checkout `git describe --abbrev=0 --tags --match "v[0-9]*" $(git rev-list --tags --max-count=1)`
 }
 
-if [ -d "$HOME/.nvm" ]; then
+if [ -d "${NVM_DIR:-$HOME/.nvm}" ]; then
     echo Updating nvm
-    cd "$HOME/.nvm" && git fetch --tags origin
+    cd "${NVM_DIR:-$HOME/.nvm}" && git fetch --tags origin
     nvm_checkout_latest_release_tag
 else
     echo Installing nvm
-    git clone https://github.com/nvm-sh/nvm.git "$HOME/.nvm"
+    git clone https://github.com/nvm-sh/nvm.git "${NVM_DIR:-$HOME/.nvm}"
     nvm_checkout_latest_release_tag
 fi
 # vim: ft=bash

@@ -1,6 +1,6 @@
 mdifnes gpg ~/.gnupg
-lnifne gpg ~/.gnupg/dirmngr.conf ~/.dotfiles/gnupg/dirmngr.conf
-lnifne gpg ~/.gnupg/gpg.conf ~/.dotfiles/gnupg/gpg.conf
-lnifne gpg ~/.gnupg/gpg-agent.conf ~/.dotfiles/gnupg/gpg-agent.conf
+lnifne gpg ~/.local/share/gnupg/dirmngr.conf ~/.dotfiles/local/share/gnupg/dirmngr.conf
+lnifne gpg ~/.local/share/gnupg/gpg.conf ~/.dotfiles/local/share/gnupg/gpg.conf
+lnifne gpg ~/.local/share/gnupg/gpg-agent.conf ~/.dotfiles/local/share/gnupg/gpg-agent.conf
 
 # vim: ft=bash

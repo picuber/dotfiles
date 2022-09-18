@@ -10,3 +10,6 @@ _local.zsh
 
 # install directory of plugins
 plugins
+
+# history file
+history

@@ -10,7 +10,7 @@
 [commit]
 	gpgsign = true
 [core]
-	excludesfile = ~/.gitignore_global
+	excludesfile = ~/.config/git/gitignore_global
 [pull]
 	rebase = false
 [alias]

@@ -1,5 +1,7 @@
-lnifne tmux ~/.tmux.conf .dotfiles/tmux.conf
-gclifneep tmux https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-tmux source-file ~/.tmux.conf
+mdifne tmux ~/.config
+mdifne tmux ~/.config/tmux
+lnifne tmux ~/.config/tmux/tmux.conf ~/.dotfiles/config/tmux/tmux.conf
+gclifneep tmux https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+tmux source-file ~/.config/tmux.conf
 
 # vim: ft=bash
