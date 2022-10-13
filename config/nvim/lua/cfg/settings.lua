@@ -45,3 +45,6 @@ vim.opt.gdefault = true -- set 'g' flag to default on in :s, set flag to turn it
 
 -- command completion --
 vim.opt.wildignorecase = true -- file completion is case-insensitive
+
+-- file settings --
+vim.opt.fixendofline = false
