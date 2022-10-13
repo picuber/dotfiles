@@ -786,6 +786,41 @@ mode "launch" {
 	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (launch):" "Launch Mode:\nm: neomutt (mail)\nb: bluetoothctl\ns: pulsemixer (sound)\np: helvum (patchbay)"
 }
 
+mode "mouse" {
+    bindsym KP_Left exec xdotool mousemove_relative -- -10 0
+    bindsym KP_Begin exec xdotool mousemove_relative 0 10
+    bindsym KP_Up exec xdotool mousemove_relative -- 0 -10
+    bindsym KP_Right exec xdotool mousemove_relative 10 0
+    bindsym Shift+KP_Left exec xdotool mousemove_relative -- -100 0
+    bindsym Shift+KP_Begin exec xdotool mousemove_relative 0 100
+    bindsym Shift+KP_Up exec xdotool mousemove_relative -- 0 -100
+    bindsym Shift+KP_Right exec xdotool mousemove_relative 100 0
+    bindsym Control+KP_Left exec xdotool mousemove_relative -- -1 0
+    bindsym Control+KP_Begin exec xdotool mousemove_relative 0 1
+    bindsym Control+KP_Up exec xdotool mousemove_relative -- 0 -1
+    bindsym Control+KP_Right exec xdotool mousemove_relative 1 0
+    bindsym Shift+Control+KP_Left exec xdotool mousemove_relative -- -500 0
+    bindsym Shift+Control+KP_Begin exec xdotool mousemove_relative 0 500
+    bindsym Shift+Control+KP_Up exec xdotool mousemove_relative -- 0 -500
+    bindsym Shift+Control+KP_Right exec xdotool mousemove_relative 500 0
+    bindsym KP_Home exec xdotool click 1
+    bindsym KP_Prior exec xdotool click 2
+    bindsym KP_Next exec xdotool click 3
+    bindsym KP_End exec xdotool click 4
+    bindsym KP_Insert exec xdotool click 5
+    bindsym Shift+KP_End exec xdotool click 4 --repeat 2
+    bindsym Shift+KP_Insert exec xdotool click 5 --repeat 2
+    bindsym KP_Down exec xdotool mousedown 1
+
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+
+	# Usage
+	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (mouse):" "Mouse Mode:\n "
+}
+bindsym $mod+KP_Begin mode "mouse"
+
 mode "mode" {
 	bindsym r mode "resize"
 	bindsym $mod+r mode "resize"
