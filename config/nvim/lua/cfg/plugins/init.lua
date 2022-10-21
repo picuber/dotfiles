@@ -129,7 +129,6 @@ return packer.startup(function(use)
 		requires = {
 			{ "nvim-lua/plenary.nvim" },
 			{ "LinArcX/telescope-env.nvim" },
-			{ "aloussase/telescope-gradle.nvim" },
 			{ "benfowler/telescope-luasnip.nvim", module = "telescope._extensions.luasnip" },
 			{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
 			{ "nvim-telescope/telescope-ui-select.nvim" },
