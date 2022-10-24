@@ -2,6 +2,6 @@ mdifne tmux ~/.config
 mdifne tmux ~/.config/tmux
 lnifne tmux ~/.config/tmux/tmux.conf ~/.dotfiles/config/tmux/tmux.conf
 gclifneep tmux https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-tmux source-file ~/.config/tmux.conf
+tmux source-file ~/.config/tmux/tmux.conf
 
 # vim: ft=bash
