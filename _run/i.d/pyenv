@@ -1,5 +1,5 @@
 curl https://pyenv.run | bash
-gclifneep pyenv https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
+gclifneep pyenv https://github.com/pyenv/pyenv-virtualenv.git ~/.local/share/pyenv/plugins/pyenv-virtualenv
 
 lnifne pyenv/profile ~/.profile .dotfiles/profile
 # vim: ft=bash

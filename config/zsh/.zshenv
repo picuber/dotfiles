@@ -22,6 +22,7 @@ export MYPY_CACHE_DIR="$XDG_CACHE_HOME"/mypy
 export TERMINFO="$XDG_DATA_HOME"/terminfo
 export TERMINFO_DIRS="$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 export GOPATH="$XDG_DATA_HOME"/go
+export PYENV_ROOT="$XDG_DATA_HOME"/pyenv
 
 path_add() {
     case ":$PATH:" in
@@ -32,6 +33,7 @@ path_add() {
 
 path_add "$CARGO_HOME/bin" # rust
 path_add "/opt/dropbox/bin" # dropbox
+path_add "$PYENV_ROOT/bin" # pyenv
 
 
 	# this makes git ask me for gpg passphrase
