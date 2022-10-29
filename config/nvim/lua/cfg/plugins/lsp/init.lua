@@ -9,5 +9,6 @@ M.SERVERS = {
     'texlab', -- latex
     'cmake', -- cmake
     'hls', -- haskell
+    'clangd', -- C/C++
 }
 return M
