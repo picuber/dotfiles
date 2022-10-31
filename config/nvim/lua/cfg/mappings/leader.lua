@@ -8,8 +8,8 @@ local function lmaps(key, cmd)
 end
 
 -- buffer --
-lmap("bs", ":ls<CR>:b<Space>") -- show/list
-lmaps("bS", "<cmd>lua require('telescope.builtin').buffers()<CR>")
+lmap("bS", ":ls<CR>:b<Space>") -- show/list
+lmaps("bs", "<cmd>lua require('telescope.builtin').buffers()<CR>")
 ---select ---
 lmap("bb", "<C-^>") -- toggle
 lmaps("bl", ":bnext<CR>") -- next buffer
@@ -209,7 +209,7 @@ lmaps("ds", "<cmd>lua require('telescope').extensions.dap.frames()<CR>") -- [s]t
 -- Git --
 lmaps("gt", "<cmd>Telescope git_status<CR>") -- s[t]atus
 lmaps("gT", "<cmd>Telescope git_stash<CR>") -- s[T]ash
-lmaps("gb", "<cmd>Telescope git_branches<CR>")
+lmaps("gB", "<cmd>Telescope git_branches<CR>")
 lmaps("gl", "<cmd>Telescope git_commits<CR>") -- [l]og
 lmaps("gL", "<cmd>Telescope git_bcommits<CR>") -- file [L]og
 lmaps("gL", "<cmd>Telescope git_bcommits<CR>") -- file [L]og
@@ -224,4 +224,4 @@ lmaps("gS", "<cmd>Gitsigns stage_buffer<CR>")
 lmaps("gu", "<cmd>Gitsigns undo_stage_hunk<CR>")
 lmaps("gr", "<cmd>Gitsigns reset_hunk<CR>")
 lmaps("gR", "<cmd>Gitsigns reset_buffer<CR>")
-lmaps("gB", "<cmd>Gitsigns blame_line<CR>")
+lmaps("gb", "<cmd>Gitsigns blame_line<CR>")
