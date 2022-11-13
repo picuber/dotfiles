@@ -1,7 +1,7 @@
 local nvim_tree = require("nvim-tree")
 
 nvim_tree.setup({
-	disable_netrw = true,
+	-- disable_netrw = true,        -- conflicts with spell file downloads
 	hijack_cursor = true,
 	diagnostics = {
 		enable = true,

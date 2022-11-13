@@ -10,5 +10,6 @@ M.SERVERS = {
     'cmake', -- cmake
     'hls', -- haskell
     'clangd', -- C/C++
+    'jdtls', -- Java
 }
 return M
