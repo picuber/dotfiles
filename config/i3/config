@@ -243,9 +243,9 @@ set $ws5 5
 set $ws6 6
 set $ws7 7:Steam
 set $ws8 8:Game
-set $ws9 9:Music
+set $ws9 9:Media
 set $ws10 10:Msg
-set $ws11 11
+set $ws11 11:Stream
 set $ws12 12:KeePass
 
 # switch to workspace
@@ -777,6 +777,10 @@ mode "launch" {
 	bindsym $mod+s mode "default", exec --no-startup-id alacritty --class sound -e pulsemixer
 	bindsym p mode "default", exec --no-startup-id helvum
 	bindsym $mod+p mode "default", exec --no-startup-id helvum
+	bindsym o mode "default", exec --no-startup-id obs
+	bindsym $mod+o mode "default", exec --no-startup-id obs
+	bindsym k mode "default", exec --no-startup-id keepassxc
+	bindsym $mod+k mode "default", exec --no-startup-id keepassxc
 
 	# back to normal: Enter or Escape
 	bindsym Return mode "default"
@@ -951,6 +955,7 @@ assign [class="Slack"] $ws10
 assign [class="TelegramDesktop"] $ws10
 assign [class="threema-web"] $ws10
 assign [class="Zulip"] $ws10
+assign [class="obs"] $ws11
 assign [class="KeePassXC"] $ws12
 
 for_window [class=".*"] border 1pixel	# needed for gaps to work
