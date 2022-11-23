@@ -17,6 +17,7 @@ return {
       },
       workspace = {
         library = vim.api.nvim_get_runtime_file("", true), -- make the server aware of Neovim runtime files
+        checkThirdParty = false, -- https://github.com/neovim/nvim-lspconfig/issues/1700
       },
       telemetry = {
         enable = false, -- do not send telemetry data
