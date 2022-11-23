@@ -32,10 +32,10 @@
 #    F = MyComputer
 #
 # Num_Lock:
-#	11 = on/off
-#	1_ = on
-#	_1 = off
-#	__ = none
+#   11 = on/off
+#   1_ = on
+#   _1 = off
+#   __ = none
 #
 # _ : used by i3
 # @ : used by dunst
@@ -127,9 +127,9 @@ font pango:monospace 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Shift+Return exec alacritty --class notes -e nvim
+bindsym $mod+Shift+Return exec "alacritty --class \\"Alacritty,notes\\" -e nvim"
 bindsym $mod+Return exec alacritty
-bindsym $mod+Control+Return exec alacritty --class calc -e ptipython
+bindsym $mod+Control+Return exec "alacritty --class \\"Alacritty,calc\\" -e ptipython"
 bindsym $mod+Shift+Control+Return exec i3-sensible-terminal
 
 # start a browser
@@ -294,9 +294,9 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 # NumPad Hotkeys
 bindsym Num_Lock nop
 bindsym KP_Insert nop
-bindsym KP_End exec --no-startup-id playerctl previous # prev media
-bindsym KP_Down exec --no-startup-id playerctl play-pause # toggle media
-bindsym KP_Next exec --no-startup-id playerctl next # next media
+bindsym KP_End exec --no-startup-id playerctl previous
+bindsym KP_Down exec --no-startup-id playerctl play-pause
+bindsym KP_Next exec --no-startup-id playerctl next
 bindsym KP_Left workspace prev_on_output
 bindsym KP_Begin workspace back_and_forth
 bindsym KP_Right workspace next_on_output
@@ -308,9 +308,9 @@ bindsym --release KP_Prior exec --no-startup-id xdotool key XF86Forward
 bindsym Control+KP_Left focus left
 bindsym Control+KP_Begin workspace $ws9
 bindsym Control+KP_Right focus right
-bindsym Control+KP_End exec --no-startup-id playerctl -p spotify previous # prev media
-bindsym Control+KP_Down exec --no-startup-id playerctl -p spotify play-pause # toggle media
-bindsym Control+KP_Next exec --no-startup-id playerctl -p spotify next # next media
+bindsym Control+KP_End exec --no-startup-id playerctl -p spotify previous
+bindsym Control+KP_Down exec --no-startup-id playerctl -p spotify play-pause
+bindsym Control+KP_Next exec --no-startup-id playerctl -p spotify next
 
 # Media keys
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause
@@ -321,7 +321,7 @@ bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # Audio keys
 bindsym XF86AudioMute exec --no-startup-id $HOME/scripts/audioctl sound-toggle
-bindsym Shift+XF86AudioMute exec alacritty --class sound -e pulsemixer
+bindsym Shift+XF86AudioMute exec "alacritty --class \\"Alacritty,sound\\" -e pulsemixer"
 bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/scripts/audioctl sound-inc
 bindsym Shift+XF86AudioRaiseVolume exec helvum
 bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/scripts/audioctl sound-dec
@@ -335,459 +335,469 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
 # Extra keys
-bindsym XF86Display nop # F7
-bindsym XF86WLAN nop	# F8
-bindsym XF86Favorites nop # F12
-bindsym XF86WakeUp nop	# Fn
+# F7
+bindsym XF86Display nop
+# F8
+bindsym XF86WLAN nop
+# F12
+bindsym XF86Favorites nop
+# Fn
+bindsym XF86WakeUp nop
 
-bindsym XF86Calculator exec alacritty --class calc -e ptipython
+bindsym XF86Calculator exec "alacritty --class \\"Alacritty,calc\\" -e ptipython"
 bindsym XF86Sleep nop
 
 
 # Keyboard Layout on the number row
-bindcode $mod+Control+10		exec --no-startup-id $HOME/scripts/keyboard dvorak_compose # 1
-bindcode $mod+Control+Shift+10	exec --no-startup-id $HOME/scripts/keyboard dvorak # 1
-bindcode $mod+Control+11		exec --no-startup-id $HOME/scripts/keyboard de # 2
-bindcode $mod+Control+12		exec --no-startup-id $HOME/scripts/keyboard neo # 3
-bindcode $mod+Control+Shift+12	exec --no-startup-id $HOME/scripts/keyboard NEO # 3
-bindcode $mod+Control+13		exec --no-startup-id $HOME/scripts/keyboard gb # 4
-bindcode $mod+Control+14		exec --no-startup-id $HOME/scripts/keyboard us # 5
-bindcode $mod+Control+Shift+19	exec --no-startup-id $HOME/scripts/keyboard KR # 0
+# 1
+bindcode $mod+Control+10        exec --no-startup-id $HOME/scripts/keyboard dvorak_compose
+bindcode $mod+Control+Shift+10  exec --no-startup-id $HOME/scripts/keyboard dvorak
+# 2
+bindcode $mod+Control+11        exec --no-startup-id $HOME/scripts/keyboard de
+# 3
+bindcode $mod+Control+12        exec --no-startup-id $HOME/scripts/keyboard neo
+bindcode $mod+Control+Shift+12  exec --no-startup-id $HOME/scripts/keyboard NEO
+# 4
+bindcode $mod+Control+13        exec --no-startup-id $HOME/scripts/keyboard gb
+# 5
+bindcode $mod+Control+14        exec --no-startup-id $HOME/scripts/keyboard us
+# 0
+bindcode $mod+Control+Shift+19  exec --no-startup-id $HOME/scripts/keyboard KR
 
 # dunst bindings with dunstctl (setting in config is deprecated)
-bindsym $mod+apostrophe			exec --no-startup-id dunstctl close
-bindsym $mod+Shift+apostrophe	exec --no-startup-id dunstctl close-all
-bindsym $mod+comma				exec --no-startup-id dunstctl history-pop
-bindsym $mod+Shift+comma		exec --no-startup-id dunstctl set-paused toggle
-bindsym $mod+period				exec --no-startup-id dunstctl action 0
-bindsym $mod+Shift+period		exec --no-startup-id dunstctl context
+bindsym $mod+apostrophe         exec --no-startup-id dunstctl close
+bindsym $mod+Shift+apostrophe   exec --no-startup-id dunstctl close-all
+bindsym $mod+comma              exec --no-startup-id dunstctl history-pop
+bindsym $mod+Shift+comma        exec --no-startup-id dunstctl set-paused toggle
+bindsym $mod+period             exec --no-startup-id dunstctl action 0
+bindsym $mod+Shift+period       exec --no-startup-id dunstctl context
 
 
 # -----MODES-----
 
 # Resize Window
 mode "resize" {
-	bindsym h resize shrink width 10 px or 10 ppt
-	bindsym j resize grow height 10 px or 10 ppt
-	bindsym k resize shrink height 10 px or 10 ppt
-	bindsym l resize grow width 10 px or 10 ppt
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (resize):" "Resize Mode:\nh: decrease width\nl: increase width\nk: decrease height\nj: increase height"
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (resize):" "Resize Mode:\nh: decrease width\nl: increase width\nk: decrease height\nj: increase height"
 }
 
 # Change Display Mode
 mode "display" {
-	bindsym n mode "default", exec --no-startup-id $HOME/scripts/displayMode normal
-	bindsym d mode "default", exec --no-startup-id $HOME/scripts/displayMode docked
-	bindsym e mode "default", exec --no-startup-id $HOME/scripts/displayMode extented
-	bindsym p mode "default", exec --no-startup-id $HOME/scripts/displayMode presentation
+    bindsym n mode "default", exec --no-startup-id $HOME/scripts/displayMode normal
+    bindsym d mode "default", exec --no-startup-id $HOME/scripts/displayMode docked
+    bindsym e mode "default", exec --no-startup-id $HOME/scripts/displayMode extented
+    bindsym p mode "default", exec --no-startup-id $HOME/scripts/displayMode presentation
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (display):" "Display Mode:\nn: normal\nd: docked\ne: extendet\np: presentation"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (display):" "Display Mode:\nn: normal\nd: docked\ne: extendet\np: presentation"
 }
 
 # Power Options
 mode "power" {
-	bindsym l mode "default", exec --no-startup-id $HOME/scripts/i3exit lock
-	bindsym b mode "default", exec --no-startup-id $HOME/scripts/i3exit blurrLock
-	bindsym e mode "default", exec --no-startup-id $HOME/scripts/i3exit logout
-	bindsym s mode "default", exec --no-startup-id $HOME/scripts/i3exit suspend
-	bindsym Shift+s mode "default", exec --no-startup-id $HOME/scripts/i3exit suspend_nolock
-	bindsym h mode "default", exec --no-startup-id $HOME/scripts/i3exit hibernate
-	bindsym r mode "default", exec --no-startup-id $HOME/scripts/i3exit reboot
-	bindsym d mode "default", exec --no-startup-id $HOME/scripts/i3exit shutdown
+    bindsym l mode "default", exec --no-startup-id $HOME/scripts/i3exit lock
+    bindsym b mode "default", exec --no-startup-id $HOME/scripts/i3exit blurrLock
+    bindsym e mode "default", exec --no-startup-id $HOME/scripts/i3exit logout
+    bindsym s mode "default", exec --no-startup-id $HOME/scripts/i3exit suspend
+    bindsym Shift+s mode "default", exec --no-startup-id $HOME/scripts/i3exit suspend_nolock
+    bindsym h mode "default", exec --no-startup-id $HOME/scripts/i3exit hibernate
+    bindsym r mode "default", exec --no-startup-id $HOME/scripts/i3exit reboot
+    bindsym d mode "default", exec --no-startup-id $HOME/scripts/i3exit shutdown
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (power):" "Power Mode:\nl: lock\nb: blurr\ne: logout\ns: suspend/sleep\nS: suspend only\nh: hibernate\nr: reboot\nd: shutdown"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (power):" "Power Mode:\nl: lock\nb: blurr\ne: logout\ns: suspend/sleep\nS: suspend only\nh: hibernate\nr: reboot\nd: shutdown"
 }
 
 # Type special characters
 mode "macro-char" {
-	bindsym --release a mode "default", exec --no-startup-id xdotool key adiaeresis
-	bindsym --release $mod+a exec --no-startup-id xdotool key adiaeresis
+    bindsym --release a mode "default", exec --no-startup-id xdotool key adiaeresis
+    bindsym --release $mod+a exec --no-startup-id xdotool key adiaeresis
 
-	bindsym --release o mode "default", exec --no-startup-id xdotool key odiaeresis
-	bindsym --release $mod+o exec --no-startup-id xdotool key odiaeresis
+    bindsym --release o mode "default", exec --no-startup-id xdotool key odiaeresis
+    bindsym --release $mod+o exec --no-startup-id xdotool key odiaeresis
 
-	bindsym --release u mode "default", exec --no-startup-id xdotool key udiaeresis
-	bindsym --release $mod+u exec --no-startup-id xdotool key udiaeresis
+    bindsym --release u mode "default", exec --no-startup-id xdotool key udiaeresis
+    bindsym --release $mod+u exec --no-startup-id xdotool key udiaeresis
 
-	bindsym --release s mode "default", exec --no-startup-id xdotool key ssharp
-	bindsym --release $mod+s exec --no-startup-id xdotool key ssharp
+    bindsym --release s mode "default", exec --no-startup-id xdotool key ssharp
+    bindsym --release $mod+s exec --no-startup-id xdotool key ssharp
 
-	bindsym --release e mode "default", exec --no-startup-id xdotool key aring
-	bindsym --release $mod+e exec --no-startup-id xdotool key aring
+    bindsym --release e mode "default", exec --no-startup-id xdotool key aring
+    bindsym --release $mod+e exec --no-startup-id xdotool key aring
 
-	bindsym --release Shift+a mode "default", exec --no-startup-id xdotool key Adiaeresis
-	bindsym --release $mod+Shift+a exec --no-startup-id xdotool key Adiaeresis
+    bindsym --release Shift+a mode "default", exec --no-startup-id xdotool key Adiaeresis
+    bindsym --release $mod+Shift+a exec --no-startup-id xdotool key Adiaeresis
 
-	bindsym --release Shift+o mode "default", exec --no-startup-id xdotool key Odiaeresis
-	bindsym --release $mod+Shift+o exec --no-startup-id xdotool key Odiaeresis
+    bindsym --release Shift+o mode "default", exec --no-startup-id xdotool key Odiaeresis
+    bindsym --release $mod+Shift+o exec --no-startup-id xdotool key Odiaeresis
 
-	bindsym --release Shift+u mode "default", exec --no-startup-id xdotool key Udiaeresis
-	bindsym --release $mod+Shift+u exec --no-startup-id xdotool key Udiaeresis
+    bindsym --release Shift+u mode "default", exec --no-startup-id xdotool key Udiaeresis
+    bindsym --release $mod+Shift+u exec --no-startup-id xdotool key Udiaeresis
 
-	bindsym --release Shift+e mode "default", exec --no-startup-id xdotool key Aring
-	bindsym --release $mod+Shift+e exec --no-startup-id xdotool key Aring
+    bindsym --release Shift+e mode "default", exec --no-startup-id xdotool key Aring
+    bindsym --release $mod+Shift+e exec --no-startup-id xdotool key Aring
 
-	bindsym --release p mode "default", exec --no-startup-id xdotool key bar
-	bindsym --release $mod+p exec --no-startup-id xdotool key bar
+    bindsym --release p mode "default", exec --no-startup-id xdotool key bar
+    bindsym --release $mod+p exec --no-startup-id xdotool key bar
 
-	bindsym --release b mode "default", exec --no-startup-id xdotool key backslash
-	bindsym --release $mod+b exec --no-startup-id xdotool key backslash
+    bindsym --release b mode "default", exec --no-startup-id xdotool key backslash
+    bindsym --release $mod+b exec --no-startup-id xdotool key backslash
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+Escape mode "macro"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Escape mode "macro"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (macro-char):" "Char Mode:\na: ä\no: ö\nu: ü\ns: ß\ne: å\nA: Ä\nO: Ö\nU: Ü\nE: Å\np: |\nb: \\\\\\\\ "
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (macro-char):" "Char Mode:\na: ä\no: ö\nu: ü\ns: ß\ne: å\nA: Ä\nO: Ö\nU: Ü\nE: Å\np: |\nb: \\\\\\\\ "
 }
 
 mode "macro-diacritics" {
-	bindsym --release g mode "default", exec --no-startup-id xdotool type
-	bindsym --release $mod+g exec --no-startup-id xdotool type
+    bindsym --release g mode "default", exec --no-startup-id xdotool type
+    bindsym --release $mod+g exec --no-startup-id xdotool type
 
-	bindsym --release a mode "default", exec --no-startup-id xdotool type
-	bindsym --release $mod+a exec --no-startup-id xdotool type
+    bindsym --release a mode "default", exec --no-startup-id xdotool type
+    bindsym --release $mod+a exec --no-startup-id xdotool type
 
-	bindsym --release c mode "default", exec --no-startup-id xdotool type
-	bindsym --release $mod+c exec --no-startup-id xdotool type
+    bindsym --release c mode "default", exec --no-startup-id xdotool type
+    bindsym --release $mod+c exec --no-startup-id xdotool type
 
-	bindsym --release t mode "default", exec --no-startup-id xdotool type
-	bindsym --release $mod+t exec --no-startup-id xdotool type
+    bindsym --release t mode "default", exec --no-startup-id xdotool type
+    bindsym --release $mod+t exec --no-startup-id xdotool type
 
-	bindsym --release m mode "default", exec --no-startup-id xdotool type
-	bindsym --release $mod+m exec --no-startup-id xdotool type
+    bindsym --release m mode "default", exec --no-startup-id xdotool type
+    bindsym --release $mod+m exec --no-startup-id xdotool type
 
-	bindsym --release o mode "default", exec --no-startup-id xdotool type
-	bindsym --release $mod+o exec --no-startup-id xdotool type
+    bindsym --release o mode "default", exec --no-startup-id xdotool type
+    bindsym --release $mod+o exec --no-startup-id xdotool type
 
-	bindsym --release b mode "default", exec --no-startup-id xdotool type
-	bindsym --release $mod+b exec --no-startup-id xdotool type
+    bindsym --release b mode "default", exec --no-startup-id xdotool type
+    bindsym --release $mod+b exec --no-startup-id xdotool type
 
-	bindsym --release p mode "default", exec --no-startup-id xdotool type
-	bindsym --release $mod+p exec --no-startup-id xdotool type
+    bindsym --release p mode "default", exec --no-startup-id xdotool type
+    bindsym --release $mod+p exec --no-startup-id xdotool type
 
-	bindsym --release u mode "default", exec --no-startup-id xdotool type
-	bindsym --release $mod+u exec --no-startup-id xdotool type
+    bindsym --release u mode "default", exec --no-startup-id xdotool type
+    bindsym --release $mod+u exec --no-startup-id xdotool type
 
-	bindsym --release r mode "default", exec --no-startup-id xdotool type
-	bindsym --release $mod+r exec --no-startup-id xdotool type
+    bindsym --release r mode "default", exec --no-startup-id xdotool type
+    bindsym --release $mod+r exec --no-startup-id xdotool type
 
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+Escape mode "macro"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Escape mode "macro"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (macro-diacritics):" "Diacritics Mode:\ng: Grave\na: Acute\nc: Circumflex\nt: Tilde\nm: Macron\no: Overline\nb: Breve\np: Dot(Point)\nu: Diaeresis(Umlaut)\nr: Ring"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (macro-diacritics):" "Diacritics Mode:\ng: Grave\na: Acute\nc: Circumflex\nt: Tilde\nm: Macron\no: Overline\nb: Breve\np: Dot(Point)\nu: Diaeresis(Umlaut)\nr: Ring"
 }
 
 # Type hex-numbers easier
 mode "macro-hex" {
-	# Num_Lock off
-	bindsym --release KP_End exec --no-startup-id xdotool key A
-	bindsym --release KP_Down exec --no-startup-id xdotool key B
-	bindsym --release KP_Next exec --no-startup-id xdotool key C
-	bindsym --release KP_Left exec --no-startup-id xdotool key D
-	bindsym --release KP_Begin exec --no-startup-id xdotool key E
-	bindsym --release KP_Right exec --no-startup-id xdotool key F
-	bindsym --release KP_Home nop
-	bindsym --release KP_Up nop
-	bindsym --release KP_Prior nop
+    # Num_Lock off
+    bindsym --release KP_End exec --no-startup-id xdotool key A
+    bindsym --release KP_Down exec --no-startup-id xdotool key B
+    bindsym --release KP_Next exec --no-startup-id xdotool key C
+    bindsym --release KP_Left exec --no-startup-id xdotool key D
+    bindsym --release KP_Begin exec --no-startup-id xdotool key E
+    bindsym --release KP_Right exec --no-startup-id xdotool key F
+    bindsym --release KP_Home nop
+    bindsym --release KP_Up nop
+    bindsym --release KP_Prior nop
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+Escape mode "macro"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Escape mode "macro"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (macro-hex):" "Hex Mode:\nNum_Lock on: 0-9\nNum_Lock off: A-F"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (macro-hex):" "Hex Mode:\nNum_Lock on: 0-9\nNum_Lock off: A-F"
 }
 
 # Macro set selection
 mode "macro" {
-	bindsym c mode "macro-char"
-	bindsym $mod+c mode "macro-char"
+    bindsym c mode "macro-char"
+    bindsym $mod+c mode "macro-char"
 
-	bindsym d mode "macro-diacritics"
-	bindsym $mod+d mode "macro-diacritics"
+    bindsym d mode "macro-diacritics"
+    bindsym $mod+d mode "macro-diacritics"
 
-	bindsym h mode "macro-hex"
-	bindsym $mod+h mode "macro-hex"
+    bindsym h mode "macro-hex"
+    bindsym $mod+h mode "macro-hex"
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (macro):" "Macro Mode:\nc: Macro-Char\nd: Macro-Diacritics\nh: Macro-Hex"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (macro):" "Macro Mode:\nc: Macro-Char\nd: Macro-Diacritics\nh: Macro-Hex"
 }
 
 
 # Open Rofi Mode
 mode "open/rofi" {
-	bindsym d mode "default", exec rofi -show drun
-	bindsym $mod+d mode "default", exec rofi -show drun
-	bindsym r mode "default", exec rofi -show run
-	bindsym $mod+r mode "default", exec rofi -show run
-	bindsym s mode "default", exec rofi -show ssh
-	bindsym $mod+s mode "default", exec rofi -show ssh
-	bindsym w mode "default", exec rofi -show window
-	bindsym $mod+w mode "default", exec rofi -show window
-	bindsym h mode "default", exec rofi -show windowcd
-	bindsym $mod+h mode "default", exec rofi -show windowcd
-	bindsym c mode "default", exec CM_LAUNCHER=rofi CM_HISTLENGTH=15 clipmenu -p clip
-	bindsym $mod+c mode "default", exec CM_LAUNCHER=rofi CM_HISTLENGTH=15 clipmenu -p clip
-	bindsym u mode "default", exec --no-startup-id $HOME/scripts/unclip
-	bindsym $mod+u mode "default", exec --no-startup-id $HOME/scripts/unclip
+    bindsym d mode "default", exec rofi -show drun
+    bindsym $mod+d mode "default", exec rofi -show drun
+    bindsym r mode "default", exec rofi -show run
+    bindsym $mod+r mode "default", exec rofi -show run
+    bindsym s mode "default", exec rofi -show ssh
+    bindsym $mod+s mode "default", exec rofi -show ssh
+    bindsym w mode "default", exec rofi -show window
+    bindsym $mod+w mode "default", exec rofi -show window
+    bindsym h mode "default", exec rofi -show windowcd
+    bindsym $mod+h mode "default", exec rofi -show windowcd
+    bindsym c mode "default", exec CM_LAUNCHER=rofi CM_HISTLENGTH=15 clipmenu -p clip
+    bindsym $mod+c mode "default", exec CM_LAUNCHER=rofi CM_HISTLENGTH=15 clipmenu -p clip
+    bindsym u mode "default", exec --no-startup-id $HOME/scripts/unclip
+    bindsym $mod+u mode "default", exec --no-startup-id $HOME/scripts/unclip
 
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (open/rofi):" "Open/Rofi Mode:\nd: drun\nr: run\ns: ssh\nw: window\nh: here\nc: clipmenu\nu: unclip"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (open/rofi):" "Open/Rofi Mode:\nd: drun\nr: run\ns: ssh\nw: window\nh: here\nc: clipmenu\nu: unclip"
 }
 
 mode "gaps-outer" {
-	bindsym 0				gaps outer current set 0
-	bindsym bracketleft		gaps outer current minus 5
-	bindsym bracketright	gaps outer current plus 5
+    bindsym 0               gaps outer current set 0
+    bindsym bracketleft     gaps outer current minus 5
+    bindsym bracketright    gaps outer current plus 5
 
-	bindsym Shift+0				gaps outer all set 0
-	bindsym Shift+bracketleft	gaps outer all minus 5
-	bindsym Shift+bracketright	gaps outer all plus 5
+    bindsym Shift+0             gaps outer all set 0
+    bindsym Shift+bracketleft   gaps outer all minus 5
+    bindsym Shift+bracketright  gaps outer all plus 5
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+Escape mode "gaps"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Escape mode "gaps"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-outer):" "Gaps Outer Mode:\n0: reset\n[: decrease\n]: increase"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-outer):" "Gaps Outer Mode:\n0: reset\n[: decrease\n]: increase"
 }
 
 mode "gaps-inner" {
-	bindsym 0				gaps inner current set 0
-	bindsym bracketleft		gaps inner current minus 5
-	bindsym bracketright	gaps inner current plus 5
+    bindsym 0               gaps inner current set 0
+    bindsym bracketleft     gaps inner current minus 5
+    bindsym bracketright    gaps inner current plus 5
 
-	bindsym Shift+0				gaps inner all set 0
-	bindsym Shift+bracketleft	gaps inner all minus 5
-	bindsym Shift+bracketright	gaps inner all plus 5
+    bindsym Shift+0             gaps inner all set 0
+    bindsym Shift+bracketleft   gaps inner all minus 5
+    bindsym Shift+bracketright  gaps inner all plus 5
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+Escape mode "gaps"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Escape mode "gaps"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-inner):" "Gaps Inner Mode:\n0: reset\n[: decrease\n]: increase"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-inner):" "Gaps Inner Mode:\n0: reset\n[: decrease\n]: increase"
 }
 
 mode "gaps-horizontal" {
-	bindsym 0				gaps horizontal current set 0
-	bindsym bracketleft		gaps horizontal current minus 5
-	bindsym bracketright	gaps horizontal current plus 5
+    bindsym 0               gaps horizontal current set 0
+    bindsym bracketleft     gaps horizontal current minus 5
+    bindsym bracketright    gaps horizontal current plus 5
 
-	bindsym Shift+0				gaps horizontal all set 0
-	bindsym Shift+bracketleft	gaps horizontal all minus 5
-	bindsym Shift+bracketright	gaps horizontal all plus 5
+    bindsym Shift+0             gaps horizontal all set 0
+    bindsym Shift+bracketleft   gaps horizontal all minus 5
+    bindsym Shift+bracketright  gaps horizontal all plus 5
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+Escape mode "gaps"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Escape mode "gaps"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-horizontal):" "Gaps Horizontal Mode:\n0: reset\n[: decrease\n]: increase"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-horizontal):" "Gaps Horizontal Mode:\n0: reset\n[: decrease\n]: increase"
 }
 
 mode "gaps-vertical" {
-	bindsym 0				gaps vertical current set 0
-	bindsym bracketleft		gaps vertical current minus 5
-	bindsym bracketright	gaps vertical current plus 5
+    bindsym 0               gaps vertical current set 0
+    bindsym bracketleft     gaps vertical current minus 5
+    bindsym bracketright    gaps vertical current plus 5
 
-	bindsym Shift+0				gaps vertical all set 0
-	bindsym Shift+bracketleft	gaps vertical all minus 5
-	bindsym Shift+bracketright	gaps vertical all plus 5
+    bindsym Shift+0             gaps vertical all set 0
+    bindsym Shift+bracketleft   gaps vertical all minus 5
+    bindsym Shift+bracketright  gaps vertical all plus 5
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+Escape mode "gaps"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Escape mode "gaps"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-vertical):" "Gaps Vertical Mode:\n0: reset\n[: decrease\n]: increase"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-vertical):" "Gaps Vertical Mode:\n0: reset\n[: decrease\n]: increase"
 }
 
 mode "gaps-top" {
-	bindsym 0				gaps top current set 0
-	bindsym bracketleft		gaps top current minus 5
-	bindsym bracketright	gaps top current plus 5
+    bindsym 0               gaps top current set 0
+    bindsym bracketleft     gaps top current minus 5
+    bindsym bracketright    gaps top current plus 5
 
-	bindsym Shift+0				gaps top all set 0
-	bindsym Shift+bracketleft	gaps top all minus 5
-	bindsym Shift+bracketright	gaps top all plus 5
+    bindsym Shift+0             gaps top all set 0
+    bindsym Shift+bracketleft   gaps top all minus 5
+    bindsym Shift+bracketright  gaps top all plus 5
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+Escape mode "gaps"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Escape mode "gaps"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-top):" "Gaps Top Mode:\n0: reset\n[: decrease\n]: increase"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-top):" "Gaps Top Mode:\n0: reset\n[: decrease\n]: increase"
 }
 
 mode "gaps-right" {
-	bindsym 0				gaps right current set 0
-	bindsym bracketleft		gaps right current minus 5
-	bindsym bracketright	gaps right current plus 5
+    bindsym 0               gaps right current set 0
+    bindsym bracketleft     gaps right current minus 5
+    bindsym bracketright    gaps right current plus 5
 
-	bindsym Shift+0				gaps right all set 0
-	bindsym Shift+bracketleft	gaps right all minus 5
-	bindsym Shift+bracketright	gaps right all plus 5
+    bindsym Shift+0             gaps right all set 0
+    bindsym Shift+bracketleft   gaps right all minus 5
+    bindsym Shift+bracketright  gaps right all plus 5
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+Escape mode "gaps"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Escape mode "gaps"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-right):" "Gaps Right Mode:\n0: reset\n[: decrease\n]: increase"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-right):" "Gaps Right Mode:\n0: reset\n[: decrease\n]: increase"
 }
 
 mode "gaps-bottom" {
-	bindsym 0				gaps bottom current set 0
-	bindsym bracketleft		gaps bottom current minus 5
-	bindsym bracketright	gaps bottom current plus 5
+    bindsym 0               gaps bottom current set 0
+    bindsym bracketleft     gaps bottom current minus 5
+    bindsym bracketright    gaps bottom current plus 5
 
-	bindsym Shift+0				gaps bottom all set 0
-	bindsym Shift+bracketleft	gaps bottom all minus 5
-	bindsym Shift+bracketright	gaps bottom all plus 5
+    bindsym Shift+0             gaps bottom all set 0
+    bindsym Shift+bracketleft   gaps bottom all minus 5
+    bindsym Shift+bracketright  gaps bottom all plus 5
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+Escape mode "gaps"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Escape mode "gaps"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-bottom):" "Gaps Bottom Mode:\n0: reset\n[: decrease\n]: increase"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-bottom):" "Gaps Bottom Mode:\n0: reset\n[: decrease\n]: increase"
 }
 
 mode "gaps-left" {
-	bindsym 0				gaps left current set 0
-	bindsym bracketleft		gaps left current minus 5
-	bindsym bracketright	gaps left current plus 5
+    bindsym 0               gaps left current set 0
+    bindsym bracketleft     gaps left current minus 5
+    bindsym bracketright    gaps left current plus 5
 
-	bindsym Shift+0				gaps left all set 0
-	bindsym Shift+bracketleft	gaps left all minus 5
-	bindsym Shift+bracketright	gaps left all plus 5
+    bindsym Shift+0             gaps left all set 0
+    bindsym Shift+bracketleft   gaps left all minus 5
+    bindsym Shift+bracketright  gaps left all plus 5
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-	bindsym $mod+Escape mode "gaps"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym $mod+Escape mode "gaps"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-left):" "Gaps Left Mode:\n0: reset\n[: decrease\n]: increase"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps-left):" "Gaps Left Mode:\n0: reset\n[: decrease\n]: increase"
 }
 
 mode "gaps" {
-	bindsym o mode "gaps-outer"
-	bindsym $mod+o mode "gaps-outer"
-	bindsym i mode "gaps-inner"
-	bindsym $mod+i mode "gaps-inner"
-	bindsym h mode "gaps-horizontal"
-	bindsym $mod+h mode "gaps-horizontal"
-	bindsym v mode "gaps-vertical"
-	bindsym $mod+v mode "gaps-vertical"
-	bindsym t mode "gaps-top"
-	bindsym $mod+t mode "gaps-top"
-	bindsym r mode "gaps-right"
-	bindsym $mod+r mode "gaps-right"
-	bindsym b mode "gaps-bottom"
-	bindsym $mod+b mode "gaps-bottom"
-	bindsym l mode "gaps-left"
-	bindsym $mod+l mode "gaps-left"
+    bindsym o mode "gaps-outer"
+    bindsym $mod+o mode "gaps-outer"
+    bindsym i mode "gaps-inner"
+    bindsym $mod+i mode "gaps-inner"
+    bindsym h mode "gaps-horizontal"
+    bindsym $mod+h mode "gaps-horizontal"
+    bindsym v mode "gaps-vertical"
+    bindsym $mod+v mode "gaps-vertical"
+    bindsym t mode "gaps-top"
+    bindsym $mod+t mode "gaps-top"
+    bindsym r mode "gaps-right"
+    bindsym $mod+r mode "gaps-right"
+    bindsym b mode "gaps-bottom"
+    bindsym $mod+b mode "gaps-bottom"
+    bindsym l mode "gaps-left"
+    bindsym $mod+l mode "gaps-left"
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps):" "Gaps Mode:\no: outer\ni: inner\nh: horizontal\nv: vertical\nt: top\nr: right\nb: bottom\nl: left"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (gaps):" "Gaps Mode:\no: outer\ni: inner\nh: horizontal\nv: vertical\nt: top\nr: right\nb: bottom\nl: left"
 }
 
 mode "screenshot" {
-	bindsym --release a mode "default", exec --no-startup-id $HOME/scripts/screenshot all
-	bindsym --release $mod+a mode "default", exec --no-startup-id $HOME/scripts/screenshot all
-	bindsym --release c mode "default", exec --no-startup-id $HOME/scripts/screenshot
-	bindsym --release $mod+c mode "default", exec --no-startup-id $HOME/scripts/screenshot
+    bindsym --release a mode "default", exec --no-startup-id $HOME/scripts/screenshot all
+    bindsym --release $mod+a mode "default", exec --no-startup-id $HOME/scripts/screenshot all
+    bindsym --release c mode "default", exec --no-startup-id $HOME/scripts/screenshot
+    bindsym --release $mod+c mode "default", exec --no-startup-id $HOME/scripts/screenshot
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (screenshot):" "Screenshot Mode:\na: all\nc: sele(c)t/cut"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (screenshot):" "Screenshot Mode:\na: all\nc: sele(c)t/cut"
 }
 
 mode "plover" {
-	bindsym s mode "default", exec --no-startup-id plover
-	bindsym $mod+s mode "default", exec --no-startup-id plover
-	bindsym l mode "default", exec --no-startup-id $HOME/scripts/keyboard STENO
-	bindsym $mod+l mode "default", exec --no-startup-id $HOME/scripts/keyboard STENO
-	bindsym t mode "default", exec --no-startup-id plover_send_command toggle
-	bindsym $mod+t mode "default", exec --no-startup-id plover_send_command toggle
-	bindsym q mode "default", exec --no-startup-id plover_send_command quit
-	bindsym $mod+q mode "default", exec --no-startup-id plover_send_command quit
+    bindsym s mode "default", exec --no-startup-id plover
+    bindsym $mod+s mode "default", exec --no-startup-id plover
+    bindsym l mode "default", exec --no-startup-id $HOME/scripts/keyboard STENO
+    bindsym $mod+l mode "default", exec --no-startup-id $HOME/scripts/keyboard STENO
+    bindsym t mode "default", exec --no-startup-id plover_send_command toggle
+    bindsym $mod+t mode "default", exec --no-startup-id plover_send_command toggle
+    bindsym q mode "default", exec --no-startup-id plover_send_command quit
+    bindsym $mod+q mode "default", exec --no-startup-id plover_send_command quit
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (plover):" "Plover Mode:\ns: start\nl: show layout\nt: toggle output\nq: quit"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (plover):" "Plover Mode:\ns: start\nl: show layout\nt: toggle output\nq: quit"
 }
 
 mode "launch" {
-	bindsym m mode "default", exec --no-startup-id alacritty --class mail -e neomutt
-	bindsym $mod+m mode "default", exec --no-startup-id alacritty --class mail -e neomutt
-	bindsym b mode "default", exec --no-startup-id alacritty --class bluetooth -e bluetoothctl
-	bindsym $mod+b mode "default", exec --no-startup-id alacritty --class bluetooth -e bluetoothctl
-	bindsym s mode "default", exec --no-startup-id alacritty --class sound -e pulsemixer
-	bindsym $mod+s mode "default", exec --no-startup-id alacritty --class sound -e pulsemixer
-	bindsym p mode "default", exec --no-startup-id helvum
-	bindsym $mod+p mode "default", exec --no-startup-id helvum
-	bindsym o mode "default", exec --no-startup-id obs
-	bindsym $mod+o mode "default", exec --no-startup-id obs
-	bindsym k mode "default", exec --no-startup-id keepassxc
-	bindsym $mod+k mode "default", exec --no-startup-id keepassxc
+    bindsym m mode "default", exec --no-startup-id alacritty --class mail -e neomutt
+    bindsym $mod+m mode "default", exec --no-startup-id alacritty --class mail -e neomutt
+    bindsym b mode "default", exec --no-startup-id alacritty --class bluetooth -e bluetoothctl
+    bindsym $mod+b mode "default", exec --no-startup-id alacritty --class bluetooth -e bluetoothctl
+    bindsym s mode "default", exec --no-startup-id alacritty --class sound -e pulsemixer
+    bindsym $mod+s mode "default", exec --no-startup-id alacritty --class sound -e pulsemixer
+    bindsym p mode "default", exec --no-startup-id helvum
+    bindsym $mod+p mode "default", exec --no-startup-id helvum
+    bindsym o mode "default", exec --no-startup-id obs
+    bindsym $mod+o mode "default", exec --no-startup-id obs
+    bindsym k mode "default", exec --no-startup-id keepassxc
+    bindsym $mod+k mode "default", exec --no-startup-id keepassxc
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (launch):" "Launch Mode:\nm: neomutt (mail)\nb: bluetoothctl\ns: pulsemixer (sound)\np: helvum (patchbay)"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (launch):" "Launch Mode:\nm: neomutt (mail)\nb: bluetoothctl\ns: pulsemixer (sound)\np: helvum (patchbay)\no: obs\nk: keepassxc"
 }
 
 mode "mouse" {
@@ -816,41 +826,41 @@ mode "mouse" {
     bindsym Shift+KP_Insert exec xdotool click 5 --repeat 2
     bindsym KP_Down exec xdotool mousedown 1
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (mouse):" "Mouse Mode:\n "
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (mouse):" "Mouse Mode:\n "
 }
 bindsym $mod+KP_Begin mode "mouse"
 
 mode "mode" {
-	bindsym r mode "resize"
-	bindsym $mod+r mode "resize"
-	bindsym w mode "display"
-	bindsym $mod+w mode "display"
-	bindsym p mode "power"
-	bindsym $mod+p mode "power"
-	bindsym m mode "macro"
-	bindsym $mod+m mode "macro"
-	bindsym o mode "open/rofi"
-	bindsym $mod+o mode "open/rofi"
-	bindsym g mode "gaps"
-	bindsym $mod+g mode "gaps"
-	bindsym s mode "screenshot"
-	bindsym $mod+s mode "screenshot"
-	bindsym v mode "plover"
-	bindsym $mod+v mode "plover"
-	bindsym l mode "launch"
-	bindsym $mod+l mode "launch"
+    bindsym r mode "resize"
+    bindsym $mod+r mode "resize"
+    bindsym w mode "display"
+    bindsym $mod+w mode "display"
+    bindsym p mode "power"
+    bindsym $mod+p mode "power"
+    bindsym m mode "macro"
+    bindsym $mod+m mode "macro"
+    bindsym o mode "open/rofi"
+    bindsym $mod+o mode "open/rofi"
+    bindsym g mode "gaps"
+    bindsym $mod+g mode "gaps"
+    bindsym s mode "screenshot"
+    bindsym $mod+s mode "screenshot"
+    bindsym v mode "plover"
+    bindsym $mod+v mode "plover"
+    bindsym l mode "launch"
+    bindsym $mod+l mode "launch"
 
-	# back to normal: Enter or Escape
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 
-	# Usage
-	bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (mode):" "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro\no: Open/rofi\nk: Keyboard\ng: Gaps\ns: Screenshot\nv: Plo(v)er\nl: Launch"
+    # Usage
+    bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help (mode):" "Modi:\nr: Resize\nw: Display\np: Power\nm: Macro\no: Open/rofi\nk: Keyboard\ng: Gaps\ns: Screenshot\nv: Plo(v)er\nl: Launch"
 }
 bindsym $mod+m mode "mode"
 bindsym $mod+Shift+slash exec --no-startup-id notify-send -u low "Help:" "Mod4+m: mode menu"
@@ -885,20 +895,20 @@ set $nordF #B48EAD
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-	id bar-0
-	position top
-	output primary
+    id bar-0
+    position top
+    output primary
 
-	tray_output primary
-	strip_workspace_numbers yes
+    tray_output primary
+    strip_workspace_numbers yes
 
-	status_command i3status
+    status_command i3status
 
     colors {
         background $nord0
         statusline $nord6
         separator $nord3
-#						   border  backgr. text
+#                          border  backgr. text
         focused_workspace  $nord8 $nord8 $nord0
         active_workspace   $nord9 $nord9 $nord1
         inactive_workspace $nord3 $nord3 $nord4
@@ -908,18 +918,18 @@ bar {
 }
 
 bar{
-	id bar-1
-	position top
-	output HDMI-A-0
+    id bar-1
+    position top
+    output HDMI-A-0
 
-	tray_output none
-	strip_workspace_numbers yes
+    tray_output none
+    strip_workspace_numbers yes
 
     colors {
         background $nord0
         statusline $nord6
         separator $nord3
-#						   border  backgr. text
+#                          border  backgr. text
         focused_workspace  $nord8 $nord8 $nord0
         active_workspace   $nord9 $nord9 $nord1
         inactive_workspace $nord3 $nord3 $nord4
@@ -958,7 +968,8 @@ assign [class="Zulip"] $ws10
 assign [class="obs"] $ws11
 assign [class="KeePassXC"] $ws12
 
-for_window [class=".*"] border 1pixel	# needed for gaps to work
+# needed for gaps to work
+for_window [class=".*"] border 1pixel
 for_window [class="discord"] border none
 for_window [class="KeePassXC"] border none
 for_window [class="Minecraft.*"] border none
@@ -988,9 +999,15 @@ for_window [title=".*Data/Cheatsheets/Neo2/.*"] floating enable, border 1pixel
 for_window [title=".*Data/Cheatsheets/Korean/Dubeolsik.png.*"] floating enable, border 1pixel
 
 # -----AUTOSTART-----
+# Nextcloud sync
 exec --no-startup-id nextcloud
-exec --no-startup-id nm-applet & # wifi-tray-icon
-exec --no-startup-id dunst # Notification Server
-exec --no-startup-id CM_IGNORE_WINDOW="KeePassXC" CM_SELECTIONS="clipboard" CM_MAX_CLIPS=100 clipmenud & # clipboard manager
-exec --no-startup-id lxpolkit & # polkit agent, for QEMU/virt-manager
-exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/* --no-fehbg # Background
+# wifi-tray-icon
+exec --no-startup-id nm-applet &
+# Notification Server
+exec --no-startup-id dunst
+# clipboard manager
+exec --no-startup-id CM_IGNORE_WINDOW="KeePassXC" CM_SELECTIONS="clipboard" CM_MAX_CLIPS=100 clipmenud &
+# polkit agent, for QEMU/virt-manager
+exec --no-startup-id lxpolkit &
+# Wallpaper
+exec_always --no-startup-id feh --bg-fill --randomize ~/Pictures/Wallpapers/* --no-fehbg
