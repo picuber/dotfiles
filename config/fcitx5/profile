@@ -1,0 +1,44 @@
+[Groups/0]
+# Group Name
+Name=Default
+# Layout
+Default Layout=gb-dvorak
+# Default Input Method
+DefaultIM=hangul
+
+[Groups/0/Items/0]
+# Name
+Name=keyboard-gb-dvorak
+# Layout
+Layout=
+
+[Groups/0/Items/1]
+# Name
+Name=hangul
+# Layout
+Layout=gb
+
+[Groups/0/Items/2]
+# Name
+Name=mozc
+# Layout
+Layout=gb-dvorak
+
+[Groups/1]
+# Group Name
+Name=Extra
+# Layout
+Default Layout=brai
+# Default Input Method
+DefaultIM=keyboard-brai
+
+[Groups/1/Items/0]
+# Name
+Name=keyboard-brai
+# Layout
+Layout=
+
+[GroupOrder]
+0=Default
+1=Extra
+

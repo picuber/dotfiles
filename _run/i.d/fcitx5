@@ -1,0 +1,10 @@
+mdifne fcitx5 ~/.config
+mdifne fcitx5 ~/.config/fcitx5
+mdifne fcitx5 ~/.config/fcitx5/conf
+lnifne fcitx5 ~/.config/fcitx5/config ~/.dotfiles/config/fcitx5/config
+lnifne fcitx5 ~/.config/fcitx5/profile ~/.dotfiles/config/fcitx5/profile
+lnifne fcitx5 ~/.config/fcitx5/conf/classicui.conf ~/.dotfiles/config/fcitx5/conf/classicui.conf
+lnifne fcitx5 ~/.config/fcitx5/conf/notifications.conf ~/.dotfiles/config/fcitx5/conf/notifications.conf
+lnifne fcitx5 ~/.config/fcitx5/conf/hangul.conf ~/.dotfiles/config/fcitx5/conf/hangul.conf
+
+# vim: ft=bash
