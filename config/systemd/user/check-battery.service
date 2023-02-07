@@ -1,0 +1,6 @@
+[Unit]
+Description=check battery
+
+[Service]
+Type=oneshot
+ExecStart=/home/picuber/.config/systemd/user/check-battery.sh

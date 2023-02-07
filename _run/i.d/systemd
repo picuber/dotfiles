@@ -1,0 +1,4 @@
+mdifne systemd ~/.config
+lnifne systemd ~/.config/systemd ~/.dotfiles/config/systemd
+
+# vim: ft=bash
