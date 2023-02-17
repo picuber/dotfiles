@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [ ! -d "$HOME/Pictures/Screenshots" ]; then
+    mkdir -p "$HOME/Pictures/Screenshots"
+fi
+
 case "$1" in
 	root | full | all)
 		import -window root "$HOME/Pictures/Screenshots/`date +'%Y%m%d-%H%M%S'`.png"
