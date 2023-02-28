@@ -23,16 +23,18 @@ local sources = {
 	fmt.prettier, -- js/ts/css/scss/html/json/md/
 	fmt.stylelint, -- scss/less/css/sass
 	diag.stylelint, -- scss/less/css/sass
-    fmt.eslint_d, -- js/ts
-    diag.eslint_d, -- js/ts
-    act.eslint_d, -- js/ts
+	fmt.eslint_d, -- js/ts
+	diag.eslint_d, -- js/ts
+	act.eslint_d, -- js/ts
 
 	-- fmt.rustfmt.with({ extra_args = { "--edition=2021" } }), -- rust
 	fmt.stylua, -- lua
 	fmt.cmake_format, -- cmake
-	fmt.clang_format, -- C/C++/...
+	fmt.clang_format.with({
+		disabled_filetypes = { "java" },
+	}), -- C/C++/Java/...
 	fmt.fourmolu, -- haskell
-    fmt.xmllint, -- XML
+	fmt.xmllint, -- XML
 }
 
 null_ls.setup({
