@@ -212,10 +212,10 @@ bindsym $mod+semicolon move scratchpad
 bindsym $mod+bar scratchpad show
 
 # focus next workspace
-bindsym $mod+Tab focus output left
+bindsym $mod+Tab focus output next
 
 # move workspace
-bindsym $mod+Shift+Tab move workspace to output left
+bindsym $mod+Shift+Tab move workspace to output next
 
 bindsym $mod+x [urgent=last] focus
 
@@ -395,6 +395,7 @@ mode "display" {
     bindsym d mode "default", exec --no-startup-id $HOME/scripts/displayMode docked
     bindsym e mode "default", exec --no-startup-id $HOME/scripts/displayMode extented
     bindsym p mode "default", exec --no-startup-id $HOME/scripts/displayMode presentation
+    bindsym w mode "default", exec --no-startup-id $HOME/scripts/displayMode work
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -921,6 +922,8 @@ bar{
     id bar-1
     position top
     output HDMI-A-0
+    output DisplayPort-0
+    output DisplayPort-1
 
     tray_output none
     strip_workspace_numbers yes
