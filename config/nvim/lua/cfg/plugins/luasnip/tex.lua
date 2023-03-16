@@ -19,77 +19,86 @@ local c = ls.choice_node
 -- local conds = require("luasnip.extras.expand_conditions")
 
 local function refFn(args)
-    local type = string.lower(args[1][1])
-    local short = {
-        appendix = "appendix",
-        chapter = "chapter",
-        section = "sec",
-        subsection = "ssec",
-        subsubsection = "sssec",
-        listing = "lst",
-        figure = "fig",
-    }
-    if (short[type]) then
-        return short[type]
-    else
-        return "sec"
-    end
+	local type = string.lower(args[1][1])
+	local short = {
+		appendix = "appendix",
+		chapter = "chapter",
+		section = "sec",
+		subsection = "ssec",
+		subsubsection = "sssec",
+		listing = "lst",
+		figure = "fig",
+	}
+	if short[type] then
+		return short[type]
+	else
+		return "sec"
+	end
 end
 
 local function lowerFn(args)
-    return string.lower(args[1][1])
+	return string.lower(args[1][1])
 end
 
 ls.add_snippets("tex", {
-    s({ trig = "    i", name = "\\item" }, {
-        t("\\item "),
-    }),
+	s({ trig = "    i", name = "\\item" }, {
+		t("\\item "),
+	}),
 
-    s({ trig = "it", name = "itemize" }, {
-        t({ "\\begin{itemize}", "    \\item " }),
-        i(0),
-        t({ "", "\\end{itemize}" }),
-    }),
+	s({ trig = "it", name = "itemize" }, {
+		t({ "\\begin{itemize}", "    \\item " }),
+		i(0),
+		t({ "", "\\end{itemize}" }),
+	}),
 
-    s({ trig = "t", name = "TOP" }, {
-        t("\\"),
-        c(1, { t("Top"), t("STop"), t("SSTop") }),
-        t("{"),
-        i(2),
-        t("}{"),
-        i(0),
-        t("}"),
-    }),
+	s({ trig = "t", name = "TOP" }, {
+		t("\\"),
+		c(1, { t("Top"), t("STop"), t("SSTop") }),
+		t("{"),
+		i(2),
+		t("}{"),
+		i(0),
+		t("}"),
+	}),
 
-    s({ trig = "bf", name = "bold" }, {
-        t("\\textbf{"),
-        i(1),
-        t("} "),
-        i(0),
-    }),
+	s({ trig = "bf", name = "bold" }, {
+		t("\\textbf{"),
+		i(1),
+		t("} "),
+		i(0),
+	}),
 
-    s({ trig = "ref", name = "reference" }, {
-        c(1, { t("Listing"), t("Section"), t("Chapter"), t("Figure"), t("Subsection"), t("Appendix") }),
-        t("~\\ref{"),
-        f(refFn, 1),
-        t(":"),
-        i(2),
-        t("}"),
-        i(0),
-    }),
+	s({ trig = "ref", name = "reference" }, {
+		c(
+			1,
+			{ t("Listing"), t("Section"), t("Subsection"), t("Subsubsection"), t("Figure"), t("Appendix"), t("Chapter") }
+		),
+		t("~\\ref{"),
+		f(refFn, 1),
+		t(":"),
+		i(2),
+		t("}"),
+		i(0),
+	}),
 
-    s({ trig = "sec", name = "section" }, {
-        t("\\"),
-        c(1, { t("section"), t("subsection"), t("subsubsection"), t("chapter") }),
-        t("{"),
-        i(2),
-        t("}\\label{"),
-        f(refFn, 1),
-        t(":"),
-        f(lowerFn, 2),
-        i(3),
-        t("}"),
-        i(0),
-    }),
+	s({ trig = "sec", name = "section" }, {
+		t("\\"),
+		c(1, { t("section"), t("subsection"), t("subsubsection"), t("chapter") }),
+		t("{"),
+		i(2),
+		t("}\\label{"),
+		f(refFn, 1),
+		t(":"),
+		f(lowerFn, 2),
+		i(3),
+		t("}"),
+		i(0),
+	}),
+
+	s({ trig = "ls", name = "lstinline" }, {
+		t("\\lstinline{"),
+		i(1),
+		t("}"),
+		i(0),
+	}),
 }, { key = "tex" })
-

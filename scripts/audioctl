@@ -1,10 +1,12 @@
 #!/bin/bash
+INPUT=alsa_input.pci-0000_06_00.6.3.analog-stereo
+OUTPUT=alsa_output.pci-0000_06_00.6.3.analog-stereo
 
 case "$1" in
 	mic-toggle)
-		pactl set-source-mute alsa_input.pci-0000_06_00.6.analog-stereo toggle
+		pactl set-source-mute $INPUT toggle
 		pactl list sources \
-			| grep -A 6 "Name: alsa_input.pci-0000_06_00.6.analog-stereo" \
+			| grep -A 6 "Name: $INPUT" \
 			| grep "Mute: yes" 1>/dev/null
 		if [ $? -eq 0 ]; then
 			notify-send "Mic: MUTED" -u low -t 1000
@@ -13,12 +15,12 @@ case "$1" in
 		fi
 		;;
 	mic-reset)
-		pactl set-source-volume alsa_input.pci-0000_06_00.6.analog-stereo 32530
+		pactl set-source-volume $INPUT 32530
 		;;
 	sound-toggle)
-		pactl set-sink-mute alsa_output.pci-0000_06_00.6.analog-stereo toggle
+		pactl set-sink-mute $OUTPUT toggle
 		pactl list sinks \
-			| grep -A 6 "Name: alsa_output.pci-0000_06_00.6.analog-stereo" \
+			| grep -A 6 "Name: $OUTPUT" \
 			| grep "Mute: yes" 1>/dev/null
 		if [ $? -eq 0 ]; then
 			notify-send "Sound: MUTED" -u low -t 1000
@@ -27,10 +29,10 @@ case "$1" in
 		fi
 		;;
 	sound-inc)
-		pactl set-sink-volume alsa_output.pci-0000_06_00.6.analog-stereo +1%
+		pactl set-sink-volume $OUTPUT +1%
 		;;
 	sound-dec)
-		pactl set-sink-volume alsa_output.pci-0000_06_00.6.analog-stereo -1%
+		pactl set-sink-volume $OUTPUT -1%
 		;;
 	*)
 		echo "Usage $0 {laptop|dock}-{mic|audio}"
