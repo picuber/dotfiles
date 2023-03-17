@@ -1,7 +1,5 @@
 mdifne plover ~/.config
 mdifne plover ~/.config/plover
 lnifne plover ~/.config/plover/plover.cfg ~/.dotfiles/config/plover/plover.cfg
-lnifne plover ~/.config/plover/tokipona.json ~/.dotfiles/config/plover/tokipona.json
-lnifne plover ~/.config/plover/user.json ~/.dotfiles/config/plover/user.json
 
 # vim: ft=bash
