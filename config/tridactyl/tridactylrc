@@ -52,8 +52,8 @@ bindurl ^(http[s]?://)duckduckgo.com f hint -Jc [data-testid~=result-title-a]
 bindurl ^(http[s]?://)duckduckgo.com F hint -Jbc [data-testid~=result-title-a]
 
 " -- redirects --
-" use AmazonSmile
-autocmd DocStart ^(http[s]?://)www.amazon.de js tri.excmds.urlmodify("-t", "www", "smile")
+" use AmazonSmile --deprecated
+" autocmd DocStart ^(http[s]?://)www.amazon.de js tri.excmds.urlmodify("-t", "www", "smile")
 " use old reddit, unless new is specified
 autocmd DocStart ^(http[s]?://)www.reddit.com js tri.excmds.urlmodify("-t", "www", "old")
 
