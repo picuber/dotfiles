@@ -10,6 +10,7 @@ end
 -- buffer --
 lmap("bS", ":ls<CR>:b<Space>") -- show/list
 lmaps("bs", "<cmd>lua require('telescope.builtin').buffers()<CR>")
+lmaps("bm", "<cmd>lua require('nvim-tree.api').marks.navigate.select()<CR>") -- select marked buffer
 ---select ---
 lmap("bb", "<C-^>") -- toggle
 lmaps("bl", ":bnext<CR>") -- next buffer

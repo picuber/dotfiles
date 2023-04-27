@@ -4,7 +4,7 @@ local M = {}
 M.SERVERS = {
     'pylsp', -- python
     'tsserver', -- typescript/javascript
-	'sumneko_lua', -- lua
+	'lua_ls', -- lua
 	'rust_analyzer', -- rust
     'texlab', -- latex
     'cmake', -- cmake
