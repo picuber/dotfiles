@@ -16,7 +16,7 @@ lmap("bb", "<C-^>") -- toggle
 lmaps("bl", ":bnext<CR>") -- next buffer
 lmaps("bh", ":bprevious<CR>") -- prev buffer
 --- delete ---
-lmap("bd", ":ls<CR>:bdelete<Space>") -- select buffer to delete
+lmaps("bd", "<cmd>lua require('cfg.plugins.telescope').buffers_deletable()<CR>") -- select buffer(s) to delete
 lmaps("bD", ":bdelete<CR>") -- delete current buffer
 
 -- tabs --
