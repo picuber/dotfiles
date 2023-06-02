@@ -45,7 +45,7 @@ require("lualine").setup({
 
 	sections = {
 		lualine_a = { "mode" },
-		lualine_b = { nomod, readonly, preview, "branch", "diff", "diagnostics" },
+		lualine_b = { nomod, readonly, preview, "diff", "diagnostics" },
 		lualine_c = { { "filename", file_status = false, path = 1 }, modified },
 		lualine_x = { charVal, "encoding", "fileformat", "filetype" },
 		lualine_y = { "progress" },
@@ -63,6 +63,7 @@ require("lualine").setup({
 
 	tabline = {
 		lualine_a = { { "tabs", mode = 0, tabs_color = { inactive = "lualine_b_normal" } } },
+		lualine_x = { "branch" },
 		lualine_y = { "ObsessionStatus" },
 		lualine_z = { "hostname" },
 	},
