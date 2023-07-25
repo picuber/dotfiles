@@ -1,6 +1,7 @@
 configuration {
 	modi: "drun,run,window";
 	terminal: "alacritty";
+    matching: "fuzzy";
 
 	filebrowser {
 		directories-first: true;

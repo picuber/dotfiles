@@ -31,6 +31,7 @@ path_add() {
     esac
 }
 
+path_add "$HOME/.local/bin" # local binaries
 path_add "$CARGO_HOME/bin" # rust
 path_add "/opt/dropbox/bin" # dropbox
 path_add "$PYENV_ROOT/bin" # pyenv
