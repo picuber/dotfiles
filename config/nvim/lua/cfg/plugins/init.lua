@@ -90,7 +90,8 @@ return packer.startup(function(use)
 		config = [[ require("cfg.plugins.lspconfig").setup() ]],
 	})
 	use({
-		"jose-elias-alvarez/null-ls.nvim",
+		-- "jose-elias-alvarez/null-ls.nvim",
+        "nvimtools/none-ls.nvim",
 		after = "nvim-lspconfig",
 		requires = "nvim-lua/plenary.nvim",
 		config = [[ require("cfg.plugins.null-ls") ]],
