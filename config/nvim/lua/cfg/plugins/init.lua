@@ -55,6 +55,7 @@ return packer.startup(function(use)
 	use("tpope/vim-commentary") -- easier commenting
 	use("tpope/vim-obsession") -- (auto-)save (n)vim sessions
 	use("tpope/vim-speeddating") -- inc/dec dates (C-a/C-x)
+	use("tpope/vim-fugitive") -- git commands
 
 	-- snippets --
 	use({ "L3MON4D3/LuaSnip", config = [[ require("cfg.plugins.luasnip") ]] }) -- snippet engine
@@ -189,6 +190,11 @@ return packer.startup(function(use)
 	})
 	use({ "mattn/emmet-vim", config = [[ require('cfg.plugins.emmet-vim') ]] })
 	use("godlygeek/tabular")
+	use({
+		"ThePrimeagen/harpoon", -- per-project marks
+		requires = "nvim-lua/plenary.nvim",
+		config = [[ require("cfg.plugins.harpoon") ]],
+	})
 
 	-- Lualine
 	use({

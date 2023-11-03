@@ -83,6 +83,7 @@ telescope.load_extension("neoclip")
 telescope.load_extension("macroscope")
 telescope.load_extension("dap")
 telescope.load_extension("ui-select")
+telescope.load_extension("harpoon")
 
 local M = {}
 function M.buffers_deletable(opts)
