@@ -1,4 +1,6 @@
 mdifnes wallpapers ~/Pictures
-lnifne wallpapers ~/Pictures/Wallpapers ~/.dotfiles/Pictures/Wallpapers
+mdifnes wallpapers ~/Pictures/Wallpapers
+lnifne wallpapers ~/Pictures/Wallpapers/.available ~/.dotfiles/Pictures/Wallpapers
+lnifne wallpapers ~/Pictures/Wallpapers/arch_dracula.png ~/Pictures/Wallpapers/.available/arch_dracula.png
 
 # vim: ft=bash
