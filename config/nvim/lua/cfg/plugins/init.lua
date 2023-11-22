@@ -190,11 +190,11 @@ return packer.startup(function(use)
 	})
 	use({ "mattn/emmet-vim", config = [[ require('cfg.plugins.emmet-vim') ]] })
 	use("godlygeek/tabular")
-	use({
-		"ThePrimeagen/harpoon", -- per-project marks
-		requires = "nvim-lua/plenary.nvim",
-		config = [[ require("cfg.plugins.harpoon") ]],
-	})
+	-- use({
+	-- 	"ThePrimeagen/harpoon", -- per-project marks
+	-- 	requires = "nvim-lua/plenary.nvim",
+	-- 	config = [[ require("cfg.plugins.harpoon") ]],
+	-- })
 
 	-- Lualine
 	use({
