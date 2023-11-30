@@ -8,23 +8,14 @@ case "$1" in
 	normal)
 		xrandr --output $INTERNAL --auto --primary --output $HDMI --off --output $DP0 --off --output $DP1 --off
 		;;
-	docked)
-		xrandr --output $INTERNAL --auto --primary --output $HDMI --auto --right-of $INTERNAL
-		;;
 	extented)
-		xrandr --output $INTERNAL --auto --primary --output $HDMI --auto --right-of $INTERNAL
+		xrandr --output $INTERNAL --auto --primary --output $HDMI --auto --right-of $INTERNAL --output $DP0 --auto --above $INTERNAL --output $DP1 --auto --above $INTERNAL
 		;;
 	presentation)
-		xrandr --output $INTERNAL --auto --primary --output $HDMI --auto --same-as $INTERNAL
+		xrandr --output $INTERNAL --auto --primary --output $HDMI --auto --same-as $INTERNAL --output $DP0 --auto --same-as $INTERNAL --output $DP1 --auto --same-as $INTERNAL
 		;;
-    dp0)
-        xrandr --output $INTERNAL --auto --primary --output $DP1 --auto --above $INTERNAL
-        ;;
-    dp1 | work)
-        xrandr --output $INTERNAL --auto --primary --output $DP1 --auto --above $INTERNAL
-        ;;
 	*)
-		echo "Usage: $0 {normal|docked|extented|presentation}"
+		echo "Usage: $0 {normal|extented|presentation}"
 		exit 2
 esac
 
