@@ -7,6 +7,9 @@ local act = null_ls.builtins.code_actions
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md
 -- https://github.com/nvimtools/none-ls.nvim/blob/main/doc/BUILTINS.md
 local sources = {
+	-- general --
+	act.gitsigns,
+
 	-- python --
 	fmt.black,
 	fmt.isort,

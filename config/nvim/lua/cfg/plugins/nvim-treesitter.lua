@@ -11,7 +11,6 @@ config.setup({
 	},
 	indent = { enable = false }, -- this currently breaks the auto-indent
 	playground = { enable = true },
-	context_commentstring = { enable = true },
 	textobjects = {
 		select = {
 			enable = true,
