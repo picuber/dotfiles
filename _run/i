@@ -65,6 +65,13 @@ pullrepo() {
 
 # param:
 # $1 prog name
+# $s message
+message_warn() { # duplicate file, file already exists
+	echo -e [$blue$1$reset] $yellow$2$reset
+}
+
+# param:
+# $1 prog name
 # $2 file target path
 # $3 relative file source path
 lnifne() { # link if not exists, if link broken overwrite

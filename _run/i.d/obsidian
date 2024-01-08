@@ -1,0 +1,3 @@
+message_warn obsidian "Please copy the obsidian.vimrc as .obsidian.vimrc manually into the Vault root"
+
+# vim: ft=bash
