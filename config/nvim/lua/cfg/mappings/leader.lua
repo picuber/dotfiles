@@ -210,19 +210,18 @@ lmaps("ds", "<cmd>lua require('telescope').extensions.dap.frames()<CR>") -- [s]t
 -- Git --
 lmaps("gt", "<cmd>Telescope git_status<CR>") -- s[t]atus
 lmaps("gT", "<cmd>Telescope git_stash<CR>") -- s[T]ash
-lmaps("gB", "<cmd>Telescope git_branches<CR>")
+lmaps("ga", "<cmd>Telescope git_branches<CR>") -- br[a]nches
 lmaps("gl", "<cmd>Telescope git_commits<CR>") -- [l]og
-lmaps("gL", "<cmd>Telescope git_bcommits<CR>") -- file [L]og
 lmaps("gL", "<cmd>Telescope git_bcommits<CR>") -- file [L]og
 lmaps("gd", "<cmd>Gitsigns diffthis<CR>")
 lmaps("gD", "<cmd>Gitsigns diffthis ~<CR>")
 lmaps("gn", "<cmd>Gitsigns next_hunk<CR>")
 lmaps("gp", "<cmd>Gitsigns prev_hunk<CR>")
 lmaps("gh", "<cmd>Gitsigns preview_hunk<CR>") -- preview [h]unk
-lmaps("gP", "<cmd>Gitsigns preview_hunk<CR>") -- [p]review hunk
 lmaps("gs", "<cmd>Gitsigns stage_hunk<CR>")
 lmaps("gS", "<cmd>Gitsigns stage_buffer<CR>")
 lmaps("gu", "<cmd>Gitsigns undo_stage_hunk<CR>")
 lmaps("gr", "<cmd>Gitsigns reset_hunk<CR>")
 lmaps("gR", "<cmd>Gitsigns reset_buffer<CR>")
 lmaps("gb", "<cmd>Gitsigns blame_line<CR>")
+lmaps("gB", "<cmd>Git blame<CR>") -- ""
