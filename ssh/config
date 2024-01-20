@@ -48,3 +48,15 @@ Host ascrun
 Host web
 	User picuber
 	Hostname 49.12.207.170
+
+Host tr_app01
+    User lsadmin
+    Hostname 10.11.24.107
+
+Host tr_app02
+    User lsadmin
+    Hostname 10.11.24.108
+
+Host tr_app03
+    User lsadmin
+    Hostname 10.11.24.109
