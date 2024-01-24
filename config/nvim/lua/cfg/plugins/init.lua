@@ -45,7 +45,7 @@ return packer.startup(function(use)
 	use("wbthomason/packer.nvim") -- packer
 
 	-- colorschemes --
-	use("arcticicestudio/nord-vim")
+	use("nordtheme/vim")
 	use("tomasr/molokai")
 	use("cocopon/iceberg.vim")
 
