@@ -124,7 +124,7 @@ nmap ,oC :open_calendar
 nmap ,om :open_bookmarks
 nmap ,oo :open_outline
 nmap ,ot :open_tags
-nmap ,oT :open_tags
+nmap ,oT :open_templates
 
 " === Daily Notes ===
 exmap daily_open obcommand daily-notes
