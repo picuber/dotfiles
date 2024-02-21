@@ -92,7 +92,7 @@ return packer.startup(function(use)
 	})
 	use({
 		-- "jose-elias-alvarez/null-ls.nvim",
-        "nvimtools/none-ls.nvim",
+		"nvimtools/none-ls.nvim",
 		after = "nvim-lspconfig",
 		requires = "nvim-lua/plenary.nvim",
 		config = [[ require("cfg.plugins.null-ls") ]],
@@ -206,6 +206,7 @@ return packer.startup(function(use)
 	-- Syntax --
 	use("tridactyl/vim-tridactyl") -- tridactyl config syntax file
 	use({ "preservim/vim-markdown", config = [[ require("cfg.plugins.vim-markdown") ]] })
+	use("andlrc/rpgle.vim")
 
 	-- Automatic initial plugin installation
 	if packer_bootstrap then

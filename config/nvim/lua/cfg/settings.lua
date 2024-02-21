@@ -48,3 +48,10 @@ vim.opt.wildignorecase = true -- file completion is case-insensitive
 
 -- file settings --
 vim.opt.fixendofline = false
+
+-- file types --
+vim.filetype.add({
+	extension = {
+		rgple = "rpgle",
+	},
+})
