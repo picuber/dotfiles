@@ -20,9 +20,9 @@ local c = ls.choice_node
 
 ls.add_snippets("javascript", {
 	s({ trig = "cl", name = "console.log()" }, {
-		t('console.log("'),
+		t('console.log('),
 		i(0),
-		t('");'),
+		t(')'),
 	}),
 
 	s({ trig = "fn", name = "anonymous arrow function" }, {
@@ -40,9 +40,7 @@ ls.add_snippets("javascript", {
 		i(1, "fn_name"),
 		t(" = ("),
 		i(2),
-		t(")"),
-		i(3),
-		t(" => "),
+		t(") => "),
 		t("{"),
 		i(0),
 		t("}"),

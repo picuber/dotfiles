@@ -26,6 +26,11 @@ if type pyenv > /dev/null; then
 	eval "$(pyenv virtualenv-init -)"
 fi
 
+# zoxide (z)
+if type zoxide > /dev/null; then
+    eval "$(zoxide init zsh)"
+fi
+
 # lazy load nvm -> reduces start-up time by a factor of 9 to 10
 function nvm npm tsc nvim gc gcam {
     unset -f nvm npm tsc nvim gc gcam
