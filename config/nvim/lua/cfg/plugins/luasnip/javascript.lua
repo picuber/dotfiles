@@ -28,9 +28,7 @@ ls.add_snippets("javascript", {
 	s({ trig = "fn", name = "anonymous arrow function" }, {
 		t("("),
 		i(1),
-		t(")"),
-		i(2),
-		t(" => {"),
+		t(") => {"),
 		i(0),
 		t("}"),
 	}),
