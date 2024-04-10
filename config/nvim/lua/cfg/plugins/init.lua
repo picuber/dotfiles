@@ -158,7 +158,7 @@ return packer.startup(function(use)
     })
     use({
         "rcarriga/nvim-dap-ui",
-        requires = { "mfussenegger/nvim-dap" },
+        requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
         config = [[ require("cfg.plugins.nvim-dap-ui") ]],
     })
 
