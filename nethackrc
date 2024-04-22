@@ -56,7 +56,8 @@ MENUCOLOR=" \(on (left|right) hand\)"=white&bold
 ###########
 #  B/U/C  #
 ###########
-#MENUCOLOR="^[a-zA-Z$] - "=white #may want to enable this if regularly playing priest.. (priests don't see the 'uncursed')
+#may want to enable this if regularly playing priest.. (priests don't see the 'uncursed')
+#MENUCOLOR="^[a-zA-Z$] - "=white
 MENUCOLOR=" blessed"=green
 MENUCOLOR=" blessed .* \(weapon in hands?\)"=lightgreen
 MENUCOLOR=" blessed .* \(wielded.*\)"=lightgreen
@@ -71,7 +72,8 @@ MENUCOLOR=" uncursed .* \(being worn\)"=cyan&bold
 MENUCOLOR=" uncursed .* \(in quiver\)"=cyan&bold
 MENUCOLOR=" uncursed .* \(on (left|right) hand\)"=cyan&bold
 
-MENUCOLOR=" ([-0-9]+:[-0-9]+)"=cyan #nethack doesn't display "uncursed" if charges are known
+#nethack doesn't display "uncursed" if charges are known
+MENUCOLOR=" ([-0-9]+:[-0-9]+)"=cyan
 # MENUCOLOR=" [+-][0-9]"=white
 
 MENUCOLOR=" cursed"=red
@@ -108,7 +110,8 @@ MENUCOLOR=" wand .* wishing"= magenta
 MENUCOLOR=" magic marker"=magenta
 MENUCOLOR=" magic lamp$"=magenta
 MENUCOLOR=" magic lamp \(lit\)"=lightmagenta
-MENUCOLOR=" unicorn horn[^[]*$"=magenta #this doesn't color the #enhance unicorn horn skill
+#this doesn't color the #enhance unicorn horn skill
+MENUCOLOR=" unicorn horn[^[]*$"=magenta
 MENUCOLOR=" tinning kit"=magenta
 MENUCOLOR=" lamp .* magic$"=magenta
 MENUCOLOR=" lamp .* magic \(lit\)"=lightmagenta
