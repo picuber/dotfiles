@@ -1,5 +1,5 @@
-# move with number pad
-OPTIONS=number_pad:1
+# move with hjklyunb
+OPTIONS=number_pad:0
 
 # show colours on default
 OPTIONS=color
@@ -141,7 +141,7 @@ MENUCOLOR=" \(Longbow of Diana\|Master Key of Thievery\)"=cyan
 MENUCOLOR=" \(Bell of Opening\|silver bell\|Candelabrum of Invocation\|candelabrum\|Book of the Dead\|papyrus spellbook\)"=magenta&bold
 
 #raison d'etre
-MENUCOLOR=" Amulet of Yendor named"=magenta&bold&underline
+MENUCOLOR=" Amulet of Yendor named"=magenta&underline
 
 #############
 # BAD STUFF #
