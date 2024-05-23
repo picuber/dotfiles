@@ -16,6 +16,13 @@ OPTIONS=role:Samurai,name:picuber,gender:female
 OPTIONS=hilite_pet
 OPTIONS=hilite_pile
 
+# always show inventory
+OPTIONS=perm_invent
+OPTIONS=windowtype:curses,symset:DECgraphics
+
+# always disclose everything at the end
+OPTIONS=disclose:i+ a+ v+ g+ c+ o+
+
 # change boulder symbol
 SYMBOLS=S_boulder:O
 
