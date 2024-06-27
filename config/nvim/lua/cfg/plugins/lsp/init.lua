@@ -11,5 +11,6 @@ M.SERVERS = {
     'hls', -- haskell
     'clangd', -- C/C++
     'jdtls', -- Java
+    'tailwindcss', -- TailwindCSS
 }
 return M

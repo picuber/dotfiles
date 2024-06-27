@@ -109,7 +109,7 @@ return packer.startup(function(use)
             { "nvim-treesitter/playground",                  after = "nvim-treesitter", cmd = "TSPlaygroundToggle" },
             { "JoosepAlviste/nvim-ts-context-commentstring", after = "nvim-treesitter" },
             { "nvim-treesitter/nvim-treesitter-textobjects", after = "nvim-treesitter" },
-            { "windwp/nvim-ts-autotag",                      after = "nvim-treesitter" },
+            -- { "windwp/nvim-ts-autotag",                      after = "nvim-treesitter" },
             {
                 "andymass/vim-matchup",
                 after = "nvim-treesitter",
@@ -198,6 +198,11 @@ return packer.startup(function(use)
     -- 	requires = "nvim-lua/plenary.nvim",
     -- 	config = [[ require("cfg.plugins.harpoon") ]],
     -- })
+    use({
+        "luckasRanarison/tailwind-tools.nvim",   -- abc
+        requires = { "nvim-treesitter/nvim-treesitter" },
+        config = [[ require("cfg.plugins.tailwind-tools")]]
+    })
 
     -- Lualine
     use({

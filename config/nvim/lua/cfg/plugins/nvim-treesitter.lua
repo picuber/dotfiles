@@ -23,7 +23,7 @@ config.setup({
 			},
 		},
 	},
-	autotag = { enable = true, enable_close_on_slash = false },
+	-- autotag = { enable = true, enable_close_on_slash = false },
 	matchup = { enable = true },
 })
 
