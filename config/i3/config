@@ -764,10 +764,10 @@ mode "plover" {
     bindsym $mod+s mode "default", exec --no-startup-id plover
     bindsym l mode "default", exec --no-startup-id $HOME/scripts/keyboard STENO
     bindsym $mod+l mode "default", exec --no-startup-id $HOME/scripts/keyboard STENO
-    bindsym t mode "default", exec --no-startup-id plover_send_command toggle
-    bindsym $mod+t mode "default", exec --no-startup-id plover_send_command toggle
-    bindsym q mode "default", exec --no-startup-id plover_send_command quit
-    bindsym $mod+q mode "default", exec --no-startup-id plover_send_command quit
+    bindsym t mode "default", exec --no-startup-id plover -s plover_send_command toggle
+    bindsym $mod+t mode "default", exec --no-startup-id plover -s plover_send_command toggle
+    bindsym q mode "default", exec --no-startup-id plover -s plover_send_command quit
+    bindsym $mod+q mode "default", exec --no-startup-id plover -s plover_send_command quit
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
