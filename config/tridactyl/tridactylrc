@@ -46,6 +46,7 @@ blacklistadd ^(http[s]?://)monkeytype\.com/.*
 blacklistadd ^(http[s]?://)www\.nitrotype\.com/.*
 blacklistadd ^(http[s]?://)trello\.com/.*
 blacklistadd ^(http[s]?://)cstimer\.net/.*
+blacklistadd ^(http[s]?://)www\.speedsolving\.com/competition/.*
 
 " -- site specific --
 " only hint search results [3]
