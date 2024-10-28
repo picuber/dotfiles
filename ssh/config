@@ -62,3 +62,7 @@ Host tr_app02
 Host tr_app03
     User lsadmin
     Hostname 10.11.24.109
+
+Host dCMS
+    User luna
+    Hostname 10.11.24.130
