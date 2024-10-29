@@ -54,6 +54,8 @@ export FZF_CTRL_T_OPTS="--multi --exact --reverse --inline-info --border --heigh
 export FZF_CTRL_R_OPTS="--multi --exact --reverse --inline-info --border --height 50% --bind tab:down,btab:up,alt-space:toggle+down,ctrl-space:toggle+up,esc:cancel"
 export FZF_ALT_C_OPTS="--multi --exact --reverse --inline-info --border --height 50% --bind tab:down,btab:up,alt-space:toggle+down,ctrl-space:toggle+up,esc:cancel"
 
+export TMUX_FZF_LAUNCH_KEY="C-f"
+
     # history
 export HISTFILE=$ZDOTDIR/history
 export HISTSIZE=500000
