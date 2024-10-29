@@ -19,27 +19,27 @@ exmap surround_curly_brackets surround { }
 " NOTE: must use 'map' and not 'nmap'
 nunmap s
 vunmap s
-map sw :surround_wiki
-map s" :surround_double_quotes
-map s' :surround_single_quotes
-map s` :surround_back_quotes
-map s( :surround_brackets
-map s) :surround_brackets
-map s[ :surround_square_brackets
-map s] :surround_square_brackets
-map s{ :surround_curly_brackets
-map s} :surround_curly_brackets
+map sw :surround_wiki<CR>
+map s" :surround_double_quotes<CR>
+map s' :surround_single_quotes<CR>
+map s` :surround_back_quotes<CR>
+map s( :surround_brackets<CR>
+map s) :surround_brackets<CR>
+map s[ :surround_square_brackets<CR>
+map s] :surround_square_brackets<CR>
+map s{ :surround_curly_brackets<CR>
+map s} :surround_curly_brackets<CR>
 
 " === Folding ===
 exmap fold_toggle obcommand editor:toggle-fold
 exmap fold_unfold_all obcommand editor:unfold-all
 exmap fold_fold_all obcommand editor:fold-all
 
-nmap za :fold_toggle
-nmap zc :fold_toggle
-nmap zo :fold_toggle
-nmap zR :fold_unfold_all
-nmap zM :fold_fold_all
+nmap za :fold_toggle<CR>
+nmap zc :fold_toggle<CR>
+nmap zo :fold_toggle<CR>
+nmap zR :fold_unfold_all<CR>
+nmap zM :fold_fold_all<CR>
 
 
 " === Windowing ===
@@ -60,28 +60,28 @@ exmap app_forward obcommand app:go-forward
 exmap app_back obcommand app:go-back
 exmap app_reload obcommand app:reload
 
-nmap <C-w>v :vs
-nmap <C-w>s :sp
-nmap <C-w>h :window_focus_left
-nmap <C-w>l :window_focus_right
-nmap <C-w>j :window_focus_bottom
-nmap <C-w>k :window_focus_top
-nmap <C-w>n :window_tab_new
+nmap <C-w>v :vs<CR>
+nmap <C-w>s :sp<CR>
+nmap <C-w>h :window_focus_left<CR>
+nmap <C-w>l :window_focus_right<CR>
+nmap <C-w>j :window_focus_bottom<CR>
+nmap <C-w>k :window_focus_top<CR>
+nmap <C-w>n :window_tab_new<CR>
 
-nmap ,ws :vs
-nmap ,wS :sp
-nmap ,wh :window_focus_left
-nmap ,wl :window_focus_right
-nmap ,wj :window_focus_bottom
-nmap ,wk :window_focus_top
-nmap ,wn :window_tab_new
-nmap ,[[ :window_sidebar_toggle_left
-nmap ,]] :window_sidebar_toggle_right
-nmap ,wreload :app_reload
-nmap ,tl :window_tab_next
-nmap ,th :window_tab_prev
-nmap ,L :app_forward
-nmap ,H :app_back
+nmap ,ws :vs<CR>
+nmap ,wS :sp<CR>
+nmap ,wh :window_focus_left<CR>
+nmap ,wl :window_focus_right<CR>
+nmap ,wj :window_focus_bottom<CR>
+nmap ,wk :window_focus_top<CR>
+nmap ,wn :window_tab_new<CR>
+nmap ,[[ :window_sidebar_toggle_left<CR>
+nmap ,]] :window_sidebar_toggle_right<CR>
+nmap ,wreload :app_reload<CR>
+nmap ,tl :window_tab_next<CR>
+nmap ,th :window_tab_prev<CR>
+nmap ,L :app_forward<CR>
+nmap ,H :app_back<CR>
 
 " === View Modes ===
 exmap viewmode_source obcommand editor:toggle-source
@@ -93,7 +93,7 @@ nmap ,ms :viewmode_source
 " === Toggles ====
 exmap toggle_spell obcommand editor:toggle-spellcheck
 
-nmap ,,s :toggle_spell
+nmap ,,s :toggle_spell<CR>
 
 
 " === Open components ===
@@ -112,25 +112,25 @@ exmap open_tags obcommand tag-pane:open
 exmap open_templates obcommand insert-templates
 
 
-nmap ,of :open_files
-nmap ,oF :open_file_tree
-nmap ,os :open_search
-nmap ,ob :open_backlinks
-nmap ,ol :open_links
-nmap ,og :open_graph
-nmap ,oG :open_graph_local
-nmap ,oc :open_commands
-nmap ,oC :open_calendar
-nmap ,om :open_bookmarks
-nmap ,oo :open_outline
-nmap ,ot :open_tags
-nmap ,oT :open_templates
+nmap ,of :open_files<CR>
+nmap ,oF :open_file_tree<CR>
+nmap ,os :open_search<CR>
+nmap ,ob :open_backlinks<CR>
+nmap ,ol :open_links<CR>
+nmap ,og :open_graph<CR>
+nmap ,oG :open_graph_local<CR>
+nmap ,oc :open_commands<CR>
+nmap ,oC :open_calendar<CR>
+nmap ,om :open_bookmarks<CR>
+nmap ,oo :open_outline<CR>
+nmap ,ot :open_tags<CR>
+nmap ,oT :open_templates<CR>
 
 " === Daily Notes ===
 exmap daily_open obcommand daily-notes
 exmap daily_prev obcommand daily-notes:goto-prev
 exmap daily_next obcommand daily-notes:goto-next
 
-nmap ,dd :daily_open
-nmap ,dh :daily_prev
-nmap ,dl :daily_next
+nmap ,dd :daily_open<CR>
+nmap ,dh :daily_prev<CR>
+nmap ,dl :daily_next<CR>
