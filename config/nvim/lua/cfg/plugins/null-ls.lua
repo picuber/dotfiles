@@ -1,4 +1,4 @@
-local lspconfig = require("cfg.plugins.lspconfig")
+local lspconfig = require("cfg.plugins.lspconfig_")
 local null_ls = require("null-ls")
 local fmt = null_ls.builtins.formatting
 local diag = null_ls.builtins.diagnostics

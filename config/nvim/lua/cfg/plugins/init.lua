@@ -88,7 +88,7 @@ return packer.startup(function(use)
         "neovim/nvim-lspconfig",
         after = { "nvim-cmp", "cmp-nvim-lsp" },
         requires = "hrsh7th/cmp-nvim-lsp",
-        config = [[ require("cfg.plugins.lspconfig").setup() ]],
+        config = [[ require("cfg.plugins.lspconfig_").setup() ]],
     })
     use({
         -- "jose-elias-alvarez/null-ls.nvim",

@@ -3,7 +3,7 @@ local M = {}
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 M.SERVERS = {
     'pylsp', -- python
-    'tsserver', -- typescript/javascript
+    'ts_ls', -- typescript/javascript
 	'lua_ls', -- lua
 	'rust_analyzer', -- rust
     'texlab', -- latex
