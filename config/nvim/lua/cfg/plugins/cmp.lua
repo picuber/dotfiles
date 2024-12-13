@@ -9,7 +9,7 @@ cmp.setup({
     },
     mapping = {
         -- expand snippets
-        ["<leader>e"] = cmp.mapping(function(fallback)
+        [vim.g.mapleader .. "e"] = cmp.mapping(function(fallback)
             if luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
             elseif cmp.visible() then
@@ -19,7 +19,7 @@ cmp.setup({
             end
         end, { "i", "c", "s" }),
 
-        ["<leader>u"] = cmp.mapping(function(fallback)
+        [vim.g.mapleader .. "u"] = cmp.mapping(function(fallback)
             if luasnip.jumpable(-1) then
                 luasnip.jump(-1)
             else
@@ -127,4 +127,3 @@ cmp.setup.cmdline(":", {
         { name = "cmdline" },
     }
 })
-
