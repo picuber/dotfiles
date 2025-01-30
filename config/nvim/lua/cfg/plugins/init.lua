@@ -79,6 +79,7 @@ return packer.startup(function(use)
                 after = { "nvim-cmp", "LuaSnip" },
                 requires = "LuaSnip",
             },
+            { "R-nvim/cmp-r", after = "nvim-cmp" },   -- R-nvim source
         },
         config = [[ require("cfg.plugins.cmp") ]],
     })
@@ -162,6 +163,12 @@ return packer.startup(function(use)
         config = [[ require("cfg.plugins.nvim-dap-ui") ]],
     })
 
+    -- R-nvim / r-lang
+    use({
+        "R-nvim/R.nvim",
+        version = "0.1.0",
+    })
+
     -- tools --
     -- use("vimwiki/vimwiki")
 
@@ -199,9 +206,13 @@ return packer.startup(function(use)
     -- 	config = [[ require("cfg.plugins.harpoon") ]],
     -- })
     use({
-        "luckasRanarison/tailwind-tools.nvim",   -- abc
+        "luckasRanarison/tailwind-tools.nvim", -- abc
         requires = { "nvim-treesitter/nvim-treesitter" },
-        config = [[ require("cfg.plugins.tailwind-tools")]]
+        config = [[ require("cfg.plugins.tailwind-tools")]],
+    })
+    use({
+        "chentoast/marks.nvim",
+        config = [[ require("cfg.plugins.marks")]],
     })
 
     -- Lualine
