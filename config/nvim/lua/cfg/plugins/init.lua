@@ -210,10 +210,10 @@ return packer.startup(function(use)
         requires = { "nvim-treesitter/nvim-treesitter" },
         config = [[ require("cfg.plugins.tailwind-tools")]],
     })
-    use({
-        "chentoast/marks.nvim",
-        config = [[ require("cfg.plugins.marks")]],
-    })
+    -- use({
+    --     "chentoast/marks.nvim",
+    --     config = [[ require("cfg.plugins.marks")]],
+    -- })
 
     -- Lualine
     use({
