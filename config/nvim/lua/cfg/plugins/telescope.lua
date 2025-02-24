@@ -9,7 +9,7 @@ telescope.setup({
 		selection_caret = " ",
 		path_display = { "smart" },
 
-		default_mappings = {
+		mappings = {
 			i = {
 				["<S-Tab>"] = actions.close,
 				["<CR>"] = actions.select_default,
@@ -25,6 +25,10 @@ telescope.setup({
 
 				["<C-f>"] = actions.complete_tag,
 				["<C-_>"] = actions.which_key, -- keys from pressing <C-/>
+
+                -- disable defaults
+                ["<C-c>"] = false,
+                ["<Tab>"] = false,
 			},
 			n = {
 				["q"] = actions.close,
@@ -51,6 +55,10 @@ telescope.setup({
 				["<C-c>"] = actions.send_selected_to_qflist + actions.open_qflist,
 
 				["?"] = actions.which_key, -- keys from pressing <C-/>
+
+                -- disable defaults
+                ["<Tab>"] = false,
+                ["<Esc>"] = false,
 			},
 		},
 	},
