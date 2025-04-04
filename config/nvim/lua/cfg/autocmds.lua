@@ -8,4 +8,5 @@ if has('wsl')
         autocmd!
         autocmd TextYankPost * :call system('clip.exe ', @")
     augroup END
+endif
 ]])
