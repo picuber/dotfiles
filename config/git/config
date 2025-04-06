@@ -15,3 +15,5 @@
 	rebase = false
 [alias]
 	all = "!f() { ls -R -d */.git | sed \"s/\\/.git//\" | xargs -I{} bash -c \"echo ==[{}]== && git -C {} $*\"; }; f"
+[credential]
+	helper = cache

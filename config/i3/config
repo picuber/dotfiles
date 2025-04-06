@@ -967,7 +967,7 @@ assign [class="TelegramDesktop"] $ws10
 assign [class="threema-web"] $ws10
 assign [class="Zulip"] $ws10
 assign [class="obs"] $ws11
-assign [class="KeePassXC"] $ws12
+assign [class="KeePassXC" title="^(?!Unlock).*"] $ws12
 
 # needed for gaps to work
 for_window [class=".*"] border 1pixel
