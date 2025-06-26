@@ -22,6 +22,7 @@ vim.opt.mouse = 'a' -- enable mouse in all modes
 
 -- looks --
 vim.opt.title = true
+vim.opt.winborder = "rounded"
 
 -- updating --
 vim.opt.updatetime = 1000 -- update swaps more often (every 1000ms)
