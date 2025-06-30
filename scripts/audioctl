@@ -12,7 +12,7 @@ case "$1" in
 		fi
 		;;
 	mic-reset)
-		pactl set-source-volume $INPUT 32530
+		pactl set-source-volume @DEFAULT_SOURCE@ 32530
 		;;
 	sound-toggle)
 		pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -25,10 +25,10 @@ case "$1" in
 		fi
 		;;
 	sound-inc)
-		pactl set-sink-volume $OUTPUT +1%
+		pactl set-sink-volume @DEFAULT_SINK@ +1%
 		;;
 	sound-dec)
-		pactl set-sink-volume $OUTPUT -1%
+		pactl set-sink-volume @DEFAULT_SINK@ -1%
 		;;
 	*)
 		echo "Usage $0 {laptop|dock}-{mic|audio}"

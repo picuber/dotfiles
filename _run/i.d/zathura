@@ -1,0 +1,4 @@
+mdifne zathura ~/.config
+lnifne zathura ~/.config/zathura ~/.dotfiles/config/zathura
+
+# vim: ft=bash
