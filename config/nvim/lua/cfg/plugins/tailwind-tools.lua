@@ -1,1 +1,7 @@
-require("tailwind-tools").setup({})
+require("tailwind-tools").setup({
+    keymaps = {
+        smart_increment = {
+            enabled = false
+        }
+    }
+})
