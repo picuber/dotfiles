@@ -3,8 +3,8 @@ local M = {}
 function M.on_attach(client, buff)
     local no_format = {sumneko_lua = true, pylsp = true, ts_ls = true}
     if no_format[client.name] ~= nil then
-	-- if client.name == "sumneko_lua" or client.name == "pylsp" or client.name == "ts_ls" then
-		client.server_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
+		client.server_capabilities.documentRangeFormattingProvider = false
 	end
 
 	local function map(key, cmd)
@@ -48,7 +48,7 @@ function M.on_attach(client, buff)
 
 	-- Format on save if formatting is available
 	--[==[
-	if client.server_capabilities.document_formatting then
+	if client.server_capabilities.documentFormattingProvider then
 		vim.cmd([[
             augroup LSP_FORMAT
                 autocmd! * <buffer>
@@ -59,7 +59,7 @@ function M.on_attach(client, buff)
     ]==]
 
 	-- highlight keyword under cursor
-	if client.server_capabilities.document_highlight then
+	if client.server_capabilities.documentHighlightProvider then
 		vim.cmd([[
             augroup lsp_document_highlight
                 autocmd! * <buffer>
