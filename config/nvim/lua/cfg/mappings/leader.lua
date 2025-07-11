@@ -90,6 +90,7 @@ opt("s", { "spell" })
 opt("w", { "wrap" })
 opt("x", { "cursorcolumn", "cursorline" })
 opt("y", { "list" }) -- "symbols"
+opt("e", { "eol" }) -- EOL at EOF
 lmaps(",h", ":nohlsearch<CR>") -- turn off search highlight
 lmaps(",l", ":lclose<CR>") -- close location list
 lmaps(",L", ":lopen<CR>") -- close location list
@@ -126,6 +127,7 @@ lang("d", "de_de") -- German
 lang("D", "de_de,en_gb") -- common
 lang("o", "eo") -- Esperanto
 lang("s", "sv") -- Swedish
+lang("i", "is") -- Icelandic
 lang("t", "tok") -- toki pona
 lang("T", "tok,en_gb") -- toki pona + English
 --- fix mistake ---
