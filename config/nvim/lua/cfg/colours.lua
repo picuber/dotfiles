@@ -8,7 +8,9 @@ vim.g.nord_underline = 1
 vim.g.molokai_original = 1
 
 -- set theme--
-vim.cmd([[colorscheme nord]])
+vim.opt.background = "light"
+vim.cmd([[colorscheme iceberg]])
+-- vim.cmd([[colorscheme nord]])
 -- vim.cmd [[colorscheme molokai]]
 
 -- highlight --

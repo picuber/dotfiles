@@ -1,53 +1,53 @@
 local M = {}
 
 function M.on_attach(client, buff)
-    local no_format = {sumneko_lua = true, pylsp = true, ts_ls = true}
+    local no_format = { sumneko_lua = true, pylsp = true, ts_ls = true }
     if no_format[client.name] ~= nil then
-		client.server_capabilities.documentFormattingProvider = false
-		client.server_capabilities.documentRangeFormattingProvider = false
-	end
+        client.server_capabilities.documentFormattingProvider = false
+        client.server_capabilities.documentRangeFormattingProvider = false
+    end
 
-	local function map(key, cmd)
-		local opt = { noremap = true, silent = true }
-		vim.api.nvim_buf_set_keymap(buff, "n", "<leader>a" .. key, cmd, opt)
-	end
-	local function bmap(key, cmd)
-		map(key, ":lua vim.lsp.buf." .. cmd .. "<CR>")
-	end
-	local function dmap(key, cmd)
-		map(key, ":lua vim.diagnostic." .. cmd .. "<CR>")
-	end
-	local function mapC(key, cmd)
-		local opt = { noremap = true, silent = true }
-		vim.api.nvim_buf_set_keymap(buff, "n", "<leader>A" .. key, cmd, opt)
-	end
-	local function bmapC(key, cmd)
-		mapC(key, ":vs%<CR><C-W><C-P>:lua vim.lsp.buf." .. cmd .. "<CR>")
-	end
+    local function map(key, cmd)
+        local opt = { noremap = true, silent = true }
+        vim.api.nvim_buf_set_keymap(buff, "n", "<leader>a" .. key, cmd, opt)
+    end
+    local function bmap(key, cmd)
+        map(key, ":lua vim.lsp.buf." .. cmd .. "<CR>")
+    end
+    local function dmap(key, cmd)
+        map(key, ":lua vim.diagnostic." .. cmd .. "<CR>")
+    end
+    local function mapC(key, cmd)
+        local opt = { noremap = true, silent = true }
+        vim.api.nvim_buf_set_keymap(buff, "n", "<leader>A" .. key, cmd, opt)
+    end
+    local function bmapC(key, cmd)
+        mapC(key, ":vs%<CR><C-W><C-P>:lua vim.lsp.buf." .. cmd .. "<CR>")
+    end
 
-	local floatcfg =
-		[[{focusable=false,source="if_many",close_events={"BufLeave","CursorMoved","InsertEnter","FocusLost"}}]]
+    local floatcfg =
+    [[{focusable=false,source="if_many",close_events={"BufLeave","CursorMoved","InsertEnter","FocusLost"}}]]
 
-	bmap("d", "definition()")
-	bmapC("d", "definition()")
-	bmap("D", "declaration()")
-	bmapC("D", "declaration()")
-	bmap("i", "implementation()")
-	bmapC("i", "implementation()")
-	bmap("h", "hover()")
-	bmap("R", "references()")
-	bmap("r", "rename()")
-	bmap("s", "signature_help()")
-	bmap("a", "code_action()")
-	bmap("f", "format({ async = true })")
-	dmap("n", "goto_next()")
-	dmap("p", "goto_prev()")
-	dmap("l", "open_float(" .. floatcfg .. ")")
-	dmap("L", "setloclist()")
-	map("I", ":LspInfo<CR>")
+    bmap("d", "definition()")
+    bmapC("d", "definition()")
+    bmap("D", "declaration()")
+    bmapC("D", "declaration()")
+    bmap("i", "implementation()")
+    bmapC("i", "implementation()")
+    bmap("h", "hover()")
+    bmap("R", "references()")
+    bmap("r", "rename()")
+    bmap("s", "signature_help()")
+    bmap("a", "code_action()")
+    bmap("f", "format({ async = true })")
+    dmap("n", "goto_next()")
+    dmap("p", "goto_prev()")
+    dmap("l", "open_float(" .. floatcfg .. ")")
+    dmap("L", "setloclist()")
+    map("I", ":LspInfo<CR>")
 
-	-- Format on save if formatting is available
-	--[==[
+    -- Format on save if formatting is available
+    --[==[
 	if client.server_capabilities.documentFormattingProvider then
 		vim.cmd([[
             augroup LSP_FORMAT
@@ -58,48 +58,45 @@ function M.on_attach(client, buff)
 	end
     ]==]
 
-	-- highlight keyword under cursor
-	if client.server_capabilities.documentHighlightProvider then
-		vim.cmd([[
+    -- highlight keyword under cursor
+    if client.server_capabilities.documentHighlightProvider then
+        vim.cmd([[
             augroup lsp_document_highlight
                 autocmd! * <buffer>
                 autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
                 autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
             augroup END
         ]])
-	end
+    end
 end
 
 M.capabilities = vim.lsp.protocol.make_client_capabilities()
 M.capabilities = require("cmp_nvim_lsp").default_capabilities(M.capabilities)
 
 function M.setup()
-	-- configure diagnostics
-	vim.diagnostic.config({
-		virtual_text = {
-			-- source = "if_many",
-			source = true,
-		},
-	})
+    -- configure diagnostics
+    vim.diagnostic.config({
+        virtual_text = {
+            -- source = "if_many",
+            source = true,
+        },
+    })
 
-	-- configure handlers
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { border = "rounded" })
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-		vim.lsp.handlers.signature_help,
-		{ border = "rounded" }
-	)
+    -- configure handlers
+    vim.lsp.handlers["textDocument/hover"] = vim.lsp.buf.hover({ border = "rounded" })
+    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.buf.signature_help({ border = "rounded" })
 
-	local default_config = {
-		on_attach = M.on_attach,
-		capabilities = M.capabilities,
-	}
+    local default_config = {
+        on_attach = M.on_attach,
+        capabilities = M.capabilities,
+    }
 
-	local lspconfig = require("lspconfig")
-	for _, lsp in ipairs(require("cfg.plugins.lsp").SERVERS) do
-		local server_config = require("cfg.plugins.lsp." .. lsp) or {}
-		local config = vim.tbl_extend("keep", server_config, default_config)
-		lspconfig[lsp].setup(config)
-	end
+    for _, lsp in ipairs(require("cfg.plugins.lsp").SERVERS) do
+        local server_config = require("cfg.plugins.lsp." .. lsp) or {}
+        local config = vim.tbl_extend("keep", server_config, default_config)
+        vim.lsp.config(lsp, config)
+        vim.lsp.enable(lsp)
+    end
 end
 
 return M
