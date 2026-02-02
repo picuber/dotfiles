@@ -901,6 +901,7 @@ bar {
     tray_output primary
     strip_workspace_numbers yes
 
+    workspace_command ~/.config/i3/workspaces primary
     status_command i3status
 
     colors {
@@ -919,12 +920,15 @@ bar {
 bar{
     id bar-1
     position top
+    output nonprimary
     output HDMI-A-0
     output DisplayPort-0
     output DisplayPort-1
 
     tray_output none
     strip_workspace_numbers yes
+
+    workspace_command ~/.config/i3/workspaces nonprimary
 
     colors {
         background $nord0
@@ -976,6 +980,7 @@ for_window [class="KeePassXC"] border none
 for_window [class="Minecraft.*"] border none
 for_window [class="Slack"] border pixel 2
 for_window [class="Spotify"] border none
+for_window [class="tidal-hifi"] border none
 for_window [class="Tabletop Simulator.x86_64"] border none
 for_window [class="TelegramDesktop"] border none
 for_window [class="Terraria"] border none
@@ -995,6 +1000,7 @@ for_window [class="Zeal"] resize set 1280 720
 for_window [class="steam"] move to workspace $ws7
 for_window [class="minecraft-launcher"] move to workspace $ws8
 for_window [class="Spotify"] move to workspace $ws9
+for_window [class="tidal-hifi"] move to workspace $ws9
 
 for_window [title=".*Data/Cheatsheets/Neo2/.*"] floating enable, border 1pixel
 for_window [title=".*Data/Cheatsheets/Korean/Dubeolsik.png.*"] floating enable, border 1pixel

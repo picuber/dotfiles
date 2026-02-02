@@ -1,0 +1,40 @@
+#!/bin/sh
+
+SCREEN_SELECT='true'
+case "$1" in
+    nonprimary | other)
+        SCREEN_SELECT='.output != "eDP"'
+        ;;
+    primary)
+        SCREEN_SELECT='.output == "eDP"'
+        ;;
+    *)
+        SCREEN_SELECT='true'
+        ;;
+esac
+
+i3-msg -t subscribe -m '["workspace", "output"]' | {
+    # Initially print the current workspaces before we receive any events. This avoids having an empty bar when starting up.
+    i3-msg -t get_workspaces;
+    # Then, while we receive events, update the workspace information.
+    while read EVENT; do i3-msg -t get_workspaces; done;
+} | {
+    if ! type jq > /dev/null; then
+        notify-send -u critical "i3config workspaces ERROR" "command 'jq' not found!\nFalling back to default behaviour.";
+        # Return stdin unchanged to stdout
+        cat;
+
+        # Alternate option: show only the error as workspace
+        # echo '[{"name": "error: jq not found", "urgent": true}]';
+    else
+        jq --unbuffered -c "
+        [
+            flatten([
+                (map(select(.num >= 0)) | sort_by(.num)),
+                (map(select(.num < 0)) | sort_by(.name))
+            ])
+            | map(select($SCREEN_SELECT))
+        ]
+        "
+    fi;
+}
