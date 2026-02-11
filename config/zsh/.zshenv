@@ -5,10 +5,11 @@ export ZDOTDIR=$HOME/.config/zsh # set here too, just to be sure
 export ZPLUGINDIR=${ZPLUGINDIR:-${ZDOTDIR:-$HOME/.config/zsh}/plugins}
 
 # XDG directories, also set in ~/.profile and .zprofile
-export XDG_DATA_HOME="$HOME/.local/share"
-export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_BIN_HOME="$HOME/.local/bin"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_STATE_HOME="$HOME/.local/state"
 
 # program directories
 export CARGO_HOME="$XDG_DATA_HOME"/cargo
@@ -31,7 +32,7 @@ path_add() {
     esac
 }
 
-path_add "$HOME/.local/bin" # local binaries
+path_add "$XDG_BIN_HOME" # local binaries
 path_add "$CARGO_HOME/bin" # rust
 path_add "/opt/dropbox/bin" # dropbox
 path_add "$PYENV_ROOT/bin" # pyenv
