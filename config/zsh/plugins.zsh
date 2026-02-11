@@ -16,6 +16,7 @@ antigen bundle tmux # tmux aliase
 # antigen bundle wd # shortcuts for directories
 antigen bundle rust # completions for rustc, cargo (rust build tool), rustup (rust toolchain manager)
 antigen bundle docker # completions for docker
+antigen bundle uv # completions and aliases for uv (python project-management)
 
 # antigen bundle zsh-users/zsh-syntax-highlighting # Syntax highlighting bundle.
 # antigen bundle zsh-users/zsh-autosuggestions # suggest recent matching commands from history
