@@ -24,6 +24,7 @@ export TERMINFO="$XDG_DATA_HOME"/terminfo
 export TERMINFO_DIRS="$XDG_DATA_HOME"/terminfo:/usr/share/terminfo
 export GOPATH="$XDG_DATA_HOME"/go
 export PYENV_ROOT="$XDG_DATA_HOME"/pyenv
+export UV_TOOL_BIN_DIR="$XDG_BIN_HOME"/uv-tools
 
 path_add() {
     case ":$PATH:" in
@@ -35,6 +36,7 @@ path_add() {
 path_add "$XDG_BIN_HOME" # local binaries
 path_add "$CARGO_HOME/bin" # rust
 path_add "/opt/dropbox/bin" # dropbox
+path_add "$UV_TOOL_BIN_DIR" # uv
 path_add "$PYENV_ROOT/bin" # pyenv
 
 
