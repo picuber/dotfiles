@@ -1,7 +1,14 @@
 configuration {
-	modi: "drun,run,window";
+	modi: "drun,window,run";
 	terminal: "alacritty";
     matching: "fuzzy";
+
+    display-ssh:    "";
+    display-run:    "";
+    display-drun:   "";
+    display-window: "";
+    display-combi:  "";
+    show-icons:     true;
 
 	filebrowser {
 		directories-first: true;
@@ -9,5 +16,10 @@ configuration {
 	}
 }
 
-@theme "/usr/share/rofi/themes/Monokai.rasi"
+// @theme "/usr/share/rofi/themes/Monokai.rasi"
+@theme "./nord.rasi"
 * { border-color: @lightfg; }
+
+listview {
+    columns: 2;
+}
