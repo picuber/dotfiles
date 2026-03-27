@@ -19,7 +19,7 @@
 
 	#placement#
     width = 300
-    offset = 10x50
+    offset = (10, 50)
     origin = top-right
     follow = mouse
 
@@ -32,7 +32,7 @@
 
 	#programs#
     dmenu = /usr/bin/rofi -dmenu
-    browser = /usr/bin/firefox
+    browser = /usr/bin/zen-browser
 
 
 [urgency_low]
