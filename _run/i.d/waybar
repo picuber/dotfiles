@@ -1,0 +1,4 @@
+mdifnes waybar ~/.config
+lnifne waybar ~/.config/waybar ~/.dotfiles/config/waybar
+
+# vim: ft=bash

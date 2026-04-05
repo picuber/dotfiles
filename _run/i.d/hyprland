@@ -1,0 +1,4 @@
+mdifnes hyprland ~/.config
+lnifne hyprland ~/.config/hypr ~/.dotfiles/config/hypr
+
+# vim: ft=bash
