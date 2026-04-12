@@ -1,4 +1,12 @@
 mdifnes hyprland ~/.config
 lnifne hyprland ~/.config/hypr ~/.dotfiles/config/hypr
 
+if ! type "hyprpm" > /dev/null; then
+    echo "hyprpm not found! Please install it before continuing"
+else
+    hyprpm add https://github.com/outfoxxed/hy3 && \
+    hyprpm enable hy3
+    hyprpm reload -n
+fi
+
 # vim: ft=bash

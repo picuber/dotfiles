@@ -140,6 +140,7 @@ cu92\:"Use the PyTorch index for CUDA 9.2"
 cu91\:"Use the PyTorch index for CUDA 9.1"
 cu90\:"Use the PyTorch index for CUDA 9.0"
 cu80\:"Use the PyTorch index for CUDA 8.0"
+rocm7.2\:"Use the PyTorch index for ROCm 7.2"
 rocm7.1\:"Use the PyTorch index for ROCm 7.1"
 rocm7.0\:"Use the PyTorch index for ROCm 7.0"
 rocm6.4\:"Use the PyTorch index for ROCm 6.4"
@@ -212,8 +213,10 @@ never\:"Disables colored output"))' \
 '(-q --quiet)*-v[Use verbose output]' \
 '(-q --quiet)*--verbose[Use verbose output]' \
 '(--color)--no-color[Disable colors]' \
-'--native-tls[Whether to load TLS certificates from the platform'\''s native store \[env\: UV_NATIVE_TLS=\]]' \
+'--native-tls[Whether to load TLS certificates from the platform'\''s native certificate store \[env\: UV_NATIVE_TLS=\]]' \
 '--no-native-tls[]' \
+'--system-certs[Whether to load TLS certificates from the platform'\''s native certificate store \[env\: UV_SYSTEM_CERTS=\]]' \
+'--no-system-certs[]' \
 '--offline[Disable network access \[env\: UV_OFFLINE=\]]' \
 '--no-offline[]' \
 '--preview[Whether to enable all experimental preview features \[env\: UV_PREVIEW=\]]' \
