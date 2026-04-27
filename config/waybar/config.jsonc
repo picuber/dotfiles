@@ -51,6 +51,11 @@
     //         "default": ""
     //     }
     // },
+    "hyprland/workspaces": {
+        "sort-by": "default",
+        "show-special": true,
+        "special-visible-only": true,
+    },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
