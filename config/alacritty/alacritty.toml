@@ -14,7 +14,7 @@ y = 0
 alphabet = "aoeuidhtns',.pgcrl"
 
 [[hints.enabled]]
-command = "firefox"
+command = "zen-browser"
 post_processing = true
 regex = "(magnet:|mailto:|gemini:|gopher:|https:|http:|news:|file:|git:|ssh:|ftp:)[^\u0000-\u001F\u007F-<>\"\\s{-}\\^⟨⟩`]+"
 
