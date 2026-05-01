@@ -97,6 +97,10 @@ lmaps(",L", ":lopen<CR>") -- close location list
 lmaps(",c", ":cclose<CR>") -- close qickfix list
 lmaps(",C", ":copen<CR>") -- close qickfix list
 
+lmaps(",.i", ":EnterIPA<CR>") -- t[o]ggle [I]PA Mode
+lmaps(",i", ":ToggleIPA<CR>") -- t[o]ggle [I]PA Mode
+lmaps(",'i", ":ExitIPA<CR>") -- t[o]ggle [I]PA Mode
+
 -- pairs --
 local nxt = function(key, cmd)
 	lmaps([[.]] .. key, ":" .. cmd .. "<CR>")
@@ -175,9 +179,6 @@ lmaps("ot", ":NvimTreeToggle<CR>") -- [o]pen nvim-[t]ree
 lmaps("ou", ":MundoToggle<CR>") -- [o]pen m[u]ndo
 
 lmaps("od", ":lua require('dapui').toggle()<CR>") -- [o]pen [d]apui
-
-lmaps("oi", ":ToggleIPA<CR>") -- t[o]ggle [I]PA Mode
-
 
 -- telescope --
 --- [f]ind ... ---
