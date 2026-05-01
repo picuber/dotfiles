@@ -176,6 +176,8 @@ lmaps("ou", ":MundoToggle<CR>") -- [o]pen m[u]ndo
 
 lmaps("od", ":lua require('dapui').toggle()<CR>") -- [o]pen [d]apui
 
+lmaps("oi", ":ToggleIPA<CR>") -- t[o]ggle [I]PA Mode
+
 
 -- telescope --
 --- [f]ind ... ---
