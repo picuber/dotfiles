@@ -12,5 +12,6 @@ M.SERVERS = {
     'clangd', -- C/C++
     'jdtls', -- Java
     'tailwindcss', -- TailwindCSS
+    'texlab', -- LaTeX
 }
 return M

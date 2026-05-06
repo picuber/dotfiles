@@ -38,6 +38,7 @@ path_add "$CARGO_HOME/bin" # rust
 path_add "/opt/dropbox/bin" # dropbox
 path_add "$UV_TOOL_BIN_DIR" # uv
 path_add "$PYENV_ROOT/bin" # pyenv
+path_add /usr/local/texlive/2026/bin/x86_64-linux # TeXLive, tlmgr
 
 
 	# this makes git ask me for gpg passphrase
