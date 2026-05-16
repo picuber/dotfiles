@@ -1,0 +1,6 @@
+hl.on("hyprland.start", function ()
+    hl.exec_cmd("mattermost-desktop")
+    hl.exec_cmd("thunderbird")
+    hl.exec_cmd("zoom")
+    hl.exec_cmd("podman-desktop")
+end)
