@@ -13,5 +13,6 @@ M.SERVERS = {
     'jdtls', -- Java
     'tailwindcss', -- TailwindCSS
     'texlab', -- LaTeX
+    'jsonls', -- JSON/JSONC
 }
 return M
