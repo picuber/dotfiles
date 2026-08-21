@@ -3,7 +3,8 @@ function zat {
 	zathura "$@" &!
 }
 function feh {
-	/usr/bin/feh "$@" &!
+    # support RAW pictures by default
+	/usr/bin/feh --conversion-timeout=1 "$@" &!
 }
 function xournal {
 	xournalpp "$@" &!
