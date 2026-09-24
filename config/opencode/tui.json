@@ -1,8 +1,0 @@
-{
-  "$schema": "https://opencode.ai/tui.json",
-  "theme": "nord",
-  "keybinds": {
-    "app_exit": "<leader>q",
-    "theme_switch_mode": "<leader>d"
-  },
-}
