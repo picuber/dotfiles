@@ -1,0 +1,7 @@
+mdifne opencode ~/.config
+mdifne opencode ~/.config/opencode
+
+lnifne opencode ~/.config/opencode/tui.json ~/.dotfiles/config/opencode/tui.json
+lnifne opencode ~/.config/opencode/opencode.jsonc ~/.dotfiles/config/opencode/opencode.jsonc
+
+# vim: ft=bash
