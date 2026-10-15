@@ -1,0 +1,150 @@
+#f################
+#  unused keys  #
+#################
+# == layout ==
+# F: 1 2 3 4 5 6 7 8 9 10 11 12
+# X: 1 2 3 4 5 6   8 9 10 11 12 C I F
+# ` 1 2 3 4 5 6 7 8 9 0 [ ]     NL / * - +
+#    ' , . p y f g c r l / =    77 88 99
+#     a o e u i d h t n s - #   44 55 66
+#    \ ; q j k x b m w v z      11 22 33
+#    CR ESC TAB SP L U D R      00 . CR
+#
+# NL = Num_Lock
+# CR = Return
+# ESC = Escape
+# SP = space
+# L = Left
+# U = Up
+# D = Down
+# R = Right
+#
+# F: = funktion keys
+# X: = XF86 keys
+#    C = Calculator
+#    I = HomePage
+#    F = MyComputer
+#
+# Num_Lock:
+#   11 = on/off
+#   1_ = on
+#   _1 = off
+#   __ = none
+#
+# _ : used by i3
+# @ : used by dunst
+#
+#
+# == normal ==
+# F: 1 2 3 4 5 6 7 8 9 10 11 12
+# X: 1 2 3 4 5 6   8 9 10 11 12 C I F
+# ` 1 2 3 4 5 6 7 8 9 0 [ ]     NL / * - +
+#    ' , . p y f g c r l / =    77 88 99
+#     a o e u i d h t n s - #   44 55 66
+#    \ ; q j k x b m w v z      11 22 33
+#    CR ESC TAB SP L U D R      00 . CR
+#
+# == Shift+ ==
+# F: 1 2 3 4 5 6 7 8 9 10 11 12
+# X: 1 2 3 4 5 6   8 9 10 11 12 C I F
+# ` 1 2 3 4 5 6 7 8 9 0 [ ]     NL / * - +
+#    ' , . p y f g c r l / =    77 88 99
+#     a o e u i d h t n s - #   44 55 66
+#    \ ; q j k x b m w v z      11 22 33
+#    CR ESC TAB SP L U D R      00 . CR
+#
+# == $mod+ ==
+# F: 1 2 3 4 5 6 7 8 9 10 11 12
+# X: 1 2 3 4 5 6   8 9 10 11 12 C I F
+# ` 1 2 3 4 5 6 7 8 9 0 [ ]     NL / * - +
+#    ' , . p y f g c r l / =    77 88 99
+#     a o e u i d h t n s - #   44 55 66
+#    \ ; q j k x b m w v z      11 22 33
+#    CR ESC TAB SP L U D R      00 . CR
+#
+# == $mod+Shift+ ==
+# F: 1 2 3 4 5 6 7 8 9 10 11 12
+# X: 1 2 3 4 5 6   8 9 10 11 12 C I F
+# ` 1 2 3 4 5 6 7 8 9 0 [ ]     NL / * - +
+#    ' , . p y f g c r l / =    77 88 99
+#     a o e u i d h t n s - #   44 55 66
+#    \ ; q j k x b m w v z      11 22 33
+#    CR ESC TAB SP L U D R      00 . CR
+#
+# == $mod+Control+ ==
+# F: 1 2 3 4 5 6 7 8 9 10 11 12
+# X: 1 2 3 4 5 6   8 9 10 11 12 C I F
+# ` 1 2 3 4 5 6 7 8 9 0 [ ]     NL / * - +
+#    ' , . p y f g c r l / =    77 88 99
+#     a o e u i d h t n s - #   44 55 66
+#    \ ; q j k x b m w v z      11 22 33
+#    CR ESC TAB SP L U D R      00 . CR
+#
+# == $mod+Control+Shift+ ==
+# F: 1 2 3 4 5 6 7 8 9 10 11 12
+# X: 1 2 3 4 5 6   8 9 10 11 12 C I F
+# ` 1 2 3 4 5 6 7 8 9 0 [ ]     NL / * - +
+#    ' , . p y f g c r l / =    77 88 99
+#     a o e u i d h t n s - #   44 55 66
+#    \ ; q j k x b m w v z      11 22 33
+#    CR ESC TAB SP L U D R      00 . CR
+#
+# == mode($mod+m) ==
+# F: 1 2 3 4 5 6 7 8 9 10 11 12
+# X: 1 2 3 4 5 6   8 9 10 11 12 C I F
+# ` 1 2 3 4 5 6 7 8 9 0 [ ]     NL / * - +
+#    ' , . p y f g c r l / =    77 88 99
+#     a o e u i d h t n s - #   44 55 66
+#    \ ; q j k x b m w v z      11 22 33
+#    CR ESC TAB SP L U D R      00 . CR
+#
+
+#########
+# Binds #
+#########
+
+# -----Programs-----
+bindsym {
+    $mod+Return exec $term
+    # start rofi drun (open programm)
+    $mod+o exec rofi -show drun
+    $mod+i exec $browser
+}
+
+
+# -----Sway System-----
+bindsym {
+    # reload the config file
+    $mod+Shift+c reload
+    # Exit sway (logs you out of your Wayland session)
+    $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+}
+
+# -----Workspaces-----
+bindsym {
+    # Switch to workspace
+    $mod+1 workspace number 1
+    $mod+2 workspace number 2
+    $mod+3 workspace number 3
+    $mod+4 workspace number 4
+    $mod+5 workspace number 5
+    $mod+6 workspace number 6
+    $mod+7 workspace number 7
+    $mod+8 workspace number 8
+    $mod+9 workspace number 9
+    $mod+0 workspace number 10
+    # Move focused container to workspace
+    $mod+Shift+1 move container to workspace number 1
+    $mod+Shift+2 move container to workspace number 2
+    $mod+Shift+3 move container to workspace number 3
+    $mod+Shift+4 move container to workspace number 4
+    $mod+Shift+5 move container to workspace number 5
+    $mod+Shift+6 move container to workspace number 6
+    $mod+Shift+7 move container to workspace number 7
+    $mod+Shift+8 move container to workspace number 8
+    $mod+Shift+9 move container to workspace number 9
+    $mod+Shift+0 move container to workspace number 10
+}
+
+
+# vim: ft=swayconfig

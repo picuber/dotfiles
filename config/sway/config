@@ -1,0 +1,36 @@
+# Read `man 5 sway` for a complete reference.
+
+include ./sway.d/10-variables
+include ./sway.d/20-input
+include ./sway.d/25-output
+include ./sway.d/30-binds
+include ./sway.d/70-theme
+include ./sway.d/80-window-rules
+include ./sway.d/90-autostart
+include ./sway.d/95-local
+
+include /etc/sway/config.d/*
+
+floating_modifier $mod normal
+bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space floating toggle
+
+# font pango:monospace 10
+
+
+# exec waybar
+
+bar {
+    position top
+
+    # When the status_command prints a new line to stdout, swaybar updates.
+    # The default just shows the current date and time.
+    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+
+    colors {
+        statusline #ffffff
+        background #323232
+        inactive_workspace #32323200 #32323200 #5c5c5c
+    }
+}
+

@@ -1,0 +1,13 @@
+#############
+# Variables #
+#############
+
+# Mod4 = Super
+#set $mod Mod4
+# for testing within hyprland set it to Alt
+set $mod Mod1
+
+set $term alacritty
+set $browser zen-browser
+
+# vim: ft=swayconfig

@@ -1,0 +1,38 @@
+# -----THEME-----
+# nord theme by arcticicestudio
+# polar night
+set $nord0 #2E3440
+set $nord1 #3B4252
+set $nord2 #434C5E
+set $nord3 #4C566A
+# snow storm
+set $nord4 #D8DEE9
+set $nord5 #E5E9F0
+set $nord6 #ECEFF4
+# frost
+set $nord7 #8FBCBB
+set $nord8 #88C0D0
+set $nord9 #81A1C1
+set $nordA #5E81AC
+# aurora
+set $nordB #BF616A
+set $nordC #D08770
+set $nordD #EBCB8B
+set $nordE #A3BE8C
+set $nordF #B48EAD
+
+#########
+# Theme #
+#########
+
+# -----CLOLOURS-----
+# class                 border  backgr. text    indicator child_border
+client.focused          $nord8  $nord8  $nord0  $nordF    $nord8
+client.focused_inactive $nord9  $nord9  $nord1  $nord9    $nord9
+client.unfocused        $nord0  $nord0  $nord9  $nord0    $nord0
+client.urgent           $nordB  $nordB  $nord6  $nordB    $nordB
+client.placeholder      $nord0  $nord0  $nord6  $nord0    $nord0
+
+client.background       $nord6
+
+# vim: ft=swayconfig
